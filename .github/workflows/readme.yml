@@ -1,0 +1,35 @@
+name: GitHub Weekly Digest
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r writer/requirements.txt
+
+      - name: Run scraper
+        run: python writer/scraper.py
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: Guan-Ming Chiu
+          author_email: guanmingchiu@gmail.com
+          message: "feat: add weekly digest on {{date}}"
+          add: "*.svg"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
