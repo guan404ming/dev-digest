@@ -1,0 +1,182 @@
+---
+title: '[8/5 - 8/11] GitHub Weekly Digest - Flash'
+publishedAt: '2024-08-11'
+---
+## 📌 GoodbyeDPI (https://github.com/ValdikSS/GoodbyeDPI)
+
+#### 簡介
+
+* GoodbyeDPI 是一款用於繞過深層封包檢測 (DPI) 系統的工具，這些系統存在於許多網際網路服務提供商 (ISP) 中，用於阻止特定網站的訪問。
+* GoodbyeDPI 可以處理兩種 DPI 連線方式：被動 DPI (Passive DPI) 和主動 DPI (Active DPI)。
+* 被動 DPI 通常使用光纖分光器或埠映象 (Passive DPI) 來連線，不會阻止任何資料，但會比目標網站更快地回應。
+* 主動 DPI 則是在網路中串聯的方式進行連線。
+* GoodbyeDPI 需要 Windows 7、8、8.1、10 或 11 作業系統，並且需要管理員許可權。
+
+#### 主要功能
+
+* 繞過被動 DPI (Passive DPI)
+* 繞過 QUIC/HTTP3
+* 替換 Host 標頭 (Host header)
+* 移除 Host 標頭中主機名稱和值之間的空格
+* 混合 Host 標頭值的大小寫 (例如：test.com -> tEsT.cOm)
+* 設定 HTTP 分片 (fragmentation)
+* 設定 HTTP 持續性 (keep-alive) 分片
+* 設定 HTTPS 分片
+* 在 Method 和 Request-URI 之間新增額外的空格
+* 在所有處理的埠 (不只是 80 埠) 上嘗試查詢和解析 HTTP 流量
+* 重新導向 UDP DNS 請求
+* 根據文字檔中的主機名稱和子網域執行規避技巧
+* 啟用偽造請求模式 (Fake Request Mode)
+* 使用原始分片 (native-frag) 技術分片封包
+* 使用反向分片 (reverse-frag) 技術分片封包
+* 設定最大有效負載 (max-payload)
+
+#### 如何使用
+
+* 從 Releases 頁面下載最新版本並執行。
+* 使用命令列引數控制 GoodbyeDPI 的行為，例如：`goodbyedpi.exe -p -r -s`
+* 檢查 .cmd 指令碼並根據您的偏好和網路狀況進行修改。
+* 如果您的 ISP 使用 DNS 汙染，您可能需要使用 `--dns-addr` 引數將 DNS 請求重新導向到公共 DNS 解析器 (例如 Yandex DNS 77.88.8.8:1253)。
+* 您可以使用 `--blacklist` 引數指定一個包含被阻止網站列表的文字檔，以便只對這些網站執行規避技巧。
+
+#### 說明
+
+* GoodbyeDPI 使用 WinDivert 驅動程式，透過 Windows Filtering Platform 設定過濾器並將封包重新導向到使用者空間。
+* GoodbyeDPI 會在控制檯視窗可見時執行，並在您關閉視窗時終止。
+* GoodbyeDPI 可以在 GNU Make 和 mingw 的環境下編譯。
+* GoodbyeDPI 可以作為 Windows 服務安裝。
+## 📌 SpoofDPI (https://github.com/xvzc/SpoofDPI)
+
+#### 簡介
+
+SpoofDPI 是一款輕量且快速的軟體，用於繞過深層封包檢測 (DPI)。它透過將客戶端問候 (Client Hello) 包拆分成多個片段，並依次傳送來規避 DPI 的偵測，從而成功繞過對 HTTPS 協議的封鎖。
+
+#### 主要功能
+
+-  Bypass Deep Packet Inspection (DPI) for HTTPS connections.
+-  Provide proxy connection for HTTP requests.
+-  Support various operating systems including macOS, Linux and Windows.
+-  Offer multiple installation methods: binary, Go install, Git build.
+-  Allow users to configure listening address, DNS address, port number and other settings.
+-  Provide debug output and version information.
+-  Support system-wide proxy setting.
+
+#### 如何使用
+
+-  **安裝:**
+    - **Binary:**  透過 curl 命令下載並安裝 SpoofDPI。
+    - **Go install:**  使用 `go install github.com/xvzc/SpoofDPI/cmd/spoof-dpi@latest` 命令安裝。
+    - **Git:**  從 Github 克隆倉庫並編譯。
+-  **啟動:**  執行 `spoof-dpi` 命令，並根據需要設定選項。
+-  **設定代理:**
+    - **macOS:**  SpoofDPI 會自動設定代理。
+    - **Linux:**  使用 `google-chrome --proxy-server="http://127.0.0.1:8080"` 命令設定瀏覽器代理。
+-  **注意:**  禁用 Chrome 瀏覽器中任何 VPN 擴充套件，例如 Hotspot Shield。
+
+#### 啟發來源
+
+-  Green Tunnel by @SadeghHayeri
+-  GoodbyeDPI by @ValdikSS
+## 📌 [Teable](https://github.com/teableio/teable)
+
+#### 簡介
+
+Teable 是一款基於 Postgres 的超高速、實時、專業、開發者友好的無程式碼資料庫，使用簡單的試算表式介面建立複雜的企業級資料庫應用程式。透過無程式碼，解鎖高效的應用程式開發，擺脫資料安全性和可擴充套件性的障礙。
+
+#### 主要功能
+
+- **Spreadsheet-like Interface:** 試算表式介面，支援細胞編輯、公式、資料排序和過濾、聚合函式、資料格式化、分組、凍結欄位、匯入/匯出、列樣式和條件格式、圖表和視覺化工具、資料驗證、撤銷/重做、註釋。
+- **Multiple Views:** 提供多種檢視以視覺化和互動資料，例如網格檢視、表單檢視、看板檢視、日曆檢視、畫廊檢視、甘特圖檢視、時間軸檢視。
+- **Super Fast:** 處理數百萬筆資料，自動資料庫索引，支援批次資料操作。
+- **Full-featured SQL Support:** 與 BI 工具（如 Metabase、PowerBi）和無程式碼工具（如 Appsmith）無縫整合，使用原生 SQL 擷取資料。
+- **Privacy-First:**  使用者擁有自己的資料，支援自帶資料庫。
+- **Real-time Collaboration:**  資料實時更新，整合協作成員邀請和管理，提供表格到欄位級的許可權管理機制。
+- **Extensions:** 基於 React 的後端無程式碼開發能力，支援自定義應用程式和指令碼擴充套件。
+- **Automation:** 使用 AI 或視覺化程式設計設計工作流程，輕鬆從表格中擷取資料。
+- **Copilot:** 內建 AI 功能，支援聊天生成應用程式、圖表、檢視和操作。
+- **Support for Multiple Databases:** 支援 Sqlite、PostgreSQL、MySQL、MariaDB、TiDB 等資料庫。
+
+#### 如何使用
+
+- **快速指南:** 選擇模板中心中的場景，點選 “使用此模板”；嘗試 100 萬行資料演示以感受 Teable 的速度；點選教學瞭解更多使用方式；點選 Railway 部署，自行部署。
+- **開發步驟:** 
+    - 初始化：使用 `corepack enable` 啟用幫助管理套件管理器，執行 `pnpm install` 安裝專案依賴。
+    - 選擇資料庫：使用 `make switch-db-mode` 切換 SQLite 或 PostgreSQL 資料庫。
+    - 自定義環境變數（可選）：複製 `.env.development` 到 `.env.development.local`。
+    - 執行開發伺服器：在 `apps/nestjs-backend` 目錄下執行 `pnpm dev`，後端會自動啟動前端的 Next.js 伺服器，檔案變更會自動過載。
+- **Docker 部署:** 在 `dockers/examples/standalone/` 目錄下執行 `docker-compose up -d`，更多詳情請參閱 `dockers/examples` 目錄。
+- **一鍵部署:** 在 Railway 等平臺上可以使用一鍵部署，並享受免費額度。
+- **標題**: zapret v.60
+- **簡介**: zapret 是一款獨立運作、不依賴外部伺服器的 DPI 防禦工具，可以協助繞過網站 HTTP(s) 阻擋或減速、TCP 及 UDP 協定封包分析等，例如用於阻擋 VPN。
+- **主要功能**:
+    - 阻擋 DPI 偵測 HTTP 和 TLS 請求，並進行封包修改來達到繞過封鎖的目的。
+    - 支援多種攻擊模式，例如 fake、rst、rstack、disorder、split 等。
+    - 支援多種平臺，包括 Linux、FreeBSD、OpenBSD、MacOS、Windows 等。
+    - 支援 autohostlist 功能，可以自動偵測封鎖並將封鎖的域名加入列表。
+    - 支援 ipset 功能，可以根據 IP 列表或域名列表進行過濾。
+    - 支援 nftables 功能，可以取代 iptables。
+    - 支援 tpws 功能，可以作為 transparent proxy 或 socks proxy。
+    - 支援 nfqws 功能，可以作為 packet modifier 和 NFQUEUE handler。
+- **如何使用**:
+    - 閱讀 docs/quick_start.txt (Linux 和 OpenWRT) 或 docs/quick_start_windows.txt (Windows) 以快速入門。
+    - 使用 iptables 或 nftables 來將流量轉向 tpws 或 nfqws。
+    - 設定 nfqws 的 DPI desync 模式和引數。
+    - 設定 tpws 的 split 模式和引數。
+    - 設定 autohostlist 模式和引數。
+    - 設定 ipset 模式和引數。
+    - 設定 nftables 模式和引數。
+    - 根據測試結果調整設定引數。
+    - 使用 blockcheck.sh 測試 DPI 阻擋模式。
+## 📌 [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+
+#### 簡介
+
+ComfyUI 是一個強大且模組化的 Stable Diffusion 圖形介面與後端，讓使用者可以設計並執行複雜的 Stable Diffusion 流程，並使用圖表、節點和流程圖的介面。
+
+#### 主要功能
+
+- 使用者介面提供圖表、節點和流程圖的介面，讓使用者可以設計並執行複雜的 Stable Diffusion 流程，無需編寫任何程式碼。
+- 支援 SD1.x、SD2.x、SDXL、Stable Video Diffusion、Stable Cascade、SD3 和 Stable Audio 等模型。
+- 內建非同步佇列系統，讓使用者可以排程多個工作。
+- 針對圖表流程執行進行最佳化，僅執行有變更的部份。
+- 智慧記憶體管理，可以在僅有 1GB 視訊記憶體的 GPU 上執行模型。
+- 即使沒有 GPU，也可以使用 `--cpu` 引數（速度較慢）執行。
+- 可以載入 ckpt、safetensors 和 diffusers 模型/檢查點，以及獨立的 VAE 和 CLIP 模型。
+- 支援嵌入/文字反轉、Loras（常規、locon 和 loha）、超網路等功能。
+- 支援從生成的 PNG、WebP 和 FLAC 檔案載入完整的工作流程（包含種子）。
+- 支援將工作流程儲存為 JSON 檔案。
+- 提供節點介面，用於建立複雜的工作流程，例如高解析度修復或更先進的工作流程。
+- 支援區域合成、修復（使用常規模型和修復模型）、ControlNet 和 T2I-Adapter、Upscale 模型（ESRGAN、ESRGAN 變體、SwinIR、Swin2SR 等）、unCLIP 模型、GLIGEN、模型合併、LCM 模型和 Loras、SDXL Turbo、AuraFlow、HunyuanDiT 等功能。
+- 支援使用 TAESD 顯示潛在預覽。
+- 啟動速度很快。
+- 完全離線運作，不會下載任何東西。
+- 提供設定檔，用於設定模型的搜尋路徑。
+
+#### 如何使用
+
+- 使用 `Ctrl + Enter` 將當前圖表排入佇列以進行生成。
+- 使用 `Ctrl + Shift + Enter` 將當前圖表排入佇列以作為第一個進行生成。
+- 使用 `Ctrl + Z` 或 `Ctrl + Y` 取消/重做操作。
+- 使用 `Ctrl + S` 儲存工作流程。
+- 使用 `Ctrl + O` 載入工作流程。
+- 使用 `Ctrl + A` 選擇所有節點。
+- 使用 `Alt + C` 折疊/展開選定的節點。
+- 使用 `Ctrl + M` 靜音/取消靜音選定的節點。
+- 使用 `Ctrl + B` 繞過選定的節點（類似於將節點從圖表中移除並重新連線電線）。
+- 使用 `Delete` 或 `Backspace` 刪除選定的節點。
+- 使用 `Ctrl + Backspace` 刪除當前圖表。
+- 使用空白鍵移動畫布。
+- 使用 `Ctrl/Shift + Click` 將點選的節點新增到選取專案。
+- 使用 `Ctrl + C` 或 `Ctrl + V` 複製和貼上選定的節點（不保留與未選定節點輸出的連線）。
+- 使用 `Ctrl + C` 或 `Ctrl + Shift + V` 複製和貼上選定的節點（保留未選定節點輸出到已貼上節點輸入的連線）。
+- 使用 `Shift + Drag` 同時移動多個選定的節點。
+- 使用 `Ctrl + D` 載入預設圖表。
+- 使用 `Alt + +` 放大畫布。
+- 使用 `Alt + -` 縮小畫布。
+- 使用 `Ctrl + Shift + LMB + 垂直拖曳` 放大/縮小畫布。
+- 使用 `Q` 切換佇列的可見性。
+- 使用 `H` 切換歷史記錄的可見性。
+- 使用 `R` 重新整理圖表。
+- 使用雙擊滑鼠左鍵開啟節點快速搜尋面板。
+
+- macOS 使用者可以使用 `Cmd` 代替 `Ctrl`。
