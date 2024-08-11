@@ -7,7 +7,7 @@ export default function Page() {
         My Blog
       </h1>
       <p className="mb-4">
-        {`I'm Guan-Ming Chiu, an Information Management student at National Taiwan University. 
+        {`I'm Wesley Chiu, an Information Management student at National Taiwan University. 
           I have a deep passion for new technologies and love finding creative ways to solve complex challenges. 
           I'm always excited to learn and innovate in the ever-evolving world of technology.`}
       </p>
