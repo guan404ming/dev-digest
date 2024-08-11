@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  readme:
+  weekly-digest:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r writer/requirements.txt
 
+      - name: Create .env file
+        run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > writer/.env
+
       - name: Run scraper
         run: python writer/scraper.py
 
@@ -30,6 +33,6 @@ jobs:
           author_name: Guan-Ming Chiu
           author_email: guanmingchiu@gmail.com
           message: "feat: add weekly digest on {{date}}"
-          add: "*.svg"
+          add: "*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
