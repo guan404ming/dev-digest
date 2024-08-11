@@ -1,14 +1,16 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
+from opencc import OpenCC
 
 # Set up Gemini API
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-1.5-flash-latest")
+cc = OpenCC("s2twp")
 
 url = "https://github.com/trending?since=weekly"
 response = requests.get(url)
@@ -21,18 +23,13 @@ for repo_element in repo_elements:
     if hydro_click and '"click_target":"REPOSITORY"' in hydro_click:
         repo_links.append(f'https://github.com{repo_element["href"]}')
 
-info = f"""
----
-title: '[8/5 - 8/11] GitHub Weekly Digest'
-publishedAt: '{datetime.now().strftime("%Y-%m-%d")}'
----
-"""
-print(info)
-
-count = 0
+summaries = []
 for repo_link in repo_links:
+    if len(summaries) >= 5: 
+        break
+
     soup = BeautifulSoup(requests.get(repo_link).text, "html.parser")
-    
+
     for element in ["article", "pre"]:
         readme_elements = soup.select(element)
         if len(readme_elements) > 0:
@@ -40,7 +37,7 @@ for repo_link in repo_links:
             break
     else:
         continue
-    
+
     prompt = f"""
     ！請確定使用繁體中文zh-TW！並且確保格式依照我的範本！
 
@@ -64,10 +61,21 @@ for repo_link in repo_links:
     ！請確定使用繁體中文zh-TW！並且確保格式依照我的範本！
     """
     summary = model.generate_content(prompt + readme_text).text.strip()
-    
+
     if len(summary) > 0:
-        print(summary)
-        count += 1
-    
-    if count == 2:
-        break
+        summaries.append(cc.convert(summary))
+
+# Write summaries to a markdown file
+now = datetime.now()
+seven_days_ago = now - timedelta(days=6)
+file_name = seven_days_ago.strftime("%Y%m%d") + now.strftime("%m%d") + ".mdx"
+info = f"""---
+title: '[{seven_days_ago.strftime('%-m/%-d')} - {now.strftime('%-m/%-d')}] GitHub Weekly Digest - Flash'
+publishedAt: '{datetime.now().strftime("%Y-%m-%d")}'
+---
+"""
+
+with open("blog/app/blog/posts/" + file_name, "w") as file:
+    file.write(info)
+    for summary in summaries:
+        file.write(summary + "\n")
