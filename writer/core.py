@@ -74,7 +74,7 @@ with open("blog/app/blog/posts/" + file_name, "w") as file:
             f"## 📌 [{repository["title"]}]({f'https://github.com{repository["link"]}'})"
         )
         file.write(f"""
-<Callout color="#2f2f2f">
+<Callout>
     Desription: {repository["description"]}\\
     🌐 {repository["language"]}｜⭐️ {repository["stars"]}
 </Callout>
