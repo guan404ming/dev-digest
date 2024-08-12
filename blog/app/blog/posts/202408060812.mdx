@@ -1,0 +1,165 @@
+---
+title: '[8/6 - 8/12] GitHub Weekly Digest'
+publishedAt: '2024-08-12'
+---
+## 📌 [xvzc/SpoofDPI](https://github.com/xvzc/SpoofDPI)
+<Callout color="#2f2f2f">
+    Desription: A simple and fast anti-censorship tool written in Go\
+    🌐 Go｜⭐️ 2,316
+</Callout>
+#### 簡介
+
+- SpoofDPI 是一個簡單快速且能繞過 Deep Packet Inspection 的軟體。
+
+#### 主要功能
+
+- SpoofDPI 是一個代理伺服器，能夠將流量導向特定地址。
+- SpoofDPI 支援 HTTPS 協議，並能繞過 Deep Packet Inspection。
+- SpoofDPI 支援系統代理，能讓系統的網路流量透過 SpoofDPI 進行代理。
+- SpoofDPI 提供 debug 模式，方便使用者除錯。
+- SpoofDPI 支援設定 DNS 地址與埠號。
+- SpoofDPI 支援設定 HTTP 埠號。
+- SpoofDPI 支援設定連線超時時間。
+- SpoofDPI 支援設定分段的 Client Hello 大小。
+
+#### 如何使用
+
+- 使用 `curl` 命令安裝 SpoofDPI，根據你的系統選擇對應的命令。
+- 使用 `go install` 命令安裝 SpoofDPI。
+- 使用 `git` 命令克隆 SpoofDPI 程式碼，並編譯。
+- 執行 `spoof-dpi` 命令，並根據需要設定引數。
+- 在瀏覽器中設定代理，將代理地址設定為 `http://127.0.0.1:8080`。
+- 若使用 Chrome 瀏覽器，請確認已關閉 Hotspot Shield 等 VPN 擴充套件。
+## 📌 [teableio/teable](https://github.com/teableio/teable)
+<Callout color="#2f2f2f">
+    Desription: ✨ The Next Gen Airtable Alternative: No-Code Postgres\
+    🌐 TypeScript｜⭐️ 9,551
+</Callout>
+#### 簡介
+
+Teable 是一款快速、即時、專業且開發者友善的無程式碼資料庫，建立於 Postgres 之上。它採用簡單的試算表式介面來建立複雜的企業級資料庫應用程式。透過無程式碼，擺脫資料安全和擴充套件性的障礙，輕鬆實現高效的應用程式開發。
+
+#### 主要功能
+
+- **Spreadsheet-like Interface**: 試算表式介面，提供細胞編輯、公式支援、資料排序和篩選、彙總函式、資料格式化、分組、凍結欄位、匯入/匯出功能、列樣式和條件格式、圖表和視覺化工具、資料驗證、撤銷/重做、註解和註釋等功能。
+- **Multiple Views**: 多種檢視，提供表格檢視、表單檢視、看板檢視、日曆檢視、相簿檢視、甘特圖檢視、時間軸檢視等。
+- **Super Fast**: 超高速，能輕鬆處理數百萬筆資料，並提供自動資料索引和批次資料操作。
+- **Full-featured SQL Support**: 全功能 SQL 支援，無縫整合 BI 工具、無程式碼工具和原生 SQL 資料擷取。
+- **Privacy-First**: 隱私優先，使用者擁有自己的資料，並且支援自帶資料庫。
+- **Real-time Collaboration**: 即時協作，無需重新整理頁面，資料即時更新，提供無縫的協作成員邀請和管理，以及完善的許可權管理機制。
+- **Extensions**: 擴充套件，提供基於 React 的無後端程式設計功能、自訂應用程式和簡單易用的指令碼擴充套件模式。
+- **Automation**: 自動化，提供 AI 或視覺化程式設計的流程設計功能，以及從表格中輕鬆擷取資料。
+- **Copilot**: 副駕駛，提供 AI 功能，例如 Chat 2 App、Chat 2 Chart、Chat 2 View、Chat 2 Action 等。
+- **Support for Multiple Databases**: 支援多種資料庫，例如 Sqlite、PostgreSQL、MySQL、MariaDB、TiDB 等。
+
+#### 如何使用
+
+- **快速入門**: 選擇模板中心中的情境，點選 "Use this template"。
+- **高效能**: 嘗試 100 萬筆資料的示範，感受 Teable 的速度。
+- **快速學習**: 點選教程。
+- **自部署**: 點選 Railway 上的 "Deploy"。
+## 📌 [hufrea/byedpi](https://github.com/hufrea/byedpi)
+<Callout color="#2f2f2f">
+    Desription: Bypass DPI\
+    🌐 C｜⭐️ 868
+</Callout>
+#### 簡介
+
+- Ciadpi 是一個本地的 SOCKS 伺服器，提供 DPI bypass 方法。
+- 透過調整網路封包，如亂序、分割或新增偽造資料，來突破 DPI 監控。
+- 可設定不同引數，以達到最佳的 bypass 效果。
+
+#### 主要功能
+
+- 監聽網路流量。
+- 偽造網路封包。
+-  調整網路封包大小、順序和內容。
+-  提供 TCP Fast Open 和 MD5 Signature 功能。
+
+#### 如何使用
+
+- 使用 `ciadpi` 命令，並指定所需引數。
+- 例如：`ciadpi --disorder 1 --auto=torst --tlsrec 1+s` 或 `ciadpi --fake -1 --ttl 8`。
+- 引數說明如下：
+    - `-i, --ip`: 監聽的 IP 地址。
+    - `-p, --port`: 監聽的埠號。
+    - `-c, --max-conn`: 最大客戶端連線數量。
+    - `-I, --conn-ip`: 傳送請求使用的 IP 地址。
+    - `-b, --buf-size`: 接收和傳送資料的最大緩衝區大小。
+    - `-g, --def-ttl`: 出站連線的 TTL 值。
+    - `-N, --no-domain`: 不代理域名請求。
+    - `-U, --no-udp`: 不代理 UDP。
+    - `-F, --tfo`: 啟用 TCP Fast Open。
+    - `-A, --auto`: 自動模式，會根據連線失敗的型別自動應用 bypass 引數。
+    - `-u, --cache-ttl`: 快取值的有效時間。
+    - `-T, --timeout`: 等待伺服器響應的超時時間。
+    - `-K, --proto`: 允許代理的協議列表。
+    - `-H, --hosts`: 指定代理的域名列表。
+    - `-V, --pf`: 埠限制。
+    - `-s, --split`: 將請求分割成多個部分傳送。
+    - `-d, --disorder`: 將請求的某些部分傳送到錯誤的順序。
+    - `-o, --oob`: 請求的某些部分使用 OOB 資料傳送。
+    - `-f, --fake`: 偽造部分請求資料，傳送到 DPI。
+    - `-t, --ttl`: 偽造資料的 TTL 值。
+    - `-k, --ip-opt`: 設定偽造 IP 包的選項。
+    - `-S, --md5sig`: 設定偽造 IP 包的 TCP MD5 Signature 選項。
+    - `-l, --fake-data`: 指定偽造資料檔案。
+    - `-e, --oob-data`: 指定 OOB 資料檔案。
+    - `-n, --tls-sni`: 設定偽造資料的 SNI 值。
+    - `-M, --mod-http`: 更改 HTTP 標頭。
+    - `-r, --tlsrec`: 將 ClientHello 分割成多個部分傳送。
+    - `-a, --udp-fake`: 偽造 UDP 包的數量。
+## 📌 [ValdikSS/GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI)
+<Callout color="#2f2f2f">
+    Desription: GoodbyeDPI — Deep Packet Inspection circumvention utility (for Windows)\
+    🌐 C｜⭐️ 20,684
+</Callout>
+#### 簡介
+
+- GoodbyeDPI 是一款用於繞過許多網際網路服務供應商 (ISP) 中的深層封包檢測 (DPI) 系統的軟體。
+- 它可以處理透過光纖分路器或埠映象 (被動 DPI) 連線的 DPI，這些 DPI 不會封鎖任何資料，但會比請求的目的地更快地回覆；以及循序連線的積極 DPI。
+- 需要 Windows 7、8、8.1、10 或 11 系統，且需具有管理員許可權。
+
+#### 主要功能
+
+- 繞過被動 DPI 和積極 DPI。
+- 透過 TCP 層級的封包片段、修改 HTTP 標頭、傳送虛假封包等方式繞過 DPI。
+- 支援多種 DPI 繞過方法，例如 TCP 分片、主機標頭替換、HTTP 持續 (Keep-Alive) 分片。
+- 提供預設的模式設定，方便使用者快速使用。
+- 允許使用者根據自身需求自訂 DPI 繞過方法。
+
+#### 如何使用
+
+- 從 Releases 頁面下載最新版本並執行。
+- 使用 `goodbyedpi.exe [OPTION...]` 命令執行，並使用各種選項自訂 DPI 繞過設定。
+- 可使用 `-1` 到 `-9` 的模式設定，其中 `-9` 是預設設定。
+- 可以在執行 `goodbyedpi.exe` 前，先確認 ISP 是否有汙染 DNS 答案，並使用 DNS over HTTPS 功能，例如 NextDNS。
+- 也可以使用 `--dns-addr` 選項將 DNS 請求轉發到非標準埠上的公共 DNS 解析器，例如 Yandex DNS 77.88.8.8:1253。
+- 可以在 `.cmd` 檔案中修改設定，以符合您的偏好和網路狀況。
+## 📌 [bol-van/zapret](https://github.com/bol-van/zapret)
+<Callout color="#2f2f2f">
+    Desription: DPI bypass multi platform\
+    🌐 C｜⭐️ 4,819
+</Callout>
+#### 簡介
+
+zapret 是一個在沒有使用外部伺服器的情況下，用來對抗 DPI (Deep Packet Inspection) 的工具。它可以幫助繞過封鎖或減速網站、標籤分析 TCP 和 UDP 協議，例如用於封鎖 VPN。zapret 主要針對執行 openwrt 的低功率嵌入式裝置，例如路由器。它支援傳統的 Linux 系統、FreeBSD、OpenBSD 和部分 MacOS。在某些情況下，可以自行將 zapret 整合到不同的韌體。大部分功能在 Windows 上執行。
+
+#### 主要功能
+
+- 繞過封鎖或減速網站。
+- 標籤分析 TCP 和 UDP 協議。
+- 封鎖 VPN。
+- 支援傳統的 Linux 系統、FreeBSD、OpenBSD 和部分 MacOS。
+- 支援部分韌體。
+- 大部分功能在 Windows 上執行。
+
+#### 如何使用
+
+- 參考 docs/quick_start.txt (Linux 和 openwrt) 和 docs/quick_start_windows.txt (Windows) 快速開始使用 zapret。
+- 針對不同的 DPI 方法，zapret 提供了多種技術，例如 TCP 分割、UDP 長度調整、亂序傳輸和 TTL 操縱等。
+- 使用 iptables 或 nftables 將流量轉發到 zapret 的 tpws 或 nfqws 程式。
+- 使用 hostlist 限制 zapret 作用於特定的域名或 IP 地址。
+- 使用 autohostlist 自動偵測並封鎖網站。
+- 使用 blockcheck.sh 測試您的網路環境，識別您的 ISP 採用的 DPI 技術。
+- 調整 /opt/zapret/config 檔案的設定，以滿足您的需求。

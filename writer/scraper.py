@@ -1,81 +1,40 @@
-from datetime import datetime, timedelta
-import requests
+from math import floor
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
-import google.generativeai as genai
-import os
-from opencc import OpenCC
+import requests
+from typing import List, Dict
 
-# Set up Gemini API
-load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash-latest")
-cc = OpenCC("s2twp")
+def scraper() -> List[Dict[str, str]]:
+    url = "https://github.com/trending?since=weekly"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
 
-url = "https://github.com/trending?since=weekly"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, "html.parser")
+    repositories = []
+    repo_elements = soup.select("article")
+    for repo_element in repo_elements:
+        link = repo_element.select_one("h2 > a")["href"]
 
-repo_links = []
-repo_elements = soup.select("a")
-for repo_element in repo_elements:
-    hydro_click = repo_element.get("data-hydro-click")
-    if hydro_click and '"click_target":"REPOSITORY"' in hydro_click:
-        repo_links.append(f'https://github.com{repo_element["href"]}')
+        description = repo_element.select("p")[0].text.strip() if len(repo_element.select("p")) > 0 else ""
+        
+        language = repo_element.select_one(
+            "span[itemprop='programmingLanguage']"
+        ).text.strip()
 
-summaries = []
-for repo_link in repo_links:
-    if len(summaries) >= 5: 
-        break
+        stars = repo_element.select_one(f'a[href="{link}/stargazers"]').text.strip()
 
-    soup = BeautifulSoup(requests.get(repo_link).text, "html.parser")
+        for element in ["article", "pre"]:
+            readme_elements = BeautifulSoup(requests.get(f'https://github.com{link}').text, "html.parser").select(element)
+            if len(readme_elements) > 0:
+                readme = readme_elements[0].text
+                break
 
-    for element in ["article", "pre"]:
-        readme_elements = soup.select(element)
-        if len(readme_elements) > 0:
-            readme_text = readme_elements[0].text
-            break
-    else:
-        continue
-
-    prompt = f"""
-    ！請確定使用繁體中文zh-TW！並且確保格式依照我的範本！
-
-    ## 📌 [標題]({repo_link})
-
-    #### 簡介
-
-    #### 主要功能
-
-    #### 如何使用
-
-    - Examine the following README.md content and summarize in 4 parts 標題 & 簡介 & 主要功能 & 如何使用 in 繁體中文
-    - List in bullet points. Every part should be at most 8 points.
-    - Please keep the technical terms in English. 
-    - Use markdown to format the content in pretty layout and do not include image.
-    - Could include code snippets if necessary.
-    - Do not add any additional information.
-    - Abstract length should be around 200-300 characters.
-    - Do not add any new heading. like ## or ####
-
-    ！請確定使用繁體中文zh-TW！並且確保格式依照我的範本！
-    """
-    summary = model.generate_content(prompt + readme_text).text.strip()
-
-    if len(summary) > 0:
-        summaries.append(cc.convert(summary))
-
-# Write summaries to a markdown file
-now = datetime.now()
-seven_days_ago = now - timedelta(days=6)
-file_name = seven_days_ago.strftime("%Y%m%d") + now.strftime("%m%d") + ".mdx"
-info = f"""---
-title: '[{seven_days_ago.strftime('%-m/%-d')} - {now.strftime('%-m/%-d')}] GitHub Weekly Digest - Flash'
-publishedAt: '{datetime.now().strftime("%Y-%m-%d")}'
----
-"""
-
-with open("blog/app/blog/posts/" + file_name, "w") as file:
-    file.write(info)
-    for summary in summaries:
-        file.write(summary + "\n")
+        repository = {
+            "title": link[1:],
+            "link": link,
+            "description": description,
+            "language": language,
+            "stars": stars,
+            "readme": readme[:floor(len(readme) * 0.8)],
+        }
+        repositories.append(repository)
+    
+    return repositories

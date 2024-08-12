@@ -79,6 +79,14 @@ function createHeading(level) {
   return Heading
 }
 
+function CustomCallout({ children, color }) {
+  return (
+    <div style={{ backgroundColor: color, padding: '0.25rem 1rem', margin: '1rem 0 2rem 0', borderRadius: '0.5rem' }}>
+      {children}
+    </div>
+  )
+}
+
 let components = {
   h1: createHeading(1),
   h2: createHeading(2),
@@ -90,6 +98,7 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  Callout: CustomCallout
 }
 
 export function CustomMDX(props) {
