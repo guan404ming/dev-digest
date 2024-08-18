@@ -1,0 +1,210 @@
+---
+title: '[8/12 - 8/18] GitHub Weekly Digest'
+publishedAt: '2024-08-18'
+---
+## 📌 [hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam)
+<Callout>
+    Desription: real time face swap and one-click video deepfake with only a single image\
+    🌐 Python｜⭐️ 24,889
+</Callout>
+#### 簡介
+
+- Deep-Live-Cam 是一個 AI 驅動的軟體，專為製作替換臉部影片而設計。
+- 該軟體能夠將一個人的臉部替換到另一個人的臉部，或替換到影片或圖片中。
+- 軟體內建檢查機制，防止處理不適當的媒體，例如裸露、暴力內容或戰爭影像。
+- 開發人員致力於以負責任和合乎道德的方式發展這個軟體。
+- 使用者需要了解並遵守相關法律，並在使用真實人物的臉部時，需取得當事人的同意。
+
+#### 主要功能
+
+- 將一個人的臉部替換到另一個人的臉部。
+- 將一個人的臉部替換到影片或圖片中。
+- 支援多種執行環境，包括 CPU、GPU、Apple Silicon、Windows 和 Intel。
+- 提供多種框架處理器，例如 face_swapper 和 face_enhancer。
+- 支援調整輸出影片的幀率、音訊和臨時框架。
+- 支援處理多個臉部。
+
+#### 如何使用
+
+- 安裝 Python 3.10、pip、git、ffmpeg 和 Visual Studio 2022 執行時期（Windows）。
+- 從 GitHub 複製儲存庫：https://github.com/hacksider/Deep-Live-Cam.git
+- 下載 GFPGANv1.4 和 inswapper_128_fp16.onnx 模型，並將其放在 "models" 資料夾。
+- 安裝相依套件：`pip install -r requirements.txt`
+- 根據您的硬體環境，選擇對應的執行環境並安裝相依套件。
+- 執行 `python run.py` 命令。
+- 選擇要替換的臉部圖片和目標圖片/影片，並點選 "Start"。
+- 在選定的輸出目錄中，會建立一個名為 `<video_title>` 的資料夾，其中包含即時替換的框架。
+- 完成處理後，會生成輸出檔案。
+- 對於使用網路攝影機模式，只需按照螢幕截圖上的點選操作即可。
+- 選擇臉部圖片並點選 "Live"。
+- 等待幾秒鐘，預覽就會顯示出來（通常需要 10 到 30 秒）。
+- 使用您最喜歡的螢幕擷取軟體進行串流，例如 OBS。
+- 若要更改臉部，只需選擇另一張圖片，預覽模式會重新啟動（因此請等待片刻）。
+- 您可以使用以下命令列引數來調整軟體的行為。
+  - `-s SOURCE_PATH`：選擇來源圖片。
+  - `-t TARGET_PATH`：選擇目標圖片或影片。
+  - `-o OUTPUT_PATH`：選擇輸出檔案或目錄。
+  - `--frame-processor`：選擇框架處理器。
+  - `--keep-fps`：保留原始幀率。
+  - `--keep-audio`：保留原始音訊。
+  - `--keep-frames`：保留臨時框架。
+  - `--many-faces`：處理所有臉部。
+  - `--vi`：開啟虛擬相機。
+## 📌 [lllyasviel/stable-diffusion-webui-forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
+<Callout>
+    Desription: \
+    🌐 Python｜⭐️ 6,285
+</Callout>
+#### 簡介
+
+- Stable Diffusion WebUI Forge 是建立在 Stable Diffusion WebUI (基於 Gradio) 之上的平臺，旨在簡化開發、最佳化資源管理、加速推論並研究實驗性功能。
+- Forge 的命名靈感來自「Minecraft Forge」，目標是成為 SD WebUI 的 Forge。
+- Forge 目前基於 SD-WebUI 1.10.1 版本。
+- Forge 每 90 天或在出現重要修復時會與原始 WebUI 同步。
+
+#### 主要功能
+
+- 提供原生 Flux BNB NF4 / GGUF Q8/Q5/Q4 支援，包含 GPU 權重滑桿、佇列/非同步交換開關和交換位置開關。
+- 提供所有 Flux BNB NF4 / GGUF Q8/Q5/Q4 的原生 LoRA 支援。
+- 提供一個點選安裝套件，包含 Git 和 Python。
+- 支援多個 CUDA/Torch 版本。
+- 包含一個 UnetPatcher 程式碼，用於實作 FreeU V2。
+
+#### 如何使用
+
+- 若您熟悉 Git 並想將 Forge 作為 SD-WebUI 的另一個分支安裝，請參閱 [這裡](https://github.com/lllyasviel/stable-diffusion-webui-forge.git)。
+- 您也可以使用與 SD-WebUI 相同的方式安裝 Forge (安裝 Git、Python、從 Github 克隆 Forge 儲存庫，然後執行 webui-user.bat)。
+- 您可以使用單點選安裝套件進行安裝，該套件包含 Git 和 Python。
+- 下載安裝套件後，解壓縮並執行 update.bat 更新，然後執行 run.bat 啟動。
+- 建議執行 update.bat，否則可能會使用舊版本，其中可能存在未修復的錯誤。
+- 您可以在 [這裡](https://github.com/lllyasviel/stable-diffusion-webui-forge.git) 下載舊版本。
+- 使用 Forge 時，請注意「Forge Status」欄位，並根據欄位中顯示的資訊進行操作。
+- 若遇到問題，請在 Github 上提交問題。
+- 若您沒有遇到問題，請重新安裝 Forge。
+## 📌 [comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+<Callout>
+    Desription: The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.\
+    🌐 Python｜⭐️ 47,016
+</Callout>
+#### 簡介
+
+ComfyUI 是一款強大的 Stable Diffusion 影象生成工具，以圖形介面為基礎，支援 SD1.x, SD2.x, SDXL, Stable Video Diffusion, Stable Cascade, SD3 和 Stable Audio。
+
+
+#### 主要功能
+
+- 圖形介面，支援建立複雜的 Stable Diffusion 工作流程。
+- 支援多種 Stable Diffusion 模型，例如 SD1.x, SD2.x, SDXL, Stable Video Diffusion, Stable Cascade, SD3 和 Stable Audio。
+- Asynchronous Queue system。
+- 記憶體管理最佳化，可在低記憶體環境下執行。
+- 支援 CPU 執行 (速度較慢)。
+- 支援載入 ckpt, safetensors 和 diffusers 模型/檢查點。
+- 支援獨立 VAEs 和 CLIP 模型。
+- 支援 Embeddings/Textual inversion。
+- 支援 Loras (regular, locon 和 loha)。
+- 支援 Hypernetworks。
+- 支援從 PNG, WebP 和 FLAC 檔案載入完整工作流程 (含 seed)。
+- 支援將工作流程儲存為 Json 檔案。
+- 支援建立複雜工作流程，例如 Hires fix。
+- 支援 Area Composition。
+- 支援使用普通模型和 Inpainting 模型進行 Inpainting。
+- 支援 ControlNet 和 T2I-Adapter。
+- 支援 Upscale 模型 (ESRGAN, ESRGAN 變體, SwinIR, Swin2SR, etc...)。
+- 支援 unCLIP 模型。
+- 支援 GLIGEN。
+- 支援模型合併。
+- 支援 LCM 模型和 Loras。
+- 支援 SDXL Turbo。
+- 支援 AuraFlow。
+- 支援 HunyuanDiT。
+- 支援 Latent 預覽 (TAESD)。
+- 啟動速度快。
+- 支援離線工作。
+- 支援自訂模型路徑。
+
+
+#### 如何使用
+
+- 透過圖形介面建立工作流程。
+- 執行工作流程並生成影象。
+- 載入或儲存工作流程。
+- 使用快捷鍵控制 ComfyUI。
+- 使用 `python main.py` 執行 ComfyUI。
+- 使用 `--cpu` 選項在 CPU 上執行 ComfyUI。
+- 使用 `--directml` 選項在 DirectML 上執行 ComfyUI。
+- 使用 `HSA_OVERRIDE_GFX_VERSION` 環境變數解決 AMD 顯示卡支援問題。
+- 使用 `()`, `{}` 和 `\` 控制提示字元。
+- 使用拖放的方式載入已生成的影象，並獲得其對應的 seed 和工作流程。
+## 📌 [OpenBMB/MiniCPM-V](https://github.com/OpenBMB/MiniCPM-V)
+<Callout>
+    Desription: MiniCPM-V 2.6: A GPT-4V Level MLLM for Single Image, Multi Image and Video on Your Phone\
+    🌐 Python｜⭐️ 10,667
+</Callout>
+#### 簡介
+
+- MiniCPM-V 是一系列針對視覺語言理解而設計的端側多模態大型語言模型 (MLLM)。
+- 模型接受影象、影片和文字作為輸入，並提供高品質的文字輸出。
+- 自 2024 年 2 月以來，我們已經發布了 5 個版本的模型，旨在實現強大的效能和高效的部署。
+- 目前該系列中最引人注目的模型包括 MiniCPM-V 2.6 和 MiniCPM-Llama3-V 2.5。
+
+#### 主要功能
+
+- **MiniCPM-V 2.6**:
+    - 是 MiniCPM-V 系列中最新的也是功能最強大的模型。
+    - 包含 80 億個引數，在單一影象、多影象和影片理解方面超越了 GPT-4V。
+    - 在單一影象理解方面優於 GPT-4o mini、Gemini 1.5 Pro 和 Claude 3.5 Sonnet。
+    - 提升了 MiniCPM-Llama3-V 2.5 的功能，例如強大的 OCR 能力、可靠的行為、多語言支援和端側部署。
+    - 憑藉其優異的 token 密度，MiniCPM-V 2.6 可以首次在 iPad 等端側裝置上支援實時影片理解。
+- **MiniCPM-Llama3-V 2.5**:
+    - 是 MiniCPM-V 系列的最新模型。
+    - 具有強大的 OCR 能力，在 OCRBench 上得分超過 700 分，超過了 GPT-4o、GPT-4V-0409、Qwen-VL-Max 和 Gemini Pro 等專有模型。
+    - 展現出更值得信賴的行為，在 Object HalBench 上的幻覺率低於 GPT-4V-1106 (13.6%)，在開源社群中取得最佳效能。
+    - 支援 30 多種語言，包括德語、法語、西班牙語、義大利語、韓語等。
+- **MiniCPM-V 2.0**:
+    - 是 MiniCPM-V 系列中最輕量級的模型。
+    - 包含 20 億個引數，在整體效能方面超越了 Yi-VL 34B、CogVLM-Chat 17B 和 Qwen-VL-Chat 10B 等較大的模型。
+    - 可以接受任何縱橫比和最高 180 萬畫素的影象輸入（例如 1344x1344），在理解場景文字方面與 Gemini Pro 的效能相當，在低幻覺率方面與 GPT-4V 相匹配。
+
+#### 如何使用
+
+- **安裝**:
+    - 克隆此倉庫並導航到原始檔夾。
+    - 建立 conda 環境。
+    - 安裝依賴項。
+- **模型庫**:
+    - 可用於 CPU 和 GPU 裝置，並提供不同大小的模型下載。
+- **推理**:
+    - 支援多回合對話、多影象聊天、上下文少樣本學習和影片聊天。
+    - 支援使用 llama.cpp、ollama 和 vLLM 等框架進行推理。
+- **微調**:
+    - 支援使用 LoRA 和 SWIFT 等框架進行微調。
+- **部署**:
+    - 支援在 Mac、移動裝置和多個 GPU 上進行部署。
+    - 提供線上和本地的 WebUI  демонстрации。
+## 📌 [twbs/bootstrap](https://github.com/twbs/bootstrap)
+<Callout>
+    Desription: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.\
+    🌐 JavaScript｜⭐️ 169,728
+</Callout>
+#### 簡介
+
+Bootstrap 是一個快速且易於使用的前端框架，提供美觀、直觀且功能強大的工具，用於加速網頁開發。
+
+#### 主要功能
+
+- 提供預先設計的 CSS 和 JavaScript 元件，例如按鈕、導航、卡片、模態視窗等。
+- 提供響應式設計功能，確保網站能適應各種螢幕尺寸。
+- 提供網格系統，用於輕鬆佈局網頁內容。
+- 提供豐富的工具函式，例如顏色、字型、間距等。
+
+#### 如何使用
+
+- 下載最新版本。
+- 使用 git clone 命令複製儲存庫：git clone https://github.com/twbs/bootstrap.git
+- 使用 npm 安裝：npm install bootstrap@v5.3.3
+- 使用 yarn 安裝：yarn add bootstrap@v5.3.3
+- 使用 Composer 安裝：composer require twbs/bootstrap:5.3.3
+- 使用 NuGet 安裝：CSS：Install-Package bootstrap Sass：Install-Package bootstrap.sass
+- 參閱「入門」頁面，瞭解框架內容、範本、範例等資訊。
+- 閱讀檔案，瞭解如何使用 Bootstrap。
+- 參與社群，獲取更新並與開發者交流。
