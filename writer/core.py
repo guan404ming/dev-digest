@@ -1,6 +1,4 @@
 from datetime import datetime, timedelta
-import requests
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
@@ -75,8 +73,8 @@ with open("blog/app/blog/posts/" + file_name, "w") as file:
         )
         file.write(f"""
 <Callout>
-    Desription: {repository["description"]}\\
+    {'Description: ' + repository["description"] + "\\" if repository["description"] else ''}
     🌐 {repository["language"]}｜⭐️ {repository["stars"]}
 </Callout>
-""")
+    """)
         file.write(summary["summary"] + "\n")
