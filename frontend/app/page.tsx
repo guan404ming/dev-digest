@@ -1,8 +1,7 @@
 import { BlogPosts } from "app/components/posts";
 import { TextAnimate } from "./components/text-animate";
-import { Typewriter } from "./components/typewriter";
 
-function Badge(props) {
+function Badge(props: React.ComponentProps<"a">) {
   return (
     <a
       {...props}
@@ -25,11 +24,7 @@ export default function Page() {
       <TextAnimate text="Hey, I'm Wesley 👋" type="popIn" />
 
       <div className="leading-7">
-        <div>
-          {`I'm a `}
-          <Typewriter texts={texts} delay={0.1} />
-        </div>
-        {`I'm currently study information management at `}
+        {`I'm a junior at `}
         <span className="not-prose">
           <Badge href="https://www.ntu.edu.tw/">
             <img
@@ -42,7 +37,7 @@ export default function Page() {
             NTU
           </Badge>
         </span>
-        {`. I'm also a web developer & open source enthusiast. I have a deep passion for new technologies and love finding creative ways to solve complex challenges.`}
+        {` studying Information Management, a web developer, and an open-source enthusiast. I have a deep passion for exploring new tech and love finding creative solutions to complex challenges!`}
       </div>
 
       <div className="my-8">
