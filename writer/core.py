@@ -63,7 +63,7 @@ publishedAt: '{datetime.now().strftime("%Y-%m-%d")}'
 ---
 """
 
-with open("blog/app/blog/posts/" + file_name, "w") as file:
+with open("frontend/app/blog/posts/" + file_name, "w") as file:
     file.write(info)
     for summary in summaries:
         repository = summary["repository"]
