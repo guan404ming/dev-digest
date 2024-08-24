@@ -1,4 +1,5 @@
 import { BlogPosts } from "app/components/posts";
+import { TextAnimate } from "./components/text-animate";
 
 function Badge(props) {
   return (
@@ -10,14 +11,24 @@ function Badge(props) {
   );
 }
 
+const texts = [
+  "an IM student 🧑‍🎓",
+  "a web developer 🧑‍💻",
+  "a open source enthusiast 🚀",
+  "a tech lover ❤️‍🔥",
+];
+
 export default function Page() {
   return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Hey, I'm Wesley 👋
-      </h1>
-      <p className="mb-4 leading-7">
-        {`I'm a web developer & open source enthusiast. I'm currently study information management at `}
+    <section className="space-y-4 flex-col">
+      <TextAnimate text="Hey, I'm Wesley 👋" type="popIn" />
+
+      {/* <div className="text-white rounded-2xl">
+        <Typewriter texts={texts} delay={0.5} baseText="I'm " />
+      </div> */}
+
+      <p className="leading-7">
+        {`I'm currently study information management at `}
         <span className="not-prose">
           <Badge href="https://www.ntu.edu.tw/">
             <img
@@ -30,7 +41,7 @@ export default function Page() {
             NTU
           </Badge>
         </span>
-        {`. I have a deep passion for new technologies and love finding creative ways to solve complex challenges.`}
+        {`. I'm also a web developer & open source enthusiast. I have a deep passion for new technologies and love finding creative ways to solve complex challenges.`}
       </p>
       <div className="my-8">
         <BlogPosts />
