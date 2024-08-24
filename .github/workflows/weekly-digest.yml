@@ -45,7 +45,6 @@ jobs:
         with:
           title: "Weekly Digest for $(date +'%Y%m%d')"
           body: "This PR includes the weekly digest."
-          base: main
           branch: ${{ env.BRANCH_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
