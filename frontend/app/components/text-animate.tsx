@@ -264,7 +264,7 @@ const TextAnimate: FC<Props> = ({
       variants={container}
       initial="hidden"
       animate="visible"
-      className="text-2xl font-semibold tracking-tighter"
+      className="text-2xl font-semibold"
       {...props}
     >
       {letters.map((letter, index) => (
