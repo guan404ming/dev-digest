@@ -28,11 +28,20 @@ jobs:
         run: python writer/core.py
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v4
+        run: |
+          git config --global user.name "Guan-Ming Chiu"
+          git config --global user.email "guanmingchiu@gmail.com"
+          git checkout -b weekly-digest-$(date +'%Y%m%d')
+          git add .
+          git commit -m "feat: add weekly digest on $(date +'%Y%m%d')"
+          git push origin weekly-digest-$(date +'%Y%m%d')
+          
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-          author_name: Guan-Ming Chiu
-          author_email: guanmingchiu@gmail.com
-          message: "feat: add weekly digest on {{date}}"
-          add: "*"
+          title: "Weekly Digest for $(date +'%Y%m%d')"
+          body: "This PR includes the weekly digest."
+          base: main
+          head: weekly-digest-$(date +'%Y%m%d')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
