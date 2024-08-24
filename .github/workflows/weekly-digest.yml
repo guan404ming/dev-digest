@@ -29,26 +29,16 @@ jobs:
         run: echo "BRANCH_NAME=weekly-digest-$(date +'%Y%m%d')" >> $GITHUB_ENV
 
       - name: Run core
-        run: |
-          git checkout -b $BRANCH_NAME
-          python writer/core.py
+        run: python writer/core.py
 
       - name: Commit changes
         run: |
           git config --global user.name ${{ github.actor }}
           git config --global user.email ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
+          git checkout -b $BRANCH_NAME
           git add .
           git commit -m "feat: add weekly digest on $(date +'%Y%m%d')"
           git push origin ${{ env.BRANCH_NAME }}
           
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          title: "Weekly Digest for $(date +'%Y%m%d')"
-          body: "This PR includes the weekly digest."
-          branch: ${{ env.BRANCH_NAME }}
-          base: main
-          assignees: guan404ming
-          reviewers: guan404ming
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr create -B main -H ${{ env.BRANCH_NAME }} --title "Weekly Digest for $(date +'%Y%m%d')" --body 'This PR includes the weekly digest.'
