@@ -1,0 +1,166 @@
+---
+title: '[8/18 - 8/24] GitHub Weekly Digest'
+publishedAt: '2024-08-24'
+---
+## 📌 [goauthentik/authentik](https://github.com/goauthentik/authentik)
+<Callout>
+    Description: The authentication glue you need.\
+    🌐 Python｜⭐️ 11,889
+</Callout>
+    #### 簡介
+
+- authentik 是一個開源的 Identity Provider，強調靈活性和多功能性，支援廣泛的協議。
+- 它可以作為大型 Okta/Auth0、Entra ID、Ping Identity 或其他傳統 IdP 的自託管替代方案，用於員工和 B2B2C 使用。
+
+#### 主要功能
+
+- 提供廣泛的協議支援。
+- 可作為大型傳統 IdP 的自託管替代方案。
+- 支援 Docker Compose 和 Helm Chart 部署。
+
+#### 如何使用
+
+- 小型/測試環境建議使用 Docker Compose，詳細資訊請參閱檔案。
+- 大型環境建議使用 Helm Chart 部署，詳細資訊請參閱檔案。
+- 欲瞭解更多資訊，請參閱開發者檔案和 SECURITY.md。
+## 📌 [toss/es-toolkit](https://github.com/toss/es-toolkit)
+<Callout>
+    Description: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash.\
+    🌐 TypeScript｜⭐️ 5,727
+</Callout>
+    #### 簡介
+
+* es-toolkit 是一個高效能的 JavaScript 工具庫。
+* 包含小型捆綁包和強大的型別註解。
+* 提供現代實作的各種日常實用功能，例如 debounce、delay、chunk、sum 和 pick。
+* 旨在提升效能，在現代 JavaScript 環境中可提升 2-3 倍的效能。
+* 支援 tree shaking，與其他庫相比，可將 JavaScript 程式碼減少高達 97%。
+* 包含內建的 TypeScript 支援，提供直觀且強大的型別。
+* 提供有用的型別守衛，例如 isNotNil。
+* 經過嚴格測試，覆蓋率達 100%，確保可靠性和穩定性。
+
+#### 主要功能
+
+* Debounce
+* Delay
+* Chunk
+* Sum
+* Pick
+* Tree shaking
+* TypeScript support
+* Type guards
+
+#### 如何使用
+
+* 使用 `import` 語法從 `es-toolkit` 匯入所需的功能。
+* 例如，使用 `import { debounce, chunk } from 'es-toolkit';` 匯入 debounce 和 chunk 功能。
+* 根據需要使用匯入的功能。
+* 例如，使用 `const debouncedLog = debounce(message => { console.log(message); }, 300);` 宣告一個 debouncedLog 變數，並使用 debounce 功能將 message 訊息的日誌輸出延遲 300 毫秒。
+* 然後可以使用 `debouncedLog('Hello, world!');` 呼叫 debouncedLog 變數，以輸出 debounced 的訊息。
+## 📌 [ostris/ai-toolkit](https://github.com/ostris/ai-toolkit)
+<Callout>
+    Description: Various AI scripts. Mostly Stable Diffusion stuff.\
+    🌐 Python｜⭐️ 1,697
+</Callout>
+    #### 簡介
+
+* AI Toolkit by Ostris 是一個用於訓練和使用 AI 模型的工具箱。
+* 該工具箱基於研究，並且會定期更新。
+* 如果遇到問題，請檢視之前的提交。
+* 需要 Python 3.10 以上版本、Nvidia GPU 和 Python venv。
+* 該工具箱需要安裝 Git 和必要的套件。
+
+#### 主要功能
+
+* 訓練 FLUX.1 模型，需要至少 24GB 的 VRAM。
+* 使用 FLUX.1-dev 和 FLUX.1-schnell 模型。
+* 訓練 LoRA 和 LoCON 模型。
+* 生成批次圖片。
+* 提取 LoRA 和 LoCON 模型。
+* 調整 LoRA 模型的權重。
+* 訓練 LoRA 滑桿。
+* 擴充套件功能，允許開發者自訂功能。
+* 模型合併功能。
+
+#### 如何使用
+
+* 克隆 GitHub 儲存庫。
+* 建立虛擬環境並安裝必要的套件。
+* 複製範例設定檔並編輯。
+* 執行 `python run.py config/whatever_you_want.yml` 進行訓練。
+* 在 RunPod 或 Modal 上訓練模型。
+* 準備資料集，包括圖片和文字檔。
+* 使用 `huggingface-cli login` 登入 Hugging Face。
+* 使用 `modal run run_modal.py --config-file-list-str=/root/ai-toolkit/config/whatever_you_want.yml` 在 Modal 上訓練模型。
+* 使用 `modal volume get flux-lora-models your-model-name` 下載訓練好的模型。
+* 參考範例設定檔和檔案。
+* 加入 Discord 社群尋求幫助。
+## 📌 [lllyasviel/stable-diffusion-webui-forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
+<Callout>
+    
+    🌐 Python｜⭐️ 6,622
+</Callout>
+    #### 簡介
+
+- Stable Diffusion WebUI Forge 是一個基於 Stable Diffusion WebUI (Gradio) 的平臺，旨在簡化開發、最佳化資源管理、加速推理和探索實驗性功能。
+- “Forge” 的命名靈感來自於 “Minecraft Forge”。這個專案旨在成為 SD WebUI 的 Forge。
+- Forge 目前基於 SD-WebUI 1.10.1。由於原版 SD-WebUI 幾乎靜止不動，Forge 將每 90 天或是在出現重要修復時與原版 WebUI 同步。
+
+#### 主要功能
+
+- Gradio 4 UI
+- Flux Tutorial (BitsandBytes Models, NF4, "GPU Weight", "Offload Location", "Offload Method", etc)
+- LoRA 管理
+- LayerDiffuse 透明影象編輯
+- ControlNet 整合
+- Flux BNB NF4 / GGUF Q8_0/Q5_0/Q4_0/Q4_1 原生支援
+- UnetPatcher
+- 各種擴充套件支援 (Adetailer, etc)
+- Wacom 128 級觸控壓力支援
+- API 終端
+
+#### 如何使用
+
+- 使用一鍵安裝包安裝 Forge (包含 Git 和 Python)。
+- 解壓縮後，使用 update.bat 更新，使用 run.bat 執行。
+- 執行 update.bat 很重要，否則可能會使用舊版本，存在潛在的錯誤。
+- 也可以使用 Git 和 Python 手動安裝 Forge。
+- 可以下載舊版本。
+- 如果遇到問題，可以提交問題，開發者會定期檢視。
+- 如果“Forge Status”沒有更新，則表示無法復現任何問題，重新安裝應該可以解決大多數問題。
+- UnetPatcher 提供所有程式碼來實現 FreeU V2。
+- 檢視 extension-builtin/sd_forge_freeu/scripts/forge_freeu.py 檔案以獲取更多資訊。
+## 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
+<Callout>
+    Description: 18 Lessons, Get Started Building with Generative AI 🔗 https://microsoft.github.io/generative-ai-for-beginners/\
+    🌐 Jupyter Notebook｜⭐️ 61,118
+</Callout>
+    #### 簡介
+
+- 本課程由 Microsoft Cloud Advocates 提供，共 18 堂課，教你如何建立 Generative AI 應用程式。
+- 每堂課都涵蓋一個主題，你可以從任何一堂課開始學習。
+- 每堂課都分為 "Learn" 和 "Build" 兩部分，前者講解 Generative AI 概念，後者則包含程式碼範例，支援 Python 和 TypeScript。
+- 每堂課還包含 "Keep Learning" 部分，提供更多學習資源。
+
+#### 主要功能
+
+- 涵蓋 Generative AI 的基礎知識。
+- 教你如何使用 Azure OpenAI 或 OpenAI API 建立應用程式。
+- 提供 Python 和 TypeScript 的程式碼範例。
+- 包含 prompt engineering 技術。
+- 探討 Generative AI 的道德和安全問題。
+
+#### 如何使用
+
+-  你只需要一個 Azure OpenAI 服務或 OpenAI API 帳戶，或 GitHub Marketplace 模型目錄的存取權。
+-  基本 Python 或 TypeScript 知識有助於學習，但不是必要條件。
+-  需要一個 GitHub 帳戶。
+-  可以參考課程設定說明，設定開發環境。
+-  課程內容包括：
+    - 影片介紹
+    - 文字說明
+    - Python 和 TypeScript 程式碼範例
+    - 額外的學習資源
+-  加入官方的 AI Discord 伺服器，與其他學習者交流和獲得支援。
+-  如果你想建立新創公司，可以註冊 Microsoft for Startups Founders Hub，獲得免費 OpenAI 信用額度和高達 15 萬美元的 Azure 信用額度。
+-  如果你有任何建議或發現錯誤，歡迎提交問題或請求。
