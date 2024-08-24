@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  BRANCH_NAME: "weekly-digest-$(date +'%Y%m%d')"
+  BRANCH_NAME: weekly-digest-$(date +'%Y%m%d')
 
 jobs:
   weekly-digest:
