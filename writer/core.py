@@ -4,7 +4,7 @@ import google.generativeai as genai
 import os
 from opencc import OpenCC
 
-from scraper import scraper
+from scraper import scraper_repo
 
 # Set up Gemini API
 load_dotenv()
@@ -13,7 +13,7 @@ model = genai.GenerativeModel("gemini-1.5-flash-latest")
 cc = OpenCC("s2twp")
 
 # Scrape GitHub trending repositories
-repositories = scraper()
+repositories = scraper_repo()
 
 summaries = []
 for repository in repositories:
