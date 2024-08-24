@@ -1,5 +1,6 @@
 import { BlogPosts } from "app/components/posts";
 import { TextAnimate } from "./components/text-animate";
+import { Typewriter } from "./components/typewriter";
 
 function Badge(props) {
   return (
@@ -12,10 +13,10 @@ function Badge(props) {
 }
 
 const texts = [
-  "an IM student 🧑‍🎓",
-  "a web developer 🧑‍💻",
-  "a open source enthusiast 🚀",
-  "a tech lover ❤️‍🔥",
+  "IM student",
+  "web developer",
+  "open source enthusiast",
+  "tech lover ❤️",
 ];
 
 export default function Page() {
@@ -23,11 +24,11 @@ export default function Page() {
     <section className="space-y-4 flex-col">
       <TextAnimate text="Hey, I'm Wesley 👋" type="popIn" />
 
-      {/* <div className="text-white rounded-2xl">
-        <Typewriter texts={texts} delay={0.5} baseText="I'm " />
-      </div> */}
-
-      <p className="leading-7">
+      <div className="leading-7">
+        <div>
+          {`I'm a `}
+          <Typewriter texts={texts} delay={0.1} />
+        </div>
         {`I'm currently study information management at `}
         <span className="not-prose">
           <Badge href="https://www.ntu.edu.tw/">
@@ -42,7 +43,8 @@ export default function Page() {
           </Badge>
         </span>
         {`. I'm also a web developer & open source enthusiast. I have a deep passion for new technologies and love finding creative ways to solve complex challenges.`}
-      </p>
+      </div>
+
       <div className="my-8">
         <BlogPosts />
       </div>
