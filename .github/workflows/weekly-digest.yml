@@ -31,10 +31,11 @@ jobs:
         run: |
           git config --global user.name "Guan-Ming Chiu"
           git config --global user.email "guanmingchiu@gmail.com"
-          git checkout -b weekly-digest-$(date +'%Y%m%d')
+          BRANCH_NAME="weekly-digest-$(date +'%Y%m%d')"
+          git checkout -b $BRANCH_NAME
           git add .
           git commit -m "feat: add weekly digest on $(date +'%Y%m%d')"
-          git push origin weekly-digest-$(date +'%Y%m%d')
+          git push origin $BRANCH_NAME
           
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
@@ -42,6 +43,6 @@ jobs:
           title: "Weekly Digest for $(date +'%Y%m%d')"
           body: "This PR includes the weekly digest."
           base: main
-          head: weekly-digest-$(date +'%Y%m%d')
+          head: $BRANCH_NAME
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
