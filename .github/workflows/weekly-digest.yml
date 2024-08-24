@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -24,15 +24,22 @@ jobs:
       - name: Create .env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > writer/.env
 
+      - name: Set branch name
+        run: echo "BRANCH_NAME=weekly-digest-$(date +'%Y%m%d')" >> $GITHUB_ENV
+
       - name: Run core
         run: python writer/core.py
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: Guan-Ming Chiu
-          author_email: guanmingchiu@gmail.com
-          message: "feat: add weekly digest on {{date}}"
-          add: "*"
+        run: |
+          git config --global user.name ${{ github.actor }}
+          git config --global user.email ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
+          git checkout -b $BRANCH_NAME
+          git add .
+          git commit -m "feat: add weekly digest on $(date +'%Y%m%d')"
+          git push origin ${{ env.BRANCH_NAME }}
+          
+      - name: Create Pull Request
+        run: gh pr create -B main -H ${{ env.BRANCH_NAME }} --title "Weekly Digest for $(date +'%Y%m%d')" --body 'This PR includes the weekly digest.'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
