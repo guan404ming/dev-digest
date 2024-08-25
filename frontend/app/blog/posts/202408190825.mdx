@@ -1,0 +1,188 @@
+---
+title: '[8/19 - 8/25] GitHub Weekly Digest'
+publishedAt: '2024-08-25'
+---
+## 📌 [goauthentik/authentik](https://github.com/goauthentik/authentik)
+<Callout>
+    Description: The authentication glue you need.\
+    🌐 Python｜⭐️ 11,927
+</Callout>
+    #### 簡介
+
+- authentik 是一個開放原始碼身分識別提供者，強調彈性和多功能性，支援各種協定。
+- 它可以作為 Okta/Auth0、Entra ID、Ping Identity 等大型部署的自我託管替換方案，用於員工和 B2B2C 使用。
+
+#### 主要功能
+
+- 支援多種協議，例如 SAML 2.0、OpenID Connect、OAuth 2.0、LDAP、Radius 等。
+- 提供靈活的配置選項，可滿足不同的安全需求。
+- 支援多因素身份驗證，增強安全性。
+- 提供使用者管理功能，方便管理使用者賬戶。
+- 支援角色和許可權管理，控制使用者訪問許可權。
+- 支援審計日誌，記錄使用者活動。
+- 提供 API 介面，方便整合其他系統。
+- 可擴充套件性強，可根據需要擴充套件功能。
+
+#### 如何使用
+
+- 使用 Docker Compose 進行小型或測試設定，請參閱文件。
+- 使用 Helm Chart 進行較大規模的設定，請參閱文件。
+- 參考開發者文件進行開發。
+- 檢視 SECURITY.md 獲取安全資訊。
+- 如果您的組織使用 authentik，請將您的徽標新增到
+## 📌 [toss/es-toolkit](https://github.com/toss/es-toolkit)
+<Callout>
+    Description: A modern JavaScript utility library that's 2-3 times faster and up to 97% smaller—a major upgrade to lodash.\
+    🌐 TypeScript｜⭐️ 5,804
+</Callout>
+    #### 簡介
+
+- es-toolkit 是一個最先進且高效能的 JavaScript 工具庫。
+- 它擁有小巧的 bundle 大小和強大的型別註解。
+- 它提供各種現代實作的日常實用函式，例如 debounce、delay、chunk、sum 和 pick。
+- 它在現代 JavaScript 環境中實現了 2-3 倍的效能提升。
+- 它支援開箱即用的 tree shaking，與其他庫相比，可以將 JavaScript 程式碼減少高達 97%。
+- 它包含內建的 TypeScript 支援，提供直觀且強大的型別。
+- 它還提供了有用的型別守衛，例如 isNotNil。
+- 它經過實戰考驗，擁有 100% 的測試覆蓋率，確保可靠性和健壯性。
+
+#### 主要功能
+
+- debounce
+- delay
+- chunk
+- sum
+- pick
+- isNotNil
+
+#### 如何使用
+
+- 使用 `import` 語句從 `es-toolkit` 包中匯入所需的函式。
+- 使用匯入的函式，例如 `debounce` 和 `chunk`，執行相應的操作。
+- 例如：
+```javascript
+import { debounce, chunk } from 'es-toolkit';
+
+const debouncedLog = debounce(message => {
+  console.log(message);
+}, 300);
+
+// This call will be debounced
+debouncedLog('Hello, world!');
+
+const array = [1, 2, 3, 4, 5, 6];
+const chunkedArray = chunk(array, 2);
+```
+## 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
+<Callout>
+    Description: 18 Lessons, Get Started Building with Generative AI 🔗 https://microsoft.github.io/generative-ai-for-beginners/\
+    🌐 Jupyter Notebook｜⭐️ 61,163
+</Callout>
+    #### 簡介
+
+* 本課程由 Microsoft Cloud Advocates 團隊製作，包含 18 堂課，旨在協助您建立生成式 AI 應用程式。
+* 課程涵蓋生成式 AI 的基本知識，並提供 Python 和 TypeScript 的程式碼範例。
+* 每堂課都包含「繼續學習」部分，提供額外的學習資源。
+
+#### 主要功能
+
+* 涵蓋生成式 AI 和大型語言模型 (LLMs) 的基本概念。
+* 介紹如何選擇適合您用例的模型。
+* 教導如何負責任地建立生成式 AI 應用程式。
+* 提供提示工程的實務最佳做法。
+* 教導如何建立文字生成、聊天、搜尋、圖片生成、低程式碼 AI 和外部應用程式整合應用程式。
+* 討論生成式 AI 應用的 UX 設計原則和安全性。
+
+#### 如何使用
+
+* 您可以從任何您喜歡的課程開始，課程分為「學習」和「構建」兩種型別。
+* 您可以使用 Azure OpenAI 服務、OpenAI API 或 GitHub Marketplace 模型目錄來完成程式碼課程。
+* 需要具備基本的 Python 或 TypeScript 知識。
+* 建議使用 GitHub 帳戶將此儲存庫複製到您的 GitHub 帳戶。
+* 您可以加入官方 AI Discord 伺服器，與其他學習者交流和獲得支援。
+* 您可以註冊 Microsoft for Startups Founders Hub，獲得免費的 OpenAI 信用額度和高達 150,000 美元的 Azure 信用額度，以透過 Azure OpenAI 服務存取 OpenAI 模型。
+* 您可以提出問題或建立拉取請求，協助改進課程內容。
+* 每堂課都包含簡短的影片介紹、書面課程、程式碼範例和額外的學習資源連結。
+## 📌 [lllyasviel/stable-diffusion-webui-forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
+<Callout>
+    
+    🌐 Python｜⭐️ 6,648
+</Callout>
+    #### 簡介
+
+Stable Diffusion WebUI Forge 是一個建立在 Stable Diffusion WebUI (基於 Gradio) 上的平臺，旨在簡化開發、最佳化資源管理、加速推論以及研究實驗性功能。名稱「Forge」源自「Minecraft Forge」，這個專案旨在成為 SD WebUI 的 Forge。
+
+#### 主要功能
+
+- 簡化 Stable Diffusion WebUI 開發。
+- 最佳化資源管理。
+- 加速推論速度。
+- 研究實驗性功能。
+- 提供 Gradio 4 UI。
+- 支援 Flux BitsandBytes NF4 / GGUF 模型。
+- 支援 LoRA 模型。
+- 提供一鍵安裝套件。
+
+#### 如何使用
+
+- 下載一鍵安裝套件，解壓縮後，使用 update.bat 更新，並使用 run.bat 執行。
+- 執行 update.bat 很重要，否則可能使用舊版本，其中可能存在未修正的錯誤。
+- 如果您熟悉 Git，可以將 Forge 作為 SD-WebUI 的另一個分支安裝。
+- 您也可以使用與 SD-WebUI 相同的方法安裝 Forge。
+- 可以下載舊版本。
+- 可以檢視 Forge 的狀態，以檢視各種功能的運作狀況。
+- 如果您發現任何錯誤，請提交問題，我會定期檢視。
+- 如果沒有更新 Forge 狀態，則表示我無法重現任何問題，建議重新安裝。
+## 📌 [ostris/ai-toolkit](https://github.com/ostris/ai-toolkit)
+<Callout>
+    Description: Various AI scripts. Mostly Stable Diffusion stuff.\
+    🌐 Python｜⭐️ 1,735
+</Callout>
+    #### 簡介
+
+- AI Toolkit by Ostris is a research repository containing experimental tools for AI training and development.
+- The toolkit offers various features for training, generating, and manipulating AI models.
+- It's important to note that the toolkit is under active development and might experience occasional instability.
+- Users are encouraged to check out earlier commits if encountering issues.
+- The project is supported by Glif and its community.
+
+#### 主要功能
+
+- **FLUX.1 Training:** Enables training FLUX.1 models, both the non-commercial FLUX.1-dev and the Apache 2.0 licensed FLUX.1-schnell.
+- **LoRA (lierla) and LoCON (LyCORIS) Extractor:** Allows for extracting LoRA and LoCON weights from trained models.
+- **LoRA Rescale:** Rescales LoRA weights to desired values, aiding in model optimization.
+- **LoRA Slider Trainer:** Trains LoRA models to create sliders for adjusting specific model attributes.
+- **Batch Image Generation:** Generates images based on prompts from a configuration file or a text file.
+- **Model Merger:** Merges multiple AI models together.
+
+#### 如何使用
+
+- **Installation:**
+    - Ensure you have Python 3.10+, an Nvidia GPU with sufficient memory, a Python virtual environment, and Git installed.
+    - Clone the repository and initialize submodules.
+    - Create and activate a virtual environment.
+    - Install PyTorch and the required dependencies.
+- **Training:**
+    - Copy an example configuration file and modify it as needed.
+    - Run the training script with the configuration file.
+    - The training process will generate checkpoints and images in a dedicated folder.
+    - Training can be stopped and resumed from the last checkpoint.
+- **Dataset Preparation:**
+    - Prepare your dataset as a folder containing images (jpg, jpeg, png) and corresponding text files with the same name and a .txt extension.
+    - Text files should contain the caption for each image.
+    - You can use the "[trigger]" keyword in the caption to be automatically replaced.
+    - Image resizing and batching are handled automatically.
+- **Extensions:**
+    - Create custom extensions that utilize the toolkit's functionality.
+    - An example extension for model merging is provided in the extensions folder.
+- **Training on RunPod:**
+    - Utilize a RunPod template with a minimum of 24 GB VRAM.
+    - Configure your RunPod environment and upload your dataset.
+    - Run the training script with your modified configuration file.
+- **Training on Modal:**
+    - Install the Modal Python package and authenticate.
+    - Upload your dataset to the ai-toolkit directory.
+    - Copy and modify an example configuration file for Modal.
+    - Run the training script with the configuration file.
+    - Monitor training progress on Modal's platform.
+    - Download the trained model from the Modal volume.
