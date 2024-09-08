@@ -1,0 +1,243 @@
+---
+title: '[9/2 - 9/8] GitHub Weekly Digest'
+publishedAt: '2024-09-08'
+---
+## 📌 [Cinnamon/kotaemon](https://github.com/Cinnamon/kotaemon)
+<Callout>
+    Description: An open-source RAG-based tool for chatting with your documents.\
+    🌐 Python｜⭐️ 10,690
+</Callout>
+    #### 簡介
+
+- Kotaemon 是一個開源的、乾淨且可自訂的 RAG 介面，讓使用者可以與檔案聊天。
+- 它同時考量到使用者和開發者的需求。
+
+#### 主要功能
+
+- 為 RAG 基礎的 QA 提供乾淨簡潔的介面。
+- 支援 LLM API 提供者 (OpenAI, AzureOpenAI, Cohere 等) 和本機 LLM (透過 ollama 和 llama-cpp-python)。
+- 簡單的安裝指令碼。
+- 提供一個框架來建立自訂的 RAG 基礎檔案 QA 管線。
+- 使用提供的介面 (使用 Gradio 建立) 自訂和檢視 RAG 管線。
+- 主持自己的檔案 QA (RAG) 網頁介面。
+- 支援多使用者登入，將檔案整理到私有/公開集合中，協作並與他人分享您最喜歡的聊天記錄。
+- 整理您的 LLM 和嵌入模型。
+- 支援本地 LLM 和熱門 API 提供者 (OpenAI, Azure, Ollama, Groq)。
+- 混合 RAG 管線。
+- 使用混合 (全文和向量) 取回器 + 重新排序以確保最佳取回品質的正常預設 RAG 管線。
+- 支援多模式 QA。
+- 在具有圖表和表格支援的多個檔案上執行問答。
+- 支援多模式檔案解析 (UI 上的可選選項)。
+- 使用檔案預覽進行進階引用。
+- 系統預設會提供詳細的引用，以確保 LLM 答案的正確性。
+- 在瀏覽器內 PDF 檢視器中直接檢視您的引用 (包括相關分數) 並附上亮點。
+- 取回管道回傳相關性低的文章時會發出警告。
+- 支援複雜推理方法。
+- 使用問題分解來回答您複雜/多跳問題。
+- 支援使用 ReAct, ReWOO 和其他代理人的代理人式推理。
+- 可設定的設定 UI。
+- 您可以在 UI 上調整取回和生成過程的大部分重要方面 (包括提示)。
+- 可擴充套件。
+- 建立在 Gradio 之上，您可以自由自訂/新增任何您喜歡的 UI 元素。
+- 我們還旨在支援多種檔案索引和取回策略。
+- GraphRAG 索引管線作為示例提供。
+
+#### 如何使用
+
+- **使用 Docker (建議)**
+    - 使用以下命令啟動伺服器：
+    ```
+    docker run \
+    -e GRADIO_SERVER_NAME=0.0.0.0 \
+    -e GRADIO_SERVER_PORT=7860 \
+    -p 7860:7860 -it --rm \
+    ghcr.io/cinnamon/kotaemon:latest
+    ```
+    - 瀏覽 http://localhost:7860/ 以存取網頁介面。
+- **不使用 Docker**
+    - 在新的 Python 環境中複製並安裝所需的套件。
+    - 啟動網頁伺服器：
+    ```
+    python app.py
+    ```
+    - 應用程式會自動在您的瀏覽器中啟動。
+    - 預設的使用者名稱/密碼為：admin / admin。您可以在 UI 上直接設定其他使用者。
+- **設定本地模型 (針對本地/私有 RAG)**
+    - 請參閱本地模型設定。
+- **自訂您的應用程式**
+    - 預設情況下，所有應用程式資料都儲存在 ./ktem_app_data 資料夾中。
+    - 您可以在新的機器上備份或複製這個資料夾，以將您的安裝遷移到新的機器。
+    - 針對進階使用者或特定用例，您可以自訂以下檔案：
+        - flowsettings.py
+        - .env
+- **flowsettings.py**
+    - 這個檔案包含您的應用程式設定。
+    - 您可以使用此處的範例作為起點。
+- **.env**
+    - 這個檔案提供另一種方式來設定您的模型和認證。
+    - 您可以使用 .env 檔案中的資訊來設定模型，這些資訊是連線到 LLM 所需的。
+    - 這個檔案位於應用程式的資料夾中。
+    - 如果您沒有看到它，您可以建立一個。
+    - 目前，支援以下提供者：
+        - OpenAI
+        - Azure OpenAI
+## 📌 [sickcodes/Docker-OSX](https://github.com/sickcodes/Docker-OSX)
+<Callout>
+    Description: Run macOS VM in a Docker! Run near native OSX-KVM in Docker! X11 Forwarding! CI/CD for OS X Security Research! Docker mac Containers.\
+    🌐 Shell｜⭐️ 45,068
+</Callout>
+    #### 簡介
+
+Docker-OSX 是一個在 Docker 容器中執行 macOS 的工具，它提供近乎原生效能，支援 X11 轉發，並且允許在 macOS 容器中進行安全研究，例如 iMessage 安全研究和 iPhone USB 透過。
+
+#### 主要功能
+
+- 幾乎原生效能
+- X11 轉發
+- iMessage 安全研究
+- iPhone USB 透過
+- 資料夾共享
+- SSH 啟用（localhost:50922）
+- VNC 啟用（localhost:8888）
+- 基於 QEMU + KVM
+- 支援 Big Sur、自定義映像、Xvfb 無頭模式
+- 可以使用 `docker commit` 克隆容器
+
+#### 如何使用
+
+-  **安裝**
+    - 確保系統 BIOS 中啟用了硬體虛擬化。
+    - 安裝 QEMU 和其他依賴項。
+    - 啟用 libvirt 和 KVM 核心模組。
+-  **啟動 Docker-OSX 容器**
+    - 使用 `docker run` 命令啟動容器。
+    - 使用 `--device /dev/kvm` 選項將 KVM 裝置傳遞給容器。
+    - 使用 `-p 50922:10022` 選項將 SSH 埠對映到主機。
+    - 使用 `-v /tmp/.X11-unix:/tmp/.X11-unix` 選項將 X11 套接字對映到主機。
+    - 使用 `-e "DISPLAY=${DISPLAY:-:0.0}"` 選項設定 DISPLAY 環境變數。
+-  **連線到容器**
+    - 使用 SSH 連線到容器。
+    - 使用 `ssh user@localhost -p 50922` 命令。
+    - 使用 `alpine` 作為密碼。
+-  **使用 iPhone USB 透過**
+    - 在 Linux 主機上安裝 `usbmuxd`、`socat` 和 `usbfluxd`。
+    - 在 Linux 主機上啟動 `usbmuxd` 和 `socat` 服務。
+    - 在 Linux 主機上執行 `usbfluxd -f -n` 命令。
+    - 在 macOS 容器中安裝 `usbmuxd`。
+    - 在 macOS 容器中執行 `sudo usbfluxd -f -r 172.17.0.1:5000` 命令。
+    - 重新啟動需要使用 USB 裝置的應用程式，例如 Xcode。
+-  **共享資料夾**
+    - 使用 `sshfs` 工具共享資料夾。
+    - 使用 `mkdir ~/mnt/osx` 建立一個資料夾。
+    - 使用 `sshfs user@localhost:/ -p 50922 ~/mnt/osx` 命令掛載資料夾。
+-  **生成序列號**
+    - 使用 `-e GENERATE_UNIQUE=true` 選項在執行時生成隨機序列號。
+    - 使用 `-e GENERATE_SPECIFIC=true` 選項使用自定義序列號。
+    - 使用 `-e SERIAL=""`、`-e BOARD_SERIAL=""`、`-e UUID=""` 和 `-e MAC_ADDRESS=""` 選項設定自定義序列號。
+-  **更改顯示解析度**
+    - 使用 `-e WIDTH=800` 和 `-e HEIGHT=600` 選項設定顯示解析度。
+    - 使用 `-e GENERATE_UNIQUE=true` 或 `-e GENERATE_SPECIFIC=true` 選項才能使用 `WIDTH` 和 `HEIGHT` 選項。
+-  **掛載物理磁碟**
+    - 使用 `-v "${DISK_TWO}:/disktwo"` 選項將物理磁碟掛載到容器。
+    - 使用 `-e EXTRA='-device ide-hd,bus=sata.5,drive=DISK-TWO -drive id=DISK-TWO,if=none,file=/disktwo,format=qcow2'` 選項將物理磁碟掛載到 QEMU。
+## 📌 [ChrisTitusTech/linutil](https://github.com/ChrisTitusTech/linutil)
+<Callout>
+    Description: Chris Titus Tech's Linux Toolbox - Linutil is a distro-agnostic toolbox designed to simplify everyday Linux tasks.\
+    🌐 Shell｜⭐️ 1,112
+</Callout>
+    #### 簡介
+
+- Linutil 是一個與發行版無關的工具箱，旨在簡化日常 Linux 工作。
+- 它可以協助您設定應用程式，並為特定用例最佳化您的系統。
+- 此工具以 Rust 🦀 積極開發，提供效能和可靠性。
+- 目前還在積極開發中，可能會遇到一些問題。
+- 歡迎您提供回饋。
+
+#### 主要功能
+
+- 簡化日常 Linux 工作。
+- 設定應用程式。
+- 最佳化系統。
+- 提供效能和可靠性。
+
+#### 如何使用
+
+- 選擇要使用的分支。
+- 在終端機中執行以下命令：
+    - **穩定分支 (建議)**
+        ```bash
+        curl -fsSL https://christitus.com/linux | sh
+        ```
+    - **開發分支**
+        ```bash
+        curl -fsSL https://christitus.com/linuxdev | sh
+        ```
+- 瀏覽 Linutil 官方檔案以獲得更詳細的資訊。
+## 📌 [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat)
+<Callout>
+    Description: 🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI / Claude 3 / Gemini / Ollama / Azure / DeepSeek), Knowledge Base (file upload / knowledge management / RAG ), Multi-Modals (Vision/TTS) and plugin system. One-click FREE deployment of your private ChatGPT/ Claude application.\
+    🌐 TypeScript｜⭐️ 40,189
+</Callout>
+    #### 簡介
+
+LobeChat 是一個開源的 ChatGPT/LLMs UI/Framework，它具有現代化的設計，並支援語音合成、多模態和可擴充套件的外掛系統。使用者可以一鍵免費部署自己的私有 OpenAI ChatGPT/Claude/Gemini/Groq/Ollama 聊天應用程式。
+
+#### 主要功能
+
+* 支援檔案上傳和知識庫功能
+* 支援多種模型服務提供商，例如 OpenAI、Anthropic、Google AI 等
+* 支援本地大型語言模型 (LLM)，例如 Ollama
+* 支援模型視覺識別
+* 支援文字轉語音 (TTS) 和語音轉文字 (STT)
+* 支援文字轉影象生成
+* 具有外掛系統 (函式呼叫)
+* 擁有代理市場 (GPTs)
+* 支援本地/遠端資料庫
+* 支援多使用者管理
+* 支援 Progressive Web App (PWA)
+* 支援行動裝置適應
+* 支援自訂主題
+
+#### 如何使用
+
+* 瀏覽 LobeChat 網站，無需安裝或註冊即可體驗
+* 加入 Discord 社群，與開發者和其他使用者交流
+* 使用 Vercel、Zeabur 或 Sealos 部署 LobeChat
+* 使用 Docker 部署 LobeChat
+* 參考檔案瞭解如何使用外掛、本地模型和知識庫
+* 提交您自己的代理到代理市場
+* 使用自訂主題和資料庫配置 LobeChat
+* 參考 Lighthouse 報告檢視效能指標
+* 參考 Docker 部署指南瞭解如何使用 Docker 部署
+* 參考環境變數指南瞭解如何配置環境變數
+## 📌 [mendableai/firecrawl](https://github.com/mendableai/firecrawl)
+<Callout>
+    Description: 🔥 Turn entire websites into LLM-ready markdown or structured data. Scrape, crawl and extract with a single API.\
+    🌐 TypeScript｜⭐️ 13,159
+</Callout>
+    #### 簡介
+
+- Firecrawl 是一個 API 服務，可以將任何網站轉換成 LLM 適用的 Markdown 或結構化資料。
+- Firecrawl 可以爬取所有可訪問的子頁面，並提供每個頁面的乾淨資料。
+- Firecrawl 不需要網站地圖。
+- Firecrawl 提供了易於使用的 API，可以使用託管版本或自託管後端。
+
+#### 主要功能
+
+- **爬取**：爬取 URL 和所有可訪問的子頁面。
+- **抓取**：抓取 URL 並以指定格式獲取其內容。
+- **對映**：對映 URL 並獲取網站的 URL。
+- **LLM 提取**：從抓取的頁面提取結構化資料。
+- **搜尋**：搜尋網頁，獲取最相關的結果，抓取每個頁面並返回 Markdown。
+
+#### 如何使用
+
+- 註冊 Firecrawl 並獲得 API 金鑰。
+- 使用 `curl` 或 SDK 呼叫 API。
+- 使用 `crawl` 端點爬取 URL。
+- 使用 `scrape` 端點抓取 URL。
+- 使用 `map` 端點對映 URL。
+- 使用 `extract` 端點提取結構化資料。
+- 使用 `search` 端點搜尋網頁。
+- 使用 Python 或 Node.js SDK 進行程式設計。
+- 參閱 Firecrawl 文件獲取更多資訊。
