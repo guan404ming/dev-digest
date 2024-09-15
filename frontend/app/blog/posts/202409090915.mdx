@@ -1,0 +1,175 @@
+---
+title: '[9/9 - 9/15] GitHub Weekly Digest'
+publishedAt: '2024-09-15'
+---
+## 📌 [RSSNext/Follow](https://github.com/RSSNext/Follow)
+<Callout>
+    Description: 🧡 Next generation information browser.\
+    🌐 TypeScript｜⭐️ 8,197
+</Callout>
+    #### 簡介
+
+- Follow 是一款下一代資訊瀏覽器，讓使用者能在一處追蹤喜愛的網站、部落格、社群媒體帳戶、播客和通知。
+- Follow 旨在成為現代、快速且便利的一站式資訊中心。
+- Follow 採用先進的 AI 技術，提供 AI 翻譯、摘要和推薦等基本功能。
+- Follow 利用區塊鏈技術作為活躍使用者和優秀創作者的激勵機制。
+- Follow 也提供社群平臺功能，讓使用者可以追蹤其他使用者、分享訂閱內容並發現新內容。
+- Follow 支援 Windows、macOS、Linux 和瀏覽器等桌面平臺，以及 Android 和 iOS（即將推出）行動平臺。
+
+#### 主要功能
+
+- 整合 RSSHub，提供近千個網站的 RSS Feed，包含 X (Twitter)、Instagram、PlayStation、Spotify、Telegram、YouTube 等平臺。
+- AI 功能包括 AI 翻譯、摘要、推薦和每日兩次 AI 報告，以突出顯示訂閱內容中的重點資訊。
+- 透過 Power Token 激勵活躍使用者和優秀創作者。
+- 社群功能包括追蹤其他使用者、分享訂閱內容、發現新內容以及訂閱清單同步功能。
+- 提供多種自訂選項和第三方整合功能。
+- 支援快速鍵和手勢操作。
+
+#### 如何使用
+
+- 目前 Follow 仍處於早期開發預覽階段（alpha），僅透過邀請制提供給有限的使用者。
+- 可透過以下方式取得邀請碼：
+    - 尋找 alpha 測試使用者邀請你加入。
+    - 加入 Discord 伺服器，參與不定期的贈送活動。
+    - 追蹤 X 帳戶，參與不定期的贈送活動。
+- 如果你有許可權，可以使用以下方式下載和安裝 Follow：
+    - 訪問線上 Web 應用程式 app.follow.is。
+    - 從 Releases 頁面獲取每個平臺的安裝套件。
+    - 如果你使用的是 Arch Linux，則可以安裝 f 包。
+## 📌 [OpenBMB/MiniCPM](https://github.com/OpenBMB/MiniCPM)
+<Callout>
+    Description: MiniCPM3-4B: An edge-side LLM that surpasses GPT-3.5-Turbo.\
+    🌐 Python｜⭐️ 6,769
+</Callout>
+    #### 簡介
+
+MiniCPM 是一個由 OpenBMB 開發的中文語言模型系列，包含多個版本，例如 MiniCPM-2B、MiniCPM-3.0 等等。MiniCPM 在多項指標上超越了同等規模的語言模型，例如 Mistral-7B、Llama2-13B 等。MiniCPM 的主要優勢在於其出色的中文和英文指令遵循能力、超強的推理能力以及長文字處理能力。
+
+#### 主要功能
+
+- 支援工具呼叫（Function Calling）和程式碼直譯器（Code Interpreter）。
+- 具有出色的推理能力，在數學能力和程式碼能力方面表現突出。
+- 擁有優秀的中文和英文指令遵循能力。
+- 原生支援 32k 上下文長度，並提出 LLM x MapReduce 技術，理論可處理的上下文長度達到 +∞。
+- 提供 MiniCPM RAG 套件，支援中文和中英跨語言檢索。
+
+#### 如何使用
+
+- **模型下載:** 可在 HuggingFace 或 ModelScope 平臺下載 MiniCPM 模型。
+- **模型推理:** 可使用 HuggingFace、vLLM 或 llama.cpp 進行模型推理。
+- **模型微調:** 目前支援使用 LLaMA-Factory 進行模型微調。
+- **進階功能:** 可使用 vLLM 來實現工具呼叫和程式碼直譯器等進階功能。
+- **PowerInfer 推理:**  針對 MiniCPM-S-1B 模型，可以使用 Powerinfer 進行推理加速。
+## 📌 [DiceDB/dice](https://github.com/DiceDB/dice)
+<Callout>
+    Description: DiceDB is an in-memory real-time database with SQL-based reactivity. It is hyper-optimized for building and scaling truly real-time applications on modern hardware while being a drop-in replacement for Redis.\
+    🌐 Go｜⭐️ 4,093
+</Callout>
+    #### 簡介
+
+* DiceDB 是一款記憶體即時資料庫，支援 SQL 查詢反應式。
+* 針對現代硬體最佳化，建構和擴充套件真正的即時應用程式。
+* 它是 Redis 的直接替換。
+
+#### 主要功能
+
+* 支援 SQL 查詢反應式，可建立真正即時的應用程式。
+* 多執行緒，遵循無共享架構。
+* 支援 QWATCH 指令，讓客戶端監聽 SQL 查詢並在有變動時實時接收通知。
+
+#### 如何使用
+
+* 使用 Docker：
+    * 執行 `docker run dicedb/dicedb` 命令啟動 DiceDB 伺服器，預設埠為 7379。
+    * 使用 DiceDB CLI 和 SDK 或者 Redis CLI 和 SDK 連線到伺服器。
+* 從原始碼設定 DiceDB：
+    * 安裝 Golang 和支援的平臺環境。
+    * 克隆 DiceDB 儲存庫：`git clone https://github.com/dicedb/dice`。
+    * 切換到 DiceDB 目錄：`cd dice`。
+    * 執行 DiceDB：`go run main.go`。
+* 設定 CLI：
+    * 使用 pip 安裝 DiceDB CLI：`pip install dicedb-cli`。
+    * 使用 DiceDB CLI 連線到 DiceDB 伺服器。
+* 執行測試：
+    * 單元測試：
+        * 執行單一單元測試：`TEST_FUNC=<test function name> make unittest-one`。
+        * 執行所有單元測試：`make unittest`。
+    * 整合測試：
+        * 執行單一整合測試：`TEST_FUNC=<test function name> make test-one`。
+        * 執行所有整合測試：`make test`。
+## 📌 [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)
+<Callout>
+    Description: The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, and more.\
+    🌐 JavaScript｜⭐️ 22,409
+</Callout>
+    #### 簡介
+
+- AnythingLLM 是一個全功能的應用程式，可以將任何檔案、資源或內容轉變成任何大型語言模型 (LLM) 可以作為聊天參考的語境。
+- 使用者可以選擇使用哪個 LLM 或向量資料庫，同時支援多使用者管理和許可權。
+- AnythingLLM 將檔案分為稱為工作空間的物件。
+- 工作空間可以共享檔案，但彼此之間不互相通話，因此可以為每個工作空間保持乾淨的語境。
+
+#### 主要功能
+
+- 客製化 AI 代理人
+- 多模式支援 (封閉和開源 LLM)
+- 多使用者例項支援和許可權 (Docker 版本)
+- 工作空間內代理人 (瀏覽網頁、執行程式碼等)
+- 客製化嵌入式聊天小部件 (Docker 版本)
+- 多種檔案型別支援 (PDF、TXT、DOCX 等)
+- 簡單的聊天介面，具有拖放功能和清晰的引用。
+- 100% 雲端部署準備就緒。
+- 支援所有主流的封閉和開源 LLM 提供商。
+- 內建的成本和時間節省措施，用於管理與其他聊天介面相比非常大的檔案。
+- 全面的開發者 API 用於客製化整合。
+
+#### 如何使用
+
+- 使用 `yarn setup` 初始化環境。
+- 設定 `server/.env.development` 檔案。
+- 使用 `yarn dev:server` 啟動伺服器。
+- 使用 `yarn dev:frontend` 啟動前端。
+- 使用 `yarn dev:collector` 啟動檔案收集器。
+## 📌 [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+<Callout>
+    Description: Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions\
+    🌐 Shell｜⭐️ 78,961
+</Callout>
+    #### 簡介
+
+nvm 是一個 Node.js 版本管理器，可以讓你快速地在命令列上安裝和使用不同版本的 Node.js。它適用於任何 POSIX 相容的 shell（sh、dash、ksh、zsh、bash），尤其是在 Unix、macOS 和 Windows WSL 平臺上。
+
+#### 主要功能
+
+- 快速安裝和使用不同版本的 Node.js。
+- 透過 `nvm use` 命令輕鬆切換 Node.js 版本。
+- 支援 `lts/*` 和 `lts/argon` 等別名，方便使用 LTS 版本。
+- 支援在安裝時將 npm 包遷移至新版本。
+- 支援將預設的 npm 包清單儲存在 `$NVM_DIR/default-packages` 檔案中。
+- 支援使用 `system` 別名來使用系統安裝的 Node.js 版本。
+- 支援設定自訂色彩，以便更輕鬆地辨識版本和別名。
+- 支援透過 `.nvmrc` 檔案為每個專案設定 Node.js 版本。
+- 支援使用 `nvm alias default` 來設定預設的 Node.js 版本。
+- 支援使用映象伺服器來下載 Node.js 二進位檔。
+- 支援將授權標頭傳遞至映象伺服器。
+- 提供 Bash 自動完成功能，方便使用 nvm 命令。
+
+#### 如何使用
+
+- 使用 `curl` 或 `wget` 命令下載安裝指令碼並執行。
+- 驗證 nvm 安裝是否成功。
+- 使用 `nvm install <version>` 安裝指定版本的 Node.js。
+- 使用 `nvm use <version>` 切換至指定版本的 Node.js。
+- 使用 `nvm ls` 列出已安裝的 Node.js 版本。
+- 使用 `nvm ls-remote` 列出可供安裝的 Node.js 版本。
+- 使用 `nvm alias <alias> <version>` 建立別名。
+- 使用 `nvm run <version> <command>` 在指定版本的 Node.js 中執行命令。
+- 使用 `nvm exec <version> <command>` 在子 shell 中執行命令。
+- 使用 `nvm which <version>` 取得指定版本 Node.js 的可執行檔路徑。
+- 使用 `.nvmrc` 檔案為每個專案設定 Node.js 版本。
+- 使用 `nvm set-colors` 設定自訂色彩。
+- 使用 `nvm deactivate` 停用 nvm。
+- 使用 `nvm alias default <version>` 設定預設的 Node.js 版本。
+- 使用 `NVM_NODEJS_ORG_MIRROR` 環境變數設定 Node.js 二進位檔映象伺服器。
+- 使用 `NVM_IOJS_ORG_MIRROR` 環境變數設定 io.js 二進位檔映象伺服器。
+- 使用 `NVM_AUTH_HEADER` 環境變數設定授權標頭。
