@@ -1,0 +1,176 @@
+---
+title: '[9/26 - 10/2] GitHub Weekly Digest'
+publishedAt: '2024-10-02'
+---
+## 📌 [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai)
+<Callout>
+    Description: 🔥🕷️ Crawl4AI: Open-source LLM Friendly Web Crawler & Scrapper\
+    🌐 Python｜⭐️ 9,858
+</Callout>
+    #### 簡介
+
+Crawl4AI 是一個簡化非同步網頁爬取和資料提取的工具，適用於大型語言模型 (LLM) 和 AI 應用程式。
+
+#### 主要功能
+
+- 免費且開源
+- 高效能
+- LLM 友善輸出格式 (JSON、清理後的 HTML、Markdown)
+- 支援同時爬取多個 URL
+- 提取所有媒體標籤 (圖片、音訊和影片)
+- 提取所有外部和內部連結
+- 提取網頁的元資料
+- 允許自訂鉤子，例如驗證、標頭和爬取前修改網頁
+- 自訂使用者代理
+- 拍攝網頁截圖
+- 爬取前執行多個自訂 JavaScript
+- 使用 JsonCssExtractionStrategy 生成結構化輸出，無需 LLM
+- 多種切片策略：主題、正則運算式、句子等
+- 進階提取策略：餘弦相似度聚類、LLM 等
+- 支援 CSS 選擇器，精準提取資料
+- 允許傳遞指示或關鍵字，精煉提取
+- 支援代理伺服器，增強隱私和存取
+- 提供會話管理功能，用於複雜的多頁面爬取場景
+- 非同步架構，提升效能和擴充套件性
+
+#### 如何使用
+
+- 使用 `pip install crawl4ai` 安裝 Crawl4AI。
+- 使用 `AsyncWebCrawler` 類別進行爬取。
+- 使用 `crawler.arun()` 方法執行爬取任務。
+- 使用 `result.markdown` 屬性取得 Markdown 格式的結果。
+- 使用 `result.extracted_content` 屬性取得提取的內容。
+- 使用 `result.success` 屬性檢查爬取是否成功。
+- 使用 `js_code` 引數執行 JavaScript 程式碼。
+- 使用 `css_selector` 引數指定 CSS 選擇器。
+- 使用 `proxy` 引數設定代理伺服器。
+- 使用 `extraction_strategy` 引數設定提取策略。
+- 使用 `session_id` 引數管理會話。
+- 使用 `bypass_cache` 引數清除快取。
+- 使用 `on_execution_started` 鉤子執行自訂程式碼。
+## 📌 [localsend/localsend](https://github.com/localsend/localsend)
+<Callout>
+    Description: An open-source cross-platform alternative to AirDrop\
+    🌐 Dart｜⭐️ 47,246
+</Callout>
+    #### 簡介
+
+- LocalSend 是一款跨平臺的應用程式，允許裝置使用 REST API 和 HTTPS 加密進行安全通訊。
+- LocalSend 不需要網路連線或第三方伺服器，使其成為本地通訊的快速可靠解決方案。
+- LocalSend 提供多種語言版本，可供不同地區的使用者使用。
+- LocalSend 是一個免費、開源的應用程式，允許您在不使用網際網路的情況下，透過區域網路安全地與附近的裝置分享檔案和訊息。
+
+#### 主要功能
+
+- 安全地分享檔案和訊息
+- 沒有網際網路連線的需求
+- 跨平臺支援
+- 透過 REST API 和 HTTPS 加密進行安全通訊
+- 允許開發人員貢獻翻譯和功能
+
+#### 如何使用
+
+- 從應用程式商店或套件管理器下載 LocalSend。
+- 在 LocalSend 的設定中允許應用程式透過區域網路通訊。
+- 確定您的路由器已停用 AP 隔離。
+- 使用 `--hidden` 引數啟動 LocalSend 以隱藏應用程式。
+- 透過 REST API 和 HTTPS 加密與其他裝置進行安全通訊。
+- 貢獻翻譯或功能：
+    - 使用 `fvm flutter` 代替 `flutter` 進行開發。
+    - 更新 `_missing_translations_<locale>.json` 或 `strings_<locale>.i18n.json` 檔案進行翻譯。
+    - 使用 `flutter pub run slang` 更新翻譯。
+    - 提交拉取請求。
+## 📌 [tw93/Pake](https://github.com/tw93/Pake)
+<Callout>
+    Description: 🤱🏻 Turn any webpage into a desktop app with Rust. 🤱🏻 利用 Rust 轻松构建轻量级多端桌面应用\
+    🌐 Rust｜⭐️ 29,517
+</Callout>
+    #### 簡介
+
+- Pake 是一個使用 Rust 開發的工具，能輕易將任何網頁轉換成桌面應用程式。
+- Pake 支援 Mac、Windows 和 Linux 作業系統。
+- Pake 比 Electron 包裹體小 20 倍（大約 5M）。
+- Pake 採用 Rust Tauri 架構，比基於 JavaScript 的框架更輕量級且速度更快。
+- Pake 提供預設的套件功能，包括捷徑傳輸、沉浸式視窗和最小化自訂。
+- Pake 是一個簡單的工具，用 Tauri 取代了舊的套件方法（儘管 PWA 已經足夠好了）。
+
+#### 主要功能
+
+- Pake 提供預設的套件功能，包括捷徑傳輸、沉浸式視窗和最小化自訂。
+- Pake 支援使用 GitHub Actions 線上編譯套件。
+- Pake 提供命令列工具，使套件自訂流程更快、更容易。
+- Pake 支援自訂應用程式的功能，例如樣式重寫、廣告移除、JS 注入、容器訊息通訊和使用者自訂的快捷鍵。
+
+#### 如何使用
+
+- 使用 Pake 時，可以透過「Popular Packages」功能瀏覽已打包好的應用程式。
+- 若要自訂套件，可以使用 Pake 提供的命令列工具。
+- 透過 GitHub Actions 線上編譯套件，可以更方便地打包應用程式。
+- 對於開發人員而言，可以透過修改 `pake.json`、`tauri.config.json` 和 `tauri.xxx.conf.json` 檔案來自訂應用程式的功能。
+- Pake 提供 Advanced Usage 檔案，包含更進階的應用程式自訂方法。
+- Pake 的開發需要感謝許多開發者的貢獻，歡迎關注他們的資訊。
+## 📌 [exo-explore/exo](https://github.com/exo-explore/exo)
+<Callout>
+    Description: Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚\
+    🌐 Python｜⭐️ 9,143
+</Callout>
+    #### 簡介
+
+- exo 是一個開源軟體，允許使用者使用現有的裝置 (例如 iPhone、iPad、Android、Mac、Linux 等) 建立自己的 AI 叢集。
+- exo 支援各種 AI 模型，包括 LLaMA (MLX 和 tinygrad)、Mistral、LlaVA、Qwen 和 Deepseek。
+- exo 使用動態模型分割技術，根據現有網路拓撲和可用裝置資源最佳化分割模型。
+- exo 可以自動發現其他裝置，不需要手動配置。
+- exo 提供與 ChatGPT 相容的 API，可以輕鬆地在自己的硬體上執行模型。
+
+#### 主要功能
+
+- 支援廣泛的 AI 模型。
+- 動態模型分割技術，可以有效率地利用多個裝置的資源。
+- 自動裝置發現，不需要手動配置。
+- 提供與 ChatGPT 相容的 API。
+- 裝置平等，任何連線的裝置都可以用於執行模型。
+
+#### 如何使用
+
+- exo 建議從原始碼安裝。
+- 根據所選的模型引擎 (MLX 或 TinyGrad)，exo 對硬體有一定的要求。
+- exo 可以使用 `git clone` 命令從 Github 倉庫克隆原始碼。
+- 使用 `pip install .` 命令安裝依賴的套件。
+- exo 提供了示例用法，包括在多個 MacOS 裝置上執行模型，以及在 MacOS 和 Linux 裝置上執行模型。
+- exo 提供了一個 ChatGPT-like WebUI，可以使用 `http://localhost:8000` 訪問。
+- exo 也提供了一個 ChatGPT-compatible API，可以使用 `http://localhost:8000/v1/chat/completions` 訪問。
+- exo 的檔案中有更詳細的使用說明和教程。
+## 📌 [mediar-ai/screenpipe](https://github.com/mediar-ai/screenpipe)
+<Callout>
+    Description: 24/7 local AI screen & mic recording. Build AI apps that have the full context. Works with Ollama. Alternative to Rewind.ai. Open. Secure. You own your data. Rust.\
+    🌐 Rust｜⭐️ 5,149
+</Callout>
+    #### 簡介
+
+- screenpipe 是一個 24/7 螢幕和音訊擷取的程式庫，可以為使用者建立個性化的 AI 模型。
+- 它使用使用者所見、所說或所聽到的資訊來訓練模型。
+- screenpipe 是一款開源、安全且尊重資料隱私的工具，使用者擁有其資料。
+- 它以 Rust 語言開發，與 Ollama 協同運作，並提供類似 Rewind.ai 的功能。
+- screenpipe 仍在積極開發中，開發團隊歡迎使用者提供意見回饋和建議。
+
+#### 主要功能
+
+- 24/7 螢幕和音訊擷取：自動收集和提取螢幕畫面和音訊輸入/輸出。
+- AI 模型訓練：基於使用者所見、所說或所聽到的資料訓練 AI 模型。
+- 開放原始碼：使用者可以檢視和修改程式碼。
+- 安全且尊重資料隱私：使用者擁有自己的資料。
+- 與 Ollama 整合：與 Ollama 協同運作，提供更強大的功能。
+
+#### 如何使用
+
+- screenpipe 可以透過 CLI 和付費的桌面應用程式兩種方式使用。
+- CLI 提供技術使用者一種使用方式，而桌面應用程式則提供更簡便的操作方式。
+- 桌面應用程式提供 1 年更新、優先支援和優先功能。
+- 使用者可以透過 GitHub 提交問題和建議。
+- screenpipe 正在積極開發中，開發團隊歡迎使用者加入開發團隊並獲得報酬。
+- 使用者可以透過管道商店 (pipe store) 建立、分享和使用外掛，以更有效率地利用資料。
+- screenpipe 支援 Windows、macOS 和 Linux 系統。
+- screenpipe 已經在 AGI House 的 Friends (the AI necklace) 駭客馬拉松中獲獎。
+- screenpipe 提供螢幕錄影功能，並可以自動將錄影連結分享到聊天室。
+- screenpipe 支援多種螢幕擷取模式和預設的語音辨識模型 (Whisper Distil large v3)。
+- screenpipe 支援 Windows、macOS 和 Linux 的原生光學字元辨識 (OCR) 功能。

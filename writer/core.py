@@ -16,11 +16,7 @@ cc = OpenCC("s2twp")
 repositories = scraper_repo()
 
 summaries = []
-for repository in repositories:
-    if len(summaries) >= 5:
-        break
-
-    prompt = """
+prompt = """
     ！請確定使用繁體中文zh-TW!確保格式依照我的範本！
 
     #### 簡介
@@ -40,18 +36,29 @@ for repository in repositories:
     - Do not add any new heading. like ## or ####
 
     ！確保格式依照我的範本！
-    """
-    summary = cc.convert(
-        model.generate_content(prompt + repository["readme"]).text.strip()
-    )
+"""
 
-    if len(summary) > 0:
-        summaries.append(
-            {
-                "repository": repository,
-                "summary": summary,
-            }
+for repository in repositories:
+    
+    try:
+        if len(summaries) >= 5:
+            break
+
+        summary = cc.convert(
+            model.generate_content(prompt + repository["readme"]).text.strip()
         )
+
+        if len(summary) > 0:
+            summaries.append(
+                {
+                    "repository": repository,
+                    "summary": summary,
+                }
+            )
+    
+    except Exception as e:
+        print(e)
+        pass
 
 # Write summaries to a markdown file
 now = datetime.now()
@@ -63,7 +70,7 @@ publishedAt: '{datetime.now().strftime("%Y-%m-%d")}'
 ---
 """
 
-with open("frontend/app/blog/posts/" + file_name, "w") as file:
+with open(f"frontend/app/blog/posts/{file_name}", "w") as file:
     file.write(info)
     for summary in summaries:
         repository = summary["repository"]
