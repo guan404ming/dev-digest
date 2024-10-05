@@ -81,7 +81,7 @@ with open(f"frontend/app/blog/posts/{file_name}", "w") as file:
         file.write(f"""
 <Callout>
     {'Description: ' + repository["description"] + "\\" if repository["description"] else ''}
-    🌐 {repository["language"]}｜⭐️ {repository["stars"]}
+    🌐 {repository["language"]}｜⭐️ {repository["stars"]} | {repository["week_stars"]} stars this week
 </Callout>
     """)
         file.write(summary["summary"] + "\n")
