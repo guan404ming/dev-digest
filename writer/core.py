@@ -1,64 +1,9 @@
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
-import google.generativeai as genai
-import os
-from opencc import OpenCC
+from scraper import scrape_repo
+from summarizer import summarize_repo
 
-from scraper import scraper_repo
-
-# Set up Gemini API
-load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash-latest")
-cc = OpenCC("s2twp")
-
-# Scrape GitHub trending repositories
-repositories = scraper_repo()
-
-summaries = []
-prompt = """
-    ！請確定使用繁體中文zh-TW!確保格式依照我的範本！
-
-    #### 簡介
-
-    #### 主要功能
-
-    #### 如何使用
-
-    - Examine the following README.md content and summarize in 3 parts 簡介 & 主要功能 & 如何使用 in 繁體中文
-    - 標題 is link and heading of markdown file.
-    - List in bullet points. Every part should be at most 8 points.
-    - Please keep the technical terms in English. 
-    - Use markdown to format the content in pretty layout and do not include image.
-    - Could include code snippets if necessary.
-    - Do not add any additional information.
-    - Abstract length should be around 100-200 characters.
-    - Do not add any new heading. like ## or ####
-
-    ！確保格式依照我的範本！
-"""
-
-for repository in repositories:
-    
-    try:
-        if len(summaries) >= 5:
-            break
-
-        summary = cc.convert(
-            model.generate_content(prompt + repository["readme"]).text.strip()
-        )
-
-        if len(summary) > 0:
-            summaries.append(
-                {
-                    "repository": repository,
-                    "summary": summary,
-                }
-            )
-    
-    except Exception as e:
-        print(e)
-        pass
+repositories = scrape_repo()
+summaries = summarize_repo(repositories)
 
 # Write summaries to a markdown file
 now = datetime.now()

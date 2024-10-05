@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 from typing import List, Dict
 
-def scraper_repo() -> List[Dict[str, str]]:
+def scrape_repo() -> List[Dict[str, str]]:
     url = "https://github.com/trending?since=weekly"
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
