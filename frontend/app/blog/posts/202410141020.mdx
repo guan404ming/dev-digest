@@ -1,0 +1,253 @@
+---
+title: '[10/14 - 10/20] GitHub Weekly Digest'
+publishedAt: '2024-10-20'
+---
+## 📌 [3b1b/manim](https://github.com/3b1b/manim)
+<Callout>
+    Description: Animation engine for explanatory math videos\
+    🌐 Python｜⭐️ 68,465 | 5212 stars this week
+</Callout>
+    #### 簡介
+
+ManimGL 是一個用於製作精準程式化動畫的引擎，專為製作解說數學的影片而設計。它是 3Blue1Brown 頻道創作者的個人專案，用於製作該頻道的影片動畫。ManimGL 的目標是提供一個穩定、測試良好、對社群貢獻有快速回應且易於使用的動畫製作工具。
+
+#### 主要功能
+
+- 產生精準的數學動畫
+- 提供豐富的物件型別和動畫型別
+- 允許使用 LaTeX 編寫文字和方程式
+- 支援多種輸出格式，例如影片和圖片
+- 可自訂設定以調整動畫風格和行為
+
+#### 如何使用
+
+- 安裝 ManimGL：
+    - 使用 `pip install manimgl` 直接安裝
+    - 或者，將此 repository 克隆至本地並使用 `pip install -e .` 安裝
+- 執行示例：
+    - 使用 `manimgl example_scenes.py OpeningManimExample` 執行示例場景
+- 探索示例場景：
+    - 檢視 `example_scenes.py` 中的範例程式碼，學習如何使用 ManimGL 的語法、物件型別和動畫型別
+- 使用 CLI 引數：
+    - `-w`：將場景寫入檔案
+    - `-o`：將場景寫入檔案並開啟結果
+    - `-s`：跳到最後並顯示最後一幀
+    - `-so`：將最後一幀儲存為圖片並顯示
+    - `-n <number>`：跳轉到場景的第 n 個動畫
+    - `-f`：將播放視窗設為全螢幕
+- 參閱 `custom_config.yml` 檔案以獲取更多自訂選項。
+## 📌 [hcengineering/platform](https://github.com/hcengineering/platform)
+<Callout>
+    Description: Huly — All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)\
+    🌐 TypeScript｜⭐️ 15,325 | 3739 stars this week
+</Callout>
+    ## Huly Platform
+
+### 簡介
+
+Huly Platform 是一個強大的框架，旨在加速商業應用程式（例如 CRM 系統）的開發。這個 repository 包含許多應用程式，例如 Chat, Project Management, CRM, HRM 和 ATS。Huly 和 TraceX 等團隊正在平臺上構建產品。
+
+### 主要功能
+
+* **自託管:** 提供一個便捷的方法使用 Docker 部署 Huly，讓使用者輕鬆地在自己的伺服器上執行 Huly。
+* **快速啟動:** 提供 `fast-start.sh` 指令碼，快速建立開發環境。
+* **安裝:** 使用 Microsoft 的 Rush 工具，方便管理和構建多個包。
+* **構建和執行:** 提供指令碼，使用 Docker 構建和執行 Huly 應用程式。
+* **開發模式:** 支援熱過載，簡化開發過程。
+* **更新專案結構和資料庫:** 提供工具更新專案結構和資料庫。
+* **測試:** 支援單元測試和 UI 測試。
+
+### 如何使用
+
+1. **驗證:** 執行 `docker --version` 和 `docker compose version` 命令驗證 Docker 是否已安裝。
+2. **安裝:** 使用 `npm install -g @microsoft/rush` 全域性安裝 Rush，並執行 `rush install` 和 `rush build` 命令安裝和構建專案。
+3. **構建和執行:**
+   * 執行 `rush docker:build` 構建 Docker 容器。
+   * 執行 `rush docker:up` 啟動容器。
+   * 執行 `sh ./scripts/build.sh` 簡化構建過程。
+4. **建立工作區和帳戶:** 執行 `sh ./scripts/create-workspace.sh` 指令碼建立工作區和帳戶。
+5. **開發模式:**
+   * 執行 `rushx dev-server` 啟動開發伺服器。
+   * 使用 `user1` 和 `1234` 登入 `http://localhost:8080`。
+6. **更新專案結構和資料庫:** 
+   * 執行 `rush update` 更新專案結構。
+   * 執行 `rush build` 重新構建專案。
+   * 執行 `rushx upgrade -f` 更新資料庫。
+7. **故障排除:** 如果構建失敗，請檢查程式碼和日誌。
+
+**注意:** 
+
+* 本地安裝不支援傳送郵件，因此功能（例如密碼恢復和郵件通知）會被禁用。
+* 在 `/etc/hosts` 檔案中新增 `127.0.0.1 host.docker.internal`，以訪問 `http://host.docker.internal:8087` 的開發模式應用程式。
+## 📌 [ManimCommunity/manim](https://github.com/ManimCommunity/manim)
+<Callout>
+    Description: A community-maintained Python framework for creating mathematical animations.\
+    🌐 Python｜⭐️ 24,671 | 2671 stars this week
+</Callout>
+    #### 簡介
+
+Manim 是一個用於製作解說數學影片的動畫引擎，它可以透過程式碼製作精準的動畫，就像 3Blue1Brown 影片中的動畫一樣。
+這個 repository 由 Manim 社群維護，與 Grant Sanderson 或 3Blue1Brown 無關，雖然我們非常感謝他們將作品分享給世界。如果你想研究 Grant 如何製作他的影片，可以到他的 repository (3b1b/manim) 檢視。這個 fork 比他的更新更頻繁，如果你想用 Manim 製作自己的專案，建議使用這個 fork。
+
+#### 主要功能
+
+- Manim 是一個非常通用的套件，可以製作各種動畫。
+- 可以使用 %%manim IPython 魔術指令在 JupyterLab (以及傳統的 Jupyter) 筆記本中方便地使用 Manim。
+- 提供命令列引數來控制渲染過程，例如：
+    - `-p`: 預覽影片，渲染完畢後自動開啟影片播放器。
+    - `-ql`: 以較低的品質進行快速渲染。
+    - `-s`: 跳過動畫，直接顯示最後一幀。
+    - `-n <number>`: 跳到場景的第 n 個動畫。
+    - `-f`: 在檔案瀏覽器中顯示輸出檔案。
+
+#### 如何使用
+
+- 在使用 Manim 之前，需要先安裝一些依賴項。如果你想在本地安裝之前先試用 Manim，可以在我們的線上 Jupyter 環境中試用。
+- 可以參閱檔案以瞭解如何在不同作業系統上安裝 Manim。
+- 可以使用命令列引數來控制渲染過程。
+- 可以使用 %%manim IPython 魔術指令在 JupyterLab 或 Jupyter 筆記本中方便地使用 Manim。
+- 可以在我們的 Discord 伺服器或 Reddit 社群中尋求幫助。
+- 如果你想提交錯誤報告或功能請求，請開啟 issue。
+- 歡迎對 Manim 貢獻，特別是測試和檔案。
+- 可以加入我們的 Discord 伺服器來討論任何潛在的貢獻並掌握最新發展。
+- 大部分開發人員使用 poetry 來管理 Manim。
+## 📌 [VikParuchuri/surya](https://github.com/VikParuchuri/surya)
+<Callout>
+    Description: OCR, layout analysis, reading order, table recognition in 90+ languages\
+    🌐 Python｜⭐️ 12,410 | 2084 stars this week
+</Callout>
+    ## 簡介
+
+Surya 是一個檔案 OCR 工具組，提供以下功能：
+
+- 支援 90 多種語言的 OCR，其表現優於雲端服務。
+- 支援任何語言的文字行級別偵測。
+- 支援檔案版面分析，例如表格、影象、標題等偵測。
+- 支援檔案閱讀順序偵測。
+- 支援表格辨識，例如偵測表格的行列。
+
+Surya 可應用於各種檔案，例如 PDF、影象、Word 檔案、PowerPoint 檔案等。
+
+
+
+## 主要功能
+
+Surya 提供以下主要功能：
+
+- **OCR（文字辨識）**: 辨識檔案中的文字，並輸出包含偵測到的文字和邊界框的 JSON 檔案。
+- **文字行偵測**: 偵測檔案中的文字行，並輸出包含偵測到的邊界框的 JSON 檔案。
+- **版面分析**: 分析檔案的版面，例如表格、影象、標題等，並輸出包含偵測到的版面資訊的 JSON 檔案。
+- **閱讀順序偵測**: 偵測檔案的閱讀順序，並輸出包含偵測到的閱讀順序資訊的 JSON 檔案。
+- **表格辨識**: 辨識檔案中的表格，並輸出包含偵測到的表格單元格和行列 ID 的 JSON 檔案。
+
+
+
+## 如何使用
+
+**安裝**:
+
+1. 確保系統已安裝 Python 3.10+ 和 PyTorch。
+2. 使用 `pip install surya-ocr` 安裝 Surya。
+3. 第一次執行 Surya 時，模型權重將會自動下載。
+
+**基本用法**:
+
+- **OCR**: 
+  ```bash
+  surya_ocr DATA_PATH --langs [語言] 
+  ```
+  `DATA_PATH` 可以是影象、PDF 或影象/PDF 資料夾。`--langs` 是可選引數，用於指定 OCR 語言。
+- **文字行偵測**:
+  ```bash
+  surya_detect DATA_PATH
+  ```
+  `DATA_PATH` 可以是影象、PDF 或影象/PDF 資料夾。
+- **版面分析**:
+  ```bash
+  surya_layout DATA_PATH
+  ```
+  `DATA_PATH` 可以是影象、PDF 或影象/PDF 資料夾。
+- **閱讀順序偵測**:
+  ```bash
+  surya_order DATA_PATH
+  ```
+  `DATA_PATH` 可以是影象、PDF 或影象/PDF 資料夾。
+- **表格辨識**:
+  ```bash
+  surya_table DATA_PATH
+  ```
+  `DATA_PATH` 可以是影象、PDF 或影象/PDF 資料夾。
+
+**其他**:
+
+- 可以使用 `surya_gui` 命令執行互動式應用程式，在影象或 PDF 檔案上測試 Surya。
+- 可以使用 `from surya.ocr import run_ocr` 等 API 在 Python 中使用 Surya。
+
+**效能**:
+
+- 使用 GPU 時，可以調整 `RECOGNITION_BATCH_SIZE`、`DETECTOR_BATCH_SIZE`、`ORDER_BATCH_SIZE` 和 `TABLE_REC_BATCH_SIZE` 環境變數來最佳化效能。
+- 可以使用 `RECOGNITION_STATIC_CACHE=true` 和 `torch.compile` 編譯 OCR 模型以提高效能。
+## 📌 [siyuan-note/siyuan](https://github.com/siyuan-note/siyuan)
+<Callout>
+    Description: A privacy-first, self-hosted, fully open source personal knowledge management software, written in typescript and golang.\
+    🌐 TypeScript｜⭐️ 20,823 | 1715 stars this week
+</Callout>
+    #### 簡介
+
+SiYuan 是一款重視隱私的個人知識管理系統，支援細緻的區塊級別參考和 Markdown 所見即所得編輯。歡迎加入 SiYuan 英語討論區，瞭解更多。
+
+#### 主要功能
+
+大部分功能免費，即使是商業用途。
+
+* **內容區塊**: 區塊級別參考和雙向連結、自定義屬性、SQL 查詢嵌入、協議 siyuan://。
+* **編輯器**: 區塊風格、Markdown 所見即所得、列表大綱、區塊放大、百萬字大型文件編輯、數學公式、圖表、流程圖、甘特圖、時間軸、樂譜等。
+* **匯出**: 區塊參考和嵌入、帶有資產的標準 Markdown、PDF、Word 和 HTML、複製到微信公眾號、知乎和語雀。
+* **資料庫**: 表格檢視。
+* **其他**: 詞卡間隔重複、透過 OpenAI API 實現 AI 寫作和問答聊天、Tesseract OCR、多標籤、拖放分割螢幕、模板片段、JavaScript/CSS 片段、Android/iOS 應用程式、Docker 部署、API、社群市場。
+
+部分功能僅供付費會員使用，更多詳情請參閱定價。
+
+#### 如何使用
+
+建議優先透過桌面和移動端的應用商店進行安裝，以便您日後可以一鍵升級版本。
+
+* **應用商店**:
+    * 移動端：
+        * App Store
+        * Google Play
+        * F-Droid
+    * 桌面端：
+        * Microsoft Store
+* **安裝包**:
+    * B3log
+    * GitHub
+* **Docker 主機**:
+    * 容器名稱：b3log/siyuan
+    * 容器 URL：請參閱 GitHub
+    * 檔案結構：所有程式位於 /opt/siyuan/ 下，基本上與 Electron 安裝包中資源資料夾下的結構相同。
+        * appearance：圖示、主題、語言
+        * guide：使用者指南檔案
+        * stage：介面和靜態資源
+        * kernel：核心程式
+    * 入口點：設定為 ENTRYPOINT ["/opt/siyuan/entrypoint.sh"]，該指令碼允許更改容器內執行使用者的 PUID 和 PGID。
+    * 使用以下引數在使用 docker run b3log/siyuan 執行容器時：
+        * --workspace：指定工作空間資料夾路徑，透過 -v 對映到主機上的容器。
+        * --accessAuthCode：指定存取授權碼。
+    * 使用 docker-compose 執行 Siyuan 時，可以將環境變數 PUID 和 PGID 傳遞給容器，以自定義使用者和群組 ID。
+    * 使用者許可權：在映像中，entrypoint.sh 指令碼確保使用指定的 PUID 和 PGID 建立 siyuan 使用者和群組。
+    * 隱藏埠：使用 NGINX 反向代理隱藏埠 6806，請注意：配置 WebSocket 反向代理 /ws。
+    * 備註：請務必確認掛載卷的正確性，否則容器刪除後資料會丟失。
+    * 限制：不支援桌面和移動應用程式連線，僅支援瀏覽器使用。不支援匯出為 PDF、HTML 和 Word 格式。不支援匯入 Markdown 檔案。
+* **Unraid 主機**:
+    * 備註：首先在終端中執行 chown -R 1000:1000 /mnt/user/appdata/siyuan。
+    * 模板參考：
+        * 網頁介面：6806
+        * 容器埠：6806
+        * 容器路徑：/home/siyuan
+        * 主機路徑：/mnt/user/appdata/siyuan
+        * PUID：1000
+        * PGID：1000
+        * 釋出引數：--accessAuthCode=******（存取授權碼）
+* **內部預覽**:
+    * 我們在主要更新之前發布內部預覽，請訪問 https://github.com/siyuan-note/insider。
