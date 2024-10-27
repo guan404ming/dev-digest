@@ -1,0 +1,179 @@
+---
+title: '[10/21 - 10/27] GitHub Weekly Digest'
+publishedAt: '2024-10-27'
+---
+## 📌 [phidatahq/phidata](https://github.com/phidatahq/phidata)
+<Callout>
+    Description: Build AI Agents with memory, knowledge, tools and reasoning. Chat with them using a beautiful Agent UI.\
+    🌐 Python｜⭐️ 13,832 | 2150 stars this week
+</Callout>
+    #### 簡介
+
+Phidata 是一個用於構建代理系統的框架，可以使用它來：
+
+- 構建具有記憶體、知識、工具和推理能力的代理。
+- 構建可以協同工作的代理團隊。
+- 使用漂亮的代理 UI 與您的代理聊天。
+- 監控、評估和最佳化您的代理。
+- 在 API 背後執行您的代理，並使用資料庫和向量資料庫。
+
+#### 主要功能
+
+Phidata 提供以下主要功能：
+
+- **代理構建**： 允許您建立具有記憶體、知識、工具和推理能力的代理。
+- **代理團隊**： 允許您構建可以協同工作的代理團隊。
+- **代理 UI**： 提供一個漂亮的 UI，可以與您的代理進行互動。
+- **監控和評估**： 提供內建的監控和評估功能，用於追蹤代理的效能。
+- **資料庫和向量資料庫**： 允許您在 API 背後執行您的代理，並使用資料庫和向量資料庫。
+- **推理代理**： 允許您建立可以逐步解決問題的代理，並在需要時回溯和更正。
+- **RAG 代理**： 允許您建立可以使用知識庫 (向量資料庫) 來搜尋特定資訊的代理，從而節省令牌並提高響應質量。
+- **Python 代理**： 允許您建立可以編寫和執行 Python 程式碼的代理。
+- **DuckDb 代理**： 允許您建立可以使用 SQL 進行資料分析的代理。
+- **結構化輸出代理**： 允許您建立可以從文字生成結構化資料 (例如 pydantic 模型) 的代理。
+
+#### 如何使用
+
+Phidata 的使用步驟如下：
+
+- **安裝**: 使用 `pip install -U phidata` 安裝 Phidata。
+- **建立代理**: 使用 `phi.agent.Agent` 類建立代理。
+- **新增工具**: 使用 `tools` 引數新增代理所需的工具，例如 Web 搜尋工具、金融資料工具等。
+- **新增知識庫**: 使用 `knowledge` 引數新增代理所需的知識庫，例如 PDF 文件或向量資料庫。
+- **執行代理**: 使用 `agent.print_response()` 方法執行代理，並提供要執行的任務。
+- **使用代理 UI**: 使用 `phi.playground.Playground` 類建立一個代理 UI，並使用 `serve_playground_app()` 方法啟動 UI。
+- **監控代理**: 使用 `monitoring=True` 引數或 `PHI_MONITORING=true` 環境變數開啟監控功能。
+- **除錯代理**: 使用 `debug_mode=True` 引數或 `PHI_DEBUG=true` 環境變數開啟除錯功能。
+## 📌 [OpenInterpreter/open-interpreter](https://github.com/OpenInterpreter/open-interpreter)
+<Callout>
+    Description: A natural language interface for computers\
+    🌐 Python｜⭐️ 53,859 | 1197 stars this week
+</Callout>
+    #### 簡介
+
+Open Interpreter 是一個讓大型語言模型（LLM）能夠在本地執行程式碼的工具。它允許使用者透過終端機中的 ChatGPT 式介面與 LLM 進行對話，並執行 Python、Javascript、Shell 等程式碼。Open Interpreter 讓使用者能夠使用自然語言來控制電腦的各種功能，例如：
+
+- 建立和編輯照片、影片、PDF 等檔案
+- 控制 Chrome 瀏覽器進行網路搜尋
+- 分析和處理大型資料集
+- 其他各種功能
+
+#### 主要功能
+
+Open Interpreter 的主要功能包括：
+
+- **本地執行程式碼：**Open Interpreter 可以在使用者自己的電腦上執行程式碼，不受任何雲端服務限制。
+- **與 LLM 互動：**使用者可以使用自然語言與 Open Interpreter 進行互動，並透過 LLM 來執行程式碼。
+- **支援多種語言：**Open Interpreter 支援 Python、Javascript、Shell 等程式碼語言。
+- **彈性配置：**使用者可以自定義 Open Interpreter 的系統訊息，以及選擇不同的語言模型。
+- **多種模式：**Open Interpreter 提供互動式模式和程式化模式，滿足不同使用需求。
+- **安全性：**Open Interpreter 要求使用者在執行程式碼之前進行確認，以保障使用者安全。
+- **多種平臺：**Open Interpreter 可在 Windows、MacOS 和 Linux 等多個平臺上使用。
+
+#### 如何使用
+
+Open Interpreter 的使用方式如下：
+
+- **安裝：**使用 pip 命令安裝 Open Interpreter：`pip install open-interpreter`
+- **啟動：**安裝完成後，在終端機中執行 `interpreter` 命令啟動 Open Interpreter。
+- **互動模式：**在互動式模式下，使用者可以輸入自然語言指令與 Open Interpreter 進行互動。
+- **程式化模式：**在程式化模式下，使用者可以使用 Python 程式碼與 Open Interpreter 進行互動。
+- **自定義設定：**使用者可以透過配置檔案自定義 Open Interpreter 的行為，例如語言模型、執行環境等。
+- **安全提示：**Open Interpreter 會在執行程式碼之前提醒使用者確認，以確保安全性。
+- **其他功能：**Open Interpreter 提供了許多其他功能，例如撤銷、重設對話、檢視聊天記錄等。
+## 📌 [serengil/deepface](https://github.com/serengil/deepface)
+<Callout>
+    Description: A Lightweight Face Recognition and Facial Attribute Analysis (Age, Gender, Emotion and Race) Library for Python\
+    🌐 Python｜⭐️ 13,930 | 1124 stars this week
+</Callout>
+    #### 簡介
+
+DeepFace 是一個輕量級的臉部辨識和麵部屬性分析 (年齡、性別、情緒和種族) 框架，適用於 Python。 它是一個混合臉部辨識框架，整合了最先進的模型：VGG-Face、FaceNet、OpenFace、DeepFace、DeepID、ArcFace、Dlib、SFace 和 GhostFaceNet。 
+實驗結果顯示，人類在臉部辨識任務中的準確率為 97.53%，而這些模型已經達到並超越了該準確率。
+
+#### 主要功能
+
+- 臉部驗證：驗證兩張臉是否屬於同一個人。
+- 臉部辨識：在資料庫中尋找輸入影像的對應身份。
+- 嵌入：將臉部影像轉換成多維向量。
+- 臉部屬性分析：預測年齡、性別、情緒和種族。
+- 臉部偵測和對齊：偵測和對齊影像中的臉部。
+- 即時分析：使用網路攝影機進行即時臉部辨識和屬性分析。
+- 反欺騙分析：偵測影像是否為真實影像。
+- API：提供 HTTP 介面，可供其他系統使用。
+- Dockerized 服務：提供 Docker 映像檔，方便部署。
+- 命令列介面：提供命令列工具，方便使用。
+
+#### 如何使用
+
+- 安裝：使用 `pip install deepface` 安裝 DeepFace。
+- 使用驗證功能：使用 `DeepFace.verify(img1_path, img2_path)` 驗證兩張臉是否屬於同一個人。
+- 使用辨識功能：使用 `DeepFace.find(img_path, db_path)` 在資料庫中尋找輸入影像的對應身份。
+- 提取嵌入：使用 `DeepFace.represent(img_path)` 提取臉部影像的嵌入向量。
+- 進行屬性分析：使用 `DeepFace.analyze(img_path, actions)` 進行年齡、性別、情緒和種族分析。
+- 使用偵測和對齊功能：使用 `DeepFace.extract_faces(img_path, detector_backend, align)` 偵測和對齊影像中的臉部。
+- 進行即時分析：使用 `DeepFace.stream(db_path)` 進行即時臉部辨識和屬性分析。
+- 啟動反欺騙分析：在任何 DeepFace 任務中將 `anti_spoofing` 引數設定為 `True`。
+- 使用 API：使用 HTTP POST 方法呼叫 API 端點，例如 `/verify`、`/analyze` 和 `/represent`。
+- 使用 Docker：使用 `docker run -p 5005:5000 serengil/deepface` 啟動 Docker 映像檔。
+- 使用命令列工具：使用 `deepface verify -img1_path tests/dataset/img1.jpg -img2_path tests/dataset/img2.jpg` 執行驗證任務。
+## 📌 [drawdb-io/drawdb](https://github.com/drawdb-io/drawdb)
+<Callout>
+    Description: Free, simple, and intuitive online database diagram editor and SQL generator.\
+    🌐 JavaScript｜⭐️ 21,214 | 1007 stars this week
+</Callout>
+    #### 簡介
+
+- drawDB 是一個免費、簡單、直觀的資料庫設計工具和 SQL 生成器。
+- 它是一個強大的且友善的資料庫實體關係 (DBER) 編輯器，可以直接在瀏覽器中使用。
+- 您可以輕鬆地用幾次點選建立圖表、匯出 SQL 指令碼、自訂編輯器等，而且不需要建立帳戶。
+
+#### 主要功能
+
+- 提供直觀的圖表編輯器，方便建立和修改資料庫架構。
+- 支援匯出 SQL 指令碼，方便將設計轉換為實際的資料庫。
+- 可自訂編輯器，讓使用者能根據需求調整介面和功能。
+- 不需要帳戶，使用者可以直接使用所有功能。
+- 提供豐富的功能，請參考 [官網](https://drawdb.io/) 瞭解更多。
+
+#### 如何使用
+
+- 您可以透過以下步驟開始使用 drawDB：
+    - 複製 drawDB 的 GitHub 儲存庫： `git clone https://github.com/drawdb-io/drawdb`
+    - 切換到 drawDB 目錄： `cd drawdb`
+    - 安裝 npm 套件： `npm install`
+    - 執行開發伺服器： `npm run dev`
+- 如果您想建立一個可部署的版本，可以使用以下步驟：
+    - 複製 drawDB 的 GitHub 儲存庫： `git clone https://github.com/drawdb-io/drawdb`
+    - 切換到 drawDB 目錄： `cd drawdb`
+    - 安裝 npm 套件： `npm install`
+    - 建立 build 版本： `npm run build`
+- 您也可以使用 Docker 建立一個容器： `docker build .`
+## 📌 [ranaroussi/yfinance](https://github.com/ranaroussi/yfinance)
+<Callout>
+    Description: Download market data from Yahoo! Finance's API\
+    🌐 Python｜⭐️ 14,213 | 962 stars this week
+</Callout>
+    #### 簡介
+
+yfinance 是一個 Python 套件，提供一種以多執行緒的方式，從 Yahoo! Finance 的 API 下載市場資料。
+它使用 Yahoo 的公開 API，用於研究和教育目的，並且不是由 Yahoo! Finance 所認可或背書。
+
+#### 主要功能
+
+- 提供 Pythonic 的方式存取 Yahoo! Finance 資料。
+- 支援多種股票資訊，包括股票資訊、歷史資料、技術指標、財務資料、持股資訊、分析師資料和新聞等。
+- 支援多個股票的資料下載。
+- 支援使用代理伺服器下載資料。
+- 提供 Sector 和 Industry 模組，可以存取美國市場資訊。
+- 提供 Screener 模組，可以根據指定的查詢條件篩選市場。
+- 支援使用日誌記錄，可以記錄程式執行過程中的訊息。
+- 支援使用請求快取，可以減少對 Yahoo! Finance 的請求次數。
+
+#### 如何使用
+
+- 安裝：使用 pip 安裝 yfinance 套件。
+- 使用 Ticker 模組：建立 Ticker 物件，可以使用 `Ticker.info` 獲取股票資訊，使用 `Ticker.history()` 獲取歷史資料。
+- 使用 Sector 和 Industry 模組：使用 `Sector` 和 `Industry` 物件存取美國市場資訊。
+- 使用 Screener 模組：使用 `Screener` 物件根據指定的查詢條件篩選市場。
+- 使用請求快取：可以使用 `requests_cache` 套件快取 Yahoo! Finance 的 API 請求。
