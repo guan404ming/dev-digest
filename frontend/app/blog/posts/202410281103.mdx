@@ -1,0 +1,263 @@
+---
+title: '[10/28 - 11/3] GitHub Weekly Digest'
+publishedAt: '2024-11-03'
+---
+## 📌 [meta-llama/llama-recipes](https://github.com/meta-llama/llama-recipes)
+<Callout>
+    Description: Scripts for fine-tuning Meta Llama with composable FSDP & PEFT methods to cover single/multi-node GPUs. Supports default & custom datasets for applications such as summarization and Q&A. Supporting a number of candid inference solutions such as HF TGI, VLLM for local or cloud deployment. Demo apps to showcase Meta Llama for WhatsApp & Messenger.\
+    🌐 Jupyter Notebook｜⭐️ 14,655 | 2441 stars this week
+</Callout>
+    #### 簡介
+
+- Llama Recipes 是一個與 Meta Llama 模型相輔相成的資源庫，它支援最新的 Llama 3.2 Vision 和 Llama 3.2 Text 版本。
+- 此資源庫包含範例指令碼和筆記本，幫助你開始在各種用例中使用這些模型，包括針對特定領域進行微調、使用 Llama 和 LLM 生態系統中的其他工具構建基於 LLM 的應用程式。
+- 這些範例在本地、雲端和內部部署環境中使用 Llama。
+- Llama 3.2 使用與 Llama 3.1 相同的提示模板，但引入了一個新的特殊標記 \<|image|\>，代表多模態模型的輸入影象。
+
+#### 主要功能
+
+- 提供範例指令碼和筆記本，幫助你開始在各種用例中使用 Llama 模型。
+- 支援針對特定領域進行微調，以適應不同的應用場景。
+- 支援使用 Llama 和 LLM 生態系統中的其他工具構建基於 LLM 的應用程式。
+- 範例在本地、雲端和內部部署環境中使用 Llama。
+
+#### 如何使用
+
+- 安裝 PyTorch Nightlies。
+- 使用 pip 安裝 Llama Recipes，並根據需要安裝額外的依賴項。
+- 從來源安裝 Llama Recipes，例如用於開發目的。
+- 從 Hugging Face Hub 取得 Llama 模型。
+- 使用 `convert_llama_weights_to_hf.py` 指令碼將模型權重轉換為 Hugging Face 格式。
+- 參考 recipes 資料夾中的範例指令碼和筆記本，學習如何使用 Llama 模型。
+- 參考 src 資料夾中的模組，學習如何構建基於 Llama 模型的應用程式。
+## 📌 [Skyvern-AI/skyvern](https://github.com/Skyvern-AI/skyvern)
+<Callout>
+    Description: Automate browser-based workflows with LLMs and Computer Vision\
+    🌐 Python｜⭐️ 9,677 | 1926 stars this week
+</Callout>
+    #### 簡介
+
+Skyvern 是一款利用大型語言模型 (LLM) 和電腦視覺自動執行瀏覽器工作流程的工具。它提供一個簡單的 API 端點，可在大量網站上完全自動執行手動工作流程，取代易碎或不可靠的自動化解決方案。
+
+Skyvern 可在從未見過的網站上執行，因為它能夠將視覺元素對映到完成工作流程所需的操作，而不需要任何自訂程式碼。
+
+Skyvern 抵禦網站佈局變化的影響，因為它在嘗試導航時不依賴任何預先確定的 XPaths 或其他選擇器。
+
+Skyvern 可將單一工作流程應用於大量網站，因為它能夠推論完成工作流程所需的操作。
+
+Skyvern 利用 LLM 推論操作，確保能夠處理複雜的情況。
+
+#### 主要功能
+
+* 自動執行瀏覽器工作流程
+* 利用 LLM 和電腦視覺
+* 處理網站佈局變化
+* 處理多個網站的相同工作流程
+* 處理複雜的邏輯操作
+
+#### 如何使用
+
+Skyvern 是一個 API 服務，您可以透過 API 端點傳送請求來執行工作流程。
+
+* 透過 `curl` 或其他 HTTP 程式庫傳送請求。
+* 透過 `Skyvern` Python 程式庫傳送請求。
+* 使用 Skyvern 雲端服務管理工作流程。
+
+每個請求都包含以下資訊：
+
+* 目標網站的 URL
+* 導航目標 (目標網站上的動作，例如填寫表格、點選按鈕等)
+* 資料提取目標 (從目標網站提取資料)
+* 導航載荷 (額外的資訊或引數，例如表格資料、搜尋關鍵字等)
+
+您可以使用 Skyvern 工作流程將多個任務串聯起來，形成一個完整的工作流程。
+
+工作流程支援：
+
+* 鏈式任務
+* 迴圈
+* 檔案解析
+* 檔案上傳
+* 郵件傳送
+* 文字提示
+* (即將推出)條件語句
+* (即將推出)自訂程式碼區塊
+
+Skyvern 允許您直播瀏覽器的視窗到本地機器，以便您檢視 Skyvern 在網路上執行的操作，方便偵錯和理解 Skyvern 如何與網站互動。
+
+Skyvern 能夠填寫網站上的表格輸入，並能從網站提取資料。
+
+Skyvern 支援多種身份驗證方法，包括密碼管理器整合和 2FA。
+## 📌 [anthropics/courses](https://github.com/anthropics/courses)
+<Callout>
+    Description: Anthropic's educational courses\
+    🌐 Jupyter Notebook｜⭐️ 7,357 | 1305 stars this week
+</Callout>
+    #### 簡介
+
+Anthropic 提供了一系列教育課程，幫助使用者深入瞭解 Claude SDK 和 prompt engineering 的技巧。這些課程包含以下內容：
+
+* **Anthropic API fundamentals**：介紹如何使用 Claude SDK，包含取得 API 金鑰、操作模型引數、撰寫多模態提示、串流回應等等。
+* **Prompt engineering interactive tutorial**：提供一個完整的循序漸進指南，涵蓋關鍵的 prompt 工程技巧。
+* **Real world prompting**：學習如何將 prompt 工程技巧應用到複雜的真實世界 prompt 中。
+* **Prompt evaluations**：學習如何撰寫生產 prompt 評估，以衡量 prompt 的品質。
+* **Tool use**：教授如何成功地在工作流程中使用 Claude 進行工具使用。
+
+#### 主要功能
+
+這些課程旨在教授使用者如何使用 Claude SDK 和 prompt engineering 技巧來有效地使用 Claude 模型。課程涵蓋以下主題：
+
+* **API 互動**：學習如何與 Claude API 互動，包括取得 API 金鑰、設定引數和處理回應。
+* **Prompt 工程**：學習如何設計有效且精確的提示，以獲得最佳的模型回應。
+* **真實世界應用**：探索如何在真實世界情境中應用 prompt 工程技巧，例如自動化任務或解決複雜問題。
+* **評估技巧**：學習如何評估 prompt 的品質，確保其能產生準確且符合預期的結果。
+* **工具使用**：探索如何使用 Claude 模型進行工具使用，例如資料查詢、程式碼生成和檔案摘要。
+
+#### 如何使用
+
+Anthropic 的課程可以透過線上平臺存取，並提供各種學習資源，例如：
+
+* **線上教材**：包含詳細的課程內容、範例程式碼和練習題。
+* **互動式教程**：提供實作練習，幫助使用者應用所學知識。
+* **社群支援**：提供討論區和線上交流平臺，方便使用者與其他使用者互動。
+
+這些資源旨在幫助使用者循序漸進地學習 Claude SDK 和 prompt engineering 技巧，並將其應用於實際應用中。
+## 📌 [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet)
+<Callout>
+    Description: Low-code platform for building business applications. Connect to databases, cloud storages, GraphQL, API endpoints, Airtable, Google sheets, OpenAI, etc and build apps using drag and drop application builder. Built using JavaScript/TypeScript. 🚀\
+    🌐 JavaScript｜⭐️ 32,163 | 1237 stars this week
+</Callout>
+    #### 簡介
+
+ToolJet 是一個開源的低程式碼框架，用於建立和部署內部工具，而無需大量的工程師資源。ToolJet 的拖放式前端建構器讓您可以在幾分鐘內建立複雜且響應式的前端。此外，您可以整合各種資料來源，包括 PostgreSQL、MongoDB 和 Elasticsearch 等資料庫；具有 OpenAPI 規格和 OAuth2 支援的 API 端點；Stripe、Slack、Google Sheets、Airtable 和 Notion 等 SaaS 工具；以及 S3、GCS 和 Minio 等物件儲存服務，以擷取和寫入資料。
+
+#### 主要功能
+
+* **視覺化應用程式建構器：** 45 個以上的內建響應式元件，包括表格、圖表、清單、表單和進度條。
+* **ToolJet 資料庫：** 內建的無程式碼資料庫。
+* **多頁面：** 建立具有多個頁面的應用程式。
+* **多人編輯：**允許多位開發人員同時建立應用程式。
+* **50 個以上的資料來源：** 整合外部資料庫、雲端儲存和 API。
+* **桌面和行動裝置：** 自訂版面配置寬度以適應各種螢幕尺寸。
+* **自行託管：** 支援 Docker、Kubernetes、AWS EC2、Google Cloud Run 等。
+* **協作：** 在畫布上的任何地方新增註解並標記您的團隊成員。
+* **使用外掛擴充：** 使用我們的命令列工具輕鬆地啟動新的聯結器。
+* **版本控制：** 使用結構化的發行週期管理多個應用程式版本。
+* **執行 JS 和 Python 程式碼：** 執行自訂 JavaScript 和 Python 程式碼片段。
+* **細緻的存取控制：** 在群組和應用程式層級設定許可權。
+* **低程式碼：** 在建構器中幾乎任何地方使用 JS 程式碼，例如根據狀態設定文字顏色，例如 `status === 'success' ? 'green' : 'red'`。
+* **無程式碼查詢編輯器：** 所有受支援的資料來源都提供查詢編輯器。
+* **加入和轉換資料：** 使用 JavaScript 或 Python 程式碼轉換查詢結果。
+* **安全：** 所有認證都使用 aes-256-gcm 安全加密。
+* **資料隱私：** ToolJet 僅作為代理，不會儲存資料。
+* **SSO：** 支援多個單一登入提供者。
+
+#### 如何使用
+
+您可以透過建立 ToolJet Cloud 帳戶來輕鬆開始使用 ToolJet。ToolJet Cloud 提供 ToolJet 的託管解決方案。如果您想要自行託管 ToolJet，請參閱部署檔案。
+您可以在 DigitalOcean 上使用一鍵式部署來部署 ToolJet。
+
+**使用 Docker 嘗試**
+
+想要在您的本地機器上快速使用 ToolJet？您可以從終端機執行以下命令，立即啟動並執行 ToolJet。
+
+```bash
+docker run \
+  --name tooljet \
+  --restart unless-stopped \
+  -p 80:80 \
+  --platform linux/amd64 \
+  -v tooljet_data:/var/lib/postgresql/13/main \
+  tooljet/try:EE-LTS-latest
+```
+
+對於升級 ToolJet 版本的使用者，建議選擇 LTS 版本而不是最新版本。LTS 版本可確保生產環境錯誤修正、安全修補程式和效能增強的穩定性。
+
+**教學課程和範例**
+
+* 時間追蹤應用程式
+* 使用低程式碼建立您自己的 CMS
+* AWS S3 瀏覽器
+
+**檔案**
+
+檔案可在 [https://docs.tooljet.com](https://docs.tooljet.com) 取得。
+
+* 入門
+* 資料來源參考
+* 元件參考
+
+**自行託管**
+
+您可以使用 ToolJet Cloud 取得完全託管的解決方案。如果您想要自行託管 ToolJet，我們提供在 Kubernetes、AWS EC2、Docker 等上部署 ToolJet 的指南。
+
+* **提供者** 
+    * Digital Ocean
+    * Docker
+    * AWS EC2
+    * AWS ECS
+    * OpenShift
+    * Helm
+    * AWS EKS (Kubernetes)
+    * GCP GKE (Kubernetes)
+    * Azure AKS (Kubernetes)
+    * Azure Container
+    * Google Cloud Run
+    * 部署 ToolJet 客戶端
+    * 在子路徑上部署 ToolJet
+
+**市集**
+
+ToolJet 現在可以在 AWS 和 Azure 市集上找到，讓您可以更輕鬆地存取和部署我們的應用程式建構平臺。
+您可以在 [AWS 市集](https://aws.amazon.com/marketplace/pp/prodview-v9m3r72325q21) 找到 ToolJet。
+## 📌 [OpenInterpreter/open-interpreter](https://github.com/OpenInterpreter/open-interpreter)
+<Callout>
+    Description: A natural language interface for computers\
+    🌐 Python｜⭐️ 54,779 | 1064 stars this week
+</Callout>
+    ### 簡介
+
+Open Interpreter 是一個讓大型語言模型 (LLM) 在本地執行程式碼 (Python、JavaScript、Shell 等) 的工具。透過執行 `interpreter` 命令，您可以透過類似 ChatGPT 的介面，以自然語言與 Open Interpreter 在終端機中互動。這提供了一個自然語言介面，讓您可以使用電腦的通用功能。
+
+### 主要功能
+
+* 讓 LLM 在本地執行程式碼，並透過終端機的 ChatGPT 介面進行互動。
+* 執行各種程式語言的程式碼，例如 Python、JavaScript 和 Shell。
+* 允許 LLM 透過自然語言介面與電腦進行互動，例如：
+    * 建立和編輯圖片、影片、PDF 等。
+    * 控制 Chrome 瀏覽器進行搜尋。
+    * 繪製、清理和分析大型資料集。
+
+### 如何使用
+
+* **安裝 Open Interpreter:** 
+    * 使用 pip 安裝： `pip install open-interpreter`
+    * 參考安裝指南解決安裝問題。
+* **使用終端機互動:**
+    * 安裝完成後，執行 `interpreter` 命令即可開始使用。
+    * 使用 `interpreter.chat()`  方法從 Python 程式碼中啟動互動式對話。
+* **使用程式碼進行互動:**
+    * 使用 `interpreter.chat(message)`  方法直接將訊息傳遞給 Open Interpreter 執行。
+    * 使用 `interpreter.messages`  方法儲存和恢復對話內容。
+* **自定義系統訊息:**
+    * 修改 `interpreter.system_message`  屬性，可擴充套件 Open Interpreter 的功能、修改許可權或提供更多上下文。
+* **更改語言模型:**
+    * 使用 `--model`  引數在命令列中選擇不同的語言模型。
+    * 使用 `interpreter.llm.model`  屬性在 Python 程式碼中更改模型。
+* **本地執行 Open Interpreter:**
+    * 使用 `--api_base` 和 `--api_key`  引數連線到 OpenAI 相容的伺服器，例如 LM Studio。
+    * 使用 `--local`  引數使用 Llamafile 在本地執行，無需安裝任何第三方軟體。
+* **調整上下文視窗和最大代幣數:**
+    * 使用 `--max_tokens` 和 `--context_window`  引數調整本地執行模型的最大代幣數和上下文視窗大小。
+* **啟用詳細模式:**
+    * 使用 `--verbose`  引數啟用詳細模式，用於除錯。
+* **使用互動式模式命令:**
+    * 使用 `%verbose`、`%reset`、`%undo` 和 `%help`  命令控制 Open Interpreter 的行為。
+* **配置和配置檔案:**
+    * 使用 `interpreter --profiles`  命令開啟配置檔案目錄，可以自定義 Open Interpreter 的預設行為。
+* **使用 FastAPI 伺服器:**
+    * 使用 `interpreter.server()`  方法啟動 FastAPI 伺服器，透過 HTTP REST 端點控制 Open Interpreter。
+* **Android 平臺:**
+    * 參考 `open-interpreter-termux`  倉庫的逐步指南，在 Android 裝置上安裝 Open Interpreter。
+* **安全注意事項:**
+    * 由於生成的程式碼在本地環境中執行，因此它可能會與您的檔案互動，請謹慎使用。
