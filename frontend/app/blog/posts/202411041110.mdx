@@ -1,0 +1,186 @@
+---
+title: '[11/4 - 11/10] GitHub Weekly Digest'
+publishedAt: '2024-11-10'
+---
+## 📌 [DS4SD/docling](https://github.com/DS4SD/docling)
+<Callout>
+    Description: Get your documents ready for gen AI\
+    🌐 Python｜⭐️ 7,634 | 5809 stars this week
+</Callout>
+    #### 簡介
+
+Docling 是一個強大的工具，可以輕鬆快速地解析檔案並將其輸出到所需的格式。它支援多種檔案格式，包括 PDF、DOCX、PPTX、影象、HTML、AsciiDoc 和 Markdown，並可以輸出到 Markdown 和 JSON 格式。Docling 還提供先進的 PDF 檔案理解功能，包括頁面佈局、閱讀順序和表格結構。
+
+#### 主要功能
+
+* 支援多種檔案格式：PDF、DOCX、PPTX、影象、HTML、AsciiDoc 和 Markdown。
+* 輸出到 Markdown 和 JSON 格式。
+* 先進的 PDF 檔案理解功能，包括頁面佈局、閱讀順序和表格結構。
+* 提供統一且表達力強的 DoclingDocument 表達格式。
+* 輕鬆整合 LlamaIndex 和 LangChain，用於強大的 RAG/QA 應用。
+* 支援 OCR，用於掃描的 PDF。
+* 簡單且方便的 CLI。
+* 支援提取方程式和程式碼。
+* 提取後設資料，包括標題、作者、參考和語言。
+* 提供 LangChain 原生擴充套件。
+
+#### 如何使用
+
+* 使用 pip 安裝 docling：
+```bash
+pip install docling
+```
+* 使用 `convert()` 方法轉換單個檔案：
+```python
+from docling.document_converter import DocumentConverter
+
+source = "https://arxiv.org/pdf/2408.09869"  # 檔案路徑或 URL
+converter = DocumentConverter()
+result = converter.convert(source)
+print(result.document.export_to_markdown())  # 輸出： "## Docling Technical Report[...]"
+```
+* 參閱「入門」指南以瞭解更多資訊和調校選項。
+* 使用討論區獲得幫助和支援。
+* 參閱 Docling 技術報告以瞭解 Docling 內部運作的更多詳細資訊。
+* 參閱「貢獻」指南以瞭解如何貢獻 Docling。
+* 如果你在你的專案中使用 Docling，請考慮引用以下參考。
+## 📌 [twentyhq/twenty](https://github.com/twentyhq/twenty)
+<Callout>
+    Description: Building a modern alternative to Salesforce, powered by the community.\
+    🌐 TypeScript｜⭐️ 20,107 | 2306 stars this week
+</Callout>
+    #### 簡介
+
+- Twenty 是一款專為滿足您獨特商業需求而設計的開放原始碼 CRM 平臺。
+- 它旨在提供比傳統 CRM 平臺（如 Pipedrive 和 Salesforce）更靈活、更可自訂的體驗。
+- Twenty 相信開放原始碼社群將成為下一代 CRM 的核心，因此鼓勵使用者參與貢獻、自行託管或分叉程式碼。
+- Twenty 旨在為您提供完全的掌控權，並幫助您有效率地經營業務。
+- 您可以透過 Twenty 的免費試用版體驗其功能，登入帳戶：`test_email: tim@apple.dev`，`test_password: Applecar2025`。
+- Twenty 提供了多種資源供您探索，例如：
+    - [官網](🌐 Website)
+    - [檔案](📚 Documentation)
+    - [Discord](Discord)
+    - [Figma](Figma)
+
+#### 主要功能
+
+- Twenty 致力於建立一個以使用者為中心的 CRM 平臺，擁有以下特色：
+    - **完全控制，完全自由**：您可以貢獻、自行託管和分叉程式碼，擺脫供應商鎖定，參與塑造 CRM 的開放未來。
+    - **您的資料，您的方式**：Twenty 允許您訪問和視覺化任何現有資料源，而不是強迫您將資料重新調整以符合遠端雲端上的預定義物件。
+    - **直觀易用**：Twenty 的使用者介面靈感來自 Notion，注重友善性與自訂能力，讓您可以輕鬆上手。
+- Twenty 目前處於 Alpha 版本的開發階段，提供以下功能：
+    - 新增、篩選、排序、編輯和追蹤客戶。
+    - 為每個公司建立一個或多個商機。
+    - 透過電子郵件整合輕鬆追蹤交易。
+    - 自訂資料模型以滿足業務需求。
+    - 檢視時間軸中顯示的豐富筆記。
+    - 在記錄上建立任務。
+    - 使用鍵盤快捷鍵和搜尋功能快速瀏覽應用程式。
+
+#### 如何使用
+
+- Twenty 是一個靈活的平臺，您可以根據自己的需求自訂其功能。
+- 您可以透過以下方式使用 Twenty：
+    - 新增、篩選、排序、編輯和追蹤客戶。
+    - 建立並管理商機。
+    - 使用電子郵件整合追蹤交易。
+    - 自訂資料模型。
+    - 新增筆記並建立任務。
+    - 使用鍵盤快捷鍵和搜尋功能快速瀏覽應用程式。
+- 您可以透過 [Twenty 的官網](🌐 Website) 瞭解更多資訊，或加入 [Discord 社群](Discord) 與其他使用者交流。
+- 歡迎您提出任何問題或需求，並在 [GitHub](https://github.com/twentycrm/twenty) 上建立 Issue。
+## 📌 [localsend/localsend](https://github.com/localsend/localsend)
+<Callout>
+    Description: An open-source cross-platform alternative to AirDrop\
+    🌐 Dart｜⭐️ 51,562 | 2036 stars this week
+</Callout>
+    #### 簡介
+
+LocalSend 是一個跨平臺的免費開源應用程式，讓使用者可以在沒有網路連線的情況下，透過本地網路安全地與附近裝置分享檔案和訊息。LocalSend 利用 REST API 和 HTTPS 加密在裝置之間建立安全通訊。與依賴外部伺服器的其他通訊應用程式不同，LocalSend 不需要網路連線或第三方伺服器，使其成為本地通訊快速且可靠的解決方案。
+
+#### 主要功能
+
+* **安全檔案和訊息分享：**LocalSend 使用 REST API 和 HTTPS 加密在裝置之間建立安全連線，確保資料傳輸的安全性。
+* **跨平臺支援：**LocalSend 支援多種平臺，包括 Windows、macOS、Linux、Android 和 iOS。
+* **無需網路連線：**LocalSend 不需要網路連線，讓使用者可以在沒有網路的情況下與附近裝置通訊。
+* **快速且可靠：**LocalSend 使用本地網路傳輸資料，提供快速且可靠的通訊速度。
+* **開源：**LocalSend 是一個開源軟體，使用者可以自由使用、修改和分享。
+
+#### 如何使用
+
+* **下載和安裝：**您可以從應用程式商店或套件管理器下載 LocalSend 應用程式。
+* **設定：**在大部分情況下，LocalSend 可以直接使用。如果您在傳送或接收檔案時遇到問題，可能需要設定您的防火牆，允許 LocalSend 在您的本地網路中通訊。
+* **使用：**LocalSend 的使用非常簡單，只要開啟應用程式並選擇要分享的檔案或訊息，然後選擇要分享的裝置即可。
+* **Portable 模式：**LocalSend 支援 Portable 模式，讓您可以在沒有安裝的情況下使用應用程式。
+* **開始隱藏：**您可以使用 `--hidden` 引數啟動 LocalSend，讓它在系統託盤中隱藏執行。
+* **翻譯：**您可以透過 Weblate 平臺或手動修改 `app/assets/i18n` 目錄下的檔案來翻譯 LocalSend。
+* **貢獻：**您可以透過翻譯、修復錯誤或改善功能來貢獻 LocalSend 開發。
+## 📌 [abi/screenshot-to-code](https://github.com/abi/screenshot-to-code)
+<Callout>
+    Description: Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)\
+    🌐 Python｜⭐️ 59,190 | 1846 stars this week
+</Callout>
+    #### 簡介
+
+* screenshot-to-code 是一款利用 AI 將截圖、模型和 Figma 設計轉換成乾淨、功能性程式碼的工具。
+* 支援 Claude Sonnet 3.5 和 GPT-4o 模型，並提供實驗性的影片轉換功能。
+* 該工具包含 React/Vite 前端和 FastAPI 後端，並提供免費的線上試用版和付費的企業版。
+
+#### 主要功能
+
+* 支援將截圖轉換成多種前端框架的程式碼，包括 HTML + Tailwind、React + Tailwind、Vue + Tailwind 等等。
+* 支援使用 Claude Sonnet 3.5 和 GPT-4o 模型進行程式碼生成。
+* 支援使用 DALL-E 3 或 Flux Schnell 生成影象。
+* 提供實驗性的影片轉換功能，可以將網站操作錄製成功能性原型。
+
+#### 如何使用
+
+* 需擁有 OpenAI API key 或 Anthropic key（可選）。
+* 安裝 Poetry 並使用 Poetry 管理套件。
+* 在後端目錄中設定 OpenAI API key 和 Anthropic key。
+* 執行後端：
+    ```bash
+    cd backend
+    echo "OPENAI_API_KEY=sk-your-key" > .env
+    echo "ANTHROPIC_API_KEY=your-key" > .env
+    poetry install
+    poetry shell
+    poetry run uvicorn main:app --reload --port 7001
+    ```
+* 執行前端：
+    ```bash
+    cd frontend
+    yarn
+    yarn dev
+    ```
+* 開啟 http://localhost:5173 即可使用。
+* 可以使用 Docker 執行應用程式，但無法進行開發。
+* 可在前端設定頁面中設定 OpenAI API key 和 Anthropic key。
+* 可以使用模擬模式執行後端，以節省 GPT4-Vision 額度。
+    ```bash
+    MOCK=true poetry run uvicorn main:app --reload --port 7001
+    ```
+## 📌 [All-Hands-AI/OpenHands](https://github.com/All-Hands-AI/OpenHands)
+<Callout>
+    Description: 🙌 OpenHands: Code Less, Make More\
+    🌐 Python｜⭐️ 35,292 | 1842 stars this week
+</Callout>
+    #### 簡介
+
+OpenHands 是一個基於 AI 的軟體開發代理平臺，旨在協助開發者更有效率地開發軟體。它可以執行人類開發者能做的一切，例如修改程式碼、執行指令、瀏覽網路、呼叫 API，甚至從 StackOverflow 複製程式碼片段。
+
+#### 主要功能
+
+* 允許開發者使用 AI 代理進行軟體開發，例如修改程式碼、執行指令、瀏覽網路、呼叫 API 和複製程式碼片段。
+* 支援多種大型語言模型 (LLM) 提供者，例如 Anthropic 的 Claude 3.5 Sonnet。
+* 提供 Docker 容器映像以供快速部署。
+* 支援本地檔案系統連線、headless 模式、CLI 介面和 GitHub Action 整合。
+* 提供豐富的文件和故障排除指南。
+
+#### 如何使用
+
+* 使用 Docker 容器映像快速部署 OpenHands。
+* 設定 LLM 提供者和 API 金鑰。
+* 使用 CLI 介面或網頁介面與 OpenHands 互動。
+* 透過 GitHub Action 整合使用 OpenHands 自動化開發工作流程。
+* 參閱文件和故障排除指南以瞭解更多使用技巧和解決問題。
