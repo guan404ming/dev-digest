@@ -1,0 +1,189 @@
+---
+title: '[11/11 - 11/17] GitHub Weekly Digest'
+publishedAt: '2024-11-17'
+---
+## 📌 [dockur/windows](https://github.com/dockur/windows)
+<Callout>
+    Description: Windows inside a Docker container.\
+    🌐 Shell｜⭐️ 28,771 | 9919 stars this week
+</Callout>
+    #### 簡介
+
+* 本專案提供一個在 Docker 容器內執行 Windows 系統的解決方案。
+* 支援多種 Windows 版本，包含 Windows 11、Windows 10、Windows Server 等。
+* 利用 KVM 加速虛擬化效能。
+* 提供基於網頁的檢視器，方便使用者監控與操作。
+* 支援 Docker Compose、Docker CLI 和 Kubernetes 部署方式。
+* 可自訂 Windows 版本、磁碟大小、儲存位置、使用者名稱和密碼等。
+* 支援自定義 ISO 映像檔安裝與指令碼執行。
+* 可透過 RDP 連線遠端操控 Windows 系統。
+
+
+#### 主要功能
+
+* **ISO 下載器 (ISO downloader):**  自動下載並安裝指定的 Windows 版本。
+* **KVM 加速 (KVM acceleration):** 利用 KVM 技術提升虛擬機器效能。
+* **基於網頁的檢視器 (Web-based viewer):** 提供瀏覽器介面觀看 Windows 系統桌面 (主要用於安裝過程)。
+* **多種 Windows 版本支援:** 支援多種 Windows 版本和 Server 版本的安裝。
+* **自訂磁碟大小 (DISK_SIZE):**  可調整虛擬硬碟大小。
+* **自訂儲存位置 (volumes):**  可指定 Windows 系統儲存的路徑。
+* **檔案分享 (volumes):**  可將主機上的資料夾與容器內的 Windows 系統共享。
+* **自訂安裝指令碼 (install.bat):**  允許在安裝過程中執行自定義指令碼。
+* **自訂使用者名稱和密碼 (USERNAME, PASSWORD):** 可設定 Windows 使用者的帳號和密碼。
+* **支援多種語言和鍵盤佈局 (LANGUAGE, KEYBOARD, REGION):**  可選擇不同的 Windows 語言、鍵盤佈局和地區設定。
+
+
+#### 如何使用
+
+* **使用 Docker Compose:**  修改 `docker-compose.yml` 檔案設定所需引數後，執行 `docker-compose up -d` 命令啟動容器。
+* **使用 Docker CLI:**  使用 `docker run` 命令啟動容器，並設定相關引數，例如埠對映、KVM 裝置、許可權等等。
+* **使用 Kubernetes:**  使用提供的 Kubernetes YAML 檔案部署容器。
+* **版本選擇:**  透過環境變數 `VERSION` 選擇 Windows 版本 (例如: `VERSION: "11"` 代表 Windows 11 Pro)。
+* **磁碟大小調整:**  透過環境變數 `DISK_SIZE` 調整虛擬磁碟大小 (例如: `DISK_SIZE: "256G"`)。
+* **儲存位置更改:**  透過 `volumes` 設定修改儲存位置。
+* **檔案分享設定:**  透過 `volumes` 設定分享主機與容器之間的檔案。
+* **RDP 連線:**  使用 RDP 客戶端連線到容器的 IP 位址 (預設使用者名稱為 Docker，密碼留空)。
+* **自訂 ISO 安裝:**  透過環境變數 `VERSION` 指定 ISO 映像檔網址或掛載本地 ISO 映像檔。
+* **執行安裝後指令碼:**  建立 `install.bat` 檔案並掛載至容器，在安裝完成後執行。
+## 📌 [exo-explore/exo](https://github.com/exo-explore/exo)
+<Callout>
+    Description: Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚\
+    🌐 Python｜⭐️ 14,786 | 3662 stars this week
+</Callout>
+    #### 簡介
+
+exo 是一個實驗性軟體，讓使用者能利用家中現有的裝置 (例如 iPhone、iPad、Android 手機、Mac 電腦、Linux 系統等) 建立一個強大的 AI 叢集，而不需要昂貴的 NVIDIA GPU。它能將不同裝置的運算能力整合起來，執行大型語言模型 (LLM)，例如 LLaMA、Mistral、LlaVA、Qwen 和 Deepseek 等。exo 的設計理念是讓不同效能的裝置都能參與運算，即使加入效能較低的裝置，雖然會降低單次推論的延遲，但能提升整體叢集的吞吐量。
+
+
+#### 主要功能
+
+*   **廣泛的模型支援:** 支援 LLaMA (MLX 和 tinygrad)、Mistral、LlaVA、Qwen 和 Deepseek 等多種模型。
+*   **動態模型分割:**  根據網路拓撲和裝置資源，最佳化模型分割，允許執行比單一裝置更大的模型。
+*   **自動裝置發現:**  自動發現可用裝置，無需手動配置。
+*   **相容 ChatGPT 的 API:** 提供相容 ChatGPT 的 API，方便應用程式整合。
+*   **裝置平等:**  採用點對點 (p2p) 架構，而非主從式架構，任何連線的裝置都能參與運算。
+*   **多種分割策略:** 支援多種模型分割策略，預設為環狀記憶體加權分割 (ring memory weighted partitioning)。
+*   **異構裝置支援:**  支援不同規格的裝置，例如具備強大 GPU 的裝置和僅有整合式 GPU 或 CPU 的裝置。
+*   **ChatGPT-like WebUI:** 提供一個類似 ChatGPT 的網頁介面 (由 tinygrad tinychat 驅動)。
+
+
+#### 如何使用
+
+*   **安裝:** 建議從原始碼安裝，需要 Python 3.12.0 以上版本。Linux 系統需安裝 NVIDIA 驅動程式、CUDA 和 cuDNN。
+*   **硬體需求:**  所有裝置的總記憶體需大於等於模型所需記憶體。
+*   **從原始碼安裝:** 使用 `git clone https://github.com/exo-explore/exo.git`  `cd exo` `pip install -e .` 或 `source install.sh` 安裝。
+*   **多裝置使用:** 在每個裝置上執行 `exo` 命令，exo 會自動發現其他裝置。
+*   **API 使用:**  使用 `curl` 命令呼叫  `http://localhost:52415/v1/chat/completions` API  進行推論，需指定模型名稱和提示訊息。範例在檔案中有提供。
+*   **單裝置使用:** 使用 `exo run model_name` 命令執行模型推論，可加入 `--prompt` 引數自訂提示。
+*   **模型儲存:** 模型預設儲存於 `~/.cache/huggingface/hub` 目錄。
+*   **效能最佳化 (Apple Silicon Mac):**  升級至最新 MacOS 15，並執行 `./configure_mlx.sh`。
+## 📌 [LibraHp/GetQzonehistory](https://github.com/LibraHp/GetQzonehistory)
+<Callout>
+    Description: 获取QQ空间发布的历史说说\
+    🌐 Python｜⭐️ 5,454 | 2988 stars this week
+</Callout>
+    #### 簡介
+
+* 這是一個用於獲取QQ空間歷史說說（僅限於訊息列表中可見的說說）的Python專案。
+* 專案已打包成可執行檔案，可在release頁面下載。
+* 透過模擬登入QQ空間，獲取歷史訊息列表，並進行資料分析。
+* 將爬取的說說儲存到`/resource/result`目錄下的Excel檔案。
+* 程式碼可能存在疏漏，可自行完善。
+* 專案包含詳細的目錄結構和使用方法說明。
+* 需自行安裝依賴項，推薦使用虛擬環境。
+* 使用前請仔細閱讀免責宣告，瞭解其風險和責任。
+
+
+#### 主要功能
+
+* 模擬登入QQ空間。
+* 獲取QQ空間歷史訊息列表。
+* 解析並提取說說內容。
+* 將提取的說說儲存到Excel檔案。
+* 提供配置檔案用於自定義儲存路徑。
+* 使用模組化設計，方便程式碼維護和擴充套件。
+* 支援自定義配置引數。
+* 基於Python開發，可擴充套件性強。
+
+
+#### 如何使用
+
+* 使用`git clone https://github.com/LibraHp/GetQzonehistory.git`克隆專案倉庫。
+* 使用`python -m venv myenv`建立虛擬環境（推薦）。
+* 啟用虛擬環境（Windows: `myenv\Scripts\activate`）。
+* 安裝依賴項（`pip install -r requirements.txt`）。
+* 執行可執行檔案（位於release頁面）。
+*  (或者)執行`main.py` 或 `fetch_all_message.py` (需配置config.ini檔案)。
+* 獲取到的說說將儲存到`/resource/result`目錄下，檔名格式為“你的qq.xlsx”。
+* 可參考B站上的詳細教程。
+## 📌 [vercel/ai-chatbot](https://github.com/vercel/ai-chatbot)
+<Callout>
+    Description: A full-featured, hackable Next.js AI chatbot built by Vercel\
+    🌐 TypeScript｜⭐️ 9,358 | 2571 stars this week
+</Callout>
+    #### 簡介
+
+* 基於 Next.js 和 Vercel AI SDK 建立的開源 AI 聊天機器人模板。
+* 使用 React Server Components (RSCs) 和 Server Actions 提升效能。
+* 整合了 OpenAI、Anthropic、Cohere 等多種大型語言模型 (LLM) 提供者。
+* 利用 Vercel Postgres 和 Vercel Blob 儲存聊天記錄和使用者資料。
+* 使用 NextAuth.js 進行簡單安全的身份驗證。
+* 預設使用 OpenAI gpt-4o 模型，但可輕鬆切換至其他 LLM 提供者。
+
+
+#### 主要功能
+
+* **Next.js App Router:** 提供高效且流暢的導航體驗。
+* **React Server Components (RSCs) & Server Actions:**  提升伺服器端渲染效能。
+* **Vercel AI SDK:**  提供統一的 API，支援文字生成、結構化物件及工具呼叫，並包含建構動態聊天和生成式使用者介面的 Hooks。
+* **shadcn/ui & Tailwind CSS:**  簡潔易用的樣式設計與元件。
+* **資料持久化:** 使用 Vercel Postgres 儲存聊天記錄和使用者資料，Vercel Blob 儲存檔案。
+* **多模型支援:** 支援 OpenAI、Anthropic、Cohere 等多種 LLM 提供者。
+* **NextAuth.js:**  簡潔安全的身份驗證系統。
+
+
+#### 如何使用
+
+*  複製專案並安裝相依套件。
+*  設定 `.env` 檔案，填寫從 `.env.example` 複製的環境變數，包含 API 金鑰等敏感資訊 (切勿將 `.env` 檔案提交至版本控制系統)。
+*  使用 Vercel 環境變數或 `.env` 檔案設定環境。
+*  執行 `npm run dev` 或 `yarn dev` 開啟開發伺服器。
+*  透過 Vercel 一鍵部署至線上環境。
+*  AI SDK 的使用方式請參考官方檔案，可輕鬆切換不同 LLM 提供者。
+*  善用 Next.js App Router 和 RSCs/Server Actions 最佳化應用程式效能。
+## 📌 [DS4SD/docling](https://github.com/DS4SD/docling)
+<Callout>
+    Description: Get your documents ready for gen AI\
+    🌐 Python｜⭐️ 9,393 | 1814 stars this week
+</Callout>
+    #### 簡介
+
+Docling 是一個高效且易於使用的檔案解析器，能快速將各種格式的檔案轉換成所需的輸出格式。它支援多種流行的文件格式，並提供進階的 PDF 檔案理解功能，例如頁面佈局、閱讀順序和表格結構分析。Docling 還能輕鬆整合到 LlamaIndex 和 LangChain 等框架中，用於構建強大的問答應用程式。
+
+
+#### 主要功能
+
+* 支援讀取 PDF、DOCX、PPTX、圖片、HTML、AsciiDoc 和 Markdown 等多種檔案格式。
+* 支援將檔案輸出為 Markdown 和 JSON 格式。
+* 提供進階的 PDF 檔案理解能力，包含頁面佈局、閱讀順序和表格結構分析。
+* 使用統一且表達力強大的 DoclingDocument 表示格式。
+* 輕鬆整合 LlamaIndex 和 LangChain，適用於構建基於檢索增強生成 (RAG) 的問答應用程式。
+* 支援光學字元辨識 (OCR)，可用於處理掃描的 PDF 檔案。
+* 提供簡單易用的命令列介面 (CLI)。
+* 未來將支援方程式和程式碼提取、後設資料提取 (包含標題、作者、參考文獻和語言)以及原生 LangChain 擴充功能。
+
+
+#### 如何使用
+
+* 使用 pip 安裝 Docling：`pip install docling`
+* 使用 `DocumentConverter` 類別進行檔案轉換：
+```python
+from docling.document_converter import DocumentConverter
+
+source = "https://arxiv.org/pdf/2408.09869"  # 檔案的本地路徑或網址
+converter = DocumentConverter()
+result = converter.convert(source)
+print(result.document.export_to_markdown()) 
+```
+*  參考檔案中的更多範例和調整選項，以充分發揮 Docling 的功能。
+*  更多詳細的安裝說明和使用說明請參考官方檔案。
