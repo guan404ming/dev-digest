@@ -1,0 +1,152 @@
+---
+title: '[11/25 - 12/1] GitHub Weekly Digest'
+publishedAt: '2024-12-01'
+---
+## 📌 [abi/screenshot-to-code](https://github.com/abi/screenshot-to-code)
+<Callout>
+    Description: Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)\
+    🌐 Python｜⭐️ 64,096 | 3494 stars this week
+</Callout>
+    #### 簡介
+
+* Screenshot-to-Code 是一個利用 AI 將螢幕截圖、模型設計稿和 Figma 設計轉換成乾淨、功能性程式碼的簡單工具。
+* 支援 Claude Sonnet 3.5 和 GPT-4o 等 AI 模型。
+* 支援多種技術棧，包括 HTML + Tailwind、React + Tailwind、Vue + Tailwind 等。
+* 提供線上付費版本，以及針對大型企業的客製化方案。
+* 也實驗性地支援將網站影片/螢幕錄製轉換成功能原型。
+
+
+#### 主要功能
+
+* 將螢幕截圖轉換成程式碼：支援各種設計稿和截圖的轉換。
+* 支援多種 AI 模型：包括 Claude Sonnet 3.5 和 GPT-4o，可選擇不同模型進行比較。
+* 支援多種前端技術棧：涵蓋主流框架和樣式庫，例如 React、Vue、Tailwind CSS 等。
+* 支援圖片生成：透過 DALL-E 3 或 Flux Schnell (使用 Replicate) 生成圖片。
+* 提供線上版本和本地部署版本：方便使用者根據需求選擇使用方式。
+* 實驗性支援影片轉換：可將網站影片/螢幕錄製轉換成功能原型。
+
+
+#### 如何使用
+
+* **本地部署：**
+    *  需要 OpenAI API key (建議) 或 Anthropic key (可選)。
+    *  使用 Poetry 安裝後端套件 (`pip install poetry`)。
+    *  設定環境變數 `OPENAI_API_KEY` 和 `ANTHROPIC_API_KEY`。
+    *  執行後端 (`poetry run uvicorn main:app --reload --port 7001`)。
+    *  執行前端 (`yarn`, `yarn dev`)。
+    *  開啟瀏覽器訪問 `http://localhost:5173`。
+    *  可使用 Docker 部署。
+* **線上版本：**  直接使用線上付費版本。
+* **設定 API key:**  可在前端設定介面設定 API key。
+* **模擬模式:**  `MOCK=true poetry run uvicorn main:app --reload --port 7001` 可在不消耗 GPT4-Vision 點數的情況下執行後端模擬模式。
+* **代理設定:**  若無法直接存取 OpenAI API，可設定 `OPENAI_BASE_URL` 使用代理伺服器。
+## 📌 [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books)
+<Callout>
+    Description: 📚 Freely available programming books\
+    🌐 HTML｜⭐️ 340,626 | 1736 stars this week
+</Callout>
+    #### 簡介
+
+*  此清單最初是 StackOverflow 上「免費可取得程式設計書籍清單」的複製版本，由 Karan Bhangui 和 George Stocker 貢獻。
+*  Victor Felder 將清單移至 GitHub，方便協作更新和維護。
+*  它已發展成為 GitHub 上最受歡迎的儲存庫之一。
+*  目前由非營利組織 Free Ebook Foundation 管理，該組織致力於促進免費電子書的創作、分發、歸檔和永續發展。
+*  美國的捐款可抵稅。
+
+
+#### 主要功能
+
+*  提供多種語言的免費學習資源清單，包含書籍、備忘單、線上課程、互動式程式設計資源、習題集和競程資源以及Podcast和螢幕錄影。
+*  資源按型別分組，例如按程式語言或主題分類的英文書籍，以及其他語言的書籍。
+*  涵蓋多種程式語言和主題。
+*  提供多種語言的資源，例如阿拉伯語、中文、法語、德語、日語、韓語、西班牙語等等。
+*  持續更新和維護，並鼓勵使用者貢獻。
+
+
+#### 如何使用
+
+*  透過連結 [https://ebookfoundation.github.io/free-programming-books-search/](https://ebookfoundation.github.io/free-programming-books-search/) 搜尋清單。
+*  網站提供易於閱讀的介面。
+*  參考 CONTRIBUTING 檔案瞭解如何貢獻。
+*  遵循其行為準則 (包含多國語言版本)。
+*  透過頁面上的分享按鈕，分享至不同社群媒體平臺。
+*  根據程式語言、主題或語言篩選所需的資源。
+## 📌 [black-forest-labs/flux](https://github.com/black-forest-labs/flux)
+<Callout>
+    Description: Official inference repo for FLUX.1 models\
+    🌐 Python｜⭐️ 17,935 | 1735 stars this week
+</Callout>
+    #### 簡介
+
+FLUX 是由 Black Forest Labs 開發的一套影象生成與編輯模型套件。此程式庫提供簡潔的推論程式碼，讓使用者能透過本地端安裝或 API 進行影象生成與編輯。  提供了多種模型，涵蓋文字轉影象、影象內外繪製 (In/Out-painting)、結構調節 (Structural Conditioning) 和影象變體 (Image variation) 等功能，部分模型可在 Hugging Face 上找到，部分則需透過 API 訪問。
+
+
+#### 主要功能
+
+* **文字轉影象 (Text to Image):** 將文字描述轉換成對應的影象。  提供多種不同版本的模型 (FLUX.1 [schnell], FLUX.1 [dev], FLUX.1 [pro], FLUX1.1 [pro] 等)。
+* **影象內外繪製 (In/Out-painting):**  FLUX.1 Fill 模型系列，可以進行影象內部或外部的繪製。
+* **結構調節 (Structural Conditioning):**  透過 Canny 和 Depth 模型系列，根據邊緣或深度資訊進行影象的結構調整。
+* **影象變體 (Image variation):** FLUX.1 Redux 模型系列，用於產生圖片的變體。
+* **多種授權模式:**  部分模型採用 Apache-2.0 授權，部分則採用 FLUX.1-dev 非商業授權。
+* **Hugging Face 與 API 支援:** 部分模型可在 Hugging Face 上取得，其餘則需透過 Black Forest Labs 提供的 API 訪問。
+
+
+#### 如何使用
+
+* **本地端安裝:** 使用 `git clone`, `python3.10 -m venv`, `source .venv/bin/activate`, `pip install -e ".[all]"` 等指令安裝套件。
+* **API 使用:**  需要先在 api.bfl.ml註冊並取得 API 金鑰。
+* **API 金鑰設定:**  設定環境變數 `BFL_API_KEY` 或使用 `api_key` 引數傳遞 API 金鑰。
+* **Python 介面:** 使用 `from flux.api import ImageRequest` 匯入 API 請求函式。
+* **模型選擇:**  根據需求選擇不同的 FLUX 模型，例如 FLUX.1 [schnell] 或 FLUX.1 Fill [dev] 等。
+* **Hugging Face 模型下載:** 部分模型可在 Hugging Face 上下載並使用。
+* **API 檔案:**  API 使用說明請參考 docs.bfl.ml。
+* **範例程式碼:**  `request = ImageRequest(...)`  (程式碼片段不完整，僅供參考)。
+## 📌 [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app)
+<Callout>
+    Description: 📨 The ultimate social media scheduling tool, with a bunch of AI 🤖\
+    🌐 TypeScript｜⭐️ 13,270 | 1602 stars this week
+</Callout>
+    #### 簡介
+
+Postiz 是一款強大的 AI 社群媒體排程工具，提供全面的功能來管理您的社群媒體貼文、建立受眾、捕捉潛在客戶並發展業務。它是 Buffer.com、Hypefury 和 Twitter Hunter 等工具的替代方案，旨在成為全球最佳的開源社群媒體排程工具。
+
+
+#### 主要功能
+
+* 排程所有社群媒體貼文 (具備多項 AI 功能)。
+* 使用分析資料衡量工作成效。
+* 與其他團隊成員協作交換或購買貼文。
+* 邀請團隊成員協作、評論和排程貼文。
+* 現階段託管版本和自託管版本沒有差異。
+
+
+#### 如何使用
+
+目前檔案未提供詳細的使用說明，但從簡介和功能描述可以推斷，使用者需要註冊帳號，並可透過 Postiz 的介面排程社群媒體貼文、追蹤分析資料及與團隊成員協作。  更多使用方法細節請參考官方檔案 (Explore the docs »)。
+## 📌 [bluesky-social/social-app](https://github.com/bluesky-social/social-app)
+<Callout>
+    Description: The Bluesky Social application for Web, iOS, and Android\
+    🌐 TypeScript｜⭐️ 13,248 | 1330 stars this week
+</Callout>
+    #### 簡介
+
+* Bluesky Social 是一款去中心化社群媒體應用程式，使用 React Native (TypeScript) 開發，並基於 AT Protocol (Authenticated Transfer Protocol) 協議。
+* 應用程式程式碼已開源，但部分 Web 服務使用 Go 語言編寫。
+* 提供 Web、iOS 和 Android 版本。
+*  應用程式使用 `app.bsky.*` 名稱空間的 Schema 和 APIs，屬於 AT Protocol 架構的一部分。
+* 鼓勵高品質的 Issue 和 Pull Request，但資源有限，可能無法回應所有提問或審查所有貢獻。
+
+
+#### 主要功能
+
+*  基於去中心化社群媒體協議 AT Protocol。
+*  提供釋出和檢視貼文的核心社群媒體功能 (雖然檔案未明確說明所有功能)。
+*  React Native 開發，支援跨平臺使用 (Web, iOS, Android)。
+
+
+#### 如何使用
+
+*  下載應用程式：可從 Web (bsky.app)、App Store 或 Play Store 下載。
+*  參與貢獻：提交高品質的 Issue 和 Pull Request，並遵循提供的規範和指引。  在提交 Pull Request 之前，請先開 Issue 討論。
+*  避擴音交不必要的 Pull Request，例如更改 UI 字詞、重構程式碼或新增未經討論的新功能。
+*  Fork 應用程式：允許 Fork 應用程式，但需更改所有品牌標識、支援連結和分析系統，以避免與 Bluesky 混淆。
