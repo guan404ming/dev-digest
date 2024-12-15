@@ -1,0 +1,194 @@
+---
+title: '[12/9 - 12/15] GitHub Weekly Digest'
+publishedAt: '2024-12-15'
+---
+## 📌 [astral-sh/uv](https://github.com/astral-sh/uv)
+<Callout>
+    Description: An extremely fast Python package and project manager, written in Rust.\
+    🌐 Rust｜⭐️ 32,241 | 3453 stars this week
+</Callout>
+    #### 簡介
+
+uv 是一個以 Rust 編寫的極速 Python 套件和專案管理器，旨在取代 pip、pip-tools、pipx、poetry、pyenv、twine、virtualenv 等工具。它速度比 pip 快 10 到 100 倍，支援多種作業系統 (macOS, Linux, Windows)，並提供單一工具來管理 Python 版本、執行和安裝 Python 應用程式，以及管理專案相依性與環境。uv 也提供 pip 相容介面，方便使用者遷移。它具有全域快取機制，可減少磁碟空間使用量並提升效能。
+
+
+#### 主要功能
+
+* **極速套件與專案管理:**  uv 比 pip 快 10-100 倍，能有效管理 Python 專案的相依性與環境。
+* **Python 版本管理:**  安裝及切換不同版本的 Python。
+* **工具管理 (Tool Management):**  執行及安裝命令列工具 (類似 pipx)。
+* **專案管理 (Project Management):** 支援 lockfiles、workspaces 等功能，類似 rye 或 poetry。
+* **單檔案指令碼支援 (Script Support):** 管理單檔案指令碼的相依性和環境，支援內嵌相依性 metadata。
+* **pip 相容介面:** 提供與 pip、pip-tools 和 virtualenv 相容的介面，並提供進階功能。
+* **全域快取:** 減少磁碟空間使用量，提升效能。
+* **Cargo-style 工作區:** 支援大型專案的擴充套件性。
+* **跨平臺支援:** 支援 macOS、Linux 和 Windows。
+
+
+#### 如何使用
+
+* **安裝:** 使用 standalone installers (curl 或 powershell指令) 或 pip/pipx 安裝。  `uv self update` 更新至最新版本。
+* **專案初始化:** `uv init example` 初始化名為 `example` 的專案。
+* **新增套件:** `uv add ruff`  新增 ruff 套件。
+* **執行指令碼/工具:** `uv run ruff check` 執行 ruff check; `uvx pycowsay 'hello world!'` 執行 pycowsay。
+* **安裝工具:** `uv tool install ruff` 安裝 ruff 工具。
+* **安裝 Python 版本:** `uv python install 3.10 3.11 3.12` 安裝多個 Python 版本。
+* **建立虛擬環境:** `uv venv` 或 `uv venv --python 3.12.0` 指定 Python 版本。
+* **使用 pip 相容介面:** `uv pip compile` 編譯 requirements; `uv pip sync` 安裝鎖定的需求。
+* **管理單檔案指令碼:**  在指令碼中加入 inline metadata 宣告相依性，然後使用 `uv run` 執行。
+## 📌 [fishaudio/fish-speech](https://github.com/fishaudio/fish-speech)
+<Callout>
+    Description: SOTA Open Source TTS\
+    🌐 Python｜⭐️ 17,065 | 1342 stars this week
+</Callout>
+    #### 簡介
+
+* Fish Speech 是一個支援多語言、零樣本和少樣本文字轉語音 (TTS) 模型，其特色在於高準確度、速度快且無需依賴音素。
+* Fish Agent 則是一個端到端的語音代理，整合了自動語音辨識 (ASR) 和 TTS，並能控制音色及表達情感。
+* 兩個專案皆已開源，並提供線上及本地端推論介面。
+* 程式碼遵循 Apache License，模型權重則遵循 CC-BY-NC-SA-4.0 License。
+* 目前仍為 Alpha 版本，存在一些錯誤，歡迎提交 issue 或 pull request。
+
+
+#### 主要功能
+
+**Fish Speech:**
+
+* 零樣本和少樣本 TTS：只需 10-30 秒的語音樣本即可產生高品質 TTS 輸出。
+* 多語言和跨語言支援：支援英文、日文、韓文、中文、法文、德文、阿拉伯文和西班牙文。
+* 無需音素：模型具有強大的泛化能力，不依賴音素。
+* 高準確度：5 分鐘英文文字的 CER 和 WER 約為 2%。
+* 快速推論：在 Nvidia RTX 4060 筆電上實時係數約為 1:5，在 RTX 4090 上約為 1:15。
+* 提供 WebUI 和 GUI 推論介面。
+* 易於部署：支援 Linux、Windows 和 macOS。
+
+
+**Fish Agent:**
+
+* 端到端：整合 ASR 和 TTS，無需額外模型。
+* 音色控制：可以使用參考音訊來控制語音音色。
+* 情感表達：模型可以產生富有情感的語音。
+
+
+#### 如何使用
+
+* 線上體驗：可透過線上 Demo 進行英文和中英文聊天。
+* 本地端推論：詳見檔案說明，可使用 `inference.ipynb`  進行本地端推論。
+* 介面選擇：提供基於 Gradio 的 WebUI 和 PyQt6 的 GUI，適用於多種作業系統。
+* 檔案：提供英文、中文、日文和葡萄牙文 (巴西) 檔案。
+## 📌 [leerob/next-saas-starter](https://github.com/leerob/next-saas-starter)
+<Callout>
+    Description: Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui.\
+    🌐 TypeScript｜⭐️ 6,889 | 1145 stars this week
+</Callout>
+    #### 簡介
+
+* 基於 Next.js 開發的 SaaS 應用程式啟動模板。
+* 提供身份驗證、Stripe 支付整合和使用者儀錶板。
+* 採用最新的 React 和 Next.js 模式，簡化常見 SaaS 開發任務，例如表單建立、資料庫互動等。
+* 範例應用程式已部署至 Vercel：https://next-saas-start.vercel.app/
+*  主要使用React hooks，例如`useActionState`處理表單錯誤和延遲狀態，以及`React Server Actions`簡化 API 呼叫。
+*  利用Next.js和React hook 建立強大的`useUser()` hook，方便從Postgres資料庫擷取使用者資訊。
+
+
+#### 主要功能
+
+* 具有動畫終端元素的行銷登陸頁面 (/)。
+* 連線到 Stripe Checkout 的價格頁面 (/pricing)。
+* 具有使用者/團隊 CRUD 操作的儀錶板頁面。
+* 基於角色的存取控制 (RBAC)，包含擁有者和成員角色。
+* 使用 Stripe 客戶入口網站進行訂閱管理。
+* 使用 JWT 儲存至 Cookie 的電子郵件/密碼身份驗證。
+* 全域中介軟體來保護已登入的路由。
+* 本地中介軟體來保護伺服器動作或驗證 Zod 架構。
+* 任何使用者事件的活動記錄系統。
+
+
+#### 如何使用
+
+* 從 GitHub 複製程式碼：`git clone https://github.com/leerob/next-saas-starter`
+* 安裝套件：`pnpm install`
+* 執行設定指令碼以建立 `.env` 檔案：`pnpm db:setup`
+* 執行資料庫遷移和填充預設使用者和團隊資料：`pnpm db:migrate` 和 `pnpm db:seed` (預設使用者: test@test.com, 密碼: admin123)
+* 執行 Next.js 開發伺服器：`pnpm dev`
+* 開啟瀏覽器並訪問 `http://localhost:3000`。
+*  (選項) 使用 Stripe CLI 監聽本地端 Webhook：`stripe listen --forward-to localhost:3000/api/stripe/webhook` (測試支付功能請使用測試卡號: 4242 4242 4242 4242，到期日及CVC隨意)
+* 部署至生產環境：設定生產環境 Stripe webhook，並將程式碼部署至 Vercel。
+## 📌 [QuivrHQ/MegaParse](https://github.com/QuivrHQ/MegaParse)
+<Callout>
+    Description: File Parser optimised for LLM Ingestion with no loss 🧠 Parse PDFs, Docx, PPTx in a format that is ideal for LLMs.\
+    🌐 Python｜⭐️ 4,295 | 1140 stars this week
+</Callout>
+    #### 簡介
+
+MegaParse 是一個強大且多功能的檔案解析器，能輕鬆處理各種檔案型別，包括文字、PDF、PowerPoint 簡報和 Word 檔案等，其核心目標是確保在解析過程中不會遺失任何資訊。它是一個開源且免費使用的工具，支援多種檔案格式和內容元素，包括表格、目錄、頁首、頁尾和圖片。
+
+
+#### 主要功能
+
+*   **多功能解析器 (Versatile Parser):**  輕鬆處理各種檔案型別。
+*   **無資訊遺失 (No Information Loss):**  確保解析過程不丟失任何資訊。
+*   **快速且高效 (Fast and Efficient):**  以速度和效率為核心設計。
+*   **廣泛的檔案相容性 (Wide File Compatibility):** 支援 Text, PDF, PowerPoint, Excel, CSV, Word 檔案。
+*   **開源 (Open Source):** 免費且開源。
+*   **支援多種檔案型別 (Files Supported):** PDF, PowerPoint, Word。
+*   **支援多種內容元素 (Content Supported):** Tables, TOC, Headers, Footers, Images。
+
+
+#### 如何使用
+
+*   安裝 MegaParse: `pip install megaparse`
+*   設定 API 金鑰：將 OpenAI 或 Anthropic API 金鑰新增到 `.env` 檔案。
+*   安裝必要的軟體：安裝 poppler 和 tesseract (處理圖片和 PDF)，macOS 使用者還需安裝 `libmagic` ( `brew install libmagic` )。
+*   使用 `UnstructuredParser` (預設解析器)：
+```python
+from megaparse import MegaParse
+from megaparse.parser.unstructured_parser import UnstructuredParser
+parser = UnstructuredParser()
+megaparse = MegaParse(parser)
+response = megaparse.load("./test.pdf")
+print(response)
+megaparse.save("./test.md")
+```
+*   使用 `MegaParseVision` (需使用多模態模型，例如 gpt-4o, gpt-4, claude 3.5, claude 4):  需替換 `parser` 為 `MegaParseVision` 並設定 `ChatOpenAI` 模型。
+*   (選項) 使用 `LlamaParser` (需有 Llama Cloud 帳號和 API 金鑰)：需替換 `parser` 為 `LlamaParser` 並設定 API 金鑰。
+*   使用 API： 使用 `make dev` 命令。
+## 📌 [DioxusLabs/dioxus](https://github.com/DioxusLabs/dioxus)
+<Callout>
+    Description: Fullstack app framework for web, desktop, mobile, and more.\
+    🌐 Rust｜⭐️ 22,873 | 1111 stars this week
+</Callout>
+    #### 簡介
+
+Dioxus 是一個使用 Rust 開發的跨平臺 UI 框架，能以單一程式碼庫建構網頁、桌面和行動應用程式。它具有零組態設定、整合熱過載和基於訊號的狀態管理等特色，並能透過 Server Functions 新增後端功能，以及使用 CLI 進行打包。Dioxus 的目標是成為一個高效能、易於使用的框架，並擁有活躍的社群支援和持續的開發更新。其獨特之處在於它結合了 React、Solid 和 Svelte 的優點，提供型別安全的路由和伺服器功能，充分利用 Rust 編譯時期的保證。
+
+
+#### 主要功能
+
+* 跨平臺：支援 Web、桌面 (macOS、Linux、Windows)、行動裝置 (Android、iOS) 和伺服器端渲染。
+* 簡潔的程式碼：僅需三行程式碼即可建立跨平臺應用程式。
+* 人體工學的狀態管理：結合 React、Solid 和 Svelte 的優點。
+* 型別安全：提供型別安全的路由和伺服器功能。
+* 整合打包器：方便部署到 Web、macOS、Linux 和 Windows。
+* 即時熱過載：`dx serve` 命令即可啟動應用程式並進行即時更新。
+* 優異效能：建構的 Web 應用程式體積可小於 50kb，桌面/行動應用程式體積則小於 5mb。
+* 詳細檔案：提供清晰、易讀且全面的檔案，並與 Dioxus 本身持續整合以確保檔案是最新的。
+* 社群驅動：擁有活躍的 Discord 和 GitHub 社群，提供支援與協助。
+*  支援 Server-side Rendering (SSR):  支援懸念(Suspense)、水合(hydration)以及伺服器端渲染。
+
+
+#### 如何使用
+
+* 使用 `cargo run --example <example>` 執行範例程式碼 (需使用 Dioxus 的 git 版本)。
+* 建議使用 `dioxus-cli`：`cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli --locked` 安裝 CLI。
+* 使用 CLI 執行範例：`dx serve --example <example> --platform web -- --no-default-features` (針對 Web 平臺)。
+*  Dioxus 使用一個類似 Rust 的 DSL (rsx!) 進行 UI 建構，其語法簡潔易懂，並支援 HTML 標籤和 CSS 樣式。  範例:
+```rust
+rsx! {
+  div {
+    class: "my-class",
+    enabled: true,
+    "Hello, {name}"
+  }
+}
+```
