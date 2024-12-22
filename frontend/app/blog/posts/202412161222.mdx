@@ -1,0 +1,167 @@
+---
+title: '[12/16 - 12/22] GitHub Weekly Digest'
+publishedAt: '2024-12-22'
+---
+## 📌 [Byaidu/PDFMathTranslate](https://github.com/Byaidu/PDFMathTranslate)
+<Callout>
+    Description: PDF scientific paper translation with preserved formats - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/Docker\
+    🌐 Python｜⭐️ 10,073 | 3825 stars this week
+</Callout>
+    #### 簡介
+
+PDFMathTranslate 是一款科學論文翻譯工具，支援多種語言和翻譯服務，能保留公式、圖表、目錄和註釋等格式。它提供命令列工具、互動式使用者介面和 Docker 版本，方便使用者根據自身需求選擇使用方式。使用者可透過線上服務或本地安裝的方式使用此工具，線上服務提供 HuggingFace 和 ModelScope 兩種平臺的示範應用。  
+
+
+#### 主要功能
+
+*   科學論文翻譯：支援多種語言和翻譯服務，例如 Google Translate, DeepL 等。
+*   格式保留：保留原始 PDF 檔案中的公式、圖表、目錄和註釋等元素。
+*   多種使用方式：提供命令列工具、圖形使用者介面和 Docker 版本，滿足不同使用者的需求。
+*   支援多種檔案型別：包含PDF以及非PDF/A檔案(需使用`-cp`引數)。
+*   線上演示：提供基於 HuggingFace 和 ModelScope 的線上演示，方便快速體驗。
+*   進階選項：提供多種進階選項，例如設定來源語言、目標語言、翻譯服務、多執行緒等。
+*   部分檔案翻譯：支援部分檔案翻譯功能（使用 `-p` 引數）。
+*   自訂提示詞：允許使用者自訂翻譯提示詞（使用 `--prompt` 引數）。
+
+
+#### 如何使用
+
+PDFMathTranslate 提供四種使用方法：
+
+1.  **命令列介面:**  安裝套件 (`pip install pdf2zh`) 後，使用 `pdf2zh document.pdf` 命令執行翻譯。
+2.  **免安裝可攜式版本:**  下載 `setup.bat` 檔案並執行。
+3.  **圖形使用者介面:** 安裝套件 (`pip install pdf2zh`) 後，使用 `pdf2zh -i` 命令啟動圖形介面，或直接訪問 `http://localhost:7860/`。
+4.  **Docker:** 使用 `docker pull byaidu/pdf2zh` 和 `docker run -d -p 7860:7860 byaidu/pdf2zh` 命令拉取並執行 Docker 映像檔，然後訪問 `http://localhost:7860/`。
+
+此外，提供了許多進階選項，例如 `-li` (設定來源語言), `-lo` (設定目標語言), `-s` (設定翻譯服務), `-t` (設定執行緒數), `-o` (設定輸出目錄) 等，詳細說明請參考檔案。  若遇到模型下載問題，可設定環境變數 `set HF_ENDPOINT=https://hf-mirror.com`。
+## 📌 [shardeum/shardeum](https://github.com/shardeum/shardeum)
+<Callout>
+    Description: Shardeum is an EVM based autoscaling blockchain\
+    🌐 TypeScript｜⭐️ 25,209 | 3395 stars this week
+</Callout>
+    #### 簡介
+
+Shardeum 是一個創新的、相容 EVM 的區塊鏈平臺，利用動態狀態分片技術 (dynamic state sharding) 達到前所未有的擴充套件性。透過分片模型，Shardeum 確保更快的處理時間和更低的交易成本，同時不會犧牲安全性或去中心化。它提供高效能、安全、去中心化的網路，並與現有的 DApp 和智慧合約相容。
+
+
+#### 主要功能
+
+* **擴充套件性 (Scalability):** 透過分片實現水平擴充套件。
+* **高效能 (High Performance):** 低延遲和高吞吐量。
+* **安全性 (Security):** 先進的密碼技術和穩健的共識協議。
+* **去中心化 (Decentralization):** 真正去中心化的網路，沒有單點故障。
+* **互操作性 (Interoperability):** 與 EVM 相容，適用於現有的 DApp 和智慧合約。
+
+
+#### 如何使用
+
+* **先決條件 (Prerequisites):**  Node.js (v18.19.1), npm (v10.2.4), Rust (v1.74.1), Docker (選項，用於容器化部署)。  確保本地環境正確設定。
+* **安裝 (Installation):** 從 GitHub 克隆 Shardeum 倉庫 (`git clone https://github.com/shardeum/shardeum.git`)，安裝依賴項 (`npm ci`)，應用網路配置 (`git apply debug-10-nodes.patch`)，編譯專案 (`npm run prepare`)，安裝 Shardus CLI (`npm install -g shardus; npm update @shardus/archiver`)。
+* **本地執行網路 (Running the Network Locally):** 使用 `shardus start 10` 命令啟動包含 10 個節點的本地 Shardeum 網路。
+* **執行 JSON-RPC 伺服器 (Running the JSON-RPC Server):** 克隆 JSON-RPC 伺服器倉庫 (`git clone https://github.com/shardeum/json-rpc-server.git`)，安裝依賴項 (`npm install`)，啟動伺服器 (`npm run start`)。預設 RPC URL 為 `http://localhost:8080`。
+* **使用 MetaMask 測試 (Testing with MetaMask):** 安裝 MetaMask，新增 Shardeum 網路 (網路名稱: Shardeum, RPC URL: `http://localhost:8080`, Chain ID: 8082, 貨幣符號: SHM, 區塊瀏覽器 URL: `http://localhost:6001/`)。  需將錢包地址新增到 `src/config/genesis.json` 檔案以獲得測試代幣。
+## 📌 [google-gemini/cookbook](https://github.com/google-gemini/cookbook)
+<Callout>
+    Description: Examples and guides for using the Gemini API\
+    🌐 Jupyter Notebook｜⭐️ 9,127 | 3214 stars this week
+</Callout>
+    #### 簡介
+
+* Gemini API Cookbook 提供一系列指南和範例，協助開發者使用 Gemini API。
+* 收錄快速入門教學，涵蓋撰寫提示詞及 API 各項功能的使用方法。
+* 提供可實際運作的應用程式範例。
+*  最新版本包含 Gemini 2.0 的功能，例如多模態即時 API、音訊串流應用程式（包含工具使用和空間理解）。
+*  提供官方 SDK 和多種程式語言的快速入門教學。
+
+
+#### 主要功能
+
+* 提供對 Google DeepMind 開發的 Gemini 模型的存取許可權。
+* Gemini 模型支援多模態 (text, images, code, audio)，可在不同資料型別間無縫推理。
+* 支援各種應用程式的開發。
+*  包含多個快速入門教學，涵蓋身份驗證、計數 Token、檔案處理 (文字、程式碼、圖片、音訊、影片)、音訊處理、JSON 模式、函式呼叫、系統指令、嵌入式、微調和程式碼執行等功能。
+* 提供許多範例和社群建立的專案列表。
+
+
+#### 如何使用
+
+* 前往 Google AI Studio。
+* 使用 Google 帳戶登入。
+* 建立 API 金鑰。
+* 使用 Python 快速入門或透過 curl 呼叫 REST API。
+*  參考 Cookbook 中的快速入門教學和範例資料夾，學習如何使用 Gemini API 的各項功能。
+*  探索 Cookbook 中提供的各種功能範例，例如處理不同檔案型別、使用 JSON 模式、函式呼叫、設定系統指令、建立嵌入式等等。
+*  參考官方 SDK 和社群貢獻的 Awesome Gemini 列表，獲取更多靈感和資源。
+## 📌 [bigskysoftware/htmx](https://github.com/bigskysoftware/htmx)
+<Callout>
+    Description: </> htmx - high power tools for HTML\
+    🌐 JavaScript｜⭐️ 41,486 | 2582 stars this week
+</Callout>
+    #### 簡介
+
+* htmx 是一個輕量級 (約 14k min.gz) 、無依賴且可擴充套件的 JavaScript 函式庫。
+* 它讓開發者可以直接在 HTML 中使用屬性來存取 AJAX、CSS Transitions、WebSockets 和 Server Sent Events。
+* htmx 的目標是透過簡化開發流程，提升使用超文字 (hypertext) 建立現代使用者介面的效率。
+* 它可視為 intercooler.js 的繼承者。
+* htmx 消除了 HTML 中不必要的限制，例如僅允許 `<a>` 和 `<form>` 標籤傳送 HTTP 請求，以及僅支援 GET 和 POST 方法等。
+
+
+#### 主要功能
+
+* 直接在 HTML 元素中使用屬性 (例如 `hx-post`, `hx-swap`) 來處理 AJAX 請求。
+* 支援 CSS Transitions，實現更流暢的使用者體驗。
+* 整合 WebSockets 和 Server Sent Events，實現即時應用程式。
+* 使用簡單的屬性即可控制 AJAX 請求的細節，例如請求方法、目標 URL 和回應的處理方式。
+* 擴充套件性強，方便根據需求進行客製化。
+
+
+#### 如何使用
+
+*  包含 htmx 的 JavaScript 檔案：`<script src="https://unpkg.com/htmx.org@2.0.4"></script>`
+*  在 HTML 元素上使用 htmx 屬性，例如：
+    ```html
+    <button hx-post="/clicked" hx-swap="outerHTML">Click Me</button>
+    ```
+    這個例子中，`hx-post` 指定了 AJAX 請求的目標 URL，`hx-swap="outerHTML"` 指定了如何處理伺服器返回的回應 (將按鈕的 HTML 替換為回應內容)。
+*  使用 npm 安裝：`npm install htmx.org --save` (注意避免安裝舊版套件 `htmx`)
+*  參閱官方網站及檔案： [https://htmx.org](https://htmx.org) 和 [https://htmx.org/docs](https://htmx.org/docs)  以瞭解更多細節和進階用法。
+*  若需本地開發，需安裝開發相依性 (`npm install`) 並執行 Web 伺服器 (例如 `npx serve`)，然後執行測試套件。
+## 📌 [tursodatabase/limbo](https://github.com/tursodatabase/limbo)
+<Callout>
+    Description: Limbo is a work-in-progress, in-process OLTP database management system, compatible with SQLite.\
+    🌐 Rust｜⭐️ 7,515 | 2551 stars this week
+</Callout>
+    #### 簡介
+
+* Limbo 是一個仍在開發中的 OLTP (Online Transaction Processing) 資料庫管理系統，與 SQLite 相容。
+* 它以 Rust 語言編寫，目標是建立一個具有原生非同步支援的 SQLite 相容的內建程式資料庫。
+* 目前支援 Linux, macOS 和 Windows 作業系統。
+*  專案仍在持續開發中 (work-in-progress)，許多功能尚未完成。
+
+
+#### 主要功能
+
+* 內建程式 OLTP 資料庫引擎函式庫 (In-process OLTP database engine library)。
+* 在 Linux 系統上支援非同步 I/O 輸入輸出 (Asynchronous I/O support on Linux with io_uring)。
+* 與 SQLite 相容，包括 SQL 語法和檔案格式支援 (SQLite compatibility)。
+* 提供 JavaScript/WebAssembly 和 Python 的繫結 (JavaScript/WebAssembly bindings, Python bindings)。
+
+
+#### 如何使用
+
+* **命令列介面 (CLI):** 使用 `curl` 指令安裝，然後使用 `limbo database.db` 命令啟動 SQL shell。  範例指令如下：
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf \
+  https://github.com/penberg/limbo/releases/latest/download/limbo-installer.sh | sh
+```
+* **JavaScript (wip):** 使用 npm 安裝 `limbo-wasm` 套件，並使用 `Database` 類別來操作資料庫。
+```javascript
+import { Database } from 'limbo-wasm';
+const db = new Database('sqlite.db');
+```
+* **Python (wip):** 使用 pip 安裝 `pylimbo` 套件，並使用 `limbo` 模組來操作資料庫。
+```python
+import limbo
+con = limbo.connect("sqlite.db")
+```
+* 開發者可以使用 Cargo 建置和執行 Limbo CLI，並執行測試和效能測試。
