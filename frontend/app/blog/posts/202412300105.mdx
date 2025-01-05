@@ -1,0 +1,163 @@
+---
+title: '[12/30 - 1/5] GitHub Weekly Digest'
+publishedAt: '2025-01-05'
+---
+## 📌 [elizaOS/eliza](https://github.com/elizaOS/eliza)
+<Callout>
+    Description: Autonomous agents for everyone\
+    🌐 TypeScript｜⭐️ 9,369 | 3022 stars this week
+</Callout>
+    #### 簡介
+
+Eliza 是一個功能強大的多功能 AI 代理平臺，支援多種大型語言模型 (LLM)，例如 Llama、Grok、OpenAI 和 Anthropic 等。它具有完整功能的 Discord、Twitter 和 Telegram 聯結器，並支援多代理和多房間模式。Eliza 可輕鬆整合及互動你的檔案，並具有可追溯的記憶體和檔案儲存功能。此外，它還具有高度的可擴充套件性，允許使用者建立自訂的動作和客戶端。
+
+
+#### 主要功能
+
+* 支援多種大型語言模型 (LLMs): Llama, Grok, OpenAI, Anthropic 等。
+* 完整的 Discord、Twitter 和 Telegram 聯結器。
+* 支援多代理和多房間。
+* 輕鬆整合和互動自有檔案。
+* 可追溯的記憶體和檔案儲存。
+* 高度可擴充套件性，允許自訂動作和客戶端。
+* 支援本地 Llama 模型和其他模型。
+*  適用於聊天機器人、自主代理、商業流程處理、電子遊戲 NPC 和交易等多種用途。
+
+
+#### 如何使用
+
+* **使用 Starter (推薦):**
+    *  `git clone https://github.com/elizaos/eliza-starter.git`
+    *  `cd eliza-starter`
+    *  `cp .env.example .env`
+    *  `pnpm i && pnpm build && pnpm start`
+    *  在另一個終端機執行 `pnpm start:client` 並依照網址指示與代理人聊天。
+* **手動啟動 Eliza (僅限熟悉者):**
+    *  `git clone https://github.com/elizaos/eliza.git`
+    *  `git checkout $(git describe --tags --abbrev=0)`  (檢出最新版本)
+* **使用 Gitpod 啟動 Eliza:**
+    *  編輯 `.env` 檔案 (`.env.example` 複製到 `.env` 並填寫相關資訊)。
+* **自動啟動 Eliza:**
+    *  `sh scripts/start.sh`
+* **編輯角色檔案:**  `packages/core/src/defaultCharacter.ts`
+* **載入自訂角色:** `pnpm start --characters="path/to/your/character.json"`
+* **連線 X (Twitter):** 修改 `"clients": []` 至 `"clients": [...]`
+## 📌 [DrewThomasson/ebook2audiobook](https://github.com/DrewThomasson/ebook2audiobook)
+<Callout>
+    Description: Convert ebooks to audiobooks with chapters and metadata using dynamic AI models and voice cloning. Supports 1,107+ languages!\
+    🌐 Python｜⭐️ 4,885 | 2865 stars this week
+</Callout>
+    #### 簡介
+
+ebook2audiobook 是一款將電子書轉換成有聲書的工具，支援語音複製和1107種語言。它使用Calibre、ffmpeg、Coqui XTTSv2、Fairseq等工具，將電子書轉換成文字，分割成章節，並利用文字轉語音技術生成有聲書。此工具僅適用於非DRM且合法取得的電子書，使用者需自行承擔使用此軟體的任何風險及法律後果。  新版v2.0 提供了網頁圖形化介面(Web GUI)。
+
+
+#### 主要功能
+
+* 將電子書 (eBook) 使用 Calibre 轉換成文字格式。
+* 將電子書分割成章節，方便組織有聲書。
+* 使用 Coqui XTTSv2 和 Fairseq 提供高品質的文字轉語音 (text-to-speech, TTS)。
+* 可選用自定義語音檔案進行語音複製 (voice cloning)。
+* 支援 1107 種語言 (預設為英文)，透過 Fairseq 支援更多語言。
+* 僅需 4GB RAM 即可執行。
+* 提供 Huggingface Space 線上演示和免費 Google Colab 使用環境。
+
+
+#### 如何使用
+
+* **安裝:** 使用 `git clone https://github.com/DrewThomasson/ebook2audiobook.git` 克隆程式碼倉庫。
+* **啟動 Gradio 網頁介面:**
+    * Linux/MacOS: `./ebook2audiobook.sh`
+    * Windows: `.\ebook2audiobook.cmd`
+    * 開啟終端機顯示的網址即可存取網頁應用程式，進行電子書轉換。  可使用 `--share` 引數分享公開連結。更多引數請使用 `python app.py --help` 檢視。
+* **基本無頭模式 (Headless) 使用:**
+    * Linux/MacOS: `./ebook2audiobook.sh -- --ebook <path_to_ebook_file> --voice [path_to_voice_file] --language [language_code]`
+    * Windows: `.\ebook2audiobook.cmd -- --ebook <path_to_ebook_file> --voice [path_to_voice_file] --language [language_code]`
+    * `<path_to_ebook_file>`: 電子書檔案路徑。
+    * `[path_to_voice_file]`: 可選，用於語音複製。
+    * `[language_code]`: 可選，指定 ISO-639-3 或 ISO-639-1 語言程式碼 (預設為 eng)。
+* **自訂 XTTS 模型使用:**  需提供模型路徑 (`custom_model`, `custom_config`, `custom_vocab`)。  使用方法類似基本無頭模式，但需新增相關引數。
+* **Docker 使用:** 提供 Docker 執行指令，包含 CPU 與 GPU 加速版本，以及 headless 模式說明。  需建立 `input-folder` 和 `Audiobooks` 資料夾。
+## 📌 [bytedance/monolith](https://github.com/bytedance/monolith)
+<Callout>
+    Description: A Lightweight Recommendation System\
+    🌐 Python｜⭐️ 6,402 | 2661 stars this week
+</Callout>
+    #### 簡介
+
+Monolith 是一個用於大型推薦模型的深度學習框架。它引入了兩個重要的功能，對先進的推薦系統至關重要：無碰撞嵌入表 (collisionless embedding tables) 保證不同 ID 特徵的唯一表示；實時訓練 (real-time training) 能捕捉最新的熱點，幫助使用者快速發現新的興趣。Monolith 基於 TensorFlow 打造，支援批次/實時訓練和服務。
+
+
+#### 主要功能
+
+* 無碰撞嵌入表 (collisionless embedding tables)：確保不同 ID 特徵的唯一表示，避免資料衝突。
+* 實時訓練 (real-time training)：即時捕捉最新的使用者行為和趨勢，提供更精準的推薦。
+* 基於 TensorFlow：利用 TensorFlow 的強大功能，提供高效的訓練和推論。
+* 支援批次/實時訓練和服務：滿足不同應用場景的需求。
+
+
+#### 如何使用
+
+* 目前僅支援 Linux 系統編譯。
+* 下載 Bazel 3.1.0：`wget https://github.com/bazelbuild/bazel/releases/download/3.1.0/bazel-3.1.0-installer-linux-x86_64.sh && chmod +x bazel-3.1.0-installer-linux-x86_64.sh && ./bazel-3.1.0-installer-linux-x86_64.sh && rm bazel-3.1.0-installer-linux-x86_64.sh`
+* 準備 Python 環境：`pip install -U --user pip numpy wheel packaging requests opt_einsum`  `pip install -U --user keras_preprocessing --no-deps`
+*  (說明檔案未完整提供後續編譯步驟)
+## 📌 [stanford-oval/storm](https://github.com/stanford-oval/storm)
+<Callout>
+    Description: An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations.\
+    🌐 Python｜⭐️ 16,450 | 2353 stars this week
+</Callout>
+    #### 簡介
+
+STORM 是一個大型語言模型 (LLM) 系統，能根據網路搜尋結果從零開始撰寫類似維基百科的文章。其後續版本 Co-STORM 更進一步強化功能，允許人類與 LLM 系統協作，以獲得更一致且符合偏好的資訊搜尋和知識整理結果。雖然系統產生的文章尚無法達到出版等級，仍需經過大量編輯，但經驗豐富的維基百科編輯發現它在撰寫前的準備階段非常有幫助。
+
+
+#### 主要功能
+
+*   **STORM:** 將撰寫帶有引文的長篇文章分解為兩個步驟：預寫階段 (收集參考資料並生成大綱) 和撰寫階段 (使用大綱和參考資料生成完整文章及引文)。
+*   **STORM 的核心：**自動提出有效問題。透過「以不同觀點提問」和「模擬對話」策略，提升提問的深度和廣度。
+*   **Co-STORM:** 提出一套協作式論述協定，包含轉換管理策略，支援 Co-STORM LLM 專家、主持人和使用者三方順利協作。
+*   **Co-STORM 的動態思維導圖:**  組織收集到的資訊，建立使用者和系統之間的共享概念空間，降低長篇深入討論的認知負擔。
+*   **模組化設計:** STORM 和 Co-STORM 都以高度模組化的方式使用 dspy 實作。
+*   **支援多種語言模型和搜尋引擎:**  支援多種語言模型 (例如 OpenAIModel, AzureOpenAIModel 等) 和搜尋引擎 (例如 YouRM, BingSearch 等) 作為元件。
+
+
+#### 如何使用
+
+*   **安裝:** 使用 `pip install knowledge-storm` 安裝知識風暴函式庫，或複製原始碼並安裝所需套件。
+*   **API:** 提供多種語言模型和搜尋引擎元件的 API。
+*   **STORM 使用範例:** 使用 `STORMWikiRunner` 類別，並設定語言模型和搜尋引擎元件，即可執行 `run()` 方法生成文章。可控制 `do_research`, `do_generate_outline`, `do_generate_article`, `do_polish_article` 等引數。
+*   **Co-STORM 使用範例:** 使用 `CoStormRunner` 類別，並設定語言模型和搜尋引擎元件。使用 `warm_start()` 方法啟動系統，並使用 `step()` 方法逐步進行協作式討論，最後使用 `generate_report()` 方法生成報告。
+*   **客製化:**  安裝原始碼後，可以根據自身需求客製化 STORM 和 Co-STORM 的各個模組，例如知識整理模組、大綱生成模組、文章生成模組和文章潤飾模組。
+*   **範例指令碼:** 提供範例指令碼，方便快速上手並使用不同設定執行 STORM 和 Co-STORM。
+*   **secrets.toml 設定檔:** 建立 `secrets.toml` 檔案設定 API 金鑰等敏感資訊。
+## 📌 [OpenSPG/KAG](https://github.com/OpenSPG/KAG)
+<Callout>
+    Description: KAG is a logical form-guided reasoning and retrieval framework based on OpenSPG engine and LLMs. It is used to build logical reasoning and factual Q&A solutions for professional domain knowledge bases. It can effectively overcome the shortcomings of the traditional RAG vector similarity calculation model.\
+    🌐 Python｜⭐️ 3,058 | 1311 stars this week
+</Callout>
+    #### 簡介
+
+* KAG 是一個基於 OpenSPG 引擎和大型語言模型 (LLM) 的邏輯推理和問答框架。
+* 用於構建垂直領域知識庫的邏輯推理和問答解決方案。
+* 有效克服傳統 RAG 向量相似度計算的歧義和 GraphRAG 引入的 OpenIE 噪聲問題。
+* 支援邏輯推理和多跳事實問答，效能優於現有 SOTA 方法。
+* 目標是在專業領域構建一個知識增強的 LLM 服務框架，支援邏輯推理、事實問答等。
+* 充分整合知識圖譜 (KGs) 的邏輯和事實特性。
+
+
+#### 主要功能
+
+* **知識與區塊互索引結構 (Knowledge and Chunk Mutual Indexing):** 整合更完整的上下文文字資訊。
+* **基於概念語義推理的知識對齊 (Knowledge alignment using conceptual semantic reasoning):** 減輕 OpenIE 造成的噪聲問題。
+* **模式約束知識構建 (Schema-constrained knowledge construction):** 支援領域專家知識的表示和構建。
+* **邏輯形式引導的混合推理和檢索 (Logical form-guided hybrid reasoning and retrieval):** 支援邏輯推理和多跳推理問答。
+*  相容無模式資訊提取和相同知識型別（例如實體型別、事件型別）上的模式約束專業知識構建。
+* 支援圖結構和原始文字塊之間的互索引表示。
+*  包含規劃、推理和檢索三種型別的運運算元。
+
+
+#### 如何使用
+
+* **產品模式 (product-based):**  需安裝 Docker 和 Docker Compose，執行 `curl` 指令下載 `docker-compose.yml` 檔案，並使用 `docker compose` 命令啟動服務。瀏覽器訪問 http://127.0.0.1:8887 使用產品。  系統需求：macOS Monterey 12.6 或更高版本、CentOS 7 / Ubuntu 20.04 或更高版本、Windows 10 LTSC 2021 或更高版本。
+* **工具包模式 (toolkit-based):**  需安裝 Python 3.10 (或 3.8.10 以上，視作業系統而定) 、Git 和相應的套件管理器 (conda 或 venv)。  克隆 KAG 程式碼庫，並使用 `pip install -e .` 安裝 KAG。參考開發者模式快速入門指南，使用內建元件複製內建資料集的效能結果，並將這些元件應用於新的業務場景。
