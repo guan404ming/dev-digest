@@ -1,0 +1,181 @@
+---
+title: '[1/6 - 1/12] GitHub Weekly Digest'
+publishedAt: '2025-01-12'
+---
+## 📌 [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai)
+<Callout>
+    Description: 🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper\
+    🌐 Python｜⭐️ 23,895 | 4501 stars this week
+</Callout>
+    #### 簡介
+
+Crawl4AI是一個開源、高效能的網頁爬蟲和資料擷取工具，專為大型語言模型 (LLM)、AI 代理和資料管道而設計。它提供快速的網頁爬取功能，並能產生 AI 友善的 Markdown 格式輸出，方便用於 RAG 和微調應用。Crawl4AI  以其速度、準確性和易部署性而聞名，是 GitHub 上趨勢第一的專案，並擁有活躍的社群支援。它支援多種瀏覽器，並提供進階功能，例如代理伺服器、自訂鉤子函式和內容過濾等。
+
+
+#### 主要功能
+
+Crawl4AI 的主要功能涵蓋以下幾個方面：
+
+- **Markdown 產生:** 產生乾淨、結構化的 Markdown 檔案，包含標題、引用和參考連結。並提供自訂策略，以及 BM25 演演算法進行內容過濾，去除不相關資訊。
+- **結構化資料擷取:** 支援所有 LLM 進行結構化資料擷取，包含基於主題、正規表示式和句子層級的分割策略，以及利用餘弦相似度找到相關內容。也支援基於 CSS 選擇器和 XPath 的快速資料擷取，並允許自訂 Schema 定義。
+- **瀏覽器整合:** 支援 Chromium, Firefox 和 WebKit 等瀏覽器，提供瀏覽器會話管理、代理伺服器支援和完整的瀏覽器控制 (修改 headers, cookies, user agents 等)，並能自動調整瀏覽器視窗大小以確保完整渲染。
+- **爬取和擷取:** 支援圖片、音訊、影片等媒體檔案擷取，並能執行 JavaScript 程式碼以擷取動態內容，包含處理 lazy loading 和無限滾動頁面。同時提供完整的連結擷取、快取機制、元資料擷取和 iframe 內容擷取等功能。
+- **部署:** 提供 Docker 化設定和 API Gateway，方便部署到雲端平臺，例如 DigitalOcean。
+
+
+#### 如何使用
+
+Crawl4AI 提供多種安裝方式，可以使用 `pip` 安裝 Python 套件，或使用 Docker 部署。基本安裝步驟如下：
+
+- 使用 `pip install crawl4ai` 安裝基本套件。
+- 執行 `crawl4ai-setup` 設定瀏覽器。  若遇到瀏覽器相關問題，可手動執行 `python -m playwright install --with-deps chromium` 安裝。
+- 驗證安裝是否成功：`crawl4ai-doctor`。
+
+簡單的網頁爬取範例：
+
+```python
+import asyncio
+from crawl4ai import *
+
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url="https://www.nbcnews.com/business")
+        print(result.markdown)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+更進階的使用方式包含自訂 Markdown 產生策略、結構化資料擷取策略，以及使用 LLM 進行資料萃取，詳見檔案範例。  檔案也提供了 Docker 部署的說明和進階用法。
+## 📌 [stanford-oval/storm](https://github.com/stanford-oval/storm)
+<Callout>
+    Description: An LLM-powered knowledge curation system that researches a topic and generates a full-length report with citations.\
+    🌐 Python｜⭐️ 19,536 | 3581 stars this week
+</Callout>
+    #### 簡介
+
+STORM 是一個大型語言模型 (LLM) 系統，能夠根據網際網路搜尋結果從頭撰寫類似維基百科條目的文章。Co-STORM 在此基礎上更進一步，允許人機協作，以獲得更一致且符合偏好的資訊搜尋和知識整理結果。雖然系統無法產生可直接發表的文章（通常需要大量編輯），但經驗豐富的維基百科編輯發現它在撰寫前的準備階段很有幫助。超過七萬人已體驗過我們的線上研究預覽版本。
+
+
+#### 主要功能
+
+* STORM 將撰寫帶有引註的長篇文章分解成兩個步驟：預寫階段 (收集參考檔案並產生大綱) 和寫作階段 (使用大綱和參考檔案產生完整的文章及其引註)。
+* STORM 利用「以觀點為導向的提問」和「模擬對話」兩種策略，改善提問的深度和廣度，自動產生有效的提問以進行研究。
+* Co-STORM 提出一套協作式論述協定，包含轉換管理策略，以支援 Co-STORM LLM 專家、主持人和使用者之間的順利協作。
+* Co-STORM 維護一個動態更新的心智圖，將收集到的資訊組織成層級的概念結構，旨在建立使用者與系統之間共享的概念空間。
+* STORM 和 Co-STORM 都以高度模組化的方式使用 dspy 實作。
+* 支援多種大型語言模型 (LLM) 和資訊檢索模組，允許使用者自定義和擴充套件系統功能。
+
+
+#### 如何使用
+
+* 使用 `pip install knowledge-storm` 安裝知識風暴程式庫。也可以複製原始碼以直接修改 STORM 引擎的行為 (`git clone https://github.com/stanford-oval/storm.git`)。
+*  STORM 使用 `STORMWikiRunner` 類別，Co-STORM 使用 `CoStormRunner` 類別。
+*  程式碼範例中展示瞭如何使用不同的語言模型 (例如 OpenAIModel, AzureOpenAIModel 等) 和資訊檢索模組 (例如 YouRM, BingSearch 等)。
+*  `STORMWikiRunner` 的 `run()` 方法控制研究、產生大綱和文章的各個步驟 (`do_research`, `do_generate_outline`, `do_generate_article`, `do_polish_article`)。
+*  `CoStormRunner` 使用 `warm_start()` 方法啟動系統，並透過 `step()` 方法逐步進行協作式論述。使用者可以透過 `user_utterance` 引數主動引導討論方向。
+*  提供範例指令碼 (位於 `examples` 資料夾) 快速上手，並建議使用 `secrets.toml` 設定 API 金鑰。
+*  可自訂 STORM 和 Co-STORM 的不同模組，例如知識整理模組、大綱生成模組、文章生成模組和文章潤飾模組，以及 Co-STORM 中的 LLM 代理程式策略。
+## 📌 [All-Hands-AI/OpenHands](https://github.com/All-Hands-AI/OpenHands)
+<Callout>
+    Description: 🙌 OpenHands: Code Less, Make More\
+    🌐 Python｜⭐️ 42,964 | 2931 stars this week
+</Callout>
+    #### 簡介
+
+OpenHands (先前稱為 OpenDevin) 是一個基於 AI 的軟體開發代理平臺。它讓使用者能像人類開發者一樣執行各種任務，包含修改程式碼、執行指令、瀏覽網頁、呼叫 API，甚至從 StackOverflow 複製程式碼片段。目前最佳模型為 Anthropic 的 Claude 3.5 Sonnet。OpenHands 旨在單一使用者本地工作站執行，不適用於多租戶部署。
+
+
+#### 主要功能
+
+*   修改程式碼 (Code modification)
+*   執行指令 (Command execution)
+*   網頁瀏覽 (Web browsing)
+*   API 呼叫 (API calls)
+*   StackOverflow 程式碼複製 (StackOverflow code copying)
+*   Docker 容器部署 (Docker deployment)
+*   支援多種大型語言模型 (Multiple LLM providers support)
+*   可指令碼化無頭模式 (Scriptable headless mode)
+*   友善的命令列介面 (Friendly CLI)
+*   GitHub Actions 整合 (GitHub Actions integration)
+
+
+#### 如何使用
+
+*   使用 Docker 進行安裝與執行：
+    ```bash
+    docker pull docker.all-hands.dev/all-hands-ai/runtime:0.19-nikolaik
+    docker run -it --rm --pull=always ... docker.all-hands.dev/all-hands-ai/openhands:0.19
+    ```
+*   設定模型提供者及 API 金鑰 (Model provider and API key)。
+*   存取 OpenHands 網址：`http://localhost:3000`。
+*   參考檔案瞭解更多資訊及設定說明 (Installation guide)。
+*   參與社群，透過 Slack、Discord 或 Github 提出問題或貢獻。
+*   參考檔案學習如何使用不同的大型語言模型提供者、疑難排解資源和進階設定選項。
+*  若需修改原始碼，請參考 `Development.md`。
+*  遇到問題，請參考 `Troubleshooting Guide`。
+## 📌 [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)
+<Callout>
+    Description: Master programming by recreating your favorite technologies from scratch.\
+    🌐 Markdown｜⭐️ 324,989 | 2789 stars this week
+</Callout>
+    #### 簡介
+
+這個儲存庫彙整了許多逐步指南，教你從零開始重建各種常見技術，例如3D渲染器、增強實境應用程式、BitTorrent客戶端、區塊鏈/加密貨幣、機器人、命令列工具、資料庫、Docker、模擬器/虛擬機器、前端框架/函式庫、遊戲、Git、網路堆疊、神經網路、作業系統、物理引擎、程式語言、正規表示式引擎、搜尋引擎、Shell、模板引擎、文字編輯器、視覺辨識系統、體素引擎、網頁瀏覽器和網頁伺服器等等。透過親自動手實作，加深對這些技術的理解，如同理查·費曼所言：「我無法創造的東西，我無法理解。」
+
+
+#### 主要功能
+
+* 提供從零開始構建各種技術的逐步指南。
+* 涵蓋範圍廣泛，包含3D圖形、人工智慧、區塊鏈、網路、系統程式設計等多個領域。
+* 使用多種程式語言，例如C、C++、Java、JavaScript、Python、Go、Rust等等。
+* 提供不同難度等級的教程，適合不同經驗的開發者。
+*  包含許多影片和線上資源連結。
+*  教程的程式碼範例清晰易懂。
+*  涵蓋從基礎概念到進階應用，例如構建一個完整的作業系統。
+*  持續更新，新增更多技術和教程。
+
+
+#### 如何使用
+
+*  瀏覽儲存庫中的目錄，選擇你感興趣的技術領域。
+*  參考提供的逐步指南，按照步驟進行實作。
+*  可以根據自己的需求，選擇使用不同的程式語言和開發工具。
+*  建議先從簡單的教程開始，循序漸進地學習。
+*  可以參考提供的影片和線上資源，更深入地學習相關知識。
+*  遇到問題可以參考線上社群或提出問題尋求協助。
+*  可以參與社群貢獻，分享你的經驗和知識。
+*  持續學習和實作，不斷提升自己的技術能力。
+## 📌 [cline/cline](https://github.com/cline/cline)
+<Callout>
+    Description: Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.\
+    🌐 TypeScript｜⭐️ 21,455 | 2509 stars this week
+</Callout>
+    #### 簡介
+
+Cline (先前稱為 Claude Dev) 是一款結合 CLI 與編輯器的 AI 助理，基於 Claude 3.5 Sonnet 的能力，能逐步處理複雜的軟體開發任務。它能建立和編輯檔案、探索大型專案、使用瀏覽器及執行終端機指令 (經您授權後)，功能超越一般的程式碼自動完成或技術支援。Cline 甚至可以使用 Model Context Protocol (MCP) 建立新的工具並擴充套件自身功能。與傳統的自主式 AI 指令碼不同，Cline 提供人機互動的圖形介面 (GUI) 來批准每個檔案變更和終端機指令，提供安全且易於使用的途徑來探索自主式 AI 的潛力。它支援多種 API 提供商，例如 OpenRouter、Anthropic、OpenAI、Google Gemini 等，並能追蹤代幣使用量和 API 成本。
+
+
+#### 主要功能
+
+*   **檔案建立與編輯:**  建立和編輯檔案，並即時監控程式碼錯誤 (例如：缺少 import 或語法錯誤)，自動修正問題。所有變更都會記錄在檔案的時間軸中，方便追蹤和復原。
+*   **終端機指令執行:** 直接在終端機執行指令並監控輸出，例如安裝套件、執行建置指令碼、部署應用程式等，並適應您的開發環境和工具鏈。支援背景執行長時間運作的程式，例如開發伺服器。
+*   **瀏覽器使用:**  使用瀏覽器進行互動式除錯、端到端測試，甚至是一般的網頁使用。可以點選元素、輸入文字、捲動頁面，並擷取螢幕截圖和主控臺日誌。
+*   **API 與模型支援:** 支援多種 API 提供商 (OpenRouter, Anthropic, OpenAI 等) 和本地模型 (LM Studio/Ollama)，並能使用 MCP 建立自定義工具擴充套件功能。
+*   **上下文新增:** 支援新增 URL、工作區錯誤和警告、檔案內容等上下文資訊，讓 Cline 更有效率地完成任務。
+*   **錯誤修正:**  主動識別並修正程式碼中的錯誤，包括語法錯誤、缺少匯入等。
+*   **程式碼分析:** 分析檔案結構和原始碼 AST，執行正規表示式搜尋，以快速瞭解現有專案。
+*   **成本追蹤:**  追蹤整個任務迴圈和個別請求的總代幣和 API 使用成本。
+
+
+#### 如何使用
+
+*   從 VS Marketplace 下載 Cline 擴充套件。
+*   在編輯器中使用快捷鍵 CMD/CTRL + Shift + P 開啟命令面板，輸入 "Cline: Open In New Tab" 以新分頁開啟擴充套件。
+*   輸入您的任務，並可以新增圖片或其他上下文資訊 (例如 URL、檔案內容、錯誤訊息)。
+*   Cline 會分析您的程式碼和上下文，並逐步執行任務。
+*   Cline 會在每個步驟向您展示結果，並允許您審查和提供回饋。
+*   您可以點選按鈕執行 Cline 生成的終端機指令，例如 `open -a "Google Chrome" index.html`。
+*   您可以使用 `@url`, `@problems`, `@file` 等標籤來提供額外的上下文資訊。
+*   您可以請求 Cline 新增自定義工具來擴充套件其功能，例如 `"add a tool that fetches Jira tickets"`。
+*   Cline 會持續更新並支援最新的模型。
