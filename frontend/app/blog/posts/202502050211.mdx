@@ -1,0 +1,169 @@
+---
+title: '[2/5 - 2/11] GitHub Weekly Digest'
+publishedAt: '2025-02-11'
+---
+## 📌 [ollama/ollama](https://github.com/ollama/ollama)
+<Callout>
+    Description: Get up and running with Llama 3.3, DeepSeek-R1, Phi-4, Gemma 2, and other large language models.\
+    🌐 Go｜⭐️ 124,516 | 5838 stars this week
+</Callout>
+    #### 簡介
+
+Ollama 是一個輕量級、可擴充套件的框架，用於在本地機器上構建和執行大型語言模型 (LLM)。它提供簡單的 API 進行模型建立、執行和管理，並包含可輕鬆應用於各種應用程式的預建模型庫。Ollama 支援多種作業系統 (macOS、Windows、Linux) 和 Docker，並提供 Python 和 JavaScript 函式庫以利整合。使用者可以透過命令列介面 (CLI) 或 REST API 與模型互動。
+
+
+#### 主要功能
+
+* 支援多種大型語言模型：Ollama 支援許多流行的 LLM，例如 Llama 3.2、DeepSeek-R1、Phi 4 等，並持續更新模型庫。
+* 簡單易用的命令列介面 (CLI)：透過 `ollama run`、`ollama create`、`ollama pull` 等指令，輕鬆管理和執行模型。
+* 模型匯入：支援從 GGUF 和 Safetensors 匯入自定義模型。
+* 提示詞自訂：允許使用者透過 `Modelfile` 自訂模型引數和系統訊息，例如設定溫度 (temperature) 和系統提示 (system message)。
+* 多模態模型支援：支援處理圖片等多模態輸入，例如 `ollama run llava "What's in this image? /path/to/image.png"`。
+* 多種輸入方式：支援單行和多行輸入，以及透過檔案輸入。
+* REST API：提供 REST API 讓使用者可以透過程式碼與模型互動。
+* 社群整合：擁有豐富的社群資源和整合應用程式，方便使用者擴充套件功能。
+
+
+#### 如何使用
+
+* **安裝:**  根據您的作業系統，從 Ollama 官網下載安裝程式或使用 `curl -fsSL https://ollama.com/install.sh | sh`  (Linux) 安裝。也可以使用 Docker 安裝。
+* **執行模型:** 使用 `ollama run model_name` 命令執行模型，例如 `ollama run llama3.2`。
+* **模型管理:** 使用 `ollama create` 建立模型、`ollama pull` 下載模型、`ollama rm` 移除模型，以及 `ollama list` 檢視本地模型列表。
+* **自定義模型:** 建立 `Modelfile`  設定模型引數和系統訊息，然後使用 `ollama create` 和 `ollama run` 建立並執行自訂模型。
+* **多行輸入:** 使用三個反引號 """ 包裹多行文字作為輸入。
+* **多模態模型:**  直接將圖片路徑作為引數傳遞給多模態模型。
+* **REST API 使用:**  透過 `curl` 命令呼叫 Ollama 的 REST API 與模型互動，例如 `curl http://localhost:11434/api/generate`。
+## 📌 [open-webui/open-webui](https://github.com/open-webui/open-webui)
+<Callout>
+    Description: User-friendly AI Interface (Supports Ollama, OpenAI API, ...)\
+    🌐 JavaScript｜⭐️ 72,191 | 5339 stars this week
+</Callout>
+    #### 簡介
+
+Open WebUI 是一個可擴充套件、功能豐富且使用者友善的自我託管 AI 平臺，設計完全離線運作。它支援多種大型語言模型 (LLM) 執行器，例如 Ollama 和 OpenAI 相容 API，並內建用於 Retrieval Augmented Generation (RAG) 的推理引擎，使其成為強大的 AI 部署方案。  Open WebUI 提供響應式設計，支援桌面電腦、筆電和行動裝置，並提供 Progressive Web App (PWA) 以獲得更好的行動裝置體驗。  它也支援多種語言，並持續更新。
+
+
+#### 主要功能
+
+* 支援 Ollama 和 OpenAI 相容 API 整合。
+* 具有細緻的許可權和使用者群組管理功能，確保安全的使用環境。
+* 響應式設計，支援桌面電腦、筆電和行動裝置，並提供 PWA。
+* 完全支援 Markdown 和 LaTeX。
+* 內建免持語音/視訊通話功能。
+* 提供 Model Builder 方便建立 Ollama 模型。
+* 內建 Python 函式呼叫工具，支援 Bring Your Own Function (BYOF)。
+* 本地 RAG 整合，支援 Web 搜尋功能。
+* 網頁瀏覽功能，可直接在聊天中整合網頁內容。
+* 影象生成整合，支援 AUTOMATIC1111 API、ComfyUI 和 OpenAI DALL-E。
+* 支援同時與多個模型進行對話。
+* 基於角色的存取控制 (RBAC)。
+* 多語言支援。
+* Pipelines 和 Open WebUI 外掛支援。
+
+
+#### 如何使用
+
+Open WebUI 提供多種安裝方式：
+
+* **使用 pip 安裝 (Python):**  `pip install open-webui`，然後執行 `open-webui serve`。
+* **使用 Docker 安裝:**  提供多種 Docker 指令，包含支援 Ollama、CUDA 加速、僅使用 OpenAI API 等不同情境。  需要根據自身環境選擇對應指令，並注意 `-v open-webui:/app/backend/data` 的引數以確保資料庫正確掛載。 例如，使用預設設定且電腦上有 Ollama 的指令為：`docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`。
+* **其他安裝方法:**  包含 Docker Compose, Kustomize 和 Helm 等方式，詳情請參考官方檔案。
+
+安裝完成後，可透過瀏覽器存取 http://localhost:8080 或 http://localhost:3000 (依安裝方式而定)。
+## 📌 [langgenius/dify](https://github.com/langgenius/dify)
+<Callout>
+    Description: Dify is an open-source LLM app development platform. Dify's intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features and more, letting you quickly go from prototype to production.\
+    🌐 TypeScript｜⭐️ 65,602 | 3862 stars this week
+</Callout>
+    #### 簡介
+
+Dify 是一個開源的 LLM 應用程式開發平臺，提供直覺的介面，結合了 Agentic AI 工作流程、RAG pipeline、Agent 功能、模型管理和可觀察性功能等，讓使用者可以快速從原型開發到產品生產。它支援多種模型，包括 GPT、Mistral、Llama3 和任何與 OpenAI API 相容的模型，並提供雲端託管和自託管選項。  Dify 也提供完善的文件和社群支援，方便使用者學習和使用。
+
+
+#### 主要功能
+
+* **Workflow 建構:** 在視覺化畫布上構建和測試強大的 AI 工作流程。
+* **全面模型支援:** 無縫整合數百種專有/開源 LLM，涵蓋 GPT、Mistral、Llama3 等。
+* **Prompt IDE:** 直覺的介面用於製作提示字元，比較模型效能，並新增文字轉語音等功能。
+* **RAG Pipeline:**  涵蓋從檔案匯入到檢索的全面 RAG 功能，支援從 PDF、PPT 等常見檔案格式提取文字。
+* **Agent 功能:**  基於 LLM Function Calling 或 ReAct 定義 Agent，並新增預建或自定義工具。提供 50 多種內建工具，例如 Google Search、DALL·E 和 WolframAlpha。
+* **LLMOps:** 監控和分析應用程式日誌和效能，持續改進提示字元、資料集和模型。
+* **Backend-as-a-Service:** 提供所有功能的 API，方便整合到自身商業邏輯中。
+* **雲端及自託管選項:** 提供雲端託管服務和自託管社群版本。
+
+
+#### 如何使用
+
+* **雲端部署:** 使用 Dify 雲端服務，無需設定即可開始使用，沙盒方案提供 200 次免費 GPT-4 呼叫。
+* **自託管部署:** 使用 Docker Compose 快速在本地環境執行 Dify。參考文件獲取更詳細的說明。
+* **企業部署:** 提供企業級功能，可透過聊天機器人或郵件聯絡以討論企業需求。  AWS 使用者可在 AWS Marketplace 部署 Dify Premium。
+* **進階設定:**  修改 `.env` 和 `docker-compose.yaml` 檔案以自定義設定。  也提供 Kubernetes 部署方案 (透過 Helm Charts 和 YAML 檔案)。
+* **Terraform 和 AWS CDK 部署:** 提供使用 Terraform 和 AWS CDK 部署至雲平臺的方案。
+## 📌 [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)
+<Callout>
+    Description: The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, and more.\
+    🌐 JavaScript｜⭐️ 35,738 | 3558 stars this week
+</Callout>
+    #### 簡介
+
+AnythingLLM 是一款全功能 AI 應用程式，讓您可以將任何檔案、資源或內容轉化為任何大型語言模型 (LLM) 在聊天過程中可用的上下文。它支援多種 LLM、向量資料庫，以及多使用者管理和許可權設定，並可在本地或遠端託管。  AnythingLLM 將檔案劃分為稱為工作區的物件，每個工作區如同一個獨立的執行緒，確保上下文清晰。  其特色包含自訂 AI 代理程式、多模態支援、多使用者支援和許可權設定（僅限 Docker 版本）、工作區內代理程式（瀏覽網頁、執行程式碼等）、自訂嵌入式聊天小部件（僅限 Docker 版本）、多種檔案型別支援等等。
+
+
+#### 主要功能
+
+* 使用商業或開源 LLM 和向量資料庫，建立私有的 ChatGPT。
+* 支援多種 LLM，包含 OpenAI、Azure OpenAI、AWS Bedrock 等。
+* 支援多種向量資料庫，包含 LanceDB、Astra DB、Pinecone 等。
+* 多種檔案型別支援 (PDF, TXT, DOCX 等)。
+* 自訂 AI 代理程式，可瀏覽網頁、執行程式碼等。
+* 多使用者管理與許可權設定 (僅限 Docker 版本)。
+* 自訂嵌入式聊天小部件 (僅限 Docker 版本)。
+* 簡單易用的拖放式聊天介面，並提供清晰的引用來源。
+* 100% 適用於雲端部署。
+* 內建的成本和時間節省措施，用於管理大型檔案。
+* 提供完整的開發者 API，方便自訂整合。
+* 支援多模態 (多媒體) 功能。
+
+
+#### 如何使用
+
+* 使用 `yarn setup` 填寫必要的 `.env` 檔案。
+* 使用 `yarn dev:server` 啟動本地伺服器。
+* 使用 `yarn dev:frontend` 啟動本地前端。
+* 使用 `yarn dev:collector` 執行檔案收集器。
+*  透過圖形化使用者介面，上傳和管理檔案。
+*  選擇要使用的 LLM 和向量資料庫。
+*  在聊天介面中與您的檔案互動。
+*  (選項) 利用 Docker 部署至 AWS, GCP, Digital Ocean 等雲端平臺或自建伺服器。
+*  (選項) 使用提供的設定檔部署至 Railway, RepoCloud, Elestio 等平臺。
+*  參考檔案學習如何使用向量快取及其他進階功能。
+## 📌 [oumi-ai/oumi](https://github.com/oumi-ai/oumi)
+<Callout>
+    Description: Everything you need to build state-of-the-art foundation models, end-to-end.\
+    🌐 Python｜⭐️ 6,579 | 3314 stars this week
+</Callout>
+    #### 簡介
+
+Oumi是一個完全開源的平臺，簡化了基礎模型的整個生命週期，從資料準備和訓練到評估和部署。無論您是在筆記型電腦上開發，在叢集上啟動大規模實驗，還是在生產環境中部署模型，Oumi 都能提供您所需的工具和工作流程。它支援從1000萬到4050億個引數的模型訓練和微調，相容文字和多模態模型（例如Llama、DeepSeek、Qwen、Phi等），並與流行的推理引擎（例如vLLM、SGLang）和雲平臺（AWS、Azure、GCP等）整合。Oumi 提供一致的 API，具有生產級可靠性和靈活性，適用於研究和生產環境。
+
+
+#### 主要功能
+
+* 支援從1000萬到4050億引數的模型訓練和微調，使用SFT、LoRA、QLoRA、DPO等先進技術。
+* 支援文字和多模態模型 (Llama, DeepSeek, Qwen, Phi 等)。
+* 使用LLM作為評審來合成和整理訓練資料。
+* 使用流行的推理引擎 (vLLM, SGLang)高效部署模型。
+* 跨標準基準進行全面的模型評估。
+* 在筆記型電腦、叢集和雲端 (AWS、Azure、GCP、Lambda 等) 上執行。
+* 整合開放模型和商業 API (OpenAI、Anthropic、Vertex AI、Together、Parasail 等)。
+* 提供零樣板程式碼的即用型配方，簡化模型訓練和部署流程。
+* 具有企業級的穩定性和可擴充套件性，以及方便研究人員進行實驗的靈活介面。
+
+
+#### 如何使用
+
+* **安裝:** 使用 `pip install oumi` (CPU & NPU) 或 `pip install oumi[gpu]` (GPU) 安裝 Oumi。也可以從 Github 原始碼安裝。
+* **Oumi CLI:** 使用 `oumi train`, `oumi evaluate`, `oumi infer` 命令進行模型訓練、評估和推理，並使用預設的配置檔案。例如：`oumi train -c configs/recipes/smollm/sft/135m/quickstart_train.yaml`。
+* **遠端執行:** 使用 `oumi launch up` 命令在雲平臺 (AWS, Azure, GCP, Lambda 等) 上執行任務。例如：`oumi launch up -c configs/recipes/smollm/sft/135m/quickstart_gcp_job.yaml --resources.cloud aws`。
+* **使用預設配方:** Oumi 提供多種預設配方，方便使用者快速上手，支援多種模型和工作流程。
+*  參考檔案和範例：Oumi 提供詳細的檔案和多個範例，幫助使用者學習和使用平臺。
