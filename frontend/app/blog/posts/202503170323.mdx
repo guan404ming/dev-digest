@@ -1,0 +1,156 @@
+---
+title: '[3/17 - 3/23] GitHub Weekly Digest'
+publishedAt: '2025-03-23'
+---
+## 📌 [glanceapp/glance](https://github.com/glanceapp/glance)
+<Callout>
+    Description: A self-hosted dashboard that puts all your feeds in one place\
+    🌐 Go｜⭐️ 19,720 | 6775 stars this week
+</Callout>
+    #### 簡介
+
+Glance 是一個快速、輕量且高度客製化的儀錶板應用程式，能顯示各種資訊小工具，例如 RSS 饋送、社群媒體貼文、天氣預報、市場價格等等。它使用 YAML 檔案進行設定，支援多種佈局和主題，並針對行動裝置進行最佳化。Glance 提供單一小型二進位檔案 (少於 20MB)，支援多種作業系統和架構，也提供 Docker 容器版本。  頁面載入速度通常在 1 秒內 (取決於網路速度和小工具數量)。
+
+
+#### 主要功能
+
+* 多種小工具：支援 RSS 饋送、Reddit 貼文、Hacker News 貼文、天氣預報、YouTube 頻道更新、Twitch 頻道、市場價格、Docker 容器狀態、伺服器統計資訊等等，並支援自定義小工具。
+* 快速輕量：記憶體使用率低，依賴性少，使用最少的原生 JavaScript，提供小型二進位檔案和 Docker 容器。
+* 高度客製化：支援不同的佈局、多個頁面/分頁、每個小工具的眾多配置選項以及某些小工具的多種樣式，並可自訂 CSS。
+* 行動裝置最佳化：可在行動裝置上使用。
+* 可主題化：可輕鬆自訂主題或從現有主題中選擇。
+
+
+#### 如何使用
+
+Glance 提供三種安裝方式：
+
+* **Docker Compose (推薦):**
+    * 建立 `glance` 目錄並下載範例檔案：`mkdir glance && cd glance && curl -sL https://github.com/glanceapp/docker-compose-template/archive/refs/heads/main.tar.gz | tar -xzf - --strip-components 2`
+    * 編輯 `docker-compose.yml` (設定埠號、儲存空間等)、`config/home.yml` (設定小工具或首頁佈局) 和 `config/glance.yml` (設定主題或新增頁面) 檔案。
+    * 執行 `docker compose up -d` 開始使用。
+
+* **Docker Compose 手動安裝:**
+    * 建立 `docker-compose.yml` 檔案，定義 Glance 服務。
+    * 建立 `config` 目錄並下載範例 `glance.yml` 檔案：`mkdir config && wget -O config/glance.yml https://raw.githubusercontent.com/glanceapp/glance/refs/heads/main/docs/glance.yml`
+    * 編輯 `glance.yml` 檔案，並執行 `docker compose up -d`。
+
+* **手動二進位安裝:**
+    * 從最新版本頁面下載對應作業系統和架構的二進位檔案。
+    * 將二進位檔案放置在指定目錄，例如 `/opt/glance/`。
+    * 使用 `--config` 選項指定設定檔路徑 (預設為與二進位檔案相同的目錄)。
+    * 下載範例 `glance.yml` 檔案：`wget https://raw.githubusercontent.com/glanceapp/glance/refs/heads/main/docs/glance.yml`
+
+
+Glance 也支援透過 Proxmox VE Helper Script、NixOS 套件和 Coolify.io 安裝。  如有問題，請參考常見問題 (FAQ) 或檔案。
+## 📌 [langchain-ai/local-deep-researcher](https://github.com/langchain-ai/local-deep-researcher)
+<Callout>
+    Description: Fully local web research and report writing assistant\
+    🌐 Python｜⭐️ 6,162 | 3234 stars this week
+</Callout>
+    #### 簡介
+
+Local Deep Researcher 是一個完全本地的網頁研究助理，可以使用 Ollama 或 LMStudio 上託管的任何大型語言模型 (LLM)。給它一個主題，它將生成一個網頁搜尋查詢，收集網頁搜尋結果，總結網頁搜尋結果，反思摘要以檢查知識差距，生成一個新的搜尋查詢來解決這些差距，並針對使用者定義的迴圈次數重複此過程。它將為使用者提供一個最終的 Markdown 摘要，其中包含用於生成摘要的所有來源。
+
+
+#### 主要功能
+
+* 使用 Ollama 或 LMStudio 本地託管的 LLM 進行網頁研究。
+* 自動生成網頁搜尋查詢，收集並總結相關網頁搜尋結果。
+* 識別知識差距並生成新的搜尋查詢以填補這些差距。
+* 反覆迭代搜尋和總結過程，直到達到使用者設定的迴圈次數。
+* 提供包含所有資料來源的 Markdown 格式研究摘要。
+* 支援 DuckDuckGo、SearXNG、Tavily 和 Perplexity 等搜尋引擎。
+* 可自訂模型選擇、搜尋工具和其他設定。
+* 使用 LangGraph Studio 提供視覺化研究流程。
+
+
+#### 如何使用
+
+* **安裝與設定:** 從 GitHub 複製程式碼庫 (`git clone https://github.com/langchain-ai/local-deep-researcher.git`)，編輯 `.env` 檔案，設定環境變數，例如選擇 LLM 模型 (Ollama 或 LMStudio)、搜尋工具以及 API 金鑰等。
+* **選擇 LLM 模型:**  支援 Ollama 和 LMStudio，需分別下載並設定，並在 `.env` 檔案中設定相關引數 (例如 `OLLAMA_MODEL`, `LMSTUDIO_BASE_URL` 等)。
+* **選擇搜尋工具:** 預設使用 DuckDuckGo，也可選擇 SearXNG、Tavily 或 Perplexity，並在 `.env` 檔案中設定 API 金鑰。
+* **執行:** 使用 LangGraph Studio 啟動伺服器，在 UI 中設定研究主題並執行。
+* **結果輸出:**  研究完成後，將生成一個包含研究摘要和所有資料來源的 Markdown 檔案。
+* **其他設定:**  `.env` 檔案可設定最大研究迴圈次數 (`MAX_WEB_RESEARCH_LOOPS`) 等引數。  LangGraph Studio UI 也提供設定選項，優先順序高於 `.env` 設定。
+## 📌 [xpipe-io/xpipe](https://github.com/xpipe-io/xpipe)
+<Callout>
+    Description: Access your entire server infrastructure from your local desktop\
+    🌐 Java｜⭐️ 9,888 | 2027 stars this week
+</Callout>
+    #### 簡介
+
+XPipe 是一款新型的 shell 連線中心和遠端檔案管理器，讓您可以從本地機器存取整個伺服器基礎架構。它建置於您已安裝的命令列程式之上，不需要在遠端系統上進行任何設定。如果您通常使用 SSH、Docker、kubectl 等 CLI 工具連線到您的伺服器，您只需在這些工具之上使用 XPipe 即可。XPipe 與您喜愛的文字/程式碼編輯器、終端機、shell、命令列工具等工具完全整合。該平臺旨在可擴充套件，允許任何人輕鬆地為更多工具新增支援，或透過模組化擴充套件系統實現自定義功能。它支援 SSH 連線、Docker 容器、Kubernetes 叢集、以及其他多種遠端連線方式，並提供強大的檔案管理和指令碼功能。所有資料都安全地儲存在您的本地系統中。
+
+
+#### 主要功能
+
+* **連線中心 (Connection hub):**  輕鬆連線並存取各種遠端連線；以階層式類別組織所有連線；在任何系統上建立特定登入環境；快速執行各種常用動作（例如啟動/停止容器、建立隧道等）；建立桌面捷徑，自動在您的終端機中開啟遠端連線。
+* **強大的檔案管理 (Powerful file management):** 使用針對專業人士最佳化的工作流程與任何遠端系統的檔案系統互動；快速在您喜愛的終端機模擬器中開啟任何目錄的終端機階段；利用您所有已安裝的本地程式來開啟和編輯遠端檔案；動態提升具有 sudo 許可權的階段；無縫地從您的系統桌面環境傳輸檔案；使用內建的索引標籤式多工處理，同時在多個系統上工作和執行傳輸。
+* **終端機啟動器 (Terminal launcher):** 一鍵啟動您喜愛的終端機中的 shell 階段；自動填寫密碼提示；支援所有常用終端機模擬器；支援開啟自定義終端機模擬器；支援所有命令 shell（例如 bash、zsh、cmd、PowerShell 等）。
+* **多功能指令碼系統 (Versatile scripting system):** 建立可在連線的遠端系統上執行的可重複使用的簡單 shell 指令碼、範本和群組；自動在任何遠端系統的 PATH 中提供您的指令碼；為連線設定 shell 初始化環境；透過提供您自己的命令來開啟自定義 shell 和自定義遠端連線。
+* **安全的資料庫 (Secure vault):** 所有資料都專門儲存在您的本地系統中的加密安全資料庫中；可以選擇使用自定義主密碼來增強安全性；沒有涉及伺服器，所有資訊都保留在您的系統上；XPipe 應用程式不會將任何個人或敏感資訊傳送到外部服務；可以將資料庫的變更推送到您自己的遠端 Git 儲存庫。
+
+
+#### 如何使用
+
+XPipe 提供多種安裝方式，包含安裝程式、可攜式版本以及各種套件管理器 (例如 choco、winget、Homebrew、apt、dnf、yum、zypper、rpm、pacman、yay 等)。  根據您的作業系統 (Windows、macOS、Linux) 和偏好選擇合適的安裝方法。安裝後，您可以透過 XPipe 的圖形介面或命令列介面管理您的遠端連線和檔案。  詳細的步驟和說明可以在 XPipe 的官方檔案或 GitHub 頁面找到。  大部分操作都相當直覺，您可以透過圖形介面輕鬆建立新的連線、組織您的連線、以及執行檔案傳輸等操作。  XPipe 也提供強大的指令碼功能，讓您可以自動化複雜的任務。
+## 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
+<Callout>
+    Description: In-depth tutorials on LLMs, RAGs and real-world AI agent applications.\
+    🌐 Jupyter Notebook｜⭐️ 6,494 | 1804 stars this week
+</Callout>
+    #### 簡介
+
+* AI Engineering Hub 是一個提供深入學習大型語言模型 (LLMs) 和檢索增強生成 (RAGs) 教程的資源庫。
+* 該資源庫包含真實世界的 AI 代理應用案例以及可供實作、調整和擴充套件的範例。
+* 資源庫內容適用於各個技能水平的使用者，從初學者到實務者和研究人員。
+* 提供免費的資料科學電子書，內含 150 多個資料科學課程。
+* 鼓勵使用者貢獻，例如新增教程、改進現有程式碼或回報問題。
+
+
+#### 主要功能
+
+* 提供關於 LLMs 和 RAGs 的深入教程。
+* 展示真實世界的 AI 代理應用程式範例。
+* 提供可實作、調整和擴充套件至個人專案的程式碼範例。
+* 涵蓋不同技能等級的學習資源。
+* 定期更新教程、見解和獨家資源。
+
+
+#### 如何使用
+
+* 瀏覽 AI Engineering Hub 資源庫。
+* 選擇感興趣的教程或應用程式範例。
+* 參考提供的程式碼範例進行實作、調整和擴充套件。
+* 參與社群貢獻，例如新增教程、改善程式碼或回報問題。
+* 訂閱電子報以獲得最新更新和獨家資源。
+## 📌 [satnaing/shadcn-admin](https://github.com/satnaing/shadcn-admin)
+<Callout>
+    Description: Admin Dashboard UI built with Shadcn and Vite.\
+    🌐 TypeScript｜⭐️ 5,837 | 1584 stars this week
+</Callout>
+    #### 簡介
+
+* Shadcn Admin Dashboard 是一個使用 Shadcn 和 Vite 打造的管理員後臺介面 UI。
+* 旨在建立一個可重複使用的管理員介面 UI 元件集合，方便未來專案使用。
+* 考慮到響應式設計和無障礙性。
+* 部分程式碼改編自 ShadcnUI 的範例，並包含一些自定義元件。
+* 目前並非一個可直接使用的啟動專案 (template)，未來可能會推出。
+
+
+#### 主要功能
+
+* 支援淺色/深色模式 (Light/dark mode)
+* 響應式設計 (Responsive)
+* 無障礙性設計 (Accessible)
+* 內建側邊欄元件 (Sidebar component)
+* 全域性搜尋指令 (Global Search Command)
+* 10 多個頁面 (10+ pages)
+*額外的自定義元件 (Extra custom components)
+
+
+#### 如何使用
+
+* 複製專案：`git clone https://github.co` (網址不完整，請參考原始README檔案取得完整網址)
+*  (其餘步驟請參考原始README檔案，因提供的資訊不足以完整描述)
