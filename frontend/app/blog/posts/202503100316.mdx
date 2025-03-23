@@ -1,0 +1,181 @@
+---
+title: '[3/10 - 3/16] GitHub Weekly Digest'
+publishedAt: '2025-03-16'
+---
+## 📌 [browser-use/browser-use](https://github.com/browser-use/browser-use)
+<Callout>
+    Description: Make websites accessible for AI agents\
+    🌐 Python｜⭐️ 44,317 | 7451 stars this week
+</Callout>
+    #### 簡介
+
+* Browser-use 是一個讓 AI 能夠控制瀏覽器的程式庫，方便使用者透過 AI 代理程式與瀏覽器互動。
+* 提供託管版本，方便快速上手進行瀏覽器自動化。
+* 支援多種模型，並可透過 .env 檔案設定 API 金鑰。
+* 提供 UI 測試介面以及 Gradio 範例，方便使用者測試與開發。
+* 積極開發中，未來將持續改進代理程式記憶體、規劃能力以及減少 Token 消耗等功能。
+* 社群活躍，提供 Discord 交流平臺及教學資源。
+
+
+#### 主要功能
+
+* 使用 Python 程式語言開發，並需要安裝 `playwright`。
+* 透過 Langchain 整合 LLM 模型 (例如：gpt-4o)，實現 AI 代理程式。
+* 能夠執行各種瀏覽器自動化任務，例如：價格比較、資料填寫、檔案存取等等。
+* 提供多種範例，涵蓋購物車操作、LinkedIn 資料管理、檔案編輯、Hugging Face 資料搜尋等應用。
+* 允許使用者自定義任務，並透過 prompt 指導 AI 代理程式執行。
+*  持續更新並擴充套件功能，包含增強代理記憶體、規劃能力，以及最佳化 DOM 元素擷取等。
+
+
+#### 如何使用
+
+* 使用 pip 安裝 `browser-use` 和 `playwright`：
+  ```bash
+  pip install browser-use
+  playwright install
+  ```
+*  在 `.env` 檔案中設定 API 金鑰 (例如：OPENAI_API_KEY)。
+*  使用 Python 程式碼建立並執行 AI 代理程式：
+  ```python
+  from langchain_openai import ChatOpenAI
+  from browser_use import Agent
+  import asyncio
+  from dotenv import load_dotenv
+  load_dotenv()
+
+  async def main():
+      agent = Agent(task="Your task here", llm=ChatOpenAI(model="gpt-4o"))
+      await agent.run()
+
+  asyncio.run(main())
+  ```
+*  參考提供的範例程式碼和檔案，學習如何設定不同的任務和模型。
+*  可透過 Gradio 介面進行 UI 測試。
+## 📌 [clockworklabs/SpacetimeDB](https://github.com/clockworklabs/SpacetimeDB)
+<Callout>
+    Description: Multiplayer at the speed of light\
+    🌐 Rust｜⭐️ 10,210 | 3765 stars this week
+</Callout>
+    #### 簡介
+
+* SpacetimeDB 是一個結合資料庫與伺服器的整合式系統。
+* 它是一個關聯式資料庫，允許開發者透過名為 "modules" 的儲存程式將應用程式邏輯直接上傳到資料庫中。
+*  客戶端直接連線到資料庫並在其中執行應用程式邏輯，無需額外的 Web 或遊戲伺服器。
+*  所有許可權和授權邏輯都可在 module 中編寫，如同在一般伺服器中一樣。
+*  應用程式可以使用單一程式語言 Rust 編寫並部署為單一二進位檔。
+*  它類似於智慧合約的概念，但速度更快，且與區塊鏈無關。
+*  針對實時應用程式（例如遊戲、聊天和協作工具）進行最佳化，並將所有應用程式狀態儲存在記憶體中，並使用預寫日誌 (WAL) 持久化資料。
+*  BitCraft Online MMORPG 的後端即基於 SpacetimeDB 模組建構。
+
+
+#### 主要功能
+
+*  將資料庫和伺服器功能整合為一體。
+*  使用 Rust 編寫應用程式邏輯，並將其部署為單一二進位檔。
+*  直接在資料庫中執行應用程式邏輯，無需額外的伺服器。
+*  內建許可權和授權管理。
+*  最佳化速度和延遲，適用於實時應用程式。
+*  將應用程式狀態儲存在記憶體中，並使用 WAL 持久化資料。
+*  支援多平臺安裝 (macOS, Linux, Windows)。
+*  提供命令列工具 (spacetime CLI) 來管理 SpacetimeDB。
+
+
+#### 如何使用
+
+*  **安裝:**  透過 `spacetime` CLI 工具安裝。支援 macOS、Linux 和 Windows 平臺，並提供不同的安裝指令(使用 `curl` 或 `iwr`)。  也可以從原始碼編譯安裝，但除非需要尚未釋出的最新功能，否則不建議這麼做。
+*  **macOS 和 Linux 安裝:**  需要安裝 rustup (如果尚未安裝 cargo 和 wasm32-unknown-unknown target 的話)，然後複製 SpacetimeDB 程式碼，編譯並安裝 CLI，最後設定 PATH 環境變數和 SpacetimeDB 版本。
+*  **Windows 安裝:**  建議使用 Strawberry Perl 和 Git for Windows，然後按照與 macOS 和 Linux 類似的步驟進行編譯和安裝，並將安裝目錄新增到系統路徑中。  過程中需要執行 `cargo build` 命令並設定環境變數。  提供兩種不同的 Windows 安裝方法，一種使用 PowerShell，另一種使用 Git for Windows shell。
+*  版本管理: 使用 `spacetime version use` 命令來切換版本，使用 `spacetime version list` 命令列出所有已安裝的版本。
+## 📌 [camel-ai/camel](https://github.com/camel-ai/camel)
+<Callout>
+    Description: 🐫 CAMEL: Finding the Scaling Law of Agents. The first and the best multi-agent framework. https://www.camel-ai.org\
+    🌐 Python｜⭐️ 10,266 | 2920 stars this week
+</Callout>
+    #### 簡介
+
+CAMEL (Community for Agent Modeling and Exploration of Large-scale systems)是一個開源社群，致力於研究大型代理（agent）的規模定律。透過模擬數百萬個代理在複雜環境中的互動，研究其行為、能力和潛在風險，並支援各種代理型別、任務、提示、模型和模擬環境。  CAMEL 提供可擴充套件、具狀態且可演化的框架，並以程式碼作為提示 (Code-as-Prompt) 的設計理念，促進研究人員進行多代理系統的尖端研究。  社群成員超過 100 位研究人員，提供多種基於大型語言模型的合成資料集。
+
+
+#### 主要功能
+
+* **大型代理系統模擬:**  模擬高達一百萬個代理，研究複雜多代理環境中的湧現行為和規模定律。
+* **動態通訊:**  允許代理之間進行即時互動，促進協作以解決複雜任務。
+* **狀態記憶:** 代理具有保留和利用歷史背景的能力，提升長期互動中的決策能力。
+* **多種基準測試支援:** 利用標準化基準測試嚴格評估代理效能，確保再現性和可靠的比較。
+* **支援多種代理型別:** 支援各種代理角色、任務、模型和環境，支援跨學科實驗和多樣化的研究應用。
+* **資料生成和工具整合:** 自動建立大型結構化資料集，並與多種工具無縫整合，簡化合成資料生成和研究工作流程。
+* **豐富的模組:** 包含 Agents、Agent Societies、Data Generation、Models、Tools 等核心模組，以及 Memory、Storage、Benchmarks 等輔助模組。
+* **多種 Cookbooks 提供範例:** 提供從基本代理建立到進階多代理系統應用等多個實用指南和教程。
+
+
+#### 如何使用
+
+* 使用 `pip install camel-ai` 安裝 CAMEL。
+* 參考[檔案](www.docs.camel-ai.org)學習如何構建強大的多代理系統。
+*  檔案提供建立第一個代理和代理社群的逐步指南，以及關於訊息處理、工具整合、記憶體系統、RAG 等進階功能的說明。
+*  提供的 Cookbooks 包含資料生成、多代理系統應用、資料處理等方面的例項教程，例如使用不同大型語言模型作為後端生成資料，以及構建各種應用程式的範例，如客戶服務Discord機器人。
+*  遇到問題可聯絡 CAMEL Discord 社群尋求協助。
+## 📌 [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)
+<Callout>
+    Description: An AI Hedge Fund Team\
+    🌐 Python｜⭐️ 17,054 | 2832 stars this week
+</Callout>
+    #### 簡介
+
+* 這是個AI驅動避險基金的驗證概念程式，旨在探索AI於交易決策中的應用。
+* 系統模擬交易，而非實際進行交易，僅供教育用途，不適用於實際投資。
+*  包含多個模擬不同投資策略的代理程式，例如價值投資、激進投資、成長投資等。
+*  使用Python開發，需設定多個API金鑰才能完整執行。
+*  包含回測功能，可以評估策略在歷史資料上的表現。
+*  免責宣告：此專案僅供教育和研究用途，不保證任何投資回報，使用者需自行承擔風險。
+
+
+#### 主要功能
+
+* 模擬多種投資策略：整合了不同投資大師的策略，例如Ben Graham, Bill Ackman, Cathie Wood, Charlie Munger, Stanley Druckenmiller 和 Warren Buffett。
+*  價值評估：透過Valuation Agent計算股票內在價值，產生交易訊號。
+*  情緒分析：Sentiment Agent分析市場情緒，產生交易訊號。
+*  基本面分析：Fundamentals Agent分析基本資料，產生交易訊號。
+*  技術面分析：Technicals Agent分析技術指標，產生交易訊號。
+*  風險管理：Risk Manager計算風險指標並設定倉位限制。
+*  投資組合管理：Portfolio Manager做出最終交易決策並產生訂單。
+*  回測功能：`src/backtester.py` 允許使用者回測策略在歷史資料上的表現。
+
+
+#### 如何使用
+
+*  複製程式碼庫：`git clone https://github.com/virattt/ai-hedge-fund.git`
+*  安裝Poetry套件管理工具：`curl -sSL https://install.python-poetry.org | python3 -`
+*  安裝相依套件：`poetry install`
+*  設定環境變數：複製`.env.example`至`.env`並設定API金鑰 (OpenAI, Groq, Financial Datasets API key)。
+*  執行避險基金模擬：`poetry run python src/main.py --ticker AAPL,MSFT,NVDA` (可加入`--show-reasoning`, `--start-date`, `--end-date`引數)。
+*  執行回測程式：`poetry run python src/backtester.py --ticker AAPL,MSFT,NVDA` (可加入`--start-date`, `--end-date`引數)。
+*  部分股票資料免費，其他股票則需設定FINANCIAL_DATASETS_API_KEY。
+## 📌 [geekan/MetaGPT](https://github.com/geekan/MetaGPT)
+<Callout>
+    Description: 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming\
+    🌐 Python｜⭐️ 52,471 | 2172 stars this week
+</Callout>
+    #### 簡介
+
+MetaGPT 是一個多代理框架，以單行需求為輸入，輸出使用者故事、競爭分析、需求規格、資料結構、API、檔案等等。它模擬軟體公司的運作流程，內含產品經理、架構師、專案經理、工程師等角色，並透過精心設計的標準作業程式 (SOP) 協同工作。核心哲學為「程式碼 = 標準作業程式 (團隊)」，將 SOP 具體化並應用於由大型語言模型 (LLM) 組成的團隊。MetaGPT 提供 CLI 和程式庫兩種使用方式，並支援多種 LLM，例如 OpenAI、Azure 等。
+
+
+#### 主要功能
+
+* 模擬整個軟體公司開發流程，包含需求分析、設計、開發、檔案撰寫等階段。
+* 利用多個大型語言模型 (LLM)扮演不同角色，例如產品經理、工程師等，協同完成任務。
+* 支援多種大型語言模型 (LLM)平臺，例如 OpenAI, Azure, Ollama, Groq 等。
+* 提供命令列介面 (CLI) 和程式庫兩種使用方式。
+* 提供資料詮釋器 (Data Interpreter) 功能，方便進行資料分析和程式碼生成。
+* 可用於多種應用場景，例如資料詮釋、辯論、研究和收據助理等。
+* 提供詳細的線上檔案和教學影片。
+* 積極開發中，持續更新功能和改善效能。
+
+
+#### 如何使用
+
+* **安裝:**  確保系統已安裝 Python 3.9 或更新版本 (但低於 3.12)，並使用 pip 安裝 `metagpt` 程式庫。  `pip install --upgrade metagpt`  (或使用 conda 或 git clone 安裝)。  安裝 Node.js 和 pnpm。
+* **設定:** 使用 `metagpt --init-config` 命令初始化設定檔 `~/.metagpt/config2.yaml`，並根據檔案設定 LLM 型別、模型、基底網址和 API 金鑰等引數。
+* **CLI 使用:** 在終端機輸入 `metagpt "你的需求"`，例如 `metagpt "Create a 2048 game"`，MetaGPT 將在 `./workspace` 目錄下建立專案。
+* **程式庫使用:** 使用 `generate_repo()` 函式生成專案，或使用 `DataInterpreter` 類別進行資料分析。  範例程式碼已提供。  參考檔案瞭解更多細節。
