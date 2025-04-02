@@ -1,0 +1,168 @@
+---
+title: '[3/24 - 3/30] GitHub Weekly Digest'
+publishedAt: '2025-03-30'
+---
+## 📌 [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
+<Callout>
+    Description: Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.\
+    🌐 Python｜⭐️ 25,007 | 4308 stars this week
+</Callout>
+    #### 簡介
+
+這個儲存庫 `Awesome LLM Apps` 收集了許多基於 RAG (Retrieval Augmented Generation) 和 AI 代理的優秀大型語言模型 (LLM) 應用程式範例。這些應用程式使用了來自 OpenAI、Anthropic、Google 等公司的模型，以及 DeepSeek、Qwen 或 Llama 等開源模型，部分甚至可以在本地電腦上執行。  它旨在展示 LLM 在不同領域的實際應用，並提供一個學習和貢獻的開源生態系統。  此外，它還宣傳了一個全球 AI 代理駭客松比賽，提供豐厚的獎金。
+
+
+#### 主要功能
+
+* 收集並展示各種基於 LLM、RAG 和 AI 代理的應用程式範例。
+* 涵蓋來自 OpenAI、Anthropic、Google 和開源模型的應用程式。
+* 提供本地執行部分應用程式的可能性。
+* 展示 LLM 在不同領域 (例如客戶支援、投資、法律、招聘等) 的應用。
+*  包含基於不同 LLM 模型和技術的應用程式 (例如 Gemini, Llama, DeepSeek)。
+* 提供了 RAG (Retrieval Augmented Generation) 和記憶功能的應用程式範例。
+* 包含與不同資料來源 (例如 GitHub 儲存庫、Gmail、PDF、研究論文等) 互動的應用程式。
+*  包含 LLM 微調的示例。
+*  包含一些進階工具和框架的應用程式。
+*  提供了一個 AI 代理駭客松比賽，鼓勵開發者參與。
+
+
+#### 如何使用
+
+這個儲存庫主要作為一個展示和學習的資源。使用者可以瀏覽儲存庫中列出的各種 LLM 應用程式，瞭解其功能和實現方式。  每個應用程式通常會提供程式碼和檔案，方便使用者學習和參考。  對於想要參與 AI 代理駭客松比賽的開發者，可以參考儲存庫中的相關資訊，並按照比賽規範提交作品。  沒有直接的使用說明，而是提供多個不同應用程式的例子，使用者需要根據各自的應用程式說明進行操作。
+## 📌 [hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam)
+<Callout>
+    Description: real time face swap and one-click video deepfake with only a single image\
+    🌐 Python｜⭐️ 48,732 | 3569 stars this week
+</Callout>
+    #### 簡介
+
+Deep-Live-Cam 是一款單點選即可進行即時臉部替換和影片 Deepfake 的軟體，只需一張圖片即可達成。該軟體旨在成為 AI 產生媒體產業的生產力工具，協助藝術家製作動畫自訂角色、創作引人入勝的內容，甚至運用模型進行服裝設計。內建檢查機制可防止處理不當媒體（裸露、血腥內容、戰爭畫面等敏感素材）。使用者需承擔使用責任，並遵守相關法律與道德規範。
+
+
+#### 主要功能
+
+* 即時臉部替換與 Deepfake：只需一張圖片，即可在影片或直播中即時替換臉部。
+* 多種臉部對映：可在多個物件上同時使用不同的臉部。
+* 嘴部遮罩 (Mouth Mask)：保留原始嘴部以獲得更精確的動作。
+* 直播功能 (Live Show)：適用於直播表演。
+* 影像/影片模式 (Image/Video Mode)：可處理圖片和影片。
+* 網路攝影機模式 (Webcam Mode)：支援即時臉部替換直播。
+* 多種執行提供者支援 (Execution Providers)：支援 CUDA (Nvidia)、CoreML (Apple Silicon)、DirectML (Windows)、OpenVINO (Intel) 等。
+*  Meme 製作：輕鬆製作病毒式 Meme。
+
+
+#### 如何使用
+
+**快速上手 (預建版本 - Windows/Nvidia)：**
+
+1. 選擇一張臉部圖片。
+2. 選擇要使用的攝影機。
+3. 按下「Live」按鈕。
+
+
+**手動安裝：** (需具備技術技能)
+
+1. **設定平臺:** 安裝 Python 3.10、pip、git、ffmpeg 和 Visual Studio 2022 執行時期 (Windows)。
+2. **複製儲存庫:** 使用 git clone https://github.com/hacksider/Deep-Live-Cam.git 並 cd Deep-Live-Cam。
+3. **下載模型:** 將 GFPGANv1.4 和 inswapper_128_fp16.onnx 放入 "models" 資料夾。
+4. **安裝相依性:** 建立虛擬環境並使用 pip install -r requirements.txt 安裝相依性。  (macOS 和 Windows 安裝步驟略有不同，請參考 README)。
+5. **執行程式:** 使用 `python run.py` 執行 (無 GPU 可使用 CPU，但速度較慢)。  GPU 加速請參考 README 中關於 CUDA、CoreML、DirectML 和 OpenVINO 的說明，並使用對應的執行提供者引數 (例如 `--execution-provider cuda`)。
+
+**使用方法：**
+
+1. **圖片/影片模式:** 執行 `python run.py`，選擇來源臉部圖片和目標圖片/影片，點選「Start」。
+2. **網路攝影機模式:** 執行 `python run.py`，選擇來源臉部圖片，點選「Live」。 使用螢幕擷取工具 (例如 OBS) 進行串流。
+## 📌 [ocrmypdf/OCRmyPDF](https://github.com/ocrmypdf/OCRmyPDF)
+<Callout>
+    Description: OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched\
+    🌐 Python｜⭐️ 25,859 | 3305 stars this week
+</Callout>
+    #### 簡介
+
+OCRmyPDF 是一個命令列程式，能將掃描的 PDF 檔案新增 OCR 文字圖層，使其可搜尋和複製貼上。它支援多種語言、旋轉校正、傾斜校正、修改輸出 metadata、多核心處理、產生 PDF/A 檔案等功能，並能最佳化 PDF 影像大小，保持原始影像解析度，甚至在不影響其他內容的情況下，以「無損」方式插入 OCR 資訊。  該軟體經過大量 PDF 檔案測試，能有效處理包含數千頁的檔案，並確保使用者資料隱私。  解決了許多現有 OCR 工具的缺點，例如文字位置錯誤、無法處理多語言和特殊符號、更改影像解析度、產生過大檔案、程式崩潰或產生無效 PDF 檔案等問題。
+
+
+#### 主要功能
+
+* 從一般 PDF 產生可搜尋的 PDF/A 檔案。
+* 精確地在影像下方放置 OCR 文字，方便複製貼上。
+* 保持原始嵌入式影像的精確解析度。
+* 在可能的情況下，以「無損」方式插入 OCR 資訊，不影響其他內容。
+* 最佳化 PDF 影像，通常產生比輸入檔案更小的檔案。
+* 可選：在執行 OCR 之前進行傾斜校正和/或影像清理。
+* 驗證輸入和輸出檔案。
+* 將工作分配到所有可用的 CPU 核心。
+* 使用 Tesseract OCR 引擎識別超過 100 種語言。
+* 保持使用者資料隱私。
+* 能適當縮放以處理包含數千頁的檔案。
+
+
+#### 如何使用
+
+OCRmyPDF 的使用方法如下：
+
+* **安裝:**  支援 Linux、Windows、macOS 和 FreeBSD 系統，並提供 Docker 映象。安裝命令依系統而異，例如使用 `apt install ocrmypdf` (Debian/Ubuntu) 或 `brew install ocrmypdf` (macOS Homebrew)。  需額外安裝 Ghostscript 和 Tesseract OCR 程式。
+* **語言設定:** 使用 `-l LANG` 引數指定語言，例如 `-l eng+fra` 表示英文和法文。  Tesseract 語言包的安裝方式依系統而異，例如使用 `apt-get install tesseract-ocr-chi-sim` (Debian/Ubuntu)。
+* **基本命令:**  `ocrmypdf input.pdf output.pdf`  將 input.pdf 轉換為可搜尋的 output.pdf。  `ocrmypdf input.jpg output.pdf` 將圖片轉換為單頁 PDF。  `ocrmypdf myfile.pdf myfile.pdf`  直接修改檔案 (僅在成功時修改)。
+* **其他選項:**  `--deskew` 進行傾斜校正；`--rotate-pages` 旋轉頁面；`--title "My PDF"` 修改輸出 metadata；`--jobs 4` 使用多核心處理。 詳細資訊請參考檔案 `ocrmypdf --help`。
+## 📌 [ourongxing/newsnow](https://github.com/ourongxing/newsnow)
+<Callout>
+    Description: Elegant reading of real-time and hottest news\
+    🌐 TypeScript｜⭐️ 6,967 | 2034 stars this week
+</Callout>
+    #### 簡介
+
+NewsNow 是一款提供即時熱門新聞閱讀的應用程式，目前僅支援繁體中文，未來將推出支援多語言及更多客製化功能的完整版本。它以簡潔優雅的介面設計，提供最佳的閱讀體驗，並透過 GitHub OAuth 登入，實現資料同步功能。
+
+
+#### 主要功能
+
+* 簡潔優雅的使用者介面 (Clean and elegant UI design)
+* 即時更新熱門新聞 (Real-time updates on trending news)
+* GitHub OAuth 登入與資料同步 (GitHub OAuth login with data synchronization)
+* 預設 30 分鐘快取時間 (30-minute default cache duration)，登入使用者可強制重新整理
+* 基於資料來源更新頻率的適應性抓取間隔 (Adaptive scraping interval)，最小間隔 2 分鐘，以最佳化資源使用並防止 IP 封鎖
+
+
+#### 如何使用
+
+* **基本部署 (Basic Deployment):**  將程式碼庫複製 (Fork) 到你的帳號，並匯入至 Cloudflare Pages 或 Vercel 等平臺。
+* **Cloudflare Pages 設定:**  建置指令：`pnpm run build`，輸出目錄：`dist/output/public`。
+* **GitHub OAuth 設定:** 建立 GitHub App (無需特殊許可權)，設定回呼 URL 為 `https://your-domain.com/api/oauth/github` (將 `your-domain` 替換為你的實際網域名稱)，取得 Client ID 和 Client Secret。
+* **環境變數設定:**  參考 `example.env.server` 檔案，設定 G_CLIENT_ID、G_CLIENT_SECRET、JWT_SECRET、INIT_TABLE 和 ENABLE_CACHE 等變數。
+* **資料庫支援:** 支援多種資料庫聯結器 (參考 https://db0.unjs.io/connectors)，推薦使用 Cloudflare D1 資料庫。  在 Cloudflare Worker 控制檯建立 D1 資料庫，並在 `wrangler.toml` 中設定 `database_id` 和 `database_name`。
+* **Docker 部署:** 在專案根目錄執行 `docker compose up`，也可在 `docker-compose.yml` 中設定環境變數。
+* **開發環境設定:** 需要 Node.js >= 20，執行 `corepack enable`、`pnpm i` 和 `pnpm dev`。
+* **新增資料來源:**  (說明檔案另行參考)
+## 📌 [subframe7536/maple-font](https://github.com/subframe7536/maple-font)
+<Callout>
+    Description: Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项\
+    🌐 Python｜⭐️ 13,548 | 2004 stars this week
+</Callout>
+    #### 簡介
+
+Maple Mono 是一款開源等寬字型，旨在提升程式碼編寫體驗。V7 版本完全重製，提供變體字型格式和字型專案原始檔，重新設計超過一半的字形，並提供更智慧的連字功能。  它支援簡體中文、繁體中文和日文，並基於 Resource Han Rounded 提供完整的中文字元集支援，兼顧中英文 2:1 對齊，適用於多語言顯示和 Markdown 表格等場景。
+
+
+#### 主要功能
+
+* **Variable Font:** 無限字重和細緻的斜體字形。
+* **Smooth Glyphs:** 圓角設計，重新設計的 @、$、%、&、Q、-> 等符號，以及斜體風格的 cursive f、i、j、k、l、x、y 字形。
+* **Smart Ligatures:**  大量的智慧連字功能。
+* **Nerd-Font Support:** 一流的 Nerd-Font 支援，使終端機更生動。
+* **Customization:**  可自定義啟用或停用字型功能，打造個人化字型。
+* **支援多種語言:** 簡體中文、繁體中文和日文。
+* **中英文 2:1 對齊:**  中文和英文字元間距完美 2:1 對齊。
+* **多種格式:** 提供 TTF、OTF、WOFF2 等多種格式。
+* **含連字及不含連字版本:** 提供兩種版本，方便使用者選擇。
+* **含提示及不含提示版本:** 提供兩種版本，適用於不同解析度的螢幕。
+
+
+#### 如何使用
+
+* **下載:** 從 Releases 頁面下載字型檔案。
+* **Scoop (Windows):** 使用 `scoop bucket add nerd-fonts` 新增儲存庫，然後使用 `scoop install` 命令安裝不同版本的 Maple Mono 字型 (例如：`scoop install Maple-Mono-NF-CN`)。
+* **Homebrew (macOS, Linux):** 使用 `brew install --cask` 命令安裝不同版本的 Maple Mono 字型 (例如：`brew install --cask font-maple-mono-nf-cn`)。
+* **Arch Linux (ArchLinuxCN 建議):** 使用 `paru -S` 命令安裝不同版本的 Maple Mono 字型 (例如：`paru -S ttf-maplemono-nf-cn-unhinted`)。AUR 也提供相關套件，但不推薦。
+* **Nixpkgs (NixOS, Linux, macOS):** 修改 `fonts.packages` 設定，加入需要的 Maple Mono 套件。
+* **自定義建置:** 使用 `config.json` 檔案配置建置過程，或使用命令列引數自定義建置過程。  可利用 GitHub Actions 或 Docker 建置，亦可本地端建置 (需安裝 Python3 和相關套件)。
