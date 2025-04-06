@@ -1,0 +1,177 @@
+---
+title: '[3/31 - 4/6] GitHub Weekly Digest'
+publishedAt: '2025-04-06'
+---
+## 📌 [th-ch/youtube-music](https://github.com/th-ch/youtube-music)
+<Callout>
+    Description: YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader)\
+    🌐 TypeScript｜⭐️ 17,315 | 5834 stars this week
+</Callout>
+    #### 簡介
+
+YouTube Music 桌面版是一個使用 Electron 開發的應用程式，它以原生桌面的樣式呈現 YouTube Music 的介面，並提供自訂外掛功能，讓使用者能根據自身需求調整應用程式的樣式、內容和功能。此應用程式旨在提升 YouTube Music 的使用體驗，並提供更多客製化的選項。它支援 Windows、macOS 和 Arch Linux 系統。
+
+
+#### 主要功能
+
+* 原生桌面介面：提供類似原生應用程式的使用者體驗。
+* 自訂外掛框架：允許使用者安裝和管理外掛程式，擴充套件應用程式功能。
+* 多樣化的外掛程式：包含廣告阻擋器、專輯色彩主題、環境模式、音訊壓縮器、歌詞支援、快捷鍵設定、Last.fm 和 ListenBrainz 整合等等。
+* 支援多種作業系統：適用於 Windows、macOS 和 Arch Linux。
+* 離線安裝：提供離線安裝方法，方便在沒有網路連線的情況下安裝。
+* 可自訂主題：支援使用者自訂 CSS 檔案來更改應用程式的樣式。
+
+
+#### 如何使用
+
+* **安裝:**  根據您的作業系統，可以使用 Homebrew (macOS)、Scoop 或 Winget (Windows) 或 AUR (Arch Linux) 安裝。  亦可手動下載安裝程式。離線安裝需下載對應的安裝檔並執行。
+* **使用外掛程式:**  應用程式提供許多外掛程式，使用者可根據需求啟用或停用。
+* **自訂主題:**  使用者可以載入自訂 CSS 檔案來改變應用程式的視覺樣式。
+* **開發自訂外掛:**  程式碼範例提供如何建立自訂外掛程式，以擴充套件應用程式功能。  這需要熟悉 TypeScript 和 Electron 開發。
+* **設定:** 應用程式內提供設定選項，調整播放、外觀等設定。
+## 📌 [ahmedkhaleel2004/gitdiagram](https://github.com/ahmedkhaleel2004/gitdiagram)
+<Callout>
+    Description: Free, simple, fast interactive diagrams for any GitHub repository\
+    🌐 TypeScript｜⭐️ 8,130 | 4363 stars this week
+</Callout>
+    #### 簡介
+
+* GitDiagram 是一款能將任何 GitHub 儲存庫在幾秒鐘內轉換成互動式圖表的工具。
+* 它能快速地將 GitHub 儲存庫結構視覺化成系統設計/架構圖表。
+*  使用者可以點選圖表中的元件直接導航到原始碼檔案和相關目錄。
+*  此工具的開發初衷是為了方便探索大型開源專案的程式碼庫。
+*  它支援公開和私有 GitHub 儲存庫。
+*  圖表使用 Mermaid.js 產生，並利用 OpenAI 的 o3-mini 模型 (先前使用 Claude 3.5 Sonnet) 進行資訊提取和處理。
+*  主要透過提示工程 (prompt engineering) 提取和處理資料，生成圖表程式碼。
+*  提供圖表客製化和重新生成的功能。
+
+
+#### 主要功能
+
+*  **立即視覺化 (Instant Visualization):** 將 GitHub 儲存庫結構轉換為系統設計/架構圖表。
+*  **互動性 (Interactivity):** 點選元件即可直接導航到原始碼檔案和相關目錄。
+*  **快速生成 (Fast Generation):** 由 Claude 3.5 Sonnet (現為 OpenAI o3-mini) 提供支援，快速且準確地生成圖表。
+*  **客製化 (Customization):** 修改並重新生成圖表，支援自訂指令。
+*  **API 存取 (API Access):** 提供公開 API 供整合使用 (開發中)。
+*  支援公開及私有倉庫。
+*  透過 README 檔案及檔案樹結構提取資訊，增加圖表互動性。
+*  後端使用 FastAPI, Python 開發，前端使用 Next.js, TypeScript, Tailwind CSS 等技術。
+
+
+#### 如何使用
+
+*  **線上使用:**  將 `hub` 替換成 `diagram` 在任何 GitHub URL 中即可存取其圖表。
+*  **私有倉庫:** 點選頁面上的 "Private Repos"，按照指示提供具有 repo 範圍的 GitHub 個人存取權杖。
+*  **本地部署:**
+    *  複製儲存庫：`git clone https://github.com/ahmedkhaleel2004/gitdiagram.git`
+    *  安裝相依套件：`pnpm i`
+    *  設定環境變數 (建立 `.env` 檔案)，包含 Anthropic API 金鑰和可選的 GitHub 個人存取權杖。
+    *  執行後端：`docker-compose up --build -d`
+    *  啟動本地資料庫：`chmod +x start-database.sh` 及 `./start-database.sh`
+    *  初始化資料庫結構：`pnpm db:push`
+## 📌 [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai)
+<Callout>
+    Description: 🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN\
+    🌐 Python｜⭐️ 37,378 | 2912 stars this week
+</Callout>
+    #### 簡介
+
+Crawl4AI 是一個開源、高效能的網頁爬蟲和資料擷取工具，專為大型語言模型 (LLM)、AI 代理程式和資料管道而設計。它提供極快的速度、精準的資料擷取和簡便的部署方式，讓開發者能輕鬆獲取網頁資料。目前在 GitHub 上非常活躍，並擁有龐大的社群支援。  版本 0.5.0 引入了深度爬取、記憶體自適應排程器、多種爬取策略、Docker 部署、命令列介面等眾多功能。
+
+
+#### 主要功能
+
+* **Markdown 生成:**  產生乾淨、結構化的 Markdown 檔案，並包含引用和參考文獻。支援自定義策略和 BM25 演演算法過濾無關內容。
+* **結構化資料擷取:** 支援所有 LLM (開源和商業) 進行結構化資料擷取，包含分塊策略 (基於主題、正規表示式、句子級別)、餘弦相似度比對和 CSS 選擇器。
+* **瀏覽器整合:**  支援多種瀏覽器 (Chromium、Firefox、WebKit)，提供完整的瀏覽器控制，包含會話管理、代理支援、動態視窗調整等功能。
+* **爬蟲與擷取:** 支援媒體檔案 (圖片、音訊、影片) 擷取，動態內容擷取 (執行 JavaScript)，螢幕截圖，以及完整的連結擷取和 iframe 內容擷取。包含快取機制和錯誤處理。
+* **部署:** 提供 Docker 部署方案，支援 JWT 身份驗證和可擴充套件架構，方便雲端部署。
+* **其他功能:**  隱身模式 (避免機器人偵測)、基於標籤的內容擷取、連結分析、CORS 支援等。
+
+
+#### 如何使用
+
+* **安裝:** 使用 `pip install -U crawl4ai` 安裝穩定版本，或使用 `pip install crawl4ai --pre` 安裝預覽版本。  `crawl4ai-setup` 完成後續設定。  如有瀏覽器相關問題，可手動安裝 `python -m playwright install --with-deps chromium`。
+* **Python 使用:** 使用 `AsyncWebCrawler` 類別，搭配 `arun` 函式執行爬取，並取得 Markdown 結果。程式碼範例如下：
+
+```python
+import asyncio
+from crawl4ai import *
+
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url="https://www.example.com")
+        print(result.markdown)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+* **命令列介面:** 使用 `crwl` 命令執行爬取，例如 `crwl https://www.example.com -o markdown`。 支援深度爬取、設定最大頁數等選項。
+* **Docker 部署:**  (目前版本已過時，新版本即將推出)  參考檔案中的 Docker 部署指南。
+## 📌 [jlowin/fastmcp](https://github.com/jlowin/fastmcp)
+<Callout>
+    Description: The fast, Pythonic way to build Model Context Protocol servers 🚀\
+    🌐 Python｜⭐️ 3,765 | 1703 stars this week
+</Callout>
+    #### 簡介
+
+FastMCP 是一個快速且 Pythonic 的 MCP (Model Context Protocol) 伺服器建構工具，旨在簡化 MCP 伺服器的建立過程。MCP 伺服器提供標準化方式，讓大型語言模型 (LLM) 應用程式存取資料和功能，而 FastMCP 則以簡潔的 Python 程式碼實現此功能。它處理複雜的協定細節和伺服器管理，讓開發者專注於建立工具。目前 FastMCP 仍在積極開發中，核心功能已運作，但某些進階功能仍在開發中。  它已整合到官方的 MCP SDK 中，可於 github.com/modelcontextprotocol/python-sdk 取得。
+
+
+#### 主要功能
+
+*   快速：高階介面意味著更少的程式碼和更快的開發速度。
+*   簡單：使用最少的樣板程式碼建立 MCP 伺服器。
+*   Pythonic：對 Python 開發者來說感覺很自然。
+*   完整性：致力於提供核心 MCP 規範的完整實作 (仍在開發中)。
+*   支援 Resources：讓 LLM 存取資料，類似 REST API 的 GET 端點。
+*   支援 Tools：讓 LLM 執行動作，類似 REST API 的 POST 端點，可以包含複雜的輸入處理和型別驗證(使用Pydantic)。
+*   支援 Prompts：可重複使用的 LLM 互動模板，定義互動模式。
+*   支援 Images：自動處理圖片資料，支援讀取、轉換和 MIME 型別。
+*   提供 Context 物件：提供進度報告、日誌記錄和資源存取等功能。
+
+
+#### 如何使用
+
+*   **安裝:** 使用 `uv pip install fastmcp` (建議) 或 `pip install fastmcp`。 macOS 使用者可能需要使用 Homebrew 安裝 uv (`brew install uv`)。
+*   **建立伺服器:** 使用 `FastMCP` 類別建立伺服器例項，並使用裝飾器 `@mcp.tool()`、`@mcp.resource()` 和 `@mcp.prompt()` 定義工具、資源和提示。
+*   **開發模式:** 使用 `fastmcp dev server.py` 啟動開發模式，提供互動式測試介面、詳細日誌和錯誤訊息以及效能監控。可使用 `--with` 指定相依性，`--with-editable` 掛載本地程式碼以進行即時更新。
+*   **Claude Desktop 整合:** 使用 `fastmcp install server.py` 將伺服器安裝到 Claude Desktop 中，可以使用 `--name` 自訂名稱，使用 `-e` 或 `-f` 設定環境變數。
+*   **直接執行:** 使用 `fastmcp run server.py` 或直接執行 Python 程式碼 `python server.py`  (需要自行管理相依性)。
+*   **伺服器物件名稱:** 預設尋找 `mcp`、`app` 或 `server` 物件，否則使用 `server.py:my_server`  指定。
+*   範例：參考 `examples/` 目錄中的範例，例如 Echo 伺服器。
+## 📌 [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners)
+<Callout>
+    Description: 10 Lessons to Get Started Building AI Agents\
+    🌐 Jupyter Notebook｜⭐️ 10,352 | 1529 stars this week
+</Callout>
+    #### 簡介
+
+此課程包含十堂課，教授建構 AI 代理程式所需的一切基礎知識。每堂課涵蓋不同的主題，您可以從任何一課開始學習。本課程支援多種語言，並提供程式碼範例，範例使用 Azure AI Foundry 和 GitHub Model Catalogs 與語言模型互動，需要 Azure 帳戶或使用免費但有限制的 GitHub Models。課程也使用 Azure AI Agent Service、Semantic Kernel 和 AutoGen 等 Microsoft 的 AI 代理程式框架和服務。 課程包含書面教材、簡短影片和額外學習資源連結。
+
+
+#### 主要功能
+
+* 提供十堂課，循序漸進教學。
+* 每堂課包含書面教材、影片和程式碼範例。
+* 支援多種語言，包含繁體中文。
+* 使用 Azure AI Foundry 和 GitHub Models 作為程式碼範例的基礎。
+* 涵蓋 AI 代理程式的各種設計模式，例如 Tool Use、RAG、Planning、Multi-Agent 和 Metacognition。
+* 教學如何建立值得信賴的 AI 代理程式。
+* 探討 AI 代理程式框架，例如 Azure AI Agent Service、Semantic Kernel 和 AutoGen。
+* 提供額外的學習資源連結。
+* 適用於初學者，無需預備知識。
+*  涵蓋 AI 代理程式的應用場景和案例。
+
+
+#### 如何使用
+
+* 前往課程頁面，選擇您想學習的章節。
+* 每個章節包含書面教學、影片教學以及 Python 程式碼範例。
+* 您可以 fork 此 repository 並在您的環境中執行程式碼範例。
+* 需要 Azure 帳戶或使用 GitHub Models (免費/有限制)。
+*  參考提供的額外學習資源，深入瞭解相關知識。
+*  若遇到問題，可加入 Azure AI 社群 Discord 尋求協助。
+*  程式碼範例位於 `code_samples` 資料夾中。
+*  如有建議或發現錯誤，請提交 issue 或 pull request。
