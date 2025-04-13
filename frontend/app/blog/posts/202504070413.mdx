@@ -1,0 +1,167 @@
+---
+title: '[4/7 - 4/13] GitHub Weekly Digest'
+publishedAt: '2025-04-13'
+---
+## 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
+<Callout>
+    Description: Python tool for converting files and office documents to Markdown.\
+    🌐 Python｜⭐️ 48,386 | 6311 stars this week
+</Callout>
+    #### 簡介
+
+* MarkItDown 是一個輕量級的 Python 工具，用於將各種檔案轉換成 Markdown 格式，以便與大型語言模型 (LLM) 和相關的文字分析管道整合使用。
+* 它與 textract 類似，但更注重保留重要的檔案結構和內容，例如標題、列表、表格、連結等，以 Markdown 格式呈現。
+* 雖然輸出結果通常相當易讀，但主要目的是供文字分析工具使用，而非用於高保真度的檔案轉換以供人類閱讀。
+*  支援多種檔案格式，包含 PDF、PowerPoint、Word、Excel、圖片 (包含 EXIF 資訊和 OCR)、音訊 (包含 EXIF 資訊和語音轉錄)、HTML、文字格式 (CSV、JSON、XML)、ZIP 檔案、Youtube 連結、EPub 等。
+* 使用 Markdown 作為輸出格式是因為其接近純文字，但仍能表示重要的檔案結構，且主流 LLM 理解和使用 Markdown。
+
+
+#### 主要功能
+
+* 將各種檔案格式轉換為 Markdown 格式。
+* 支援多種檔案型別，包括 PDF, PowerPoint, Word, Excel, 圖片, 音訊, HTML,  文字格式檔案 (CSV, JSON, XML), ZIP 檔案, YouTube 連結和 EPUB 等。
+* 可選的相依套件，允許使用者根據需求安裝特定檔案格式的支援。
+* 支援外掛程式，擴充套件其功能。
+* 整合 Azure Document Intelligence 服務，提升檔案轉換的準確度。
+* 提供 Python API，方便在 Python 程式碼中使用。
+* 支援使用大型語言模型 (LLM) 來描述圖片。
+* 提供 Docker 映像檔，方便部署。
+
+
+#### 如何使用
+
+* **命令列介面:** 使用 `markitdown path-to-file.pdf > document.md` 命令將檔案轉換為 Markdown 檔案。可以使用 `-o` 選項指定輸出檔案名稱，或使用管道符號 `|` 直接處理檔案內容。
+* **Python API:**  使用 `MarkItDown` 類別，透過 `convert()` 方法將檔案轉換為 Markdown。 可以設定 `enable_plugins`、`docintel_endpoint`、`llm_client` 和 `llm_model` 等引數來控制轉換過程。
+* **安裝:** 使用 `pip install 'markitdown[all]'` 安裝所有相依套件，或使用 `pip install markitdown[<feature-group>]` 安裝特定功能的相依套件 (例如 `pip install markitdown[pdf, docx]` )。
+* **外掛程式:**  使用 `markitdown --use-plugins path-to-file.pdf` 啟用外掛程式。
+* **Azure Document Intelligence:** 使用 `-d` 和 `-e` 選項指定 Azure Document Intelligence 端點來進行檔案轉換。
+## 📌 [yeongpin/cursor-free-vip](https://github.com/yeongpin/cursor-free-vip)
+<Callout>
+    Description: [Support 0.48.x]（Reset Cursor AI MachineID & Auto Sign Up / In & Bypass Higher Token Limit）自动注册 Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.\
+    🌐 Python｜⭐️ 11,255 | 5472 stars this week
+</Callout>
+    #### 簡介
+
+Cursor Free VIP 是一個自動化工具，支援最新 0.48.x 版本的 Cursor 軟體。它可以自動註冊帳號（支援 Google 和 GitHub 帳號，包含臨時 GitHub 帳號），終止所有 Cursor 正在執行的程式，重置並清除 Cursor 的資料和硬體資訊。此工具支援 Windows、macOS 和 Linux 系統。建議以管理員許可權執行並保持最新版本，並清除瀏覽器的快取和 Cookie，如有條件，使用 VPN 建立新帳號以提升效能。
+
+
+#### 主要功能
+
+* 支援 Google OAuth 和 GitHub OAuth 認證，提供終身訪問。
+* 自動註冊 Cursor 會員帳號。
+* 支援 Windows、macOS 和 Linux 系統。
+* 完成 Auth 驗證程式。
+* 重置 Cursor 的配置設定。
+* 刪除 Cursor Google 帳號。
+* 支援多種語言：英文、簡體中文、繁體中文和越南語。
+
+
+#### 如何使用
+
+* **指令碼自動化執行 (Auto Run Script):**
+    * **Linux/macOS:** `curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.sh -o install.sh && chmod +x install.sh && ./install.sh`
+    * **Windows:** `irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.ps1 | iex`
+* **手動重置機器 (Manual Reset Machine):**
+    * **Linux/macOS:** `curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.sh | sudo bash`
+    * **Windows:** `irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.ps1 | iex`
+* 停止指令碼請按下 Ctrl+C。
+* 程式會根據 `config.ini` 檔案中的設定進行運作，檔案路徑為 `Documents/.cursor-free-vip/config.ini` (Win/Mac/Linux)。  `config.ini` 檔案包含各種時間設定和程式路徑設定，例如瀏覽器路徑、資料庫路徑等等。
+## 📌 [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners)
+<Callout>
+    Description: 10 Lessons to Get Started Building AI Agents\
+    🌐 Jupyter Notebook｜⭐️ 13,215 | 2699 stars this week
+</Callout>
+    #### 簡介
+
+此課程包含十堂課，教授建構AI代理所需的一切基礎知識。每堂課涵蓋不同的主題，您可以從任何一堂課開始學習。課程支援多種語言，並提供程式碼範例，使用Azure AI Foundry和GitHub Model Catalogs與大型語言模型互動。  需要Azure帳戶才能使用Azure AI Foundry，而GitHub Models提供免費但有限制的存取。本課程也使用Microsoft的Azure AI Agent Service、Semantic Kernel和AutoGen等AI代理框架和服務。  課程包含書面教材、影片教學和額外的學習資源連結。
+
+
+#### 主要功能
+
+* 十堂課循序漸進教學，涵蓋AI代理的基礎知識。
+* 每堂課都包含書面教材、影片教學和程式碼範例。
+* 支援多種語言，方便全球學習者。
+* 使用Azure AI Foundry和GitHub Models進行程式碼範例演示。
+* 涵蓋各種AI代理設計模式，例如Tool Use、RAG、Planning和Multi-Agent。
+* 介紹如何建構值得信賴的AI代理。
+* 探討AI代理在生產環境中的應用。
+* 提供額外的學習資源連結，幫助學習者深入學習。
+* 使用Microsoft的Azure AI Agent Service、Semantic Kernel和AutoGen等框架和服務。
+* 提供GitHub儲存庫，方便使用者複製程式碼並參與貢獻。
+
+
+#### 如何使用
+
+* 前往課程提供的連結，觀看影片和閱讀教材。
+* 從 `code_samples` 資料夾中取得程式碼範例。
+* 您可以fork此repo來建立自己的副本。
+* 使用Azure AI Foundry或GitHub Models來執行程式碼範例 (GitHub Models為免費/有限制)。
+*  如有任何疑問，可以加入Azure AI Community Discord尋求協助。
+*  發現錯誤或有建議，歡迎提出issue或pull request。
+*  需要Azure帳戶才能完全使用所有程式碼範例。
+*  課程內容包含介紹AI代理、探討框架、設計模式（工具使用、RAG、規劃、多代理、元認知）、建構值得信賴的代理以及生產環境應用。
+*  支援多種語言版本，包括繁體中文。
+## 📌 [datawhalechina/llm-cookbook](https://github.com/datawhalechina/llm-cookbook)
+<Callout>
+    Description: 面向开发者的 LLM 入门教程，吴恩达大模型系列课程中文版\
+    🌐 Jupyter Notebook｜⭐️ 18,523 | 1759 stars this week
+</Callout>
+    #### 簡介
+
+* 本專案是一個面向開發者的大模型手冊，基於吳恩達老師的大模型系列課程，提供 LLM 全方位入門實踐。
+* 涵蓋 Prompt Engineering、RAG 開發、模型微調等流程。
+* 將 11 門英文課程翻譯、復現並調整，更適合國內開發者學習。
+* 提供線上閱讀和 PDF 下載，並包含部分課程的中文字幕。
+* 鼓勵開發者貢獻更多課程復現。
+
+
+#### 主要功能
+
+* 提供基於吳恩達老師課程的 LLM 入門教程，包含必修和選修課程。
+* 必修課程涵蓋 Prompt Engineering、基於 ChatGPT 的問答系統開發、使用 LangChain 開發應用程式以及使用 LangChain 訪問個人資料。
+* 選修課程涵蓋使用 Gradio 構建生成式 AI 應用、評估和除錯生成式 AI、微調大語言模型、大模型與語義搜尋、基於 Chroma 的高階搜尋、構建和評估高階 RAG 應用、LangChain 的 Functions、Tools 和 Agents，以及 Prompt 高階技巧。
+* 提供可執行 Jupyter Notebook 程式碼以及線上閱讀和 PDF 版本的教程。
+* 提供中文 Prompt，方便學習者在中文語境下使用 LLM。
+
+
+#### 如何使用
+
+* 需具備基礎 Python 能力和一個 LLM API (建議 OpenAI)。
+* 建議先學習必修課程，再根據興趣選擇選修課程。
+* 可透過線上閱讀或下載 PDF 學習。
+* 可參考提供的 Jupyter Notebook 程式碼進行實踐。
+* 可利用提供的中文 Prompt 進行實驗和學習。
+* 對於其他 API，可能需要修改程式碼以適應不同的 API 呼叫方式。
+## 📌 [jiji262/douyin-downloader](https://github.com/jiji262/douyin-downloader)
+<Callout>
+    Description: 抖音批量下载工具，去水印，支持视频、图集、合集、音乐(原声)。免费！免费！免费！\
+    🌐 Python｜⭐️ 3,438 | 1048 stars this week
+</Callout>
+    #### 簡介
+
+* DouYin Downloader 是一個批次下載抖音內容的工具。
+* 基於抖音 API 開發，支援命令列引數或 YAML 配置檔案執行。
+* 可下載多種抖音內容，例如影片、圖片集、音樂和直播資訊。
+* 支援去水印下載。
+* 提供多種連結型別支援，包含作品分享連結、個人主頁、單個影片、圖集、合集、音樂原聲和直播連結。
+* 支援增量更新及資料持久化到資料庫。
+
+
+#### 主要功能
+
+* 多種內容支援：影片、圖集、音樂、直播資訊下載。
+* 支援多種連結型別：個人主頁、作品分享、直播、合集、音樂集合等。
+* 批次下載能力：多執行緒併發下載，支援多連結批次下載，自動跳過已下載內容。
+* 靈活配置：支援命令列引數和配置檔案兩種方式，可自定義下載路徑、執行緒數等，並支援下載數量限制。
+* 增量更新：支援個人主頁作品增量更新，支援資料持久化到資料庫，可根據時間範圍過濾。
+* 去水印下載
+
+
+#### 如何使用
+
+* **安裝:** 使用 `pip install -r requirements.txt` 安裝 Python 相關套件。
+* **複製配置檔案:** 將 `config.example.yml` 複製為 `config.yml`。
+* **配置:** 編輯 `config.yml`，設定下載連結、儲存路徑、Cookie 資訊和其他下載選項。
+* **執行 (方法一，推薦):** 使用配置檔案執行 `python DouYinCommand.py`。
+* **執行 (方法二):** 使用命令列引數執行，例如 `python DouYinCommand.py -C True -l "抖音分享連結" -p "下載路徑"`。
+* **命令列引數:**  包含基礎引數 (`-C`, `-l`, `-p`, `-t`) 和下載選項 (`-m`, `-c`, `-a`, `-j`)，使用 `-h` 檢視更多說明。
