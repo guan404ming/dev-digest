@@ -1,0 +1,187 @@
+---
+title: '[4/14 - 4/20] GitHub Weekly Digest'
+publishedAt: '2025-04-20'
+---
+## 📌 [yeongpin/cursor-free-vip](https://github.com/yeongpin/cursor-free-vip)
+<Callout>
+    Description: [Support 0.48.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.\
+    🌐 Python｜⭐️ 19,526 | 8715 stars this week
+</Callout>
+    #### 簡介
+
+Cursor Free VIP 是一款用於學習和研究用途的工具，目前未違反任何法律，請支援原作者。它不會生成假電子郵件帳戶或 OAuth 訪問許可權，並支援 Windows、macOS 和 Linux 系統。為獲得最佳效能，建議以管理員許可權執行並保持軟體更新。
+
+
+#### 主要功能
+
+* 支援 Windows、macOS 和 Linux 系統。
+* 重設 Cursor 的設定。
+* 支援多種語言：英文、簡體中文、繁體中文和越南語。
+* 提供指令碼自動化執行功能 (Auto Run Script)。
+* 提供手動重置機器功能 (Manual Reset Machine)。
+
+
+#### 如何使用
+
+* **指令碼自動化執行 (Auto Run Script):**
+    * Linux/macOS: 使用 `curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.sh -o install.sh && chmod +x install.sh && ./install.sh` 指令安裝。
+    * Archlinux: 使用 AUR 安裝 `yay -S cursor-free-vip-git`。
+    * Windows: 使用 `irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.ps1 | iex` 指令安裝。
+* **手動執行重置機器 (Manual Reset Machine):**
+    * Linux/macOS: 使用 `curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.sh | sudo bash` 指令重置。
+    * Windows: 使用 `irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/reset.ps1 | iex` 指令重置。
+* 停止指令碼請按下 Ctrl+C。
+*  配置檔案位於 `Documents/.cursor-free-vip/config.ini` (Win/macOS/Linux)，需根據自身系統路徑調整。  配置檔案包含多項引數設定，例如 Chrome 路徑、等待時間等等，詳見範例配置檔案。
+## 📌 [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)
+<Callout>
+    Description: An AI Hedge Fund Team\
+    🌐 Python｜⭐️ 25,920 | 4965 stars this week
+</Callout>
+    #### 簡介
+
+* 此專案是一個概念驗證 (Proof of Concept)，旨在探索使用人工智慧 (AI) 來進行交易決策的可能性。
+* 系統模擬一個 AI 驅動的避險基金，並非實際進行交易或投資。
+*  系統包含多個 AI 代理，分別模擬不同投資策略及風格，例如價值投資、成長投資、主動投資等。
+*  僅供教育及研究用途，不保證任何投資回報，且不承擔任何財務損失責任。
+*  使用者需自行承擔所有風險，並建議諮詢財務顧問以獲得專業投資建議。
+*  程式使用 Python 編寫，並需安裝 Poetry 及相關套件。
+*  需設定 OpenAI、Groq 或其他 LLM 提供商的 API 金鑰以及 Financial Datasets API 金鑰 (部分股票資料免 API 金鑰)。
+
+
+#### 主要功能
+
+* 模擬多位著名投資大師的投資策略，包含價值投資、成長投資、主動投資等不同風格。
+*  整合多個 AI 代理，包含估值代理、情緒代理、基本面代理、技術面代理、風險管理代理和投資組合管理代理。
+*  提供避險基金模擬功能，根據設定的股票程式碼及時間範圍，模擬交易決策。
+*  提供回測功能 (Backtester)，評估策略在歷史資料中的表現。
+* 使用 LLM (大型語言模型) 進行決策推理。
+* 支援多個 LLM 提供商，例如 OpenAI 和 Groq。
+*  允許使用者自訂股票程式碼、時間範圍等引數。
+* 可選擇顯示每個代理的決策推理過程。
+
+
+#### 如何使用
+
+* 使用 `git clone` 命令複製專案程式碼。
+* 使用 `curl` 命令安裝 Poetry 套件管理工具。
+* 使用 `poetry install` 命令安裝專案相依套件。
+* 建立 `.env` 檔案並設定 API 金鑰 (OpenAI, Groq, Financial Datasets)。
+* 使用 `poetry run python src/main.py` 命令執行避險基金模擬，並指定股票程式碼 (例如 `--ticker AAPL,MSFT,NVDA`) 及其他選項 (例如 `--start-date`, `--end-date`, `--ollama`, `--show-reasoning`)。
+* 使用 `poetry run python src/backtester.py` 命令執行回測功能，並指定股票程式碼及其他選項。
+*  需注意，部分股票資料需要 API 金鑰，而 AAPL, GOOGL, MSFT, NVDA, TSLA 等股票資料則免費提供。
+## 📌 [n8n-io/n8n](https://github.com/n8n-io/n8n)
+<Callout>
+    Description: Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.\
+    🌐 TypeScript｜⭐️ 83,290 | 3895 stars this week
+</Callout>
+    #### 簡介
+
+* n8n 是一個工作流程自動化平臺，讓技術團隊能以程式碼的彈性和無程式碼的速度建立自動化流程。
+* 它擁有 400 多種整合、原生 AI 功能和公平程式碼授權，讓使用者在保有資料和部署的完全控制權的同時，建立強大的自動化流程。
+* n8n 結合了程式碼和無程式碼的優點，提供靈活性和效率。
+*  支援自託管和雲端部署選項，滿足不同需求。
+*  擁有活躍的社群，提供豐富的整合、範例和教學資源。
+*  提供企業級功能，例如進階許可權、單一登入和隔離部署。
+*  基於 LangChain，可以輕鬆建立基於 AI 的工作流程。
+*  其名稱 "n8n" 代表 "nodemation"，發音為 n-eight-n。
+
+
+#### 主要功能
+
+* **程式碼支援:**  允許使用 JavaScript/Python 編寫程式碼，新增 npm 套件或使用視覺化介面。
+* **原生 AI 平臺:** 基於 LangChain 建立 AI 代理工作流程，可以使用自己的資料和模型。
+* **完全控制:** 使用公平程式碼授權進行自託管，或使用雲端服務。
+* **企業級功能:** 提供進階許可權、單一登入 (SSO) 和隔離部署等功能。
+* **活躍社群:**  擁有 400 多種整合和 900 多個可立即使用的範例工作流程。
+* **可擴充套件性:**  允許新增自定義節點和功能。
+* **開源且可自託管:**  原始碼始終可見，並可在任何地方部署。
+*  提供企業版授權，包含額外功能和支援。
+
+
+#### 如何使用
+
+* 使用 `npx n8n` (需要 Node.js) 快速啟動 n8n。
+* 使用 Docker 部署:  
+  ```bash
+  docker volume create n8n_data
+  docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+  ```
+*  在 http://localhost:5678 訪問編輯器。
+*  參考檔案、整合、範例工作流程、AI 與 LangChain 指南及社群論壇等資源。
+*  社群論壇提供使用者支援和交流。
+*  提供豐富的教學資源協助使用者上手。
+## 📌 [krillinai/KrillinAI](https://github.com/krillinai/KrillinAI)
+<Callout>
+    Description: A video translation and dubbing tool powered by LLMs, offering professional-grade translations and one-click full-process deployment. It can generate content optimized for platforms like YouTube，TikTok, and Shorts. 基于AI大模型的视频翻译和配音工具，专业级翻译，一键部署全流程，可以生成适配抖音，小红书，哔哩哔哩，视频号，TikTok，Youtube Shorts等形态的内容\
+    🌐 Go｜⭐️ 5,200 | 2436 stars this week
+</Callout>
+    #### 簡介
+
+Krillin AI 是一款一體化AI影音翻譯及配音工具，能輕鬆將影片在地化並提升影片品質。它支援從翻譯、配音到聲音複製，以及格式調整（無縫轉換橫向和縱向影片），適用於 YouTube、TikTok、Bilibili 等多個平臺。Krillin AI 提供端到端的工作流程，只需點選幾下就能將原始影片轉換成經過潤飾、平臺就緒的內容。支援多種語言，包含中文、英文、日文、韓文等等，翻譯語言更超過 101 種。提供桌面版及非桌面版，桌面版操作更簡便，但仍處於更新階段。
+
+
+#### 主要功能
+
+* 一鍵啟動工作流程
+* 支援 yt-dlp 及本地檔案上傳
+* Whisper 驅動的高精度字幕辨識
+* 基於大型語言模型 (LLM) 的字幕分割與校準
+* 段落級別翻譯，確保一致性
+* 一鍵替換特定領域詞彙
+* 配音與聲音複製功能 (可選擇 CosyVoice 或複製聲音)
+* 自動格式化橫向/縱向佈局
+* 支援多種本地與雲端語音辨識模型 (OpenAI Whisper, FasterWhisper, WhisperKit, Alibaba Cloud ASR)
+* 支援多種大型語言模型 (OpenAI, DeepSeek, Qwen 等)
+
+
+#### 如何使用
+
+* **下載對應作業系統的執行檔:**  選擇桌面版 (名稱包含 "desktop") 或非桌面版。
+* **桌面版:**  直接雙擊執行檔啟動 (需在軟體內進行設定)。
+* **非桌面版:**
+    * 在目錄下建立 `config` 資料夾，並在其中建立 `config.toml` 檔案。
+    * 將 `config-example.toml` 檔案內容複製到 `config.toml` 並填寫配置細節。
+    * 雙擊執行檔或在終端機執行啟動服務。
+    * 在瀏覽器輸入 `http://127.0.0.1:8888` (將 8888 替換為你在配置檔案中指定的埠號) 開始使用。
+* **macOS 使用者:** 桌面版和非桌面版都需要執行特定指令來授予執行許可權 (詳見 README 中的步驟)。  這涉及使用 `sudo xattr -cr` 和 `sudo chmod +x` 指令解除隔離並設定執行許可權。
+* **Docker 部署:** 支援 Docker 部署 (詳見 README 中的 Docker 部署說明)。
+* **Cookie 設定:** 若遇到影片下載失敗，請參考 Cookie 設定說明。
+* **推薦設定:**  將 `transcription_provider` 和 `llm_provider` 都設定為 `openai`，只需填寫 `openai.apikey` 即可進行字幕翻譯。
+## 📌 [Zackriya-Solutions/meeting-minutes](https://github.com/Zackriya-Solutions/meeting-minutes)
+<Callout>
+    Description: A free and open source, self hosted Ai based live meeting note taker and minutes summary generator that can completely run in your Local device (Mac OS and windows OS Support added. Working on adding linux support soon) https://meetily.zackriya.com/\
+    🌐 C++｜⭐️ 3,795 | 1949 stars this week
+</Callout>
+    #### 簡介
+
+Meetily 是一款開放原始碼的 AI 會議助理，能即時捕捉會議音訊、轉錄並產生摘要，所有處理過程都在您的裝置本地進行，確保使用者隱私。它適用於希望專注於討論，同時自動記錄和整理會議內容的團隊，無需外部伺服器或複雜的基礎架構。Meetily 使用開源 AI 模型，具有成本效益且靈活，支援離線使用和多個會議平臺，並可自訂以滿足您的特定需求。內建知識圖譜，方便跨會議語意搜尋。
+
+
+#### 主要功能
+
+* 即時音訊擷取 (麥克風 + 系統音訊)
+* 使用 Whisper.cpp 進行即時轉錄
+* 本地處理以確保隱私
+* macOS 和 Windows 封裝應用程式
+* 現代化、響應式 UI，提供即時更新
+* 支援多種 LLM 提供商 (Anthropic, Groq, Ollama)
+*  內建知識圖譜 (Knowledge Graph) 進行語意搜尋
+*  講者區隔 (Speaker diarization) (部分功能還在開發中)
+*  匯出為 Markdown/PDF (部分功能還在開發中)
+
+
+#### 如何使用
+
+**前端設定:**
+
+1. 從 releases 頁面下載最新版本。
+2.  Windows 使用者：下載 .exe 或 .msi 安裝程式，執行安裝程式並按照指示完成設定。
+3.  macOS 使用者：下載 dmg 檔案，解壓縮後將應用程式拖放到應用程式資料夾，並執行終端機指令 `xattr -c /Applications/meeting-minutes-frontend.app`  移除隔離屬性。
+4.  提供必要的音訊擷取和麥克風存取許可權。
+5. 開發環境執行：  `cd frontend`， `chmod +x clean_build.sh`， `./clean_build.sh`
+
+**後端設定:**
+
+1.  複製儲存庫：`git clone https://github.com/Zackriya-Solutions/meeting-minutes.git`
+2.  建立並啟動虛擬環境 (指令依據作業系統而異，請參考README)。
+3.  建立 `.env` 檔案並設定 API 金鑰 (Anthropic 和 Groq)。
