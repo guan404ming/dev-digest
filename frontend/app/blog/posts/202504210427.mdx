@@ -1,0 +1,164 @@
+---
+title: '[4/21 - 4/27] GitHub Weekly Digest'
+publishedAt: '2025-04-27'
+---
+## 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
+<Callout>
+    Description: Python tool for converting files and office documents to Markdown.\
+    🌐 Python｜⭐️ 54,416 | 4830 stars this week
+</Callout>
+    #### 簡介
+
+* MarkItDown 是一個輕量級的 Python 工具，用於將各種檔案轉換成 Markdown 格式，方便與大型語言模型 (LLM) 及相關文字分析流程整合使用。
+* 它與 textract 類似，但更注重保留 Markdown 中重要的檔案結構和內容，例如標題、列表、表格、連結等等。
+* 雖然輸出結果通常相當易讀，但主要目標是供文字分析工具使用，可能不適合需要高保真度的檔案轉換以供人類閱讀。
+* 支援多種檔案格式，包含 PDF、PowerPoint、Word、Excel、圖片、音訊、HTML、文字格式檔案 (CSV、JSON、XML)、ZIP 檔案、Youtube 連結、EPub 等。
+* 使用 Markdown 作為輸出格式，因為 Markdown 接近純文字，且 LLM 通常能很好地理解和處理 Markdown 格式。
+
+
+#### 主要功能
+
+* 將各種檔案格式轉換為 Markdown 格式。
+* 保留原始檔案中的重要結構資訊，例如標題、列表、表格等。
+* 支援多種檔案格式，包括但不限於 PDF, PowerPoint, Word, Excel, 圖片, 音訊, HTML,  文字格式檔案 (CSV, JSON, XML), ZIP 檔案, Youtube 連結, EPub。
+* 可選用 Azure Document Intelligence 服務進行檔案轉換。
+* 支援外掛程式擴充套件功能。
+* 提供命令列介面和 Python API。
+* 支援使用大型語言模型 (LLM) 進行圖片描述生成。
+
+
+#### 如何使用
+
+* **命令列介面:**  `markitdown path-to-file.pdf > document.md` (或使用 `-o` 指定輸出檔案)。  也可透過管道輸入：`cat path-to-file.pdf | markitdown`。
+* **Python API:**  使用 `MarkItDown` 類別，例如 `md = MarkItDown(enable_plugins=False); result = md.convert("test.xlsx"); print(result.text_content)`。
+* **安裝:** 使用 pip 安裝：`pip install 'markitdown[all]'` (安裝所有選項套件) 或個別安裝所需的套件 (例如 `pip install 'markitdown[pdf, docx, pptx]'`)。  也可以從原始碼安裝。
+* **啟用外掛程式:** 使用 `markitdown --use-plugins path-to-file.pdf` 啟用已安裝的外掛程式。
+* **使用 Azure Document Intelligence:** 使用 `-d` 和 `-e` 選項指定端點。
+* **Docker:** 使用 Docker 映像檔執行：`docker build -t markitdown:latest .`  `docker run --rm -i markitdown:latest < ~/your-file.pdf > output.md`
+* **使用 LLM 進行圖片描述:** 在 `MarkItDown` 類別初始化時，提供 `llm_client` 和 `llm_model` 引數。
+## 📌 [Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook)
+<Callout>
+    Description: 程序员在家做饭方法指南。Programmer's guide about how to cook at home (Simplified Chinese only).\
+    🌐 Dockerfile｜⭐️ 80,945 | 3511 stars this week
+</Callout>
+    #### 簡介
+
+* 本專案旨在為程式設計師提供一份清晰、精準的菜譜集合，以解決現有菜譜描述混亂的問題。
+* 菜譜採用更符合程式設計師習慣的形式語言編寫，力求簡明扼要。
+* 專案採用開源模式，歡迎社群貢獻和維護。
+* 提供多種菜餚，涵蓋素菜、葷菜、水產、早餐、主食、半成品加工、湯與粥等類別。
+* 菜譜按難度等級（1星至5星）進行索引，方便使用者選擇。
+* 支援本地部署，使用者可透過Docker執行菜譜Web服務或下載PDF版本。
+* 提供詳細的廚房準備及烹飪技巧指導，例如焯水、炒、煎、涼拌、醃、蒸、煮等。
+* 專案包含多種廚具的使用說明，例如高壓鍋、空氣炸鍋、微波爐等。
+
+
+#### 主要功能
+
+* 提供大量常見菜餚的詳細食譜，涵蓋不同口味和難度。
+* 菜譜內容清晰、步驟明確，易於程式設計師理解和操作。
+* 按難度等級和菜品類別進行分類，方便查詢和選擇。
+* 支援本地部署，方便使用者隨時查閱。
+* 支援PDF格式下載，方便離線使用。
+* 開放原始碼，支援社群貢獻和維護，不斷更新和完善菜譜內容。
+* 提供Docker映象，簡化本地部署流程。
+* 提供廚具使用說明及烹飪技巧，幫助使用者提升烹飪技能。
+
+
+#### 如何使用
+
+* **本地部署 (使用 Docker):**
+    * 執行 `docker pull ghcr.io/anduin2017/how-to-cook:latest` 下載 Docker 映象。
+    * 執行 `docker run -d -p 5000:5000 ghcr.io/anduin2017/how-to-cook:latest` 啟動 Web 服務 (埠為 5000)。
+    * 在瀏覽器訪問 `http://localhost:5000` 瀏覽菜譜。
+    * 訪問 `/document.pdf` 下載 PDF 版本菜譜。
+* **貢獻菜譜:** 複製並修改已有的菜譜模板 ("示例菜")，然後提交 Pull Request。
+* **查詢菜譜:** 根據菜品類別或難度等級進行篩選。  菜譜按難度（1-5星）和類別（素菜、葷菜等）分類，方便查詢。
+## 📌 [microsoft/BitNet](https://github.com/microsoft/BitNet)
+<Callout>
+    Description: Official inference framework for 1-bit LLMs\
+    🌐 C++｜⭐️ 17,418 | 3419 stars this week
+</Callout>
+    #### 簡介
+
+* `bitnet.cpp` 是一個針對 1-bit 大型語言模型 (LLM) 的高效能推論框架，例如 BitNet b1.58。
+* 它提供了一套最佳化的核心程式，可在 CPU 上實現快速且無損的 1.58-bit 模型推論 (未來將支援 NPU 和 GPU)。
+* 首版著重於 CPU 推論，在 ARM 和 x86 CPU 上均顯示出顯著的效能提升和能耗降低。
+* 可以在單顆 CPU 上執行 100B BitNet b1.58 模型，速度可與人類閱讀速度相媲美。
+* 專案基於 llama.cpp 框架，並利用 T-MAC 的查詢表方法。
+
+
+#### 主要功能
+
+* 快速且無損的 1-bit LLM 推論。
+* 在 ARM 和 x86 CPU 上實現顯著的效能提升 (速度提升 1.37x 至 6.17x)。
+* 能耗降低 (55.4% 至 82.2%)，提升整體效率。
+* 支援多種 1-bit LLM 模型，例如 BitNet b1.58 系列和 Falcon3 系列。
+* 提供 I2_S, TL1, TL2 等多種 Kernel 選擇。
+* 提供命令列工具進行推論和效能評測。
+
+
+#### 如何使用
+
+* **安裝**:  需要 Python >=3.9, CMake >=3.22, Clang >=18。  Windows 使用者需安裝 Visual Studio 2022 並選擇特定元件 (Desktop development with C++, C++ CMake tools for Windows, Git for Windows, C++ Clang Compiler for Windows, MS-Build support for LLVM-toolset (clang))。 Debian/Ubuntu 使用者可以使用提供的自動安裝指令碼。  也建議使用 conda 建立虛擬環境。
+* **建置**: 使用 `git clone --recursive https://github.com/microsoft/BitNet.git` 克隆程式碼，並使用 `pip install -r requirements.txt` 安裝依賴項。
+* **下載模型**: 使用 `huggingface-cli` 下載所需模型，例如 `huggingface-cli download microsoft/BitNet-b1.58-2B-4T-gguf --local-dir models/BitNet-b1.58-2B-4T`。
+* **設定環境**: 使用 `python setup_env.py` 設定推論環境，指定模型路徑、量化型別 (i2_s, tl1) 等引數。
+* **執行推論**: 使用 `python run_inference.py` 執行推論，指定模型路徑、提示詞、執行緒數等引數。
+* **效能評測**: 使用 `python utils/e2e_benchmark.py` 進行效能評測，需指定模型路徑。  引數包含：`-n` (產生 token 數), `-p` (prompt token 數), `-t` (執行緒數)。
+## 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+<Callout>
+    Description: Interactive roadmaps, guides and other educational content to help developers grow in their careers.\
+    🌐 TypeScript｜⭐️ 316,005 | 2032 stars this week
+</Callout>
+    #### 簡介
+
+roadmap.sh 是一個社群驅動的資源平臺，提供開發者互動式的學習路線圖 (roadmaps)、最佳實踐 (best practices) 和測驗題庫 (questions)。涵蓋前端、後端、DevOps、全端、AI、資料科學、雲端服務 (AWS, Cloudflare) 等多個領域，以及各種程式語言和框架 (例如 React, Node.js, Python 等)。  使用者可以點選路線圖上的節點，深入瞭解特定主題。平臺持續更新，並鼓勵社群貢獻與分享。
+
+
+#### 主要功能
+
+* 提供多個領域的互動式學習路線圖，涵蓋前端、後端、DevOps、全端開發等。
+* 收錄各種程式語言和框架的學習路線圖，例如 React、Node.js、Python、Java 等。
+* 提供最佳實踐指南，涵蓋後端效能、前端效能、程式碼審查、API 安全性、AWS 等方面。
+* 提供測驗題庫，幫助使用者檢測和提升知識水平。
+* 鼓勵社群貢獻和分享，持續更新和改進內容。
+* 提供入門頁面，協助使用者選擇適合自己的學習路徑。
+
+
+#### 如何使用
+
+* 瀏覽 roadmap.sh 網站，檢視提供的學習路線圖、最佳實踐和測驗題庫。
+* 點選路線圖上的節點，深入瞭解特定主題。
+* 使用提供的最佳實踐指南，提升開發技能。
+* 使用測驗題庫，檢測和提升知識水平。
+* 參與社群貢獻，分享你的知識和經驗。
+*  若需參與開發，可參考 `git clone git@github.com/...` (程式碼片段不完整，需完整 Git repository URL)。
+## 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
+<Callout>
+    Description: A collective list of free APIs\
+    🌐 Python｜⭐️ 337,879 | 1919 stars this week
+</Callout>
+    #### 簡介
+
+這個公開 API 資源庫由社群成員和 APILayer 的工作人員共同維護，包含來自許多領域的大量公開 API 清單，可供使用者應用於自身產品。它就像一個寶庫，多年來由社群精心管理。APILayer 提供快速整合 API 至任何產品的方法，其市集上有許多可用的 API。
+
+
+#### 主要功能
+
+* 提供豐富的公開 API 清單，涵蓋動物、動漫、反惡意軟體、藝術設計、身份驗證與授權、區塊鏈、書籍、商業、行事曆、雲端儲存與檔案分享、持續整合、加密貨幣、貨幣兌換、資料驗證、開發、字典、檔案與生產力、電子郵件、娛樂、環境、活動、金融、食物與飲料、遊戲與漫畫、地理編碼、政府、健康、工作、機器學習、音樂、新聞、公開資料、開源專案、專利、個性、電話、攝影、程式設計、科學與數學、安全、購物、社群、運動與健身、測試資料、文字分析、追蹤、運輸、網址縮短器、車輛、影片和天氣等多個領域。
+* 提供 APILayer 市集，方便使用者快速整合 API 至產品中。
+* 提供 API 的描述、身份驗證方式 (Auth)、HTTPS 支援與 CORS 支援等資訊。
+* 提供索引，方便使用者查詢特定領域的 API。
+
+
+#### 如何使用
+
+*  使用者可以瀏覽 README.md 檔案中的 API 清單，找到所需 API。
+*  每個 API 專案都包含 API 描述、身份驗證方法 (Auth: apiKey, OAuth 等)、HTTPS 支援與 CORS 支援等資訊，方便使用者評估是否符合需求。
+*  使用者需參考個別 API 的檔案，瞭解如何使用 API 並取得 API Key 或進行 OAuth 授權。
+*  部分 API 需要申請 API Key 或進行 OAuth 授權才能使用。
+*  API 的 HTTPS 支援與 CORS 支援資訊，有助於使用者在開發過程中處理安全和跨域請求問題。
+*  索引頁面提供各個領域的 API 分類，方便使用者快速查詢。
+*  部分 API 提供程式碼範例，方便使用者快速上手。
+*  使用者可參考 Contributing Guide、Issues 和 Pull Requests 等資訊，參與社群貢獻。
