@@ -1,0 +1,165 @@
+---
+title: '[4/28 - 5/4] GitHub Weekly Digest'
+publishedAt: '2025-05-04'
+---
+## 📌 [hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam)
+<Callout>
+    Description: real time face swap and one-click video deepfake with only a single image\
+    🌐 Python｜⭐️ 59,439 | 8191 stars this week
+</Callout>
+    #### 簡介
+
+Deep-Live-Cam 是一款單擊即可進行即時臉部交換和影片深度偽造的軟體，僅需單張圖片即可實現。它旨在成為 AI 生成媒體產業的生產力工具，協助藝術家製作自訂角色動畫、創作引人入勝的內容，甚至可用於服裝設計。軟體內建檢查機制，防止處理不當媒體（裸露、血腥內容、戰爭畫面等敏感素材）。使用者應負責任且合法地使用此軟體，若使用真人臉部，需取得其同意並線上上分享時明確標示為深度偽造。開發團隊承諾負責任地開發此專案，遵守法律和道德規範，必要時可能關閉專案或新增浮水印。
+
+
+#### 主要功能
+
+* 即時臉部交換 (Real-time face swap)：單張圖片即可將臉部套用到影片或直播中。
+*  影片深度偽造 (Video deepfake)：將臉部套用到影片中，產生深度偽造影片。
+*  Mouth Mask：保留原有嘴部，實現更精準的嘴部動作。
+*  Face Mapping：同時在多個主體上使用不同的臉部。
+*  Your Movie, Your Face：即時將任何臉部套用到電影中觀看。
+*  Live Show：執行直播表演。
+*  Memes 製作：輕鬆製作爆紅迷因。
+*  支援多種執行提供者 (execution provider)：CUDA (Nvidia GPU), CoreML (Apple Silicon), DirectML (Windows), OpenVINO (Intel)。
+
+
+#### 如何使用
+
+* **預建版本 (Pre-built):** 適用於非技術使用者，只需三個步驟：選擇臉部圖片、選擇攝影機、按下「Live」。
+* **手動安裝 (Manual Installation):** 需具備技術技能，包含設定平臺 (Python 3.10, pip, git, ffmpeg, Visual Studio 2022 Runtimes)、複製程式碼庫、下載模型 (GFPGANv1.4, inswapper_128_fp16.onnx)、安裝相依套件等步驟，並根據作業系統 (Windows, Linux, macOS) 選擇不同的安裝方法。
+* **圖片/影片模式 (Image/Video Mode):** 執行 `python run.py`，選擇來源臉部圖片和目標圖片/影片，點選「Start」。輸出結果將儲存到以目標影片命名的目錄中。
+* **網路攝影機模式 (Webcam Mode):** 執行 `python run.py`，選擇來源臉部圖片，點選「Live」。等待預覽畫面出現 (10-30 秒)，使用螢幕擷取工具 (例如 OBS) 進行串流。要更改臉部，請選擇新的來源圖片。
+*  **命令列引數 (Command Line Arguments):** 提供多種命令列選項，例如設定來源、目標路徑、輸出路徑、影格處理器、影片編碼器、品質等。  (此功能目前未維護)
+## 📌 [kortix-ai/suna](https://github.com/kortix-ai/suna)
+<Callout>
+    Description: Suna - Open Source Generalist AI Agent\
+    🌐 TypeScript｜⭐️ 9,599 | 3427 stars this week
+</Callout>
+    #### 簡介
+
+Suna 是一個完全開源的 AI 助理，旨在協助您輕鬆完成現實世界的任務。透過自然語言對話，Suna 能成為您在研究、資料分析和日常挑戰中的數位夥伴，它結合了強大的功能和直覺的介面，瞭解您的需求並提供結果。Suna 的工具包包含無縫瀏覽器自動化、檔案管理、網路爬蟲和擴充套件搜尋功能、命令列執行、網站部署以及與各種 API 和服務的整合。這些功能協同工作，讓 Suna 能夠透過簡單的對話解決您的複雜問題並自動化工作流程。
+
+
+#### 主要功能
+
+* 無縫瀏覽器自動化 (Seamless browser automation)：輕鬆瀏覽網頁並提取資料。
+* 檔案管理 (File management)：建立和編輯檔案。
+* 網路爬蟲和擴充套件搜尋 (Web crawling and extended search)：執行更深入的網路搜尋。
+* 命令列執行 (Command-line execution)：執行系統任務。
+* 網站部署 (Website deployment)：部署網站。
+* API 和服務整合 (API and service integration)：與各種 API 和服務整合。
+* 後端 API (Backend API)：使用 Python/FastAPI 服務處理 REST 端點、執行緒管理和 LLM 整合。
+* 前端 (Frontend)：使用 Next.js/React 應用程式提供響應式 UI，包含聊天介面和儀錶板。
+* Agent Docker：為每個 Agent 提供隔離的執行環境，包含瀏覽器自動化、程式碼直譯器、檔案系統存取、工具整合和安全功能。
+* Supabase 資料庫 (Supabase Database)：處理資料永續性，包含身份驗證、使用者管理、對話記錄、檔案儲存、Agent 狀態、分析和即時訂閱。
+
+
+#### 如何使用
+
+Suna 可以自行託管在您的基礎架構上。設定步驟如下：
+
+* **需求 (Requirements):** Supabase 專案、Redis 資料庫、Daytona sandbox、Python 3.11、LLM 提供商 API 金鑰 (Anthropic 建議)、Tavily API 金鑰 (選用)、Firecrawl API 金鑰 (選用)、RapidAPI API 金鑰 (選用)。
+* **前提條件 (Prerequisites):** 建立 Supabase 專案並儲存 API URL、匿名金鑰和服務角色金鑰；設定 Redis 例項；在 Daytona 建立帳戶並產生 API 金鑰，新增 kortix-ai/kortix-suna:0.0.20 映像；取得 LLM API 金鑰 (Anthropic 建議)；取得 Tavily 和 Firecrawl API 金鑰 (選用)；取得 RapidAPI API 金鑰 (選用)。
+* **安裝步驟 (Installation Steps):** 複製儲存庫；設定後端環境，編輯 .env 檔案填寫憑證；設定 Supabase 資料庫，使用 Supabase CLI 登入、連結您的專案並推送資料庫遷移；設定前端環境，編輯 .env 檔案。
+## 📌 [getzep/graphiti](https://github.com/getzep/graphiti)
+<Callout>
+    Description: Build Real-Time Knowledge Graphs for AI Agents\
+    🌐 Python｜⭐️ 7,903 | 2732 stars this week
+</Callout>
+    #### 簡介
+
+Graphiti 是一個用於構建和查詢時間感知知識圖譜的框架，特別適用於在動態環境中運作的 AI 代理。它與傳統的 RAG (Retrieval-Augmented Generation) 方法不同，Graphiti 會持續整合使用者互動、結構化和非結構化企業資料以及外部資訊到一個連貫且可查詢的圖譜中。此框架支援增量資料更新、高效的檢索和精確的歷史查詢，無需重新計算整個圖譜，使其適用於開發互動式、上下文感知的 AI 應用程式。Graphiti 能夠自主構建知識圖譜，同時處理變化的關係並維護歷史上下文。它採用混合檢索方法，結合語義嵌入、關鍵字 (BM25) 和圖形遍歷，以實現低延遲查詢，無需依賴大型語言模型 (LLM) 的摘要。
+
+
+#### 主要功能
+
+*   **即時增量更新 (Real-Time Incremental Updates):**  立即整合新的資料片段，無需批次重新計算。
+*   **雙時間資料模型 (Bi-Temporal Data Model):**  明確追蹤事件發生時間和資料採集時間，允許精確的時點查詢。
+*   **高效混合檢索 (Efficient Hybrid Retrieval):** 結合語義嵌入、關鍵字 (BM25) 和圖形遍歷，實現低延遲查詢。
+*   **自定義實體定義 (Custom Entity Definitions):** 透過簡單的 Pydantic 模型，靈活建立詞彙表並支援開發者自定義實體。
+*   **可擴充套件性 (Scalability):** 使用平行處理有效管理大型資料集，適用於企業環境。
+*   **處理動態資料:**  專門設計用於處理動態且頻繁更新的資料集。
+*   **精確的歷史查詢:**  支援精確的時點查詢，追蹤資料的歷史變化。
+*   **MCP 伺服器支援:** 提供 Model Context Protocol (MCP) 伺服器，方便 AI 代理與知識圖譜互動。
+*   **REST 服務:** 提供基於 FastAPI 的 REST API 服務。
+*   **支援多種大型語言模型:** 支援 OpenAI、Anthropic、Google Gemini 和 Groq 等 LLM 提供商。
+
+
+#### 如何使用
+
+*   安裝必要的套件：`pip install graphiti-core` 或 `poetry add graphiti-core` (可選配額外 LLM 提供商)。
+*   設定環境變數，例如 `OPENAI_API_KEY`。
+*   連線到 Neo4j 資料庫。
+*   初始化 Graphiti 索引和約束。
+*   將片段（文字和結構化 JSON）新增到圖譜。
+*   使用混合搜尋方法搜尋關係 (邊緣)。
+*   使用圖形距離重新排序搜尋結果。
+*   使用預定義的搜尋規則搜尋節點。
+*   使用 MCP 伺服器或 REST API 與 Graphiti 互動。
+*   參考 `examples` 目錄中的快速入門範例。
+*   針對 Azure OpenAI，需要配置 LLM 客戶端和嵌入器，並使用 Azure OpenAI 憑證。
+## 📌 [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners)
+<Callout>
+    Description: 21 Lessons, Get Started Building with Generative AI 🔗 https://microsoft.github.io/generative-ai-for-beginners/\
+    🌐 Jupyter Notebook｜⭐️ 82,132 | 2158 stars this week
+</Callout>
+    #### 簡介
+
+*  本課程為Microsoft Cloud Advocates提供的 Generative AI 入門課程，共包含 21 個教學單元。
+*  課程涵蓋建立 Generative AI 應用程式的基礎知識。
+*  每個單元都包含教學影片、書面教材、Python 和 TypeScript 的程式碼範例，以及額外的學習資源連結。
+*  單元型別分為「Learn」和「Build」，前者講解 Generative AI 概念，後者則包含程式碼範例。
+*  課程適合具備 Python 或 TypeScript 基礎知識的學習者，也提供給.NET 開發者的版本。
+*  需要 Azure OpenAI Service、GitHub Marketplace Model Catalog 或 OpenAI API 才能執行程式碼。
+*  建議使用 GitHub 帳號 fork 此程式庫。
+*  提供課程設定單元，協助設定開發環境。
+
+
+#### 主要功能
+
+*  提供21個涵蓋 Generative AI 各面向的教學單元，從基礎概念到應用程式開發。
+*  學習如何選擇適合自身應用情境的 Large Language Model (LLMs)。
+*  學習負責任地開發 Generative AI 應用程式。
+*  深入學習 Prompt Engineering 技術，提升提示效果。
+*  實作各種 Generative AI 應用程式，包括文字生成、聊天機器人、搜尋應用程式、影象生成等等。
+*  學習如何整合外部應用程式和使用 Function Calling。
+*  學習 Generative AI 應用程式的 UX 設計和安全措施。
+*  學習 Generative AI 應用程式的生命週期管理和 LLMOps。
+
+
+#### 如何使用
+
+*  課程分為 21 個單元，學習者可自行選擇學習順序。
+*  每個單元包含教學影片和書面教材。
+*  提供 Python 和 TypeScript 的程式碼範例，並支援 Azure OpenAI 和 OpenAI API。
+*  包含額外的學習資源連結，方便進一步學習。
+*  需要一個 GitHub 帳號以 fork 這個 repository。
+*  建議先完成「Course Setup」單元，設定開發環境。
+*  可參考提供的不同 LLM 服務 (Azure OpenAI Service, GitHub Marketplace Model Catalog, OpenAI API)。
+*  可加入官方 Discord 伺服器，與其他學習者交流和尋求協助。
+## 📌 [juspay/hyperswitch](https://github.com/juspay/hyperswitch)
+<Callout>
+    Description: An open source payments switch written in Rust to make payments fast, reliable and affordable\
+    🌐 Rust｜⭐️ 17,763 | 1910 stars this week
+</Callout>
+    #### 簡介
+
+* Juspay於2012年成立，是全球領先的支付協調和結帳解決方案提供商，服務全球400多家領先企業和品牌。
+* Hyperswitch是Juspay新一代可組合的商業開源支付平臺，專為數位企業設計，提供存取最佳支付基礎架構的途徑。
+* Hyperswitch包含後端、SDK（前端）和控制中心三個主要組成部分。
+* 提供企業級、透明且模組化的支付平臺。
+
+
+#### 主要功能
+
+* **Hyperswitch後端:**  處理各種支付流程（授權、驗證、作廢和擷取），並管理退款和拒付等後續流程。支援與外部FRM或身份驗證提供者連線。透過自定義工作流程最佳化支付路由，包括基於成功率的路由、基於規則的路由、分散式負載、備援處理和基於特定錯誤程式碼的智慧重試機制。
+* **SDK (前端):** 提供Web、Android和iOS版本，統一各種支付方式（例如信用卡、電子錢包、BNPL、銀行轉帳等）的支付體驗，並支援底層支付服務供應商（PSPs）的多樣化支付流程。搭配Locker功能，顯示使用者儲存的支付方式。
+* **控制中心:**  無需編碼即可管理整個支付堆疊。允許建立路由、支付重試的工作流程，並定義觸發3DS、欺詐風險管理(FRM)和附加費模組的條件。提供所有整合PSP的交易、退款和拒付操作，以及交易級別日誌和詳細的分析與支付效能洞察。
+
+
+#### 如何使用
+
+* **本地設定:** 使用單一指令`scripts/setup.sh`即可執行Hyperswitch，支援標準、完整和獨立應用程式伺服器等部署模式。
+* **雲端部署:** 提供AWS CDK指令碼快速部署，支援GCP和Azure的Helm charts部署。
+* **託管沙盒:**  註冊我們的託管沙盒，即可體驗產品，設定聯結器、定義路由和重試的工作流程，並從儀錶板嘗試支付。  此方法無需任何程式碼或設定。
