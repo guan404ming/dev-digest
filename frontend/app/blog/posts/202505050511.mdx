@@ -1,0 +1,152 @@
+---
+title: '[5/5 - 5/11] GitHub Weekly Digest'
+publishedAt: '2025-05-11'
+---
+## 📌 [hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam)
+<Callout>
+    Description: real time face swap and one-click video deepfake with only a single image\
+    🌐 Python｜⭐️ 65,955 | 7310 stars this week
+</Callout>
+    #### 簡介
+
+Deep-Live-Cam 是一款單擊即可實時進行臉部替換和影片 Deepfake 的軟體，只需一張圖片即可完成。它旨在作為 AI 產生媒體產業的生產工具，協助藝術家製作動畫自定義角色、創作引人入勝的內容，甚至用於服裝設計。軟體內建檢查機制，防止處理不當的媒體內容（裸露、血腥內容、戰爭畫面等）。使用者應負責任且合法地使用此軟體，使用真人臉部需取得其同意，並線上上分享任何輸出時清楚標示為 Deepfake。
+
+
+#### 主要功能
+
+* 實時臉部替換與 Deepfake 功能，只需一張圖片。
+*  支援多種臉部對映功能，可在多個物件上同時使用不同的臉部。
+*  Mouth Mask 功能，保留原來的嘴巴以確保精確的動作。
+*  實時觀看電影，並將任何臉部套用到影片中。
+*  進行實時直播表演。
+*  創作迷因。
+*  與 Omegle 等平臺整合使用。
+* 提供預建版本(Windows)及手動安裝版本。預建版本方便非技術使用者使用，並領先開源版本 60 天。
+
+
+#### 如何使用
+
+* **預建版本 (Windows):** 選擇一張臉部圖片，選擇要使用的攝影機，點選 "Live" 即可開始。
+* **手動安裝版本:**  需要一定的技術技能。步驟包含：設定平臺 (Python 3.10、pip、git、ffmpeg、Visual Studio 2022 Runtimes (Windows))、複製程式碼庫、下載模型 (GFPGANv1.4、inswapper_128_fp16.onnx)、安裝相依性 (使用 virtual environment 建議)。根據您的GPU型別，選擇對應的執行提供者 (CUDA、CoreML、DirectML、OpenVINO) 並安裝其相依性，最後執行 `python run.py` 並設定執行提供者 (例如 `--execution-provider cuda`)。
+* **圖片/影片模式:** 執行 `python run.py`，選擇來源臉部圖片和目標圖片/影片，點選 "Start"。輸出將儲存在以目標影片命名的目錄中。
+* **網路攝影機模式:** 執行 `python run.py`，選擇來源臉部圖片，點選 "Live"，等待預覽畫面出現 (10-30 秒)，使用螢幕擷取工具 (例如 OBS) 進行串流。要更改臉部，只需選擇新的來源圖片即可。
+## 📌 [GoogleCloudPlatform/kubectl-ai](https://github.com/GoogleCloudPlatform/kubectl-ai)
+<Callout>
+    Description: AI powered Kubernetes Assistant\
+    🌐 Go｜⭐️ 4,502 | 4099 stars this week
+</Callout>
+    #### 簡介
+
+kubectl-ai 是一個智慧型介面，能將使用者的意圖轉換成精確的 Kubernetes 操作，使 Kubernetes 的管理更易於使用且更高效。它支援多種大型語言模型 (LLM)，例如 Gemini、Grok、Azure OpenAI、OpenAI 以及本地的 LLM 提供者，例如 ollama 和 llama.cpp。使用者可以使用自然語言提出 Kubernetes 相關指令，kubectl-ai 將其轉換為 Kubernetes 命令並執行。
+
+
+#### 主要功能
+
+* 將自然語言指令轉換為 Kubernetes 命令。
+* 支援多種大型語言模型 (LLM)：Gemini, Grok, Azure OpenAI, OpenAI, ollama, llama.cpp。
+* 提供互動式模式，允許使用者進行多輪對話，並保持上下文。
+* 支援靜默模式 (`--quiet`)，直接輸出結果，不顯示對話過程。
+* 可與其他 Unix 命令結合使用，例如 `cat`, `echo`。
+* 提供特殊關鍵字：`model`, `models`, `version`, `reset`, `clear`, `exit` 或 `quit`。
+* 作為 kubectl plugin 使用，方便整合至 Kubernetes 工作流程。
+* 支援設定不同的模型引數，例如模型名稱、API 金鑰等等。
+
+
+#### 如何使用
+
+* **安裝:**  透過 `curl` 指令快速安裝 (Linux & MacOS)，或從 releases 頁面手動下載安裝 (Linux, MacOS and Windows)，亦可使用 krew 安裝。
+* **設定 API 金鑰:**  根據所使用的 LLM 提供者，設定對應的環境變數，例如 `GEMINI_API_KEY`, `GROK_API_KEY`, `AZURE_OPENAI_API_KEY`, `OPENAI_API_KEY` 等。
+* **使用互動模式:** 直接執行 `kubectl-ai` 進入互動模式，輸入自然語言指令。
+* **使用指令模式:** 使用 `kubectl-ai --quiet "你的指令"`  執行單一指令，並取得結果。
+* **與其他命令結合:**  將指令透過管道傳送給 `kubectl-ai`，例如 `echo "你的指令" | kubectl-ai`。
+* **指定 LLM 提供者和模型:** 使用 `--llm-provider` 和 `--model` 選項指定 LLM 提供者和模型名稱。例如 `kubectl-ai --llm-provider ollama --model gemma3:12b-it-qat`。
+* **使用 kubectl plugin:** 使用 `kubectl ai`  執行指令。
+## 📌 [voideditor/void](https://github.com/voideditor/void)
+<Callout>
+    
+    🌐 TypeScript｜⭐️ 16,439 | 3891 stars this week
+</Callout>
+    #### 簡介
+
+Void 是一個開源的 Cursor 替代方案，允許使用者在程式碼庫上使用 AI 代理程式，建立檢查點並視覺化程式碼變更，以及在本地部署任何模型或主機。Void 直接向提供者傳送訊息，不會保留使用者的資料。此儲存庫包含 Void 的完整原始碼。
+
+
+#### 主要功能
+
+* 使用 AI 代理程式於程式碼庫。
+* 建立檢查點 (checkpoint) 並視覺化程式碼變更。
+* 部署任何模型或主機於本地。
+* 直接向提供者傳送訊息，不儲存使用者資料。
+* 開源專案。
+* 基於 vscode 儲存庫進行開發 (fork)。
+
+
+#### 如何使用
+
+* 參考專案看板 (Project Board) 開始參與 Void 開發。
+* 參考 HOW_TO_CONTRIBUTE 檔案以瞭解更多貢獻方式。
+* 加入 Discord 社群參與每週非正式會議，獲取更多資訊。
+## 📌 [LadybirdBrowser/ladybird](https://github.com/LadybirdBrowser/ladybird)
+<Callout>
+    Description: Truly independent web browser\
+    🌐 C++｜⭐️ 41,781 | 3605 stars this week
+</Callout>
+    #### 簡介
+
+Ladybird 是一個完全獨立的網頁瀏覽器，採用基於網頁標準的新型引擎。目前仍處於預覽階段 (pre-alpha)，僅適用於開發者使用。它目標是打造一個完整且好用的現代網頁瀏覽器。
+
+
+#### 主要功能
+
+* 使用多程序架構，包含主 UI 程序、多個 WebContent 渲染程序、ImageDecoder 程序和 RequestServer 程序。
+*  影象解碼和網路連線在單獨的程序中執行，以增強抵禦惡意內容的能力。
+* 每個分頁都有其獨立的渲染程序，與系統其他部分隔離 (sandboxed)。
+*  許多核心函式庫都繼承自 SerenityOS，包括：
+    * LibWeb (網頁渲染引擎)
+    * LibJS (JavaScript 引擎)
+    * LibWasm (WebAssembly 實作)
+    * LibCrypto/LibTLS (加密原語和傳輸層安全性)
+    * LibHTTP (HTTP/1.1 客戶端)
+    * LibGfx (2D 圖形庫、影象解碼和渲染)
+    * LibUnicode (Unicode 和地區設定支援)
+    * LibMedia (音訊和視訊播放)
+    * LibCore (事件迴圈，作業系統抽象層)
+    * LibIPC (程序間通訊)
+
+
+#### 如何使用
+
+*  建置和執行 Ladybird 的說明，請參考建置說明檔案 (build instructions)。
+*  Ladybird 支援 Linux、macOS、Windows (使用 WSL2) 和許多其他類 Unix 系統 (*Nixes)。
+*  程式碼相關檔案位於檔案資料夾 (documentation folder)。
+*  加入 Discord 伺服器以參與社群並取得聯絡。
+## 📌 [daytonaio/daytona](https://github.com/daytonaio/daytona)
+<Callout>
+    Description: Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code\
+    🌐 TypeScript｜⭐️ 20,080 | 1470 stars this week
+</Callout>
+    #### 簡介
+
+Daytona 是一個安全且彈性的基礎架構，用於執行 AI 生成的程式碼。它提供快速的沙盒建立、隔離的執行環境以及程式化的控制，確保 AI 程式碼執行安全無虞，並能與您的基礎架構隔離。Daytona 支援 Python 和 TypeScript SDK，並具有良好的擴充套件性和永續性。  主要功能包含亞 90 毫秒的沙盒建立速度，以及對OCI/Docker映像的相容性。
+
+
+#### 主要功能
+
+* **Lightning-Fast Infrastructure:**  90 毫秒內即可建立沙盒並執行程式碼。
+* **Separated & Isolated Runtime:** 在隔離的環境中執行 AI 生成的程式碼，避免對您的基礎架構造成任何風險。
+* **Massive Parallelization for Concurrent AI Workflows:** (即將推出)  支援沙盒檔案系統和記憶體狀態的分支，實現大規模並行處理。
+* **Programmatic Control:** 提供 File、Git、LSP 和 Execute API 等程式化控制介面。
+* **Unlimited Persistence:** 沙盒可以永久存在。
+* **OCI/Docker Compatibility:** 支援任何 OCI/Docker 映像來建立沙盒。
+* **Python SDK & TypeScript SDK:** 提供 Python 和 TypeScript 的 SDK 方便開發者使用。
+
+
+#### 如何使用
+
+1. 在 https://app.daytona.io 建立帳號。
+2. 產生新的 API 金鑰。
+3. 參考入門檔案開始使用 Daytona SDK。
+4. 使用 SDK 建立沙盒例項 (例如，使用 Python SDK 的 `daytona.create(CreateSandboxParams(language="python"))` )。
+5. 使用 SDK 在沙盒內安全地執行程式碼 (例如，使用 Python SDK 的 `sandbox.process.code_run('print("Sum of 3 and 4 is " + str(3 + 4))')` )。
+6. 處理執行結果，並檢查 `exit_code` 是否為 0 以判斷程式碼是否成功執行。
+7. 清理沙盒 (例如，使用 Python SDK 的 `daytona.remove(sandbox)` )。  TypeScript SDK 的使用方法類似，僅 API 名稱略有不同 (例如 `codeRun` 與 `code_run`)。
