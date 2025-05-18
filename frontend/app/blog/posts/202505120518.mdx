@@ -1,0 +1,158 @@
+---
+title: '[5/12 - 5/18] GitHub Weekly Digest'
+publishedAt: '2025-05-18'
+---
+## 📌 [xming521/WeClone](https://github.com/xming521/WeClone)
+<Callout>
+    Description: 🚀从聊天记录创造数字分身的一站式解决方案💡 使用聊天记录微调大语言模型，让大模型有“那味儿”，并绑定到聊天机器人，实现自己的数字分身。 数字克隆/数字分身/数字永生/LLM/聊天机器人/LoRA\
+    🌐 Python｜⭐️ 10,102 | 6767 stars this week
+</Callout>
+    #### 簡介
+
+WeClone 是一個一站式解決方案，能利用你的聊天記錄（微信、QQ、Telegram 等）微調大型語言模型 (LLM)，創造出具有你個人風格的數位分身。它涵蓋了從聊天資料匯出、預處理、模型訓練到部署的完整流程，並注重資料隱私和安全，所有微調過程都在本地進行。目前支援 Qwen2.5-7B-Instruct 模型，並可支援 LLaMA Factory 支援的其他模型和方法。  WeClone 仍在快速迭代中，效果受模型大小、資料數量和質量影響。
+
+
+#### 主要功能
+
+* 聊天資料匯出與預處理：支援從微信、QQ、Telegram、企業微信和飛書等平臺匯出聊天記錄，並進行資料預處理，去除敏感資訊（例如：電話號碼、身分證號碼、郵箱地址和網址）。
+* 本地化模型微調：使用 LoRA 方法微調 LLM，讓模型學習你的聊天風格。支援多種模型和微調方法。
+* 部署至聊天機器人：支援將微調後的模型部署到 AstrBot 和 LangBot 等聊天機器人平臺。
+* 資料安全可控：所有處理過程都在本地進行，確保資料安全。
+* 命令列工具：提供命令列介面，方便操作。
+* 可自定義引數：允許使用者調整模型訓練和推理引數，例如 `temperature`、`top_p`、`top_k` 等。
+* 支援多卡訓練：支援多 GPU 訓練，加速模型訓練過程。
+
+
+#### 如何使用
+
+1. **環境搭建**: 安裝 CUDA (版本 12.4 以上)、Python 環境管理器 uv，並安裝必要的 Python 依賴庫。
+2. **模型下載**: 下載 Qwen2.5-7B-Instruct 模型 (或其他支援的模型)。
+3. **資料準備**: 使用 PyWxDump 提取微信聊天記錄 (不支援微信 4.0 版本)，將 CSV 檔案放在 `./dataset/csv` 目錄。
+4. **資料預處理**: 使用 `weclone-cli make-dataset` 命令處理資料，可自定義設定檔 `settings.jsonc` 中的引數。
+5. **模型微調**: 使用 `weclone-cli train-sft` 命令進行單卡訓練，或使用 `deepspeed` 命令進行多卡訓練。
+6. **測試模型**: 使用 `weclone-cli webchat-demo` 或 `weclone-cli server` 命令測試模型，並使用 `weclone-cli test-model` 進行更全面的測試。
+7. **部署到聊天機器人**:  按照 AstrBot 或 LangBot 的說明，將微調後的模型部署到對應的平臺。  需注意調整 AstrBot 中的系統提示詞和 API 設定，並關閉預設工具。
+## 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
+<Callout>
+    Description: 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.\
+    🌐 Python｜⭐️ 33,391 | 4953 stars this week
+</Callout>
+    #### 簡介
+
+MoneyPrinterTurbo 是一個自動生成短影片的工具，只需提供影片主題或關鍵字，即可自動生成文案、素材、字幕和背景音樂，最後合成高畫質短片。它支援 Web 介面和 API 介面，並支援多種大模型接入，例如 OpenAI、Moonshot、Azure 等。  使用者可以自訂文案、影片尺寸 (橫屏 16:9 或 豎屏 9:16)、片段長度、語音合成、字幕樣式以及背景音樂。  此工具提供 Windows 一鍵啟動包和 Google Colab 版本，方便快速上手。
+
+
+#### 主要功能
+
+*   AI 自動生成影片文案。
+*   支援自訂影片文案。
+*   支援多種高畫質影片尺寸 (9:16, 16:9)。
+*   支援批次影片生成。
+*   支援調整影片片段長度。
+*   支援中文和英文影片文案。
+*   支援多種語音合成，並可即時試聽效果。
+*   支援字幕生成，包含調整字型、位置、顏色、大小和描邊。
+*   支援背景音樂設定，包含隨機或指定音樂檔案及音量調整。
+*   使用無版權的高畫質素材，亦支援使用本地素材。
+*   支援多種大型語言模型 (LLM) 接入，例如 OpenAI、Moonshot、Azure 等。
+
+
+#### 如何使用
+
+*   **快速開始:** 使用 Windows 一鍵啟動包或 Google Colab 版本，免去本地環境配置。
+*   **安裝部署:** 可透過 Git 克隆程式碼，並根據系統 (Windows, MacOS, Linux) 指引進行安裝，包含設定 `config.toml` 檔案，指定 API 金鑰和必要的軟體 (例如 ImageMagick)。 也支援 Docker 部署。
+*   **手動部署:**  需建立虛擬環境，安裝相依套件，並安裝 ImageMagick。  啟動 Web 介面 (`webui.bat` 或 `webui.sh`) 和 API 服務 (`main.py`)。
+*   **設定:**  在 `config.toml` 檔案中設定 LLM 提供商、API 金鑰、字幕生成方式 (edge 或 whisper)、ffmpeg 路徑等引數。  Whisper 模式需下載約 3GB 的模型檔案。
+*   **輸入主題或關鍵字:**  透過 Web 介面或 API 輸入影片主題或關鍵字。
+*   **輸出:**  MoneyPrinterTurbo 將生成包含文案、素材、字幕和背景音樂的影片。
+## 📌 [voideditor/void](https://github.com/voideditor/void)
+<Callout>
+    
+    🌐 TypeScript｜⭐️ 20,271 | 4162 stars this week
+</Callout>
+    #### 簡介
+
+Void 是一個開源專案，旨在成為 Cursor 的替代方案。它允許使用者在程式碼庫上使用 AI 代理，建立檢查點、視覺化程式碼變更，並在本地執行任何模型或主機。Void 直接將訊息傳送給提供商，不會儲存使用者的資料。此儲存庫包含 Void 的完整原始碼。
+
+
+#### 主要功能
+
+* 使用 AI 代理於程式碼庫上。
+* 建立檢查點 (checkpoint) 追蹤程式碼變更。
+* 視覺化程式碼變更。
+* 在本地執行任何模型或主機。
+* 直接將訊息傳送給提供商，不儲存使用者資料。
+* 開源專案，原始碼公開。
+
+
+#### 如何使用
+
+* 參考專案看板 (Project Board) 開始參與 Void 開發。
+* 參考 HOW_TO_CONTRIBUTE 檔案貢獻程式碼。
+* 加入 Discord 社群參與每週例會。
+* Void 基於 vscode 儲存庫開發。
+## 📌 [mem0ai/mem0](https://github.com/mem0ai/mem0)
+<Callout>
+    Description: Memory for AI Agents; SOTA in AI Agent Memory; Announcing OpenMemory MCP - local and secure memory management.\
+    🌐 Python｜⭐️ 31,165 | 2181 stars this week
+</Callout>
+    #### 簡介
+
+Mem0 是一個增強 AI 助理和代理的智慧記憶層，讓 AI 互動更個人化。它能記住使用者偏好，適應個人需求，並持續學習，非常適合客戶支援聊天機器人、AI 助理和自主系統。相較於 OpenAI Memory，Mem0 在 LOCOMO 基準測試中準確率提高了 26%，速度提升了 91%，且減少了 90% 的 Token 使用量。
+
+
+#### 主要功能
+
+*   **多層級記憶 (Multi-Level Memory):** 無縫保留使用者、工作階段和代理狀態，實現自適應個人化。
+*   **開發者友善 (Developer-Friendly):** 提供直覺的 API、跨平臺 SDK 和完全託管的服務選項。
+*   適用於 AI 助理：提供前後文豐富且一致的對話。
+*   適用於客戶支援：記住過去的工單和使用者歷史記錄，提供量身定製的協助。
+*   適用於醫療保健：追蹤病患偏好和病史，提供個人化的照護。
+*   適用於生產力工具和遊戲：根據使用者行為調整工作流程和環境。
+
+
+#### 如何使用
+
+*   選擇託管平臺或自託管套件。
+*   **託管平臺:**註冊 Mem0 平臺，透過 SDK 或 API 金鑰嵌入記憶層。
+*   **自託管 (開源):** 使用 pip 或 npm 安裝 SDK：`pip install mem0ai` 或 `npm install mem0ai`。
+*   Mem0 需要一個大型語言模型 (LLM) 才能運作，預設使用 OpenAI 的 `gpt-4o-mini`，但支援多種 LLM (詳見支援的 LLM 檔案)。
+*   初始化記憶體：`from openai import OpenAI; from mem0 import Memory; openai_client = OpenAI(); memory = Memory()`。
+*   使用 `memory.search()` 搜尋相關記憶體，`memory.add()` 新增新的記憶體。
+*   範例程式碼中展示瞭如何將記憶體整合到聊天機器人中，以提供基於過去互動的個人化回應。  詳見快速入門指南瞭解更多整合步驟。
+## 📌 [mlabonne/llm-course](https://github.com/mlabonne/llm-course)
+<Callout>
+    Description: Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.\
+    🌐 Jupyter Notebook｜⭐️ 51,664 | 1527 stars this week
+</Callout>
+    #### 簡介
+
+本課程涵蓋大型語言模型 (LLM) 的三個主要面向：基礎知識 (LLM Fundamentals)、科學家面向 (LLM Scientist) 和工程師面向 (LLM Engineer)。基礎知識部分介紹必要的數學、Python 和神經網路知識。科學家面向著重於利用最新技術構建最佳 LLM。工程師面向則專注於建立基於 LLM 的應用程式並進行部署。課程本身免費，但作者也提供了一本配套的實用手冊供選購。此外，還提供了一個互動式 LLM 助理，可在 HuggingChat 或 ChatGPT 上解答問題並測試知識。課程包含多個筆記本 (Notebook) 和文章，涵蓋 LLM 的自動評估、模型合併、微調、量化以及其他相關主題。
+
+
+#### 主要功能
+
+本課程提供豐富的資源，涵蓋 LLM 的各個方面，包括：
+
+* **LLM 基礎知識:** 提供數學、Python 和神經網路的基礎知識，作為學習 LLM 的基石。
+* **LLM 架構:** 詳細介紹 Transformer 架構、標記化、注意力機制和取樣技術等核心概念。
+* **預訓練模型:** 解釋預訓練過程中的資料準備、分散式訓練、訓練最佳化和監控等重要步驟。
+* **後訓練資料集:** 涵蓋後訓練資料集的結構、合成資料生成、資料增強和質量過濾等技術。
+* **監督式微調:** 詳細介紹監督式微調的訓練技術、引數、分散式訓練和監控方法。
+* **偏好校準:** 探討偏好校準中的拒絕取樣、直接偏好最佳化和強化學習等演算法。
+* **評估:** 提供自動化基準測試、人工評估和基於模型的評估等方法。
+* **量化:** 介紹量化技術，包括 GGUF、llama.cpp、GPTQ、AWQ 等方法。
+* **新興趨勢:** 探討模型合併、多模態模型、可解釋性和測試時間計算等新興趨勢。
+* **LLM 執行與應用:** 涵蓋 LLM API 的使用、開源 LLM 的執行、提示工程和輸出結構化等工程師面向的知識。
+* **向量儲存與檢索增強生成 (RAG):** 指導如何構建向量儲存，以及如何使用 RAG 來增強 LLM 的能力。
+
+
+#### 如何使用
+
+本課程採用模組化設計，使用者可以根據自身需求選擇學習不同的部分：
+
+*  **LLM Fundamentals (基礎知識):** 可選模組，提供必要的數學、Python 和神經網路基礎知識。
+* **LLM Scientist (科學家面向):** 學習如何構建最佳 LLM，涵蓋 LLM 架構、預訓練、後訓練資料集、監督式微調、偏好校準、評估和量化等方面。
+* **LLM Engineer (工程師面向):** 學習如何構建和部署 LLM 應用程式，涵蓋 LLM 執行、向量儲存、RAG 和新興趨勢等方面。
+
+每個部分都提供了大量的筆記本 (Notebook)、文章和參考資源，使用者可以透過閱讀材料、執行程式碼和參考資源來學習 LLM 相關知識。  課程資源包含多種學習管道，例如 YouTube 影片、線上課程和程式碼範例，能滿足不同學習風格的需求。
