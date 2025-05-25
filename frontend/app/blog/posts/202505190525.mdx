@@ -1,0 +1,159 @@
+---
+title: '[5/19 - 5/25] GitHub Weekly Digest'
+publishedAt: '2025-05-25'
+---
+## 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
+<Callout>
+    Description: 所有小初高、大学PDF教材。\
+    🌐 Roff｜⭐️ 30,074 | 8070 stars this week
+</Callout>
+    #### 簡介
+
+這個專案旨在彙整並公開分享中國義務教育階段的數學教材資源，以促進教育普及，縮小教育資源差距，並方便海外華人子女學習。資源涵蓋小學、初中、高中以及部分大學數學教材，例如高等數學、線性代數、離散數學和機率論等。由於檔案大小限制，部分大型 PDF 檔案被拆分為多個較小的檔案。
+
+
+#### 主要功能
+
+* 提供小學至高中的數學教材資源下載。
+* 提供部分大學數學教材資源下載，例如高等數學、線性代數、離散數學和機率論。
+* 提供 Windows 系統下的 PDF 合併工具 `mergePDFs-windows-amd64.exe`，用於合併被拆分的 PDF 檔案。
+* 提供重新下載的替代方案 tchMaterial (適用於中國大陸地區)。
+
+
+#### 如何使用
+
+* **下載教材:**  直接下載所需年級和學科的教材資源。
+* **合併檔案:** 若下載的教材檔案被拆分，請下載 `mergePDFs-windows-amd64.exe` 到檔案所在的資料夾，並雙擊執行程式進行合併。  檔案命名格式通常為 `*.pdf.1`, `*.pdf.2` 等。
+* **使用 tchMaterial (中國大陸地區):**  如果位於中國大陸地區且網路狀況良好，可以使用 `tchMaterial` 重新下載檔案。
+## 📌 [public-apis/public-apis](https://github.com/public-apis/public-apis)
+<Callout>
+    Description: A collective list of free APIs\
+    🌐 Python｜⭐️ 346,692 | 5692 stars this week
+</Callout>
+    #### 簡介
+
+這個公共 API 倉庫由社群成員和 APILayer 的人員共同維護，收錄了來自許多領域的大量公共 API，使用者可以將其應用於自己的產品。它就像一個寶庫，多年來一直由社群精心管理。APILayer 提供快速整合 API 的方法，並提供 Discord 伺服器以供使用者獲取更新、提問、獲得解答等。倉庫中包含許多分類，例如動物、動漫、反惡意軟體、藝術與設計等等，每個分類下都列出了多個 API，並附有 API 描述、驗證方式 (Auth)、是否支援 HTTPS 和 CORS 等資訊。
+
+
+#### 主要功能
+
+* 提供大量分類的公共 API 列表，方便使用者查詢所需 API。
+* 每個 API 皆包含簡短描述、驗證方式 (Auth: apiKey, OAuth 等)、HTTPS 支援與 CORS 支援狀態。
+* 收錄的 API 涵蓋多個領域，例如：動物、動漫、反惡意軟體、藝術與設計、驗證與授權、區塊鏈、書籍、商業等等。
+* 提供 API 詳細資訊連結，方便使用者深入瞭解。
+* 提供 APILayer 自家的 API 服務連結。
+* 提供 Discord 社群連結，方便使用者交流與尋求協助。
+* 提供參與貢獻的指南。
+
+
+#### 如何使用
+
+* 瀏覽 README.md 檔案，尋找感興趣的 API 類別。
+* 在各個類別中，找到符合需求的 API，檢視其描述、Auth 方法、HTTPS 與 CORS 支援狀況。
+* 根據 API 的說明檔案，使用相對應的 Auth 方法進行驗證，並傳送 API 請求。
+*  需要注意每個 API 的 `Auth`，`HTTPS`，`CORS` 欄位，這些欄位描述了 API 的驗證方式，是否使用安全協定以及跨域資源共享的支援情況。
+* 部分 API 需要 `apiKey` 或 `OAuth` 進行驗證，使用者需要先註冊或申請 API 金鑰。
+*  使用 API 時，請遵守各 API 的使用條款及限制。
+## 📌 [virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)
+<Callout>
+    Description: An AI Hedge Fund Team\
+    🌐 Python｜⭐️ 32,660 | 4847 stars this week
+</Callout>
+    #### 簡介
+
+* 這是一個概念驗證專案，旨在探索使用人工智慧進行交易決策的可能性。
+* 系統模擬了基於多種投資策略的交易行為，並非用於實際交易或投資。
+* 該系統包含多個模擬不同著名投資大師策略的 AI 代理，例如 Warren Buffett, Cathie Wood 等。
+* 該專案僅供教育和研究用途，不提供任何投資建議或保證。
+* 使用者需自行承擔所有財務風險，並建議諮詢專業財務顧問。
+* 系統使用多種API獲取資料和進行大型語言模型的推理。
+* 需要配置API金鑰才能使用除AAPL, GOOGL, MSFT, NVDA, TSLA外的股票資料。
+*  包含回測功能，可以模擬歷史交易表現。
+
+
+#### 主要功能
+
+* **多代理系統 (Multi-Agent System):**  整合多個模擬不同投資策略的 AI 代理，模擬一個完整的對沖基金運作流程。
+* **策略多樣化 (Diversified Strategies):**  包含價值投資、成長投資、宏觀經濟分析等多種投資策略。
+* **量化分析 (Quantitative Analysis):**  運用基本面分析、技術指標分析以及市場情緒分析進行決策。
+* **風險管理 (Risk Management):**  內建風險管理模組，設定倉位限制以控制風險。
+* **回測功能 (Backtesting):**  允許使用者對歷史資料進行回測，評估策略的有效性。
+* **大型語言模型整合 (LLM Integration):** 利用大型語言模型進行更復雜的決策和推理。
+* **可定製性 (Customizability):**  允許使用者指定股票程式碼、交易時間段等引數。
+* **兩種執行模式 (Poetry & Docker):** 提供 Poetry 和 Docker 兩種執行環境，方便使用者使用。
+
+
+#### 如何使用
+
+* **安裝環境:** 使用 Poetry 或 Docker 安裝必要的套件和相依性。  需要設定多個API金鑰，包括OpenAI, Groq, Financial Datasets API等。
+* **執行主程式:** 使用 `poetry run python src/main.py` (Poetry) 或 `./run.sh main` (Docker) 執行主程式，並使用 `--ticker` 引數指定股票程式碼。
+* **執行回測程式:** 使用 `poetry run python src/backtester.py` (Poetry) 或 `./run.sh backtest` (Docker) 執行回測程式，並使用 `--ticker` 引數指定股票程式碼。
+* **設定引數:** 可使用 `--start-date`, `--end-date`, `--ollama`, `--show-reasoning` 等引數自定義執行過程。  `--ollama` 使用本地的LLM。 `--show-reasoning` 顯示每個代理的推理過程。
+* **資料限制:**  預設僅提供 AAPL, GOOGL, MSFT, NVDA, TSLA 的免費資料，其他股票需要設定 `FINANCIAL_DATASETS_API_KEY`。
+* **輸出結果:**  程式會輸出交易決策和回測結果。
+## 📌 [f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
+<Callout>
+    Description: This repo includes ChatGPT prompt curation to use ChatGPT and other LLM tools better.\
+    🌐 JavaScript｜⭐️ 126,441 | 1855 stars this week
+</Callout>
+    #### 簡介
+
+這個儲存庫 "Awesome ChatGPT Prompts" 收集了許多適用於 ChatGPT 及其他 AI 模型 (如 Claude, Gemini, Hugging Face Chat, Llama, Mistral 等) 的提示詞範例。這些提示詞涵蓋了廣泛的應用情境，從扮演不同角色 (程式開發者、翻譯員、旅遊導遊等) 到產生各種內容 (故事、詩歌、程式碼等)。使用者可以複製並直接使用這些提示詞，也可以以此為靈感創作自己的提示詞。有些提示詞可能無法如預期般運作，此時建議嘗試重新輸入、開啟新對話或重新登入。
+
+
+#### 主要功能
+
+* 提供大量的 ChatGPT 提示詞範例，涵蓋多種應用場景。
+* 適用於多種 AI 模型，不侷限於 ChatGPT。
+* 使用者可以輕鬆複製並使用提供的提示詞。
+* 鼓勵使用者貢獻更多提示詞。
+* 提供線上工具 prompts.chat 提升使用者體驗。
+* 包含未合併的 Pull Requests，可能包含更多有用的提示詞。
+* 提供相關電子書，教學如何撰寫有效的提示詞以及如何利用 ChatGPT 賺錢。
+
+
+#### 如何使用
+
+* 複製這個儲存庫：`git clone <repository_url>`。
+* 從 README.md 檔案中選擇你需要的提示詞。
+* 將提示詞貼上到你的 AI 模型中。
+* 根據需要修改提示詞以符合你的需求。
+* 如果提示詞無法正常運作，請嘗試重新輸入、開啟新對話或重新登入。  如果仍然不行，請嘗試用你自己的句子改寫提示詞，但需保留原意。
+## 📌 [All-Hands-AI/OpenHands](https://github.com/All-Hands-AI/OpenHands)
+<Callout>
+    Description: 🙌 OpenHands: Code Less, Make More\
+    🌐 Python｜⭐️ 55,879 | 1524 stars this week
+</Callout>
+    #### 簡介
+
+OpenHands (先前稱為 OpenDevin) 是一個由 AI 驅動的軟體開發代理平臺，能執行任何人類開發者能做的事：修改程式碼、執行指令、瀏覽網頁、呼叫 API，甚至從 StackOverflow 複製程式碼片段。它提供雲端版本 (OpenHands Cloud) 和本地部署 (Docker) 兩種方式。OpenHands 主要針對單一使用者本地工作站使用，不適合多租戶環境。  使用者可透過檔案學習更多使用方法，並參與社群貢獻。
+
+
+#### 主要功能
+
+* 使用 AI 驅動的軟體開發代理。
+* 修改程式碼。
+* 執行指令。
+* 瀏覽網頁。
+* 呼叫 API。
+* 從 StackOverflow 複製程式碼片段。
+* 支援多種大型語言模型 (LLM) 提供者。
+* 提供雲端服務 (OpenHands Cloud) 和本地 Docker 部署。
+* 提供 CLI 和 headless 模式。
+* 支援與本地檔案系統連線。
+* 與 GitHub Actions 整合。
+
+
+#### 如何使用
+
+* **雲端部署:** 使用 OpenHands Cloud，新使用者享有 $50 的免費額度。
+* **本地部署:** 使用 Docker 部署，需參考 Running OpenHands 指南瞭解系統需求。  Docker 指令範例如下：
+```bash
+docker pull docker.all-hands.dev/all-hands-ai/runtime:0.39-nikolaik
+docker run -it --rm --pull=always ...
+```
+* 部署後，應用程式會在 `http://localhost:3000` 執行，並需要選擇 LLM 提供者和新增 API 金鑰。建議使用 Anthropic's Claude Sonnet 4。
+* 更多關於本地部署、headless 模式、CLI 使用和 GitHub Actions 整合的資訊，請參考 Running OpenHands 檔案。
+* 程式碼修改請參考 Development.md。
+* 疑難排解請參考 Troubleshooting Guide。
+* 詳細使用說明和進階設定，請參考線上檔案。
