@@ -1,0 +1,157 @@
+---
+title: '[6/2 - 6/8] GitHub Weekly Digest'
+publishedAt: '2025-06-08'
+---
+## 📌 [anthropics/prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
+<Callout>
+    Description: Anthropic's Interactive Prompt Engineering Tutorial\
+    🌐 Jupyter Notebook｜⭐️ 11,003 | 4546 stars this week
+</Callout>
+    #### 簡介
+
+本課程旨在逐步指導您如何撰寫最佳的 Claude 提示詞。完成課程後，您將能掌握良好提示詞的基本結構、辨識常見錯誤模式並學習解決方法、瞭解 Claude 的優缺點，以及針對常見用例從頭構建強大的提示詞。課程包含九個章節及練習題，並附有進階方法的附錄，建議循序漸進完成。每個章節都設有「範例遊樂場」供您實驗，並提供解答。本教學使用 Claude 3 Haiku 模型，Anthropic 也提供更強大的 Claude 3 Sonnet 和 Claude 3 Opus 模型。建議使用 Google Sheets 版本的教學，因為它更易於使用。
+
+
+#### 主要功能
+
+* 提供逐步指導，學習撰寫有效的 Claude 提示詞。
+* 涵蓋提示詞的基本結構、常見錯誤模式及解決方法。
+* 幫助您瞭解 Claude 模型的優缺點。
+* 引導您針對常見用例從零開始建立提示詞。
+* 提供九個章節的課程內容及練習題，並附有進階方法的附錄。
+* 每個章節包含「範例遊樂場」區域，方便您實驗並觀察提示詞的變化如何影響 Claude 的回應。
+* 提供解答，幫助您驗證自己的學習成果。
+* 支援 Google Sheets 版本，提供更友善的使用體驗。
+
+
+#### 如何使用
+
+* 按照章節順序逐步學習。
+* 在每個章節的「範例遊樂場」區域練習撰寫和除錯提示詞。
+* 參考解答驗證您的答案。
+* 可以使用 Google Sheets 版本的教學，體驗更友善的操作介面。
+* 從 Chapter 1: Basic Prompt Structure 開始學習。
+*  課程涵蓋初級和中級主題，例如：基本提示詞結構、清晰直接的提示詞、角色分配、分離資料和指令、格式化輸出等等。
+*  可以利用提供的範例，並在範例遊樂場中實驗，觀察不同的提示詞如何影響 Claude 的回應。
+## 📌 [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
+<Callout>
+    Description: Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460. Any other account is fake.\
+    🌐 Python｜⭐️ 17,279 | 3349 stars this week
+</Callout>
+    #### 簡介
+
+AgenticSeek 是一款完全本地化的、支援語音的 AI 助理，它提供 Manus AI 的替代方案。所有資料都儲存在您的裝置上，確保您的隱私和零雲端依賴性。AgenticSeek 能夠自主瀏覽網頁、編寫程式碼和規劃任務，並針對本地推理模型進行最佳化。目前專案仍在積極開發中，沒有路線圖和資金支援，非常歡迎貢獻、回饋和耐心等待。
+
+
+#### 主要功能
+
+* **完全本地且私密:** 所有運算都在您的電腦上執行，沒有雲端服務或資料共享。您的檔案、對話和搜尋結果都保持私密。
+* **智慧型網頁瀏覽:** AgenticSeek 能夠自主瀏覽網路，進行搜尋、閱讀、資訊提取和填寫網路表單，完全免人工操作。
+* **自主編碼助理:** 能夠編寫、除錯和執行 Python、C、Go、Java 等多種程式語言的程式碼，無需監督。
+* **智慧型代理選擇:** 系統會自動選擇最適合任務的代理程式，如同擁有一支專家團隊隨時提供協助。
+* **規劃和執行複雜任務:** 從行程規劃到複雜專案，它都能將大型任務分解成步驟並使用多個 AI 代理程式完成。
+* **語音控制:** (開發中) 提供清晰、快速、具未來感的語音和語音轉文字功能，讓您可以像科幻電影中一樣與您的個人 AI 互動。
+
+
+#### 如何使用
+
+1. **安裝需求:** 確保已安裝 Chrome Driver、Docker 和 Python 3.10。
+2. **複製並設定:** 複製程式碼庫，並修改 `.env` 檔案，設定工作目錄、各服務埠號以及 API 金鑰 (可選，若使用本地 LLM 則無需設定)。
+3. **啟動 Docker:** 啟動 Docker 服務。
+4. **設定本地 LLM 提供者:**  選擇並啟動本地 LLM 提供者 (例如 ollama 或 lm-studio)，並更新 `config.ini` 檔案，設定提供者名稱、模型名稱和伺服器位址。  需具備足夠的硬體才能本地執行LLM，例如支援 Qwen/Deepseek 14B 的 GPU。
+5. **啟動服務並執行:** 執行 `./start_services.sh full` (macOS) 或 `start ./start_services.cmd full` (Windows) 啟動所有服務。
+6. **使用 Web 介面或 CLI 介面:**  透過瀏覽器訪問 `http://localhost:3000/` 使用 Web 介面，或使用 CLI 介面 (`python3 cli.py`)。
+7. **語音輸入 (實驗性):** 在 `config.ini` 中設定 `listen = True` 並設定 `agent_name` 來啟用語音輸入功能，目前僅支援英文。
+## 📌 [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
+<Callout>
+    Description: Learn how to design large-scale systems. Prep for the system design interview. Includes Anki flashcards.\
+    🌐 Python｜⭐️ 304,722 | 3314 stars this week
+</Callout>
+    #### 簡介
+
+* 本系統設計入門 (System Design Primer) 提供一系列資源，協助工程師學習如何設計大型可擴充套件系統，並為系統設計面試做準備。
+* 內容涵蓋系統設計原則、常見面試題目及解答、Anki  flashcards、以及各種系統設計主題的總結與優缺點分析。
+* 資源以開放原始碼形式提供，並持續更新，歡迎社群貢獻。
+* 提供針對不同面試時間規劃 (短、中、長) 的學習指南。
+
+
+#### 主要功能
+
+* 提供系統設計原則的學習資源，包含影片講解與文章說明。
+* 收錄常見系統設計面試題目及其解答，包含討論、程式碼和圖表。
+* 提供物件導向設計面試題目及其解答。
+* 提供 Anki  flashcards，方便學習者隨時複習重要概念。
+* 收錄各種系統設計主題的總結，包含優缺點分析及深入資源連結，例如：可擴充套件性、延遲與吞吐量、可用性與一致性、CAP 定理、一致性模式、可用性模式、DNS、CDN、負載平衡器、反向代理、應用層、微服務、資料庫 (SQL 與 NoSQL)、快取、非同步處理、通訊協定 (TCP、UDP、RPC、REST) 等。
+* 提供實際案例架構與公司工程部落格連結。
+
+
+#### 如何使用
+
+* 根據面試時間規劃 (短、中、長) 選擇學習內容，從系統設計主題開始學習，逐步深入。
+* 參考「如何處理系統設計面試問題」章節，學習如何有效率地進行系統設計面試。
+* 練習系統設計面試題目，並參考提供的解答。
+* 使用 Anki flashcards 複習重要概念。
+* 參考提供的資源連結，深入學習相關主題。
+*  針對特定需求，選擇適合的資料庫 (SQL 或 NoSQL) 及快取策略。
+## 📌 [frdel/agent-zero](https://github.com/frdel/agent-zero)
+<Callout>
+    Description: Agent Zero AI framework\
+    🌐 Python｜⭐️ 9,131 | 2239 stars this week
+</Callout>
+    #### 簡介
+
+Agent Zero 是一個個人化的、有機的代理框架，能隨著您的使用而成長和學習。它並非預先定義的框架，而是動態且有機地發展，透過使用不斷學習。Agent Zero 完全透明、易讀、易懂、可自訂且互動式。它使用電腦作為工具來完成您的任務，並具備持久記憶，能記住之前的解決方案、程式碼、事實和指示，以更快、更可靠地解決未來的任務。它包含 MCP 伺服器和使用者端功能，可用作其他大型語言模型 (LLM) 工具的 MCP 伺服器，也能使用外部 MCP 伺服器作為工具。
+
+
+#### 主要功能
+
+* **通用助理:**  Agent Zero 並非針對特定任務預先程式設計，而是作為通用個人助理。您可以賦予它任務，它將收集資訊、執行指令和程式碼，與其他代理例項協作，並盡力完成任務。
+* **電腦作為工具:** Agent Zero 使用作業系統作為工具來完成任務。它沒有預先程式設計的單一用途工具，而是可以編寫自己的程式碼並使用終端機根據需要建立和使用自己的工具。預設工具包括線上搜尋、記憶功能、通訊（與使用者和其他代理）以及程式碼/終端機執行。
+* **多代理協作:** 每個代理都有一個上級代理賦予它任務和指令，每個代理都會向其上級報告。第一個代理 (Agent 0) 的上級是人類使用者。每個代理都可以建立其下級代理來幫助分解和解決子任務。
+* **完全可自訂和可擴充套件:** 幾乎沒有任何程式碼是硬編碼的，所有東西都可以由使用者擴充套件或更改。整個行為由 `prompts/default/agent.system.md` 檔案中的系統提示定義。
+* **通訊至關重要:**  透過適當的系統提示和指令，Agent Zero 能完成許多工。代理可以與上級和下級通訊，提出問題、發出指令和提供指導。
+
+
+#### 如何使用
+
+* **安裝:**  您可以透過 Docker 安裝 Agent Zero，詳情請參考檔案中的安裝指南 (包含 Windows、macOS 和 Linux 的步驟)。快速啟動命令：`docker pull frdel/agent-zero-run` 和 `docker run -p 50001:80 frdel/agent-zero-run`，然後訪問 `http://localhost:50001`。
+* **Docker化和語音功能:** Agent Zero 完全 Docker 化，並支援語音轉文字和文字轉語音。
+* **客製化設定:**  使用者可以自訂設定來調整代理的行為和回應。
+* **網頁介面:**  網頁 UI 輸出清晰、流暢、色彩豐富、易讀且互動式。您可以直接在網頁 UI 中載入或儲存聊天記錄。終端機輸出會自動儲存到 `logs/` 資料夾中的 HTML 檔案。
+* **即時輸出:** 代理輸出會即時串流，允許使用者隨時閱讀和幹預。
+* **無需編碼:**  只需要提示和通訊技巧即可。
+* **注意事項:** Agent Zero 具有潛在危險性，請在隔離環境 (例如 Docker) 中執行，並謹慎操作。整個框架由 `prompts/` 資料夾中的提示引導。
+## 📌 [nautechsystems/nautilus_trader](https://github.com/nautechsystems/nautilus_trader)
+<Callout>
+    Description: A high-performance algorithmic trading platform and event-driven backtester\
+    🌐 Python｜⭐️ 8,211 | 2193 stars this week
+</Callout>
+    #### 簡介
+
+NautilusTrader 是一個開源、高效能、生產級的演演算法交易平臺，為量化交易者提供在歷史資料上回測自動交易策略組合（使用事件驅動引擎）以及將相同策略部署到實盤環境的能力，且無需更改程式碼。該平臺以 AI 為首要目標，旨在於高效能且穩健的原生 Python 環境中開發和部署演演算法交易策略，這有助於解決將 Python 研究/回測環境與生產實盤交易環境保持一致的挑戰。NautilusTrader 的設計、架構和實施理念將軟體正確性和安全性置於最高層級，旨在支援原生 Python 的任務關鍵型交易系統回測和實盤部署工作負載。該平臺也是通用的且與資產類別無關——任何 REST API 或 WebSocket 饋送都可以透過模組化介面卡整合。它支援跨各種資產類別和工具型別的 HFT（高頻交易），包括外匯、股票、期貨、期權、加密貨幣和博彩，實現跨多個交易場所的無縫運作。
+
+
+#### 主要功能
+
+* **高效能:** 核心程式碼使用 Rust 編寫，並使用 tokio 進行非同步網路操作。
+* **可靠性:** 基於 Rust 的型別和執行緒安全性，並具有可選的基於 Redis 的狀態永續性。
+* **可移植性:** 與作業系統無關，可在 Linux、macOS 和 Windows 上執行。可以使用 Docker 部署。
+* **靈活性:** 模組化介面卡意味著可以整合任何 REST API 或 WebSocket 饋送。
+* **進階功能:** 提供 IOC、FOK、GTC、GTD、DAY、AT_THE_OPEN、AT_THE_CLOSE 等有效時間，以及進階的訂單型別和條件觸發器；包含僅限釋出、僅減倉和冰山單等執行指令；包含 OCO、OUO、OTO 等應急訂單。
+* **可自訂性:** 可以新增使用者自定義元件，或利用快取和訊息匯流排從頭組裝整個系統。
+* **回測功能:** 使用歷史報價、交易、K 線、訂單簿和自定義資料（具有奈秒級解析度）同時執行多個交易場所、工具和策略。
+* **實盤交易:** 回測和實盤部署使用相同的策略實現。
+* **多交易場所:** 多交易場所功能促進做市商和統計套利策略。
+* **AI 訓練:** 回測引擎速度夠快，可用於訓練 AI 交易代理（強化學習/進化策略）。
+
+
+#### 如何使用
+
+* 建議使用支援的最新 Python 版本，並在虛擬環境中安裝 `nautilus_trader` 以隔離依賴項。
+* 可以從 PyPI 或 Nautech Systems 套件索引安裝預建的二進位制 wheel。
+* 也可以從原始碼構建。建議使用 uv 套件管理器與「原版」CPython 一起安裝。
+* 從 PyPI 安裝：`pip install -U nautilus_trader`
+* 從 Nautech Systems 套件索引安裝穩定版本：`pip install -U nautilus_trader --index-url=https://packages.nautechsystems.io/simple`
+* 從原始碼安裝需要安裝 Rust 工具鏈和 clang。  需參考檔案中的詳細步驟。
+* Makefile 提供了自動化大多數安裝和構建任務的目標，例如 `make install`、`make build`、`make test` 等。
+* 可選地使用 Redis 作為快取資料庫或訊息匯流排的後端。
