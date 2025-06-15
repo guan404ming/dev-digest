@@ -1,0 +1,152 @@
+---
+title: '[6/9 - 6/15] GitHub Weekly Digest'
+publishedAt: '2025-06-15'
+---
+## 📌 [tensorzero/tensorzero](https://github.com/tensorzero/tensorzero)
+<Callout>
+    Description: TensorZero is an open-source stack for industrial-grade LLM applications. It unifies an LLM gateway, observability, optimization, evaluation, and experimentation.\
+    🌐 Rust｜⭐️ 6,903 | 2321 stars this week
+</Callout>
+    #### 簡介
+
+TensorZero是一個開源的LLM應用程式工業級堆疊，整合了LLM閘道器、可觀察性、最佳化、評估和實驗功能。它能整合所有主要的LLM提供商，並支援高吞吐量、低延遲的工業級應用需求，同時提供型別安全、自託管、GitOps和客製化等特性。TensorZero透過生產指標和使用者回饋來最佳化複雜的LLM應用程式，並統一整個LLMOps堆疊，創造出複合效益。
+
+
+#### 主要功能
+
+* **LLM Gateway:**  透過單一統一API存取所有主要LLM提供商（API或自託管），支援串流、工具使用、結構化生成（JSON模式）、批次處理、多模態（VLMs）、檔案輸入、快取等功能。  定義提示範本和模式，以確保應用程式和LLM之間一致且型別化的介面。使用Rust編寫，確保極高的吞吐量和低延遲(<1ms p99 latency overhead at 10k+ QPS)。支援Python客戶端、任何OpenAI SDK或OpenAI相容客戶端，以及HTTP API。
+* **LLM 可觀察性 (Observability):** 將推論和回饋（指標、人工編輯等）儲存到您自己的資料庫中。使用TensorZero UI或程式化方式深入瞭解個別推論或高層級的聚合模式。建立用於最佳化、評估和其他工作流程的資料集。使用新的提示、模型、推論策略等重播歷史推論。將OpenTelemetry (OTLP)追蹤匯出到您最喜歡的通用可觀察性工具。
+* **LLM 最佳化 (Optimization):** 使用監督式微調、RLHF和其他技術最佳化您的模型。使用自動提示工程演演算法（例如MIPROv2）最佳化您的提示。使用動態上下文學習、思維鏈、最佳/混合N取樣等最佳化您的推論策略。為您的LLM啟用回饋迴圈：一個資料和學習飛輪，將生產資料轉化為更聰明、更快、更便宜的模型。
+* **LLM 評估 (Evaluations):** 使用基於啟發式方法或LLM評委的靜態評估來評估個別推論（≈ LLM的單元測試）。使用具有完全彈性的動態評估來評估端到端工作流程（≈ LLM的整合測試）。像任何其他TensorZero函式一樣最佳化LLM評委，使其與人類偏好保持一致。
+* **LLM 實驗 (Experimentation):** 使用內建的A/B測試，為模型、提示、提供者、超引數等提供信心十足的釋出。在複雜的工作流程中執行有原則的實驗（RCT），包括多輪和複合LLM系統。
+
+
+#### 如何使用
+
+TensorZero提供多種使用方式：
+
+* **Python客戶端 (推薦):** 使用`pip install tensorzero`安裝，並使用提供的Python程式碼範例進行推論。
+* **OpenAI客戶端:** 使用TensorZero修補OpenAI客戶端，並使用與Python客戶端類似的程式碼進行推論。支援Python和JavaScript/TypeScript (Node)。
+* **HTTP API:**  透過HTTP API，支援幾乎任何程式語言和平臺，使用curl等工具傳送請求。  程式碼範例中提供curl指令。  所有方法都需要設定TensorZero組態。
+
+
+所有方法都支援多個LLM提供商，並能輕鬆切換。  詳細使用方法請參考Quick Start和檔案。
+## 📌 [eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master)
+<Callout>
+    Description: An AI-powered task-management system you can drop into Cursor, Lovable, Windsurf, Roo, and others.\
+    🌐 JavaScript｜⭐️ 14,747 | 2239 stars this week
+</Callout>
+    #### 簡介
+
+Task Master 是一個針對 AI 驅動開發的任務管理系統，設計上能與 Cursor AI 無縫接軌。它利用 Claude 等 AI 模型，協助開發者管理和執行任務。  使用者可透過簡單的指令與 AI 互動，分解大型專案、規劃下一步行動，甚至直接執行部分程式碼撰寫。系統支援多種 AI 模型，並提供彈性的設定和使用方式。  詳細資訊請參考 `docs` 目錄中的檔案。
+
+
+#### 主要功能
+
+*   整合多種 AI 模型 (例如：Claude 3.7, OpenAI, Google Gemini, Perplexity, xAI, OpenRouter 等)。
+*   透過自然語言指令管理任務：建立、檢視、更新、擴充套件任務。
+*   支援 PRD (Product Requirements Document) 檔案解析，自動生成任務清單。
+*   提供 MCP (Model Control Protocol) 介接，方便在編輯器中直接使用。
+*   提供多種指令，例如：解析需求、規劃下一步、執行任務、研究資訊等。
+*   支援多種編輯器 (Cursor, Windsurf, VS Code)。
+*   提供快速安裝方式 (一鍵安裝)。
+*   可設定主要模型、研究模型和備用模型。
+*   彈性設定 API Keys，方便切換不同模型提供商。
+*   提供範例 PRD 模板和互動範例。
+
+
+#### 如何使用
+
+*   **安裝:**  透過 Cursor deeplink 或手動設定 `mcp.json` 或 `.env` 檔案，並設定各 AI 模型的 API Keys。
+*   **MCP 設定:**  根據你的編輯器，將 API Keys 加入對應的 `mcp.json` 檔案。
+*   **Cursor 使用者:**  啟用 Taskmaster MCP 並在 AI 聊天視窗中輸入指令。
+*   **模型設定:**  在 AI 聊天視窗中設定主要、研究和備用模型。
+*   **PRD 建立:** 建立 PRD 檔案 (建議使用 `.taskmaster/docs/prd.txt`)。
+*   **任務初始化:** 在 AI 聊天視窗中輸入 `Initialize taskmaster-ai in my project` 初始化任務。
+*   **指令使用:** 使用自然語言指令，例如 `Can you parse my PRD at scripts/prd.txt?`、`What's the next task I should work on?` 等。
+*   **手動設定:**  若不使用 MCP，則需手動設定環境變數或設定檔。
+*   **替代方案:** 使用指令列工具。
+## 📌 [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)
+<Callout>
+    Description: Master programming by recreating your favorite technologies from scratch.\
+    🌐 Markdown｜⭐️ 387,060 | 1877 stars this week
+</Callout>
+    #### 簡介
+
+這個儲存庫彙整了許多循序漸進的指南，教你從零開始重建你最喜歡的技術，涵蓋範圍廣泛，包含3D渲染器、擴增實境、BitTorrent客戶端、區塊鏈/加密貨幣、機器人、命令列工具、資料庫、Docker、模擬器/虛擬機器、前端框架/函式庫、遊戲、Git、網路堆疊、神經網路、作業系統、物理引擎、程式語言、正規表示式引擎、搜尋引擎、Shell、模板引擎、文字編輯器、視覺辨識系統、體素引擎、網頁瀏覽器和網頁伺服器等。透過親手實作，能更深入理解這些技術背後的運作原理。
+
+
+#### 主要功能
+
+* 提供從零開始重建各種技術的步驟指南。
+* 涵蓋多種程式語言 (例如 C、C++、Java、Python、JavaScript 等)。
+* 涵蓋許多不同領域的技術，例如遊戲開發、圖形渲染、網路程式設計、機器學習等。
+* 提供不同複雜程度的教學，適合不同程度的開發者。
+* 部分教學包含影片或影象輔助說明。
+* 教學內容結構清晰，步驟明確。
+* 教學涵蓋的技術範圍廣泛，包含前端、後端、以及系統層級等不同面向。
+* 許多教學專案都提供多種程式語言的實作範例。
+
+
+#### 如何使用
+
+* 瀏覽儲存庫中的目錄，找到你感興趣的技術專案 (例如 "Build your own 3D Renderer")。
+* 點選進入該專案，閱讀提供的步驟指南。
+* 依照指南的步驟，使用指定的程式語言和工具，一步步重建該技術。
+* 部分指南會提供程式碼範例，你可以參考這些範例來學習如何實作。
+* 若遇到問題，可以參考指南中的說明，或在社群平臺上尋求協助。
+*  每個技術專案通常包含多個不同語言或方法的實作教學。
+*  部分教學包含影片連結，提供視覺化學習。
+*  有些教學檔案可能比較簡潔，有些則較為詳盡，應依據自身需求選擇合適的教學內容。
+*  需要具備一定的程式設計基礎以及相關工具的使用經驗。
+## 📌 [datawhalechina/self-llm](https://github.com/datawhalechina/self-llm)
+<Callout>
+    Description: 《开源大模型食用指南》针对中国宝宝量身打造的基于Linux环境快速微调（全参数/Lora）、部署国内外开源大模型（LLM）/多模态大模型（MLLM）教程\
+    🌐 Jupyter Notebook｜⭐️ 18,211 | 1812 stars this week
+</Callout>
+    #### 簡介
+
+這個專案是一個針對國內初學者、基於 Linux 平臺的開源大模型教程。它提供從環境配置、本地部署到高效微調等全流程指導，涵蓋 LLaMA、ChatGLM、InternLM 等主流開源 LLM，降低開源大模型的使用門檻，讓更多學生和研究者能更容易地應用開源大模型。本教程建議學習順序為：環境配置→模型部署使用→微調。  初學者建議從 Qwen1.5、InternLM2、MiniCPM 等模型開始學習。
+
+
+#### 主要功能
+
+* 提供基於 Linux 平臺的開源 LLM 環境配置指南。
+* 提供國內外主流開源 LLM (例如 LLaMA、ChatGLM、InternLM 等) 的部署使用教程。
+* 指導開源 LLM 的部署應用，包括命令列呼叫、線上 Demo 部署和 LangChain 框架整合。
+* 提供開源 LLM 的全量微調和高效微調方法，例如分散式全量微調、LoRA 和 ptuning。
+* 收錄多個開源模型的教學範例，例如 Chat-嬛嬛、Tianji-天機、AMChat 等。
+* 支援多種模型，例如 MiniCPM, Qwen, Kimi, Llama4, SpatialLM, Hunyuan3D-2等等。
+* 提供多種部署方式，例如 FastApi, WebDemo, vLLM 等。
+* 提供多種微調方法，例如 LoRA, Ptuning, QLoRA 等。
+
+
+#### 如何使用
+
+本專案以教程形式呈現，使用者可循序漸進學習：
+
+* **環境配置**: 首先學習如何配置 Linux 環境以滿足不同模型的需求。
+* **模型部署使用**:  學習如何部署和使用各種主流開源 LLM，包括命令列、線上 Demo 和 LangChain 整合等方式。
+* **模型微調**:  學習如何透過全量微調、LoRA 或 ptuning 等方法，對模型進行微調以提升效能或使其更符合特定需求。  本專案提供多個模型的詳細步驟，涵蓋不同模型的部署、應用和微調方法。  使用者可根據自身需求選擇合適的模型和方法進行學習。  專案也提供許多範例，例如不同模型的 FastAPI 部署、WebDemo 部署、Langchain 整合以及不同微調方法的實作。
+## 📌 [onlook-dev/onlook](https://github.com/onlook-dev/onlook)
+<Callout>
+    Description: The Cursor for Designers • An Open-Source Visual Vibecoding Editor • Visually build, style, and edit your React App with AI\
+    🌐 TypeScript｜⭐️ 18,673 | 1546 stars this week
+</Callout>
+    #### 簡介
+
+Onlook 是一款針對設計師的開源、視覺優先程式碼編輯器，使用 Next.js + TailwindCSS 建立網站、原型和設計。它允許使用者直接在瀏覽器 DOM 中使用視覺化編輯器進行編輯，並即時設計程式碼。Onlook 提供了類似於 Bolt.new、Lovable、V0、Replit Agent、Figma Make 和 Webflow 等工具的替代方案，目前網頁版仍在開發中，積極尋求貢獻者參與。Onlook 的目標是打造令人難以置信的「提示到構建」體驗。
+
+
+#### 主要功能
+
+* **快速建立應用程式:**  幾秒鐘內建立 Next.js 應用程式，並可從文字、圖片、預建模板或 Figma 匯入。亦可從 GitHub 倉庫開始。
+* **視覺化編輯:** 提供類似 Figma 的使用者介面，即時預覽應用程式，管理品牌資產和樣式標記，建立和導覽頁面，瀏覽圖層、偵測和使用元件、管理專案圖片。
+* **開發工具:**  提供即時程式碼編輯器、檢查點儲存和還原功能、透過 CLI 執行指令、連線應用程式市集和本地程式碼編輯。
+* **快速部署:**  產生可分享的連結，連結自定義網域。
+* **團隊協作:**  提供即時編輯和留言功能。
+
+
+#### 如何使用
+
+Onlook 可在任何 Next.js + TailwindCSS 專案上執行。您可以將您的專案匯入 Onlook 或在編輯器中從頭開始。使用 AI 聊天功能建立或編輯專案。隨時右鍵點選元素即可開啟程式碼中該元素的確切位置。您可以拖放來繪製新的 div 並在父容器中重新排列它們。程式碼預覽與網站設計並排顯示。使用 Onlook 的編輯器工具列調整 Tailwind 樣式、直接操作物件和實驗佈局。  Onlook 的運作原理是將程式碼載入網頁容器，容器執行並提供程式碼，編輯器接收預覽連結並在 iFrame 中顯示，編輯器讀取並索引容器中的程式碼，並透過工具將元素對映到程式碼中的位置。編輯元素時，會先在 iFrame 中編輯，然後再編輯程式碼。AI 聊天也具備程式碼存取權和工具，用於理解和編輯程式碼。
