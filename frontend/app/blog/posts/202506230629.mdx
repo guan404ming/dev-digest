@@ -1,0 +1,152 @@
+---
+title: '[6/23 - 6/29] GitHub Weekly Digest'
+publishedAt: '2025-06-29'
+---
+## 📌 [microsoft/edit](https://github.com/microsoft/edit)
+<Callout>
+    Description: We all edit.\
+    🌐 Rust｜⭐️ 10,969 | 2319 stars this week
+</Callout>
+    #### 簡介
+
+* 是一款簡潔易用的文字編輯器，旨在提供一個即使不熟悉終端機的使用者也能輕鬆使用的介面。
+* 效仿經典的 MS-DOS Editor，但具有現代化的介面和類似 VS Code 的輸入控制。
+* 提供 Windows 版本的安裝程式以及透過 WinGet 安裝的選項。
+* 原始碼可透過 GitHub 取得，並提供建置說明。
+* 可選配 ICU 函式庫以支援搜尋和替換功能。
+
+
+#### 主要功能
+
+* 提供簡潔的文字編輯功能。
+* 現代化的使用者介面。
+* 類似 VS Code 的輸入控制。
+* 支援 Windows 作業系統。
+* 可選的搜尋和替換功能 (需 ICU 函式庫支援)。
+
+
+#### 如何使用
+
+* **安裝:** 可透過 WinGet (`winget install Microsoft.Edit`) 安裝 Windows 版本，或從 Releases 頁面下載二進位檔案。
+* **建置 (開發者):**  需安裝 Rust 及 nightly toolchain (`rustup install nightly`)，並複製 repository 後執行 `cargo build --config .cargo/release.toml --release`  進行 release 版本的編譯。
+* **套件維護者注意事項:** 建議執行檔名稱使用 "msedit" 以避免與現有命令衝突，並盡可能設定 "edit" 為別名。  若使用 ICU 函式庫，需注意其 SONAME 及 C++ 符號名稱設定 (例如，透過環境變數 `EDIT_CFG_ICUUC_SONAME`, `EDIT_CFG_ICUI18N_SONAME`, `EDIT_CFG_ICU_CPP_EXPORTS`, `EDIT_CFG_ICU_RENAMING_VERSION`  調整)。
+## 📌 [patchy631/ai-engineering-hub](https://github.com/patchy631/ai-engineering-hub)
+<Callout>
+    Description: In-depth tutorials on LLMs, RAGs and real-world AI agent applications.\
+    🌐 Jupyter Notebook｜⭐️ 12,945 | 2260 stars this week
+</Callout>
+    #### 簡介
+
+* 此專案為AI工程中心，旨在提供深入的教程、真實世界的應用範例以及可供實作、改編和擴充套件的程式碼，幫助使用者在AI工程領域提升技能。
+* 涵蓋大型語言模型 (LLMs) 和檢索增強生成 (RAGs) 的深入教學。
+* 提供真實世界AI代理程式的應用案例。
+* 資源適用於初學者、實務工作者和研究人員等不同技能水平。
+* 提供免費的資料科學電子書，內含150多個重要的資料科學課程。
+* 鼓勵使用者貢獻，例如新增教程、改進現有程式碼或回報問題。
+
+
+#### 主要功能
+
+* 提供大型語言模型 (LLMs) 和檢索增強生成 (RAGs) 的深入教程。
+* 提供真實世界AI代理程式的應用例項，方便使用者學習和實踐。
+* 提供可實作、改編和擴充套件的程式碼範例，使用者可將其應用於自身專案。
+* 資源涵蓋不同技能水平，從初學者到研究人員都能受益。
+* 定期更新，提供最新的教程、見解和獨家資源。
+* 鼓勵社群貢獻，促進共同成長和知識分享。
+
+
+#### 如何使用
+
+* 瀏覽此程式碼倉庫 (repository) 的內容。
+* 參考提供的深入教程學習 LLMs 和 RAGs 的知識。
+* 研究並實作提供的真實世界AI代理程式應用案例。
+* 將提供的程式碼範例應用於自身專案，並根據需要進行改編和擴充套件。
+* 訂閱電子報以獲取最新的教程、見解和獨家資源。
+* 參與貢獻，例如新增教程、改程序式碼或回報問題，以協助社群成長。
+## 📌 [twentyhq/twenty](https://github.com/twentyhq/twenty)
+<Callout>
+    Description: Building a modern alternative to Salesforce, powered by the community.\
+    🌐 TypeScript｜⭐️ 30,450 | 1570 stars this week
+</Callout>
+    #### 簡介
+
+Twenty 是一款領先的開源 CRM 系統，旨在解決現有 CRM 系統價格昂貴且使用者受限的問題。它基於開源和社群合作的理念，提供更友善的使用者體驗，並從 Notion、Airtable 和 Linear 等工具汲取靈感，力求打造更優質的客戶關係管理體驗。  Twenty 的目標是打破現有 CRM 的限制，為使用者提供更具彈性、更具成本效益的解決方案。
+
+
+#### 主要功能
+
+* 客製化佈局：提供篩選、排序、分組、看板和表格等多種檢視方式。
+* 客製化物件和欄位：允許使用者根據自身需求調整物件和欄位。
+* 自訂許可權管理：建立和管理自訂角色，控制使用者許可權。
+* 工作流程自動化：透過觸發器和動作自動化工作流程。
+* 整合多種功能：支援郵件、行事曆事件、檔案管理等功能。
+
+
+#### 如何使用
+
+Twenty 提供兩種安裝方式：🚀 Self-hosting (自行託管) 和 🖥️ Local Setup (本地安裝)，詳細步驟請參考檔案 (📚 Documentation)。  使用者可以根據自身需求選擇合適的安裝方式，並透過檔案學習如何使用 Twenty 的各種功能。  如遇問題，可以透過建立 issue 的方式回報並尋求協助。
+## 📌 [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router)
+<Callout>
+    Description: Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.\
+    🌐 TypeScript｜⭐️ 2,162 | 1175 stars this week
+</Callout>
+    #### 簡介
+
+Claude Code Router 是一個工具，用於將 Claude Code 請求路由到不同的模型，並允許自定義任何請求。它支援多個模型提供者 (例如 OpenRouter, DeepSeek, Ollama) 及其不同的模型，並允許透過設定檔 (`config.json`)  調整路由規則，根據任務型別選擇最合適的模型。  使用者可以透過指令 `/model` 手動切換模型。
+
+
+#### 主要功能
+
+* 支援切換不同模型，並可自定義路由規則。
+* 整合 GitHub Actions，實現自動化流程。
+* 提供強大的外掛程式支援，可擴充套件功能。
+* 詳細的日誌記錄功能，方便除錯。
+* 支援圖片處理 (未來功能)。
+* 支援網頁搜尋 (未來功能)。
+* 預設提供三種路由模式：`background` (背景任務), `think` (推理任務), `longContext` (長上下文)。
+
+
+#### 如何使用
+
+1.  安裝 Claude Code 和 Claude Code Router:
+    ```bash
+    npm install -g @anthropic-ai/claude-code
+    npm install -g @musistudio/claude-code-router
+    ```
+2.  執行 `ccr code`  啟動 Claude Code。
+3.  (選項) 設定 `~/.claude-code-router/config.json` 檔案，定義模型提供者、API 金鑰、以及路由規則。  範例設定檔包含了 `background`, `think`, `longContext` 三種路由模式的設定，並指定了不同的模型提供者和模型。
+4.  使用 `/model provider,model` 指令在 Claude Code 中切換模型，例如：`/model openrouter,anthropic/claude-3.5-sonnet`。
+5.  (選項) 安裝外掛程式到 `~/.claude-code-router/plugins/` 目錄，並在 `config.json` 中設定 `usePlugins` 選項啟用。
+6.  整合 GitHub Actions，需安裝 Claude Code Actions 並修改 `.github/workflows/claude.yaml` 檔案。  設定檔中需包含 `claude-code-router` 的相關設定。
+7.  目前可用的外掛程式包含 `notebook-tools-filter` (過濾 Jupyter 筆記本工具呼叫) 和 `toolcall-improvement` (改進工具呼叫)。
+## 📌 [typst/typst](https://github.com/typst/typst)
+<Callout>
+    Description: A new markup-based typesetting system that is powerful and easy to learn.\
+    🌐 Rust｜⭐️ 43,416 | 1113 stars this week
+</Callout>
+    #### 簡介
+
+Typst是一個新型的基於標記語言的排版系統，旨在兼具 LaTeX 的強大功能，同時更易於學習和使用。它內建了常用格式化任務的標記語言，並提供彈性函式處理其他任務，還整合了指令碼系統。支援數學排版、文獻管理等功能，並透過增量編譯實現快速編譯速度及友善的錯誤訊息。  該專案包含 Typst 編譯器及其命令列介面 (CLI)，方便使用者在本地編譯 Typst 檔案。  官方也提供線上協作編輯器以提升撰寫體驗。
+
+
+#### 主要功能
+
+* 強大的標記語言，支援常見的格式化任務。
+* 彈性的函式，能處理各種排版需求。
+* 內建指令碼系統，提升排版彈性。
+* 支援數學公式排版 (Math typesetting)。
+* 支援文獻管理 (Bibliography management)。
+* 增量編譯，加快編譯速度。
+* 友善的錯誤訊息，方便除錯。
+* 提供命令列介面 (CLI) 進行本地編譯。
+* 提供線上協作編輯器 (線上應用程式)。
+
+
+#### 如何使用
+
+* **安裝:**  可從Releases頁面下載預編譯版本，或透過不同的套件管理器 (例如：brew、winget、cargo、Nix、Docker) 安裝。
+* **編譯:** 使用 `typst compile file.typ` 命令編譯 `.typ` 檔案，產生 PDF 檔案。  可指定輸出路徑，例如 `typst compile path/to/source.typ path/to/output.pdf`。
+* **監控:** 使用 `typst watch file.typ` 命令監控檔案變更，自動重新編譯。
+* **字型設定:** 使用 `--font-path` 選項或環境變數 `TYPST_FONT_PATHS`  新增自訂字型路徑。  `typst fonts` 命令列出已偵測到的字型。
+* **取得說明:** 使用 `typst help` 命令取得所有子命令和選項的說明，或使用 `typst help watch` 取得特定子命令的詳細使用說明。
+*  線上應用程式: 官方提供免費的線上應用程式，提供整合式開發環境般的體驗，包含自動完成和即時預覽功能。
