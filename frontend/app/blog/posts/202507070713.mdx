@@ -1,0 +1,168 @@
+---
+title: '[7/7 - 7/13] GitHub Weekly Digest'
+publishedAt: '2025-07-13'
+---
+## 📌 [googleapis/genai-toolbox](https://github.com/googleapis/genai-toolbox)
+<Callout>
+    Description: MCP Toolbox for Databases is an open source MCP server for databases.\
+    🌐 Go｜⭐️ 5,971 | 4119 stars this week
+</Callout>
+    #### 簡介
+
+* MCP Toolbox for Databases 是一個開源的 MCP 伺服器，專為資料庫而設計。
+* 它簡化了工具的開發流程，使其更快速、更安全、更易於整合。
+* 它處理了連線池、身份驗證等複雜性，讓開發者能專注於工具本身的邏輯。
+* 透過簡化開發、提升效能、增強安全性及提供端到端可觀察性，加速 Gen AI 工具開發。
+* 原名為“Gen AI Toolbox for Databases”，後因加入 MCP 相容性而改名。
+* 目前仍處於 Beta 版本，未來可能會有重大變更。
+* 讓 AI 助理成為真正的共同開發者，減少開發者上下文切換。
+* 允許 AI 助理處理複雜的資料庫任務，例如查詢、建立表格、新增索引等。
+
+
+#### 主要功能
+
+* **簡化開發 (Simplified development):**  只需幾行程式碼即可將工具整合到您的 Agent 中，並在多個 Agent 或框架之間重複使用工具，更輕鬆地部署新版本的工具。
+* **提升效能 (Better performance):**  採用最佳實務，例如連線池和身份驗證。
+* **增強安全性 (Enhanced security):**  整合身份驗證機制，以確保資料庫存取的安全。
+* **端到端可觀察性 (End-to-end observability):**  內建 OpenTelemetry 支援，提供開箱即用的指標和追蹤功能。
+* **以自然語言查詢 (Query in Plain English):**  直接在 IDE 中使用自然語言與資料互動。
+* **自動化資料庫管理 (Automate Database Management):**  根據資料需求，自動產生查詢、建立表格、新增索引等。
+* **產生具備上下文感知的程式碼 (Generate Context-Aware Code):**  根據即時資料庫結構生成應用程式程式碼和測試程式碼。
+* **減少開發負擔 (Slash Development Overhead):**  簡化冗長的資料庫設定、重複性程式碼和容易出錯的 Schema 遷移。
+
+
+#### 如何使用
+
+* **安裝伺服器 (Installing the server):**  可透過二進位檔、容器映像檔或從原始碼編譯安裝。  (包含 `curl`、`docker pull` 和 `go install` 的範例指令)。
+* **執行伺服器 (Running the server):**  設定 `tools.yaml` 檔案定義工具，然後執行 `./toolbox --tools-file "tools.yaml"` 命令啟動伺服器。  (可使用 `--disable-reload` 旗標關閉動態重新載入功能)。
+* **整合應用程式 (Integrating your application):**  提供多種客戶端 SDK，支援 Python (包含 LangChain 和 LangGraph)、Javascript/Typescript (包含 Core, LangChain/LangGraph 和 Genkit) 和 Go (包含 Core, LangChain Go, Genkit, Go GenAI 和 OpenAI Go)。  (包含各 SDK 的安裝和使用程式碼範例)。  這些 SDK 允許載入工具集並在應用程式中使用。
+## 📌 [rustfs/rustfs](https://github.com/rustfs/rustfs)
+<Callout>
+    Description: 🚀 High-performance distributed object storage for MinIO alternative.\
+    🌐 Rust｜⭐️ 4,555 | 3562 stars this week
+</Callout>
+    #### 簡介
+
+* RustFS 是一款使用 Rust 語言開發的高效能分散式物件儲存軟體。
+* 它具有與 MinIO 類似的優點，例如簡潔易用、與 S3 相容、開源、支援資料湖、AI 和大資料等。
+* 使用 Apache 2.0 授權，比其他儲存系統擁有更友善的開源授權。
+* 基於 Rust 的特性，RustFS 提供更快速且安全的分散式功能，實現高效能的物件儲存。
+* 目前仍在快速開發中，不建議用於生產環境。
+
+
+#### 主要功能
+
+* 高效能 (High Performance)：Rust 語言開發，確保速度和效率。
+* 分散式架構 (Distributed Architecture)：可擴充套件且容錯的設計，適用於大規模部署。
+* 與 S3 相容 (S3 Compatibility)：與現有的 S3 相容應用程式無縫整合。
+* 支援資料湖 (Data Lake Support)：針對大資料和 AI 工作負載進行最佳化。
+* 開源 (Open Source)：Apache 2.0 授權，鼓勵社群貢獻和透明度。
+* 使用者友善 (User-Friendly)：設計簡潔易用，易於部署和管理。
+
+
+#### 如何使用
+
+* **一鍵安裝指令碼 (Option 1):** `curl -O https://rustfs.com/install_rustfs.sh && bash install_rustfs.sh`
+* **Docker 快速入門 (Option 2):** 使用 `docker run` 指令，選擇合適的版本標籤 (例如 `latest`, `main-latest`, `v1.0.0`)，並掛載資料卷 `/data:/data`。範例：`docker run -d -p 9000:9000 -v /data:/data rustfs/rustfs:latest`
+* **存取主控臺:** 在瀏覽器中開啟 `http://localhost:9000`，預設使用者名稱和密碼為 `rustfsadmin`。
+* **建立儲存桶:** 使用主控臺建立新的儲存桶以存放物件。
+* **上傳物件:** 可透過主控臺直接上傳檔案，或使用 S3 相容 API 與 RustFS 例項互動。
+## 📌 [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler)
+<Callout>
+    Description: 小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫 | 知乎问答文章｜评论爬虫\
+    🌐 Python｜⭐️ 30,375 | 3035 stars this week
+</Callout>
+    #### 簡介
+
+MediaCrawler 是一個功能強大的多平臺自媒體資料採集工具，支援小紅書、抖音、快手、B站、微博、貼吧、知乎等主流平臺的公開資訊抓取。其核心技術基於 Playwright 瀏覽器自動化框架，透過保留登入態的瀏覽器上下文環境獲取簽名引數，無需複雜的 JS 逆向，大幅降低技術門檻。  該專案提供多種資料儲存方式，包括 MySQL 資料庫、CSV 檔案和 JSON 檔案。此外，還提供 MediaCrawlerPro 付費版本，具備更多功能和最佳化的架構設計，例如斷點續爬、多帳號和 IP 代理池支援等。
+
+
+#### 主要功能
+
+* 支援多平臺：小紅書、抖音、快手、B站、微博、貼吧、知乎。
+* 關鍵字搜尋：根據關鍵字搜尋相關帖子。
+* 指定帖子 ID 爬取：根據指定的帖子 ID 抓取特定帖子資訊。
+* 二級評論爬取：獲取帖子的二級評論。
+* 指定創作者主頁爬取：爬取指定創作者的主頁資訊。
+* 登入態快取：儲存登入狀態，提高效率。
+* IP 代理池：支援使用 IP 代理池，提升爬蟲穩定性。
+* 生成評論詞雲圖：將評論資料生成詞雲圖表。
+* 資料儲存：支援 MySQL、CSV 和 JSON 格式的資料儲存。
+
+
+#### 如何使用
+
+* **前置依賴安裝:** 安裝 uv (Python 包管理工具)、Node.js (>= 16.0.0) 和 Playwright 瀏覽器驅動。  使用 `uv sync` 命令同步 Python 依賴包。  `uv run playwright install` 安裝瀏覽器驅動。
+* **執行爬蟲程式:** 使用 `uv run main.py --platform [平臺] --lt [登入方式] --type [search/detail]` 命令執行爬蟲。  `[平臺]` 代表平臺名稱 (例如 xhs, dy)， `[登入方式]` 代表登入方式 (例如 qrcode)，`[type]` 代表爬取型別 (search 為關鍵字搜尋，detail 為指定帖子 ID)。
+* **設定:**  在 `config/base_config.py` 檔案中可以調整設定，例如開啟評論爬取模式 (`ENABLE_GET_COMMENTS`)。
+* **資料儲存:**  程式會將資料儲存到指定的資料庫或檔案中 (MySQL, CSV, JSON)。  首次使用 MySQL 需要執行 `python db.py` 初始化資料庫表結構。
+* **原生 Python 環境 (不推薦):**  可以透過建立 Python 虛擬環境，使用 `pip install -r requirements.txt` 安裝依賴，然後執行 `python main.py` 命令。
+## 📌 [humanlayer/12-factor-agents](https://github.com/humanlayer/12-factor-agents)
+<Callout>
+    Description: What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?\
+    🌐 TypeScript｜⭐️ 8,491 | 2679 stars this week
+</Callout>
+    #### 簡介
+
+這篇文章提出「12-Factor Agents」的概念，旨在提供一套原則，用於構建可靠且可維護的、以大型語言模型 (LLM) 為動力的應用程式。作者基於自身經驗，指出許多標榜為「AI 代理」的產品並非真正具備代理能力，大多數是決定性程式碼加上少許 LLM 步驟。作者認為，真正好的代理程式應主要由軟體構成，而非依賴簡單的「提示-工具-迴圈」模式。  這套原則旨在協助開發者避開常見的陷阱，並快速構建高品質的 AI 軟體。
+
+
+#### 主要功能
+
+「12-Factor Agents」定義了 12 個核心原則，涵蓋了 LLM 應用程式的各個方面，例如：
+
+* 將自然語言轉換為工具呼叫 (Natural Language to Tool Calls)。
+* 擁有自己的提示 (Own your prompts)。
+* 擁有自己的上下文視窗 (Own your context window)。
+* 將工具視為結構化輸出 (Tools are just structured outputs)。
+* 統一執行狀態和業務狀態 (Unify execution state and business state)。
+* 使用簡單的 API 進行啟動/暫停/恢復 (Launch/Pause/Resume with simple APIs)。
+* 使用工具呼叫聯絡人類 (Contact humans with tool calls)。
+* 擁有自己的控制流程 (Own your control flow)。
+* 將錯誤壓縮到上下文視窗 (Compact Errors into Context Window)。
+* 建立小型且聚焦的代理程式 (Small, Focused Agents)。
+* 從任何地方觸發，在使用者所在位置滿足使用者 (Trigger from anywhere, meet users where they are)。
+* 將代理程式建構成無狀態的 reducer (Make your agent a stateless reducer)。
+
+
+#### 如何使用
+
+這篇文章沒有提供具體的使用方法，而是提供了一套設計原則。開發者可以參考這 12 個原則，將其應用於自身的 LLM 應用程式開發中。  這些原則並非一個框架，而是可以單獨使用或組合使用的模組化概念。  文章建議，即使不使用任何特定的框架，開發者也可以從這些原則中獲益，藉此提升軟體品質，避免重寫程式碼。  文章提供的程式碼範例展示了基本的代理程式迴圈，說明瞭 LLM 如何決定下一步動作，以及如何執行工具呼叫和更新上下文。
+## 📌 [datawhalechina/happy-llm](https://github.com/datawhalechina/happy-llm)
+<Callout>
+    Description: 📚 从零开始的大语言模型原理与实践教程\
+    🌐 Jupyter Notebook｜⭐️ 10,718 | 2529 stars this week
+</Callout>
+    #### 簡介
+
+* Happy-LLM 是一個系統性的 LLM (大型語言模型)學習教程，由 Datawhale 推出。
+* 旨在幫助學習者深入理解 LLM 的原理和訓練過程。
+* 從 NLP 的基礎研究方法出發，逐步深入剖析 LLM 的架構基礎和訓練過程。
+* 結合主流程式碼框架，演練如何搭建和訓練 LLM。
+* 提供免費的線上和 PDF 版本教程。
+* 涵蓋從 NLP 基礎概念到 LLM 實戰應用等多個方面。
+* 鼓勵學習者結合理論與實踐，參與 LLM 相關專案與比賽。
+*  適合大學生、研究人員和 LLM 愛好者。
+
+
+#### 主要功能
+
+* 深入理解 Transformer 架構和注意力機制 (Attention Mechanism)。
+* 掌握預訓練語言模型 (Pre-trained Language Model, PLM) 的基本原理。
+* 瞭解現有大模型的基本結構。
+* 動手實現一個完整的 LLaMA2 模型。
+* 掌握從預訓練到微調 (Fine-tuning) 的完整訓練流程。
+* 實戰應用 RAG (Retrieval-Augmented Generation) 和 Agent 等前沿技術。
+* 提供模型下載 (Happy-LLM-Chapter5-Base-215M 和 Happy-LLM-Chapter5-SFT-215M)。
+* 提供完整的學習路徑，從基礎概念到實戰應用。
+
+
+#### 如何使用
+
+* 建議具備一定的 Python 程式設計經驗和深度學習相關知識。
+* 教程分為基礎知識和實戰應用兩個部分。
+* 前四章介紹 LLM 的基本原理，包括 NLP 基礎、Transformer 架構、預訓練語言模型和 LLM 本身。
+* 第五到七章是實戰部分，涵蓋 LLM 的搭建、訓練和應用，包括使用 PyTorch 和 Transformers 框架。
+* 鼓勵讀者結合教程內容進行程式碼實踐，並參與相關專案和比賽。
+* 可以根據個人需求選擇性閱讀相關章節。
+* 可參考線上閱讀地址或下載 PDF 版本。
