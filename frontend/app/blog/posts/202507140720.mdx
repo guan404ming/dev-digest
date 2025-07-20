@@ -1,0 +1,161 @@
+---
+title: '[7/14 - 7/20] GitHub Weekly Digest'
+publishedAt: '2025-07-20'
+---
+## 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
+<Callout>
+    Description: Python tool for converting files and office documents to Markdown.\
+    🌐 Python｜⭐️ 68,385 | 8235 stars this week
+</Callout>
+    #### 簡介
+
+MarkItDown 是一個輕量級的 Python 工具，用於將各種檔案轉換成 Markdown 格式，以便與大型語言模型 (LLM) 和相關的文字分析管道一起使用。它與 textract 類似，但更注重保留重要的檔案結構和內容，例如標題、列表、表格、連結等，以 Markdown 格式呈現。雖然輸出通常相當易於閱讀，但主要目的是供文字分析工具使用，可能不適合用於需要高保真度的檔案轉換以供人類閱讀。MarkItDown 支援多種檔案格式的轉換，包括 PDF、PowerPoint、Word、Excel、圖片、音訊、HTML、文字格式 (CSV、JSON、XML)、ZIP 檔案、YouTube 連結和 EPUB 等。選擇 Markdown 格式是因為它接近純文字，但仍然能表示重要的檔案結構，並且被大多數 LLM 所支援。
+
+
+#### 主要功能
+
+* 將多種檔案格式轉換為 Markdown：支援 PDF、PowerPoint、Word、Excel、圖片、音訊、HTML、文字格式 (CSV、JSON、XML)、ZIP 檔案、YouTube 連結和 EPUB 等。
+* 保留檔案結構：在轉換過程中盡可能保留原始檔案的標題、列表、表格、連結等結構資訊。
+* 支援外掛程式：允許第三方外掛程式擴充套件功能。
+* 整合 Azure Document Intelligence：可以透過 Azure Document Intelligence 服務進行檔案轉換。
+* 支援大型語言模型 (LLM)：可以使用 LLM 進行圖片描述等進階功能。
+* 命令列介面和 Python API：提供方便使用的命令列工具和 Python API。
+* 可選依賴項：可以根據需求安裝不同檔案格式的依賴項。
+
+
+#### 如何使用
+
+* **命令列介面:**  `markitdown path-to-file.pdf > document.md`  (將檔案轉換成 Markdown 並輸出到 `document.md`) 或 `markitdown path-to-file.pdf -o document.md` (指定輸出檔案名稱)。也可以使用管道：`cat path-to-file.pdf | markitdown`。
+* **Python API:** 使用 `MarkItDown` 類別，例如：`md = MarkItDown(enable_plugins=False); result = md.convert("test.xlsx"); print(result.text_content)`。
+* **安裝:** 使用 `pip install 'markitdown[all]'` 安裝所有依賴項，或使用 `pip install 'markitdown[pdf, docx, pptx]'`  安裝特定檔案格式的依賴項。也可以從原始碼安裝。
+* **啟用外掛程式:** 使用 `markitdown --use-plugins path-to-file.pdf` 啟用外掛程式。
+* **整合 Azure Document Intelligence:** 使用 `markitdown path-to-file.pdf -o document.md -d -e "<document_intelligence_endpoint>"` 整合 Azure Document Intelligence。
+* **使用 LLM:** 在 Python API 中設定 `llm_client` 和 `llm_model` 來使用大型語言模型。
+* **Docker:** 使用 `docker build -t markitdown:latest .` 和 `docker run --rm -i markitdown:latest < ~/your-file.pdf > output.md` 在 Docker 環境中使用。
+## 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
+<Callout>
+    Description: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.\
+    🌐 PowerShell｜⭐️ 24,650 | 5628 stars this week
+</Callout>
+    #### 簡介
+
+Claude Code 是一款執行於終端機的程式碼輔助工具，能理解您的程式碼庫並透過自然語言指令協助您更快編寫程式碼。它能執行例行任務、解釋複雜程式碼以及處理 Git 工作流程。您可以在終端機、IDE 或 GitHub 上使用它 (@claude)。  此工具收集使用資料以改進產品和服務，但不會用於訓練生成模型，且使用者回饋資料僅儲存 30 天。
+
+
+#### 主要功能
+
+* 執行例行任務 (routine tasks)
+* 解釋複雜程式碼 (explain complex code)
+* 處理 Git 工作流程 (handle git workflows)
+* 透過自然語言指令操作 (operate via natural language commands)
+* 錯誤回報功能 (/bug command)
+* 在終端機、IDE 和 GitHub 上皆可使用
+
+
+#### 如何使用
+
+* 使用 npm 全域安裝: `npm install -g @anthropic-ai/claude-code`
+* 導覽至您的專案目錄並執行 `claude`
+* 使用 `/bug` 指令回報錯誤
+* 透過自然語言指令與 Claude Code 互動。
+## 📌 [musistudio/claude-code-router](https://github.com/musistudio/claude-code-router)
+<Callout>
+    Description: Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model while enjoying updates from Anthropic.\
+    🌐 TypeScript｜⭐️ 6,112 | 2600 stars this week
+</Callout>
+    #### 簡介
+
+Claude Code Router 是一個強大的工具，用於將 Claude Code 請求路由到不同的模型，並自定義任何請求。它支援多種模型提供商，例如 OpenRouter、DeepSeek、Ollama、Gemini、Volcengine 和 SiliconFlow，並允許透過轉換器 (transformers) 自定義請求和回應。  使用者可以根據需求動態切換模型，並與 GitHub Actions 整合，實現 CI/CD 流程中的自動化任務執行。
+
+
+#### 主要功能
+
+* 模型路由 (Model Routing)：根據需求將請求路由到不同的模型 (例如：背景任務、思考、長上下文)。
+* 多提供商支援 (Multi-Provider Support)：支援 OpenRouter、DeepSeek、Ollama、Gemini、Volcengine 和 SiliconFlow 等多種模型提供商。
+* 請求/回應轉換 (Request/Response Transformation)：使用轉換器自定義不同提供商的請求和回應。
+* 動態模型切換 (Dynamic Model Switching)：在 Claude Code 中使用 `/model` 命令動態切換模型。
+* GitHub Actions 整合：在 GitHub 工作流程中觸發 Claude Code 任務。
+* 外掛系統 (Plugin System)：透過自定義轉換器擴充套件功能。
+
+
+#### 如何使用
+
+1. **安裝 (Installation):**  首先安裝 Claude Code (`npm install -g @anthropic-ai/claude-code`)，然後安裝 Claude Code Router (`npm install -g @musistudio/claude-code-router`)。
+2. **設定 (Configuration):** 建立並設定 `~/.claude-code-router/config.json` 檔案 (參考 `config.example.json`)，包含設定 Proxy、Log、API Key、Host，以及 Providers 和 Router 設定。  `Providers` 區段定義不同的模型提供商，包含名稱、API 基礎網址、API 金鑰、模型列表和可選的轉換器。 `Router` 區段定義不同場景使用的模型 (例如：預設、背景任務、思考、長上下文)。
+3. **執行 (Running):** 使用 `ccr code` 命令啟動 Claude Code Router。  並可透過 `/model provider_name,model_name` 命令動態切換模型。
+4. **轉換器 (Transformers):**  可以設定全域或模型特定的轉換器來修改請求和回應。內建轉換器包含 `deepseek`、`gemini`、`openrouter`、`groq`、`maxtoken`、`tooluse`、`gemini-cli` 等，也可自定義轉換器。
+5. **GitHub Actions 整合:**  設定 GitHub Actions 工作流程，利用 Claude Code Router 進行自動化任務執行。
+## 📌 [getzep/graphiti](https://github.com/getzep/graphiti)
+<Callout>
+    Description: Build Real-Time Knowledge Graphs for AI Agents\
+    🌐 Python｜⭐️ 14,261 | 1647 stars this week
+</Callout>
+    #### 簡介
+
+Graphiti 是一個用於構建和查詢時間感知知識圖譜的框架，專為在動態環境中運作的 AI 代理設計。不同於傳統的 Retrieval-Augmented Generation (RAG) 方法，Graphiti 持續整合使用者互動、結構化和非結構化的企業資料以及外部資訊到一個一致且可查詢的圖譜中。該框架支援增量資料更新、高效的檢索和精確的歷史查詢，而無需重新計算整個圖譜，使其適用於開發互動式、上下文感知的 AI 應用程式。它能整合和維護動態使用者互動和業務資料，促進基於狀態的推理和代理的任務自動化，並使用語義、關鍵字和基於圖形的搜尋方法查詢複雜的演變資料。Graphiti 也為 Zep AI 代理的記憶層提供核心功能，並被證明是目前最先進的代理記憶體技術。
+
+
+#### 主要功能
+
+*   **即時增量更新 (Real-Time Incremental Updates):**  立即整合新的資料片段，無需批次重新計算。
+*   **雙時間資料模型 (Bi-Temporal Data Model):**  明確追蹤事件發生時間和資料採集時間，允許進行精確的特定時間點查詢。
+*   **高效混合檢索 (Efficient Hybrid Retrieval):** 結合語義嵌入、關鍵字 (BM25) 和圖形遍歷，實現低延遲查詢，無需依賴大型語言模型 (LLM) 摘要。
+*   **自定義實體定義 (Custom Entity Definitions):**  透過簡單的 Pydantic 模型，實現彈性的知識體系建立和支援開發者自定義實體。
+*   **可擴充套件性 (Scalability):**  使用平行處理高效管理大型資料集，適用於企業環境。
+*   **支援多種大型語言模型 (LLM):**  支援 OpenAI, Gemini, Anthropic, Groq 等 LLM 提供商。
+*   **處理矛盾 (Contradiction Handling):** 透過時間邊緣失效來處理矛盾。
+*   **MCP 伺服器支援:** 提供 Model Context Protocol (MCP) 伺服器，方便 AI 助理與 Graphiti 的知識圖譜互動。
+*   **REST 服務:** 提供基於 FastAPI 的 REST API 服務。
+*   **支援多種資料庫:** 支援 Neo4j 和 FalkorDB 作為圖資料庫後端。
+
+
+#### 如何使用
+
+*   安裝 Graphiti，需要 Python 3.10 或更高版本，以及 Neo4j 或 FalkorDB 作為圖資料庫後端，並設定 OpenAI API key 或其他支援的 LLM 提供商 API key。可以使用 `pip install graphiti-core` 或 `uv add graphiti-core` 安裝，並可根據需求安裝額外的 LLM 提供商支援。
+*   連線到 Neo4j 或 FalkorDB 資料庫，初始化 Graphiti 索引和約束。
+*   將片段 (episodes) 新增到圖形中 (文字和結構化 JSON)。
+*   使用混合搜尋搜尋關係 (邊緣)，並使用圖形距離重新排序搜尋結果。
+*   使用預定義的搜尋方法搜尋節點。
+*   MCP 伺服器允許 AI 助理透過 MCP 協定與 Graphiti 的知識圖譜互動。
+*   REST 服務提供 API 介面與 Graphiti 互動。
+*   可自定義資料庫名稱和使用平行執行時期以提升效能。
+*   支援 Azure OpenAI, Google Gemini 和 Ollama (本地 LLM) 等多種 LLM 環境。
+*   參考 `examples` 目錄中的快速入門範例，以及 `mcp_server` 和 `server` 目錄中的檔案以獲得更多資訊。
+## 📌 [gorhill/uBlock](https://github.com/gorhill/uBlock)
+<Callout>
+    Description: uBlock Origin - An efficient blocker for Chromium and Firefox. Fast and lean.\
+    🌐 JavaScript｜⭐️ 56,415 | 1142 stars this week
+</Callout>
+    #### 簡介
+
+* uBlock Origin (uBO) 是一款高效能的內容阻擋器，適用於 Chromium 和 Firefox 瀏覽器。
+* 它能有效阻擋廣告、追蹤器、挖礦程式、彈出視窗、惱人的反阻擋器、惡意軟體網站等。
+* 預設使用 EasyList、EasyPrivacy、Peter Lowe's Blocklist、Online Malicious URL Blocklist 和 uBO 自訂篩選清單。
+* 支援許多其他清單以阻擋更多內容，也支援 Hosts 檔案。
+* 使用 EasyList 篩選語法，並擴充套件語法以支援自訂規則和篩選條件。
+* 使用者可以輕鬆取消選取任何預選的篩選清單。
+* 使用阻擋器並非竊盜行為，這點非常重要。
+* uBO 的主要目標是協助使用者以友善的方式來抵禦隱私入侵手段。
+
+
+#### 主要功能
+
+* 廣泛的內容阻擋：阻擋廣告、追蹤器、挖礦程式、彈出視窗、反阻擋器和惡意軟體網站。
+* 高效能：CPU 和記憶體使用率低。
+* 客製化選項：使用者可自訂篩選清單和規則，調整阻擋強度。
+* 支援多種瀏覽器：支援 Firefox、Chromium、Edge 和 Opera 等瀏覽器。
+* 使用簡單：提供基本模式和進階模式，滿足不同使用者的需求。
+* 進階模式提供：一個基於網站的點選式防火牆。
+* 支援 Hosts 檔案：允許使用者匯入自定義 Hosts 檔案。
+*  擴充套件的 EasyList 語法：允許更精確的內容過濾。
+
+
+#### 如何使用
+
+* 從 Firefox Add-ons、Chrome Web Store、Edge Add-ons 或 Opera Add-ons 安裝 uBlock Origin。
+* 安裝後，uBO 會自動開始阻擋內容。
+* 可使用基本模式 (簡單易用) 或進階模式 (提供更多自訂選項)。
+* 進階模式允許使用者建立和管理自訂篩選規則。
+*  若 uBO 阻擋過多內容，使用者可以輕鬆取消選取預設篩選清單。
+*  Thunderbird 使用者需要注意，uBO 只會影響 feeds，不會影響郵件。
+*  如需更多檔案或支援，請參考官方 Wiki 或 /r/uBlockOrigin 子版面。
