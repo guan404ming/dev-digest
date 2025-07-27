@@ -1,0 +1,155 @@
+---
+title: '[7/21 - 7/27] GitHub Weekly Digest'
+publishedAt: '2025-07-27'
+---
+## 📌 [maybe-finance/maybe](https://github.com/maybe-finance/maybe)
+<Callout>
+    Description: The personal finance app for everyone\
+    🌐 Ruby｜⭐️ 52,418 | 7255 stars this week
+</Callout>
+    #### 簡介
+
+Maybe 是一款可自行託管的個人理財應用程式，使用 Docker 部署。此專案已停止維護，但可在 AGPLv3 授權下自由分叉。分叉專案需包含原始 AGPLv3 授權，並明確宣告與 Maybe Finance Inc. 無關聯或背書，且不得使用 "Maybe" 商標或其標誌。
+
+
+#### 主要功能
+
+* 個人理財應用程式 (personal finance app)
+* 可自行託管 (self-hosted)
+* 使用 Docker 部署
+
+
+#### 如何使用
+
+* **安裝需求:**  參考 `.ruby-version` 檔案取得 Ruby 版本要求，並需要 PostgreSQL 9.3 以上版本 (建議使用最新穩定版本)。
+* **複製程式碼:**  `git clone`  複製程式碼庫。
+* **設定環境:**  `cd maybe`  進入專案目錄後，執行 `cp .env.local.example .env.local` 複製範例環境設定檔案。
+* **執行設定指令碼:**  `bin/setup` 執行設定指令碼。
+* **啟動開發伺服器:**  `bin/dev` 啟動開發伺服器。
+* **(選項) 載入示範資料:** `rake demo_data:default` 載入示範資料。
+* **存取應用程式:**  瀏覽器訪問 `http://localhost:3000`  即可使用應用程式。  登入帳號密碼由資料庫種子資料產生。
+## 📌 [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB)
+<Callout>
+    Description: Investment Research for Everyone, Everywhere.\
+    🌐 Python｜⭐️ 46,330 | 3114 stars this week
+</Callout>
+    #### 簡介
+
+OpenBB 平臺是第一個開源的金融平臺，提供股票、期權、加密貨幣、外匯、宏觀經濟、固定收益等多種金融資料的訪問，並提供廣泛的擴充套件功能以增強使用者體驗。它結合Python或CLI介面，並提供OpenBB Workspace作為企業級UI，以視覺化資料並使用AI代理。  透過`pip install openbb`即可快速安裝。OpenBB 平臺的資料整合詳情請參考：[https://docs.openbb.co/platform/reference](https://docs.openbb.co/platform/reference)。
+
+
+#### 主要功能
+
+* 提供股票 (Equity)、期權 (Options)、加密貨幣 (Crypto)、外匯 (Forex)、宏觀經濟 (Macro economy)、固定收益 (Fixed income) 等多種金融資料的訪問。
+* 提供大量的擴充套件功能，以滿足不同使用者的需求。
+* 提供命令列介面 (CLI) 供使用者直接操作。
+* 整合多個資料供應商 (Data vendors)。
+* 可與OpenBB Workspace 整合，提供企業級的UI和AI代理功能。
+*  開源且可自由擴充套件。
+* 使用Python程式語言。
+*  透過`pip install openbb[all]`安裝所有套件。
+
+
+#### 如何使用
+
+* **安裝:** 使用 `pip install openbb` 安裝 OpenBB 平臺，或使用 `git clone https://github.com/OpenBB-finance/OpenBB.git` 從 GitHub 複製程式碼。OpenBB CLI 可透過 `pip install openbb-cli` 安裝。更多安裝資訊請參考 OpenBB 檔案。
+* **啟動後端伺服器:**  執行 `openbb-api`  啟動 FastAPI 伺服器 (預設位址為 127.0.0.1:6900)。
+* **與 OpenBB Workspace 整合:**
+    * 登入 OpenBB Workspace。
+    * 前往 "Apps" 標籤。
+    * 點選 "Connect backend"。
+    * 填寫表格：Name: OpenBB Platform, URL: http://127.0.0.1:6900。
+    * 點選 "Test" 和 "Add" 完成整合。
+*  參考檔案以瞭解如何新增資料和AI代理到OpenBB Workspace。
+## 📌 [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
+<Callout>
+    Description: A curated list of awesome commands, files, and workflows for Claude Code\
+    🌐 Python｜⭐️ 6,858 | 2434 stars this week
+</Callout>
+    #### 簡介
+
+Awesome Claude Code 是一個整理了 Claude Code 的 slash-commands、CLAUDE.md 檔案、CLI 工具和其他資源與指南的列表，旨在增強 Claude Code 的工作流程、生產力與使用體驗。Claude Code 是一個基於 CLI 的尖端程式碼助理，可在終端機或 IDE 中使用，它是一個快速發展的工具，提供許多強大的功能，並允許以多種方式進行大量配置。使用者正在積極探索最佳實踐和工作流程，此倉庫旨在幫助社群分享知識，並瞭解如何充分利用 Claude Code。  目前已收錄工作流程指南、工具、Hooks、Slash-Commands、CLAUDE.md 檔案以及官方檔案等資源。
+
+
+#### 主要功能
+
+Awesome Claude Code 收錄的資源涵蓋 Claude Code 使用的各個面向，包含：
+
+* **工作流程與知識指南:** 提供多種針對特定專案的 Claude Code 原生資源工作流程，涵蓋部落格平臺建立、進階機制解說、情境啟動、專案啟動和任務管理、軟體開發生命週期 (SDLC) 等。
+* **工具:**  包含基於 Claude Code 建立的應用程式，功能包含 Claude Code 使用狀況管理與分析、Claude Code 設定檔與 slash commands 管理、程式碼優先編排層、Claude Code 代幣使用監控、以及 Claude Code 與 GitHub 儲存庫的整合等。  也包含多種 IDE 整合工具。
+* **Hooks:**  一個全新的 Claude Code API，允許使用者在 Claude 的代理生命週期中的不同時間點啟用命令和執行指令碼。
+* **Slash-Commands:**  提供大量的 slash-commands，涵蓋版本控制 (Git)、程式碼分析與測試、情境載入與啟動、檔案與變更日誌、CI/CD、專案與任務管理以及其他雜項功能。
+* **CLAUDE.md 檔案:**  包含重要指南和特定情境資訊或指令，幫助 Claude Code 更好地理解專案和編碼標準，包含特定程式語言和特定領域的檔案。
+
+
+#### 如何使用
+
+Awesome Claude Code 提供一個整理過的資源列表，使用者可根據自身需求搜尋所需資源。  資源以不同的類別分類，例如工作流程、工具、Slash-Commands 和 CLAUDE.md 檔案等。 每個資源專案都包含簡短的描述和連結，方便使用者快速找到並使用。  使用者可透過瀏覽目錄結構或使用搜尋功能找到需要的資源。  部分資源包含程式碼片段，方便使用者理解其使用方法。  注意，部分標示為實驗性資源可能尚未完全驗證，使用時需注意。 使用者可以參考 CONTRIBUTING.md 瞭解如何提交新的資源。
+## 📌 [frappe/hrms](https://github.com/frappe/hrms)
+<Callout>
+    Description: Open Source HR and Payroll Software\
+    🌐 Python｜⭐️ 4,619 | 1715 stars this week
+</Callout>
+    #### 簡介
+
+Frappe HR 是一款開源、現代且易於使用的 HR 和薪資管理軟體。它提供超過 13 個模組，涵蓋員工管理、入職、休假、薪資、稅務等全方位 HRMS 解決方案。  Frappe 團隊因自身規模擴張而開發此軟體，因市面上缺乏真正開源的 HR 軟體，故自行開發。起初為 ERPNext 的一部分，至 14 版後因模組成熟獨立成產品。
+
+
+#### 主要功能
+
+* **員工生命週期管理 (Employee Lifecycle):** 從員工入職、升遷調動到離職面談，涵蓋整個員工生命週期。
+* **休假與考勤 (Leave and Attendance):** 設定休假政策、輕鬆查詢地區節假日、地理位置打卡、追蹤休假餘額和考勤記錄並產生報告。
+* **費用報銷與預支 (Expense Claims and Advances):** 管理員工預支、報銷費用、設定多層級審批流程，並與 ERPNext 會計系統無縫整合。
+* **績效管理 (Performance Management):** 追蹤目標、將目標與關鍵成果領域 (KRAs) 對齊、讓員工自我評估，簡化績效考核流程。
+* **薪資與稅務 (Payroll & Taxation):** 建立薪資結構、設定所得稅級距、執行標準薪資計算、處理額外薪資和非週期性付款、檢視薪資單上的收入明細等。
+* **Frappe HR 行動應用程式 (Frappe HR Mobile App):**  隨時申請和批准休假、打卡、檢視員工個人資料。
+
+
+#### 如何使用
+
+* **雲端部署 (Managed Hosting):** 使用 Frappe Cloud，一個簡單易用且精密的開源平臺，輕鬆託管 Frappe 應用程式，包含安裝、設定、升級、監控、維護和支援。
+* **本地部署 (Docker):**  需要在電腦上安裝 Docker、docker-compose 和 git。
+    * 使用 `git clone https://github.com/frappe/hrms` 克隆程式碼。
+    * 切換到 `hrms/docker` 目錄。
+    * 執行 `docker-compose up`。
+    * 等候設定指令碼建立網站後，即可在瀏覽器中訪問 `http://localhost:8000`，並使用帳號 `Administrator` 和密碼 `admin` 登入。
+* **本地部署 (Local):** 按照安裝步驟設定 bench 並啟動伺服器。
+## 📌 [microsoft/ai-agents-for-beginners](https://github.com/microsoft/ai-agents-for-beginners)
+<Callout>
+    Description: 11 Lessons to Get Started Building AI Agents\
+    🌐 Jupyter Notebook｜⭐️ 32,692 | 1699 stars this week
+</Callout>
+    #### 簡介
+
+* 本課程為 AI 代理程式入門教學，包含 11 個單元，涵蓋建立 AI 代理程式所需的一切知識。
+* 課程支援多種語言，包含繁體中文(臺灣)。
+* 每個單元包含書面教學、簡短影片和程式碼範例，並提供額外學習資源連結。
+* 課程使用 Azure AI Foundry 和 GitHub Model Catalogs 等工具，需要 Azure 帳戶或 GitHub 模型。
+* 課程也使用 Microsoft 的 Azure AI Agent Service、Semantic Kernel 和 AutoGen 等框架和服務。
+* 課程提供程式碼範例，位於 `code_samples` 資料夾中。
+* 鼓勵使用者貢獻和提出建議，並提供社群資源連結協助學習。
+* 學習者可從任何單元開始學習，並包含其他相關課程連結。
+
+
+#### 主要功能
+
+* 提供 11 個單元，逐步教授 AI 代理程式的基礎知識。
+* 支援多種語言，方便不同語言背景的學習者。
+* 每個單元包含書面教學、影片教學和程式碼範例。
+* 涵蓋各種 AI 代理程式設計模式，例如工具使用設計模式 (Tool Use Design Pattern)、記憶增強設計模式 (Agentic RAG)、規劃設計模式 (Planning Design Pattern)、多代理程式設計模式 (Multi-Agent Design Pattern) 和元認知設計模式 (Metacognition Design Pattern)。
+* 使用 Azure AI Foundry 和 GitHub Models 作為程式碼範例的基礎。
+* 使用 Microsoft 的 Azure AI Agent Service、Semantic Kernel 和 AutoGen 等框架和服務。
+* 提供額外學習資源連結，幫助學習者深入學習。
+* 鼓勵使用者參與社群討論並貢獻程式碼。
+
+
+#### 如何使用
+
+* 複製此儲存庫 (fork this repo) 以取得程式碼。
+* 從任何單元開始學習，每個單元都獨立且完整。
+* 參考每個單元的 README 和影片教學。
+* 執行程式碼範例，並參考 `code_samples` 資料夾中的程式碼。
+* 需準備 Azure 帳號 (適用於 Azure AI Foundry) 或使用 GitHub Models (免費但資源有限)。
+* 如有疑問，可加入 Azure AI Foundry 社群 Discord 或 Azure AI Foundry 開發者論壇。
+* 發現錯誤或有建議，請提出 issue 或提交 pull request。
+* 課程使用 Azure AI Agent Service、Semantic Kernel 和 AutoGen 等工具，需事先了解相關知識。
