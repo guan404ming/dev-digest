@@ -1,0 +1,148 @@
+---
+title: '[8/4 - 8/10] GitHub Weekly Digest'
+publishedAt: '2025-08-10'
+---
+## 📌 [dyad-sh/dyad](https://github.com/dyad-sh/dyad)
+<Callout>
+    Description: Free, local, open-source AI app builder ✨ v0 / lovable / Bolt alternative 🌟 Star if you like it!\
+    🌐 TypeScript｜⭐️ 11,898 | 8429 stars this week
+</Callout>
+    #### 簡介
+
+Dyad 是一款本地化的、開源的 AI 應用程式建構工具。它速度快、注重隱私，且完全由您掌控，類似 Lovable、v0 或 Bolt，但執行在您的本地機器上。  您可以透過提供的網址瞭解更多資訊：http://dyad.sh/。  它不需要註冊，下載即可使用。
+
+
+#### 主要功能
+
+* **本地執行 (Local):**  快速、私密且無繫結。
+* **自帶金鑰 (Bring your own keys):** 使用您自己的 AI API 金鑰，避免廠商鎖定。
+* **跨平臺 (Cross-platform):** 容易在 Mac 或 Windows 上執行。
+
+
+#### 如何使用
+
+* 免註冊：無需註冊帳號。
+* 直接下載：下載適合您平臺的版本即可開始使用。
+*  (詳情請參考下載頁面)
+## 📌 [9001/copyparty](https://github.com/9001/copyparty)
+<Callout>
+    Description: Portable file server with accelerated resumable uploads, dedup, WebDAV, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file, no deps\
+    🌐 Python｜⭐️ 22,357 | 4149 stars this week
+</Callout>
+    #### 簡介
+
+Copyparty 是一款強大的檔案伺服器軟體，僅需 Python 環境即可執行，支援多種協定 (HTTP、WebDAV、FTP、TFTP、SMB/CIFS)，並提供 Android 應用程式及 iPhone 快捷鍵等功能，讓您幾乎可以使用任何裝置將其轉變為檔案伺服器，並支援可恢復的檔案上傳/下載。Copyparty 旨在提供一個快速、簡便且功能豐富的檔案分享解決方案，適用於各種場合和裝置。其逆向 Linux 理念——盡可能多做事情，並做到還可以——使其成為一個理想的應急方案，用於在舊裝置之間傳輸檔案。Copyparty 也注重最小化依賴性，並透過純文字介面，方便使用者審查程式碼的安全性。
+
+
+#### 主要功能
+
+Copyparty 的主要功能包含伺服器端和使用者端兩部分。伺服器端支援多種檔案協定，允許使用者透過 Web 瀏覽器、Android 應用程式或命令列工具進行檔案上傳和下載。其核心功能包含：多種協定支援 (HTTP, WebDAV, FTP, TFTP, SMB/CIFS)、可恢復的上傳/下載、帳號與許可權管理 (包含每資料夾、每使用者許可權)、檔案索引與搜尋 (按大小、日期、路徑/名稱、MP3 標籤等)、快取機制、多種檔案格式的媒體播放器 (包含播放清單功能)、Markdown 檢視器與編輯器、檔案去重複、Zeroconf/MDNS/SSDP 等 LAN 宣告功能，以及進階功能例如上傳規則設定、檔案壓縮、自毀檔案上傳等。使用者端方面則提供 Web 瀏覽器介面，具備檔案管理 (剪下/貼上、重新命名、刪除)、檔案搜尋、圖示/縮圖顯示、ZIP/TAR 檔案下載、多語言支援等功能。
+
+
+#### 如何使用
+
+Copyparty 的使用非常簡便。首先，您需要安裝 Python 環境 (版本 2 或 3)。然後，執行 `copyparty-sfx.py` 即可快速啟動伺服器。  對於家用環境，您可以透過 Cloudflare Tunnel 等工具將伺服器公開至網際網路。伺服器端可透過命令列引數或設定檔進行設定，包含帳號管理、許可權設定、資料夾分享等。使用者端則可透過 Web 瀏覽器存取伺服器，使用拖放或複製貼上等方式上傳檔案，並使用內建的檔案管理功能進行檔案操作。  此外，Copyparty 也提供命令列上傳工具、Android 應用程式和 iPhone 快捷鍵等多種存取方式，以及進階功能如 RSS 監控、批次重新命名、自毀檔案上傳等，滿足不同的使用需求。  若需進階功能，例如媒體索引、縮圖生成等，則需要額外安裝相關的套件 (例如 Pillow 和 FFmpeg)。
+## 📌 [nautechsystems/nautilus_trader](https://github.com/nautechsystems/nautilus_trader)
+<Callout>
+    Description: A high-performance algorithmic trading platform and event-driven backtester\
+    🌐 Rust｜⭐️ 13,352 | 3224 stars this week
+</Callout>
+    #### 簡介
+
+NautilusTrader 是一個開源、高效能、生產級別的演演算法交易平臺，專為量化交易者設計。它允許交易者使用事件驅動引擎在歷史資料上回測自動交易策略組合，並無需更改程式碼即可將這些策略部署到實盤交易中。該平臺以 AI 為先，旨在在高效能且穩健的原生 Python 環境中開發和部署演演算法交易策略，解決 Python 研究/回測環境與生產實盤交易環境一致性問題。NautilusTrader 優先考慮軟體正確性和安全性，旨在支援 Python 原生、關鍵任務的交易系統回測和實盤部署工作負載。平臺具有通用性和資產類別無關性，任何 REST API 或 WebSocket 資料來源都可以透過模組化介面卡整合。它支援跨多種資產類別和工具型別的頻繁交易，包括外匯、股票、期貨、期權、加密貨幣、DeFi 和博彩，允許同時在多個交易場所進行無縫操作。
+
+
+#### 主要功能
+
+* **高速 (Fast):** 核心使用 Rust 編寫，並使用 tokio 進行非同步網路操作。
+* **可靠 (Reliable):** 由 Rust 提供型別和執行緒安全性，並可選用 Redis 支援的狀態永續性。
+* **可移植性 (Portable):** 作業系統獨立，可在 Linux、macOS 和 Windows 上執行。可以使用 Docker 部署。
+* **靈活性 (Flexible):** 模組化介面卡意味著可以整合任何 REST API 或 WebSocket 資料來源。
+* **進階功能 (Advanced):**  提供立即成交 (IOC)、全部成交或取消 (FOK)、有效直到取消 (GTC)、有效直到日期 (GTD)、當天 (DAY)、開盤價 (AT_THE_OPEN)、收盤價 (AT_THE_CLOSE) 等多種有效時間和進階訂單型別及條件觸發器；執行指令包括僅限掛單 (post-only)、僅限減單 (reduce-only) 和冰山單 (icebergs)；包含 OCO、OUO、OTO 等應急訂單。
+* **客製化 (Customizable):**  新增使用者自定義元件，或利用快取和訊息匯流排從頭組裝整個系統。
+* **回測 (Backtesting):**  使用歷史報價、成交、K 線、訂單簿和自定義資料（具有納秒級解析度）同時執行多個交易場所、工具和策略。
+* **實盤交易 (Live):** 回測和實盤部署使用相同的策略實現。
+* **多交易場所 (Multi-venue):** 多交易場所功能促進做市和統計套利策略。
+* **AI 訓練 (AI Training):** 回測引擎速度快，可用於訓練 AI 交易代理 (RL/ES)。
+
+
+#### 如何使用
+
+* 建議使用最新支援版本的 Python 並在虛擬環境中安裝 `nautilus_trader` 以隔離相依性。
+* 可以從 PyPI 或 Nautech Systems 套件索引安裝預建二進位制 wheel 檔案，或從原始碼編譯安裝。
+* 使用 pip 安裝：`pip install -U nautilus_trader` (從 PyPI 安裝最新穩定版本)。  可以使用 `--pre` 旗標安裝預發布版本，以及 `--index-url=https://packages.nautechsystems.io/simple` 從 Nautech Systems 套件索引安裝。
+* 從原始碼安裝需要先安裝 Rust 工具鏈 (rustup)、Clang 編譯器和 uv 套件管理器，並執行 git clone、uv sync 等步驟。  過程較複雜，需參考檔案中的詳細說明。
+* 可選使用 Redis 作為快取資料庫或訊息匯流排的後端。
+* 提供 Makefile 來自動化大多數安裝和構建任務。
+* 提供 Python 和 Cython 的指標和策略範例。
+## 📌 [microsoft/mcp-for-beginners](https://github.com/microsoft/mcp-for-beginners)
+<Callout>
+    Description: This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in .NET, Java, TypeScript, JavaScript, and Python. Designed for developers, it focuses on practical techniques for building modular, scalable, and secure AI workflows from session setup to service orchestration.\
+    🌐 Python｜⭐️ 8,300 | 2146 stars this week
+</Callout>
+    #### 簡介
+
+* Model Context Protocol (MCP) 是一個先進的框架，用於標準化 AI 模型與使用者端應用程式之間的互動。
+* 這個開源課程提供結構化的學習路徑，包含實用的程式碼範例和實際應用案例，涵蓋 C#、Java、JavaScript、TypeScript 和 Python 等多種常用的程式語言。
+* 適用於 AI 開發人員、系統架構師和軟體工程師，幫助他們掌握 MCP 的基礎知識和實作策略。
+* 提供多種語言版本，包含繁體中文 (臺灣)。
+* 包含完整的課程架構、範例程式碼、以及進階實作範例。
+* 提供 MCP Dev Days 線上研討會，提供深入的技術見解和實作學習。
+* 擁有完整的學習指南和資源，協助學習者有效率地學習。
+* 鼓勵社群貢獻與參與。
+
+
+#### 主要功能
+
+* 提供結構化的 MCP 學習課程，涵蓋基礎概念到進階應用。
+* 提供多種程式語言 (C#、Java、JavaScript、Python、TypeScript) 的程式碼範例。
+*  涵蓋 MCP 的核心概念，例如安全性、伺服器/使用者端建置、與大型語言模型整合等等。
+*  包含實作指南，引導使用者建立自己的 MCP 伺服器和使用者端。
+*  提供與 Azure 整合的教學。
+*  探討進階主題，例如多模態 AI、擴充套件性和企業應用。
+*  提供測試和部署的指導。
+*  包含社群貢獻和最佳實務的章節。
+
+
+#### 如何使用
+
+* **Fork the Repository:** 點選複製儲存庫。
+* **Clone the Repository:** 使用 `git clone https://github.com/microsoft/mcp-for-beginners.git` 指令複製儲存庫。
+* 加入 Azure AI Foundry Discord 社群。
+* 參考提供的學習指南，循序漸進地學習各個模組。
+* 參考多種程式語言的程式碼範例，進行實作練習。
+* 參與 MCP Dev Days 線上研討會。
+*  參考提供的檔案、規格和原始規格檔案。
+*  參與社群討論和貢獻。
+## 📌 [openai/codex](https://github.com/openai/codex)
+<Callout>
+    Description: Lightweight coding agent that runs in your terminal\
+    🌐 Rust｜⭐️ 33,424 | 1599 stars this week
+</Callout>
+    #### 簡介
+
+OpenAI Codex CLI 是一款本地執行的程式碼代理程式，由 OpenAI 開發。它能根據自然語言提示生成程式碼，並在沙盒環境中執行，確保安全。  Codex CLI 支援多種作業系統 (macOS 12+, Ubuntu 20.04+/Debian 10+, 或透過 WSL2 使用 Windows 11)，並可透過 npm 或 brew 安裝。使用者可選擇使用 ChatGPT 方案或 OpenAI API 金鑰進行身份驗證。與雲端版本的 Codex Web (chatgpt.com/codex) 不同，Codex CLI 執行於本地電腦。
+
+
+#### 主要功能
+
+* 程式碼產生與修改:  根據自然語言提示生成、修改、測試及重構程式碼。
+* 沙盒環境: 提供多種沙盒模式 (Read/write, Read-only, Advanced configuration)，以控制程式碼代理程式的存取許可權，防止未經授權的檔案修改或網路存取。
+* 多種模型支援: 支援 OpenAI  Responses API 的模型，包含預設的 o4-mini 以及其他模型 (例如 gpt-4.1)。也支援透過設定檔使用自定義的 Open Source 模型提供者 (例如 Ollama, OpenRouter, Azure)。
+* 開放原始碼模型支援: 可使用 --oss 旗標與 OpenAI 相容的開放原始碼模型 (例如 Ollama) 本地執行。
+* 互動式使用者介面 (TUI): 提供直覺的圖形化介面，方便使用者與 Codex CLI 互動。
+* 非互動式模式: 支援非互動式模式 (codex exec)，適用於 CI/CD 等自動化情境。
+* 完善的設定選項:  透過 config.toml 檔案或命令列引數，可以微調 Codex CLI 的行為，例如沙盒模式、核准機制、模型選擇等。
+* 安全考量:  內建安全機制，防止未經授權的檔案操作和網路存取。支援 Zero Data Retention (ZDR)。
+
+
+#### 如何使用
+
+* **安裝:** 使用 npm (`npm install -g @openai/codex`) 或 brew (`brew install codex`) 全域安裝，或從 GitHub 發行頁面下載對應作業系統的二進位檔。
+* **登入:** 使用 ChatGPT Plus, Pro 或 Team 帳號登入，或設定 `OPENAI_API_KEY` 環境變數使用 API 金鑰。
+* **執行:** 執行 `codex` 命令進入互動式 TUI，輸入自然語言提示即可開始使用。  也可以使用 `codex exec "..."` 執行非互動式模式。
+* **沙盒設定:** 使用 `--sandbox` 選項設定沙盒模式 (workspace-write, read-only, danger-full-access)，並使用 `--ask-for-approval` 選項設定是否需要使用者批准。
+* **模型選擇:** 使用 `--model` 選項或在 config.toml 檔案中設定 `model` 引數來選擇模型。  使用 `--profile` 選項載入預設設定檔。
+* **使用開放原始碼模型:** 使用 `--oss` 旗標，並設定 `CODEX_OSS_BASE_URL` 或 `CODEX_OSS_PORT` 環境變數來指定開放原始碼模型主機。
+* **設定檔:** 使用 `~/.codex/config.toml` 設定檔案自訂 Codex CLI 的行為。
+* **非互動模式:** 使用 `codex exec "your prompt"` 在非互動式模式下執行指令。
