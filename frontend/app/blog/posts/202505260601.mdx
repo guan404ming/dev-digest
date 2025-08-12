@@ -1,0 +1,146 @@
+---
+title: '[5/26 - 6/1] GitHub Weekly Digest'
+publishedAt: '2025-06-01'
+---
+## 📌 [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
+<Callout>
+    Description: Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity.\
+    🌐 Python｜⭐️ 14,061 | 10499 stars this week
+</Callout>
+    #### 簡介
+
+AgenticSeek 是一款完全本地化的語音 AI 助理，可替代 Manus AI。它在您的裝置上自主瀏覽網頁、編寫程式碼和規劃任務，所有資料都儲存在本地，確保您的隱私和零雲端依賴。AgenticSeek 專為本地推理模型設計，完全在您的硬體上執行。目前仍在積極開發中，程式碼/Bash尚未容器化，不建議部署到網路或生產環境。
+
+
+#### 主要功能
+
+* 完全本地且私密：所有操作都在您的機器上執行，無雲端、無資料共享。您的檔案、對話和搜尋結果都保持私密。
+* 智慧網頁瀏覽：AgenticSeek 可以自主瀏覽網路，搜尋、閱讀、提取資訊、填寫網路表單，所有操作均免人工幹預。
+* 自主編碼助理：可以編寫、除錯和執行 Python、C、Go、Java 等多種程式語言的程式碼，無需監督。
+* 智慧代理選擇：它可以自動選擇最適合任務的代理，就像擁有一支專家團隊隨時待命。
+* 規劃和執行複雜任務：從行程規劃到複雜專案，它可以將大型任務分解成步驟並使用多個 AI 代理完成。
+* 語音啟用：乾淨、快速、具有未來感的語音和語音轉文字功能，讓您可以像科幻電影中的個人 AI 一樣與它交談。
+
+
+#### 如何使用
+
+* **安裝:** 確保已安裝 Chrome 驅動程式、Docker 和 Python 3.10。建議使用 `./install.sh` (Linux/macOS) 或 `./install.bat` (Windows) 進行自動安裝，或根據您的作業系統手動安裝相依套件和 ChromeDriver。
+* **設定本地 LLM 提供者:**  啟動本地提供者 (例如 ollama: `ollama serve`)，並更新 `config.ini` 檔案，設定 `provider_name`、`provider_model` 等引數。  需具備足夠的硬體資源，至少需要能執行 Qwen/Deepseek 14B 的 GPU。
+* **啟動服務並執行:** 使用 `sudo ./start_services.sh` (macOS) 或 `start ./start_services.cmd` (Windows) 啟動必要的服務 (searxng、redis、frontend)。然後使用 `python3 cli.py` (命令列介面) 或 `python3 api.py` (網頁介面) 啟動 AgenticSeek。網頁介面網址為 `http://localhost:3000/`。
+* **使用:**  在 CLI 模式下，您可以直接輸入指令；網頁介面提供圖形化操作。可以使用語音輸入 (需在 `config.ini` 中設定 `listen = True`)，但目前僅支援英文。結束使用，請輸入或說 "goodbye"。  範例用法包含程式碼撰寫、網頁搜尋、檔案處理等複雜任務。
+* **設定遠端 LLM 伺服器:**  您可以在伺服器上執行 LLM 模型，並在您的個人電腦上使用它。需要在伺服器端安裝相依套件並執行 `llm_server/app.py`，然後在 `config.ini` 中設定相關引數。
+## 📌 [microsoft/qlib](https://github.com/microsoft/qlib)
+<Callout>
+    Description: Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.\
+    🌐 Python｜⭐️ 23,469 | 3114 stars this week
+</Callout>
+    #### 簡介
+
+RD-Agent 是一個強大的工具，支援量化投資研發中的自動化因素挖掘和模型最佳化。它基於大型語言模型 (LLM)，能夠自主演化，提升量化投資策略的效率。RD-Agent 已經在 GitHub 上發布，並提供英文和中文的演示影片，方便使用者理解其應用場景和使用方法。該工具整合了資料處理、模型訓練、回測等全流程的機器學習 (ML) 管線，涵蓋量化投資的整個環節，從 Alpha 尋找、風險建模、投資組合最佳化到訂單執行。RD-Agent 基於 Qlib 平臺構建，並與其功能緊密結合。
+
+
+#### 主要功能
+
+* 自動化因素挖掘 (Quant Factor Mining)：自動從資料中發現有價值的投資因子。
+* 基於報表的因素挖掘 (Quant Factor Mining from reports)：從投資報告中提取投資因子。
+* 量化模型最佳化 (Quant Model Optimization)：自動最佳化量化投資模型，提升模型績效。
+* 支援多種機器學習範例 (Supervised learning, market dynamics modeling, and reinforcement learning)：涵蓋監督式學習、市場動態建模和強化學習等多種模型。
+* 整合完整的 ML 管線：包含資料處理、模型訓練、回測和評估等完整流程。
+* 涵蓋量化投資全流程：從 Alpha 尋找、風險建模、投資組合最佳化到訂單執行。
+* 基於 LLM 的自主演化：利用大型語言模型自主學習和最佳化。
+
+
+#### 如何使用
+
+* 參閱 GitHub 頁面 (https://github.com/microsoft/RD-Agent/) 下載 RD-Agent。
+* 參考官方提供的英文和中文演示影片，瞭解 RD-Agent 的應用場景和使用方法。
+* 使用者可根據自身需求，利用 RD-Agent 進行量化因子挖掘和模型最佳化。
+* RD-Agent 基於 Qlib 平臺，熟悉 Qlib 的使用將有助於更好地使用 RD-Agent。
+*  檔案提供了關於安裝、資料準備、自動化量化研究工作流程和自定義工作流程的詳細指南。
+*  提供 `qrun` 工具自動執行整個工作流程，包含資料集構建、模型訓練、回測和評估。
+*  提供程式碼範例，方便使用者自定義量化研究工作流程。
+*  提供多種模型 (例如：LightGBM, LSTM, GRU 等)，使用者可選擇適合自身需求的模型。
+## 📌 [mindsdb/mindsdb](https://github.com/mindsdb/mindsdb)
+<Callout>
+    Description: AI's query engine - Platform for building AI that can answer questions over large scale federated data. - The only MCP Server you'll ever need\
+    🌐 Python｜⭐️ 31,025 | 1878 stars this week
+</Callout>
+    #### 簡介
+
+MindsDB 是一個開放原始碼伺服器，能讓使用者從分散且大型的資料來源中獲得高精準度的答案。它支援連線、統一和回應來自各種資料來源（資料庫、資料倉庫和SaaS應用程式）的查詢，並透過MCP (Model Context Protocol) 提供互動介面。其核心哲學圍繞著「連線、統一、回應」三個關鍵能力，讓使用者能輕鬆地與資料互動並獲得洞察。  MindsDB 也提供 Docker 和 PyPI 等多種安裝方式。
+
+
+#### 主要功能
+
+* **連線資料 (Connect Your Data):**  連線數百個企業級資料來源，無論資料位於何處都能輕鬆存取。
+* **統一資料 (Unify Your Data):** 使用完整的 SQL 語法查詢已連線的資料來源，如同它們是單一資料庫的一部分。
+* **虛擬表 (VIEWS):**  跨不同資料來源建立統一檢視，簡化資料存取 (無需 ETL)。
+* **知識庫 (KNOWLEDGE BASES):**  索引和組織非結構化資料，以利有效率的檢索。
+* **機器學習模型 (ML MODELS):**  應用 AI/ML 轉換，從資料中獲得洞察。
+* **工作 (JOBS):** 排程同步和轉換任務，以進行即時處理。
+* **代理程式 (AGENTS):**  設定內建代理程式，專門用於回答關於已連線和統一資料的提問。
+* **MCP (Model Context Protocol):**  透過 MCP 與 MindsDB 無縫互動。
+
+
+#### 如何使用
+
+* **使用 Docker Desktop:**  這是最快且推薦的入門方式。
+* **使用 Docker:**  提供更多自定義伺服器的彈性。
+* **使用 PyPI:**  讓您可以貢獻到 MindsDB 專案。  
+
+
+安裝完成後，您可以使用 SQL 語法查詢資料，並利用 MindsDB 提供的各種功能 (例如 VIEWS, KNOWLEDGE BASES, ML MODELS, AGENTS) 來處理和分析資料。  透過 MCP，應用程式也能與 MindsDB 進行整合。
+## 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
+<Callout>
+    Description: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.\
+    🌐 Shell｜⭐️ 10,819 | 1284 stars this week
+</Callout>
+    #### 簡介
+
+Claude Code 是一款終端機程式碼輔助工具，能理解你的程式碼庫並透過自然語言指令協助你更快編寫程式碼。它能執行例行性任務、解釋複雜程式碼以及處理 Git 工作流程。Claude Code 旨在提升開發效率，讓開發者更專注於程式碼邏輯和架構。此工具目前為 Beta 版本，歡迎提供回饋。
+
+
+#### 主要功能
+
+*   編輯檔案並修正程式碼庫中的錯誤 (Edit files and fix bugs across your codebase)
+*   解答關於程式碼架構和邏輯的問題 (Answer questions about your code's architecture and logic)
+*   執行和修正測試、程式碼風格檢查和其他指令 (Execute and fix tests, lint, and other commands)
+*   搜尋 Git 歷史記錄、解決合併衝突並建立提交和 PR (Search through git history, resolve merge conflicts, and create commits and PRs)
+
+
+#### 如何使用
+
+*   安裝 Claude Code：使用 `npm install -g @anthropic-ai/claude-code` 全域性安裝。
+*   導覽至你的專案目錄並執行 `claude`。
+*   完成與你的 Claude Max 或 Anthropic Console 帳戶的一次性 OAuth 流程。
+*   建議以非特權使用者身份安裝，而非以 root 等管理員身份安裝，以維護系統安全性和穩定性。
+*   如有錯誤回報，請使用 `/bug` 指令在 Claude Code 內直接回報，或提交 GitHub 問題。
+## 📌 [anthropics/courses](https://github.com/anthropics/courses)
+<Callout>
+    Description: Anthropic's educational courses\
+    🌐 Jupyter Notebook｜⭐️ 12,692 | 969 stars this week
+</Callout>
+    #### 簡介
+
+Anthropic 提供一系列線上課程，協助使用者學習如何有效運用 Claude SDK 及其相關技術。目前包含五個課程，建議循序漸進完成，逐步掌握從 API 基本操作到進階應用技巧。課程涵蓋 API 基礎、提示工程、真實世界應用、提示評估以及工具使用等面向。
+
+
+#### 主要功能
+
+* 教學如何取得 Anthropic API Key 並使用 Claude SDK。
+* 詳細說明模型引數設定及使用方法。
+* 提供撰寫多模態提示 (multimodal prompts) 的技巧。
+* 說明串流回應 (streaming responses) 的機制。
+* 提供逐步教學，學習關鍵提示工程技術。
+* 指導如何將提示工程技巧應用於複雜的真實世界情境。
+* 教學如何撰寫生產環境等級的提示評估方法，以衡量提示品質。
+* 教學如何在工作流程中成功地實施工具使用 (tool use) 與 Claude 整合。
+
+
+#### 如何使用
+
+* 依照建議順序完成五個課程。
+* 參考提供的教學內容，學習 API 使用、提示工程技巧及工具應用。
+* 針對不同課程主題，練習實作並應用所學知識。
+* 利用提供的資源，例如 AWS Workshop 或 Google Vertex 版本的課程，加強學習效果。
+* 完成課程後，可以更有效地運用 Claude SDK 及其相關技術，提升工作效率。
