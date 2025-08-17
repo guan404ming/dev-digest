@@ -1,0 +1,169 @@
+---
+title: '[8/11 - 8/17] GitHub Weekly Digest'
+publishedAt: '2025-08-17'
+---
+## 📌 [umami-software/umami](https://github.com/umami-software/umami)
+<Callout>
+    Description: Umami is a modern, privacy-focused alternative to Google Analytics.\
+    🌐 TypeScript｜⭐️ 30,034 | 2248 stars this week
+</Callout>
+    #### 簡介
+
+Umami 是一個簡單、快速且注重隱私的 Google Analytics 替代方案。它提供了一個開源的網頁分析工具，讓使用者能追蹤網站流量和使用者行為，同時兼顧資料安全。與 Google Analytics 相比，Umami 更注重使用者隱私，不會將資料傳送到第三方伺服器。
+
+
+#### 主要功能
+
+* 網頁流量追蹤 (Website traffic tracking)
+* 使用者行為分析 (User behavior analysis)
+* 資料儀錶板 (Data dashboard)
+* 隱私保護 (Privacy-focused)
+* 開源 (Open-source)
+* 支援多種資料庫 (Supports MariaDB, MySQL, and PostgreSQL)
+
+
+#### 如何使用
+
+* **從原始碼安裝:**
+    * 需準備 Node.js (v18.18 或以上) 和資料庫 (MariaDB v10.5, MySQL v8.0 或 PostgreSQL v12.14 以上)。
+    * 使用 `git clone` 下載程式碼，並執行 `npm install` 安裝套件。
+    * 建立 `.env` 檔案，設定 `DATABASE_URL` (例如: `postgresql://username:mypassword@localhost:5432/mydb`)。
+    * 執行 `npm run build` 編譯應用程式 (首次安裝會自動建立資料庫表格及預設帳號 admin/umami)。
+    * 執行 `npm run start` 啟動應用程式 (預設埠號為 3000)。
+* **使用 Docker 安裝:**
+    * 執行 `docker compose up -d` 建立並啟動 Umami 容器及 PostgreSQL 資料庫。
+    * 或使用 `docker pull` 命令下載預建的 Docker 映像檔 (支援 PostgreSQL 或 MySQL)。  詳細步驟請參考官方檔案 umami.is/docs。
+## 📌 [openai/codex](https://github.com/openai/codex)
+<Callout>
+    Description: Lightweight coding agent that runs in your terminal\
+    🌐 Rust｜⭐️ 35,218 | 2062 stars this week
+</Callout>
+    #### 簡介
+
+OpenAI Codex CLI 是一款可在本地電腦上執行的程式碼產生代理程式，來自 OpenAI。  它與基於雲端的 Codex Web (chatgpt.com/codex) 不同。  Codex CLI 提供強大的程式碼產生和編輯能力，並具備安全沙盒機制，以防止未經授權的檔案修改或網路存取。  使用者可透過不同的身份驗證方式，例如 ChatGPT 方案或 OpenAI API 金鑰，來存取並使用 Codex CLI。  此外，它支援多種模型和客製化設定，提供高度的彈性和控制能力。
+
+
+#### 主要功能
+
+* 程式碼產生與編輯：根據自然語言提示產生程式碼，並支援程式碼重構、測試生成和錯誤修正等功能。
+* 多種模型支援：支援 OpenAI 的 GPT 模型以及其他符合 OpenAI Chat Completions (或 Responses) API 的開源模型。
+* 安全沙盒：提供多層級的沙盒機制，以限制程式碼執行範圍和防止意外操作。  包含讀取模式、寫入模式及進階設定。
+* 多種身份驗證方式：支援使用 ChatGPT Plus/Pro/Team 方案或 OpenAI API 金鑰進行身份驗證。
+* 本地和遠端部署：支援在本地電腦、無頭伺服器（例如 Docker 容器）和遠端伺服器上執行。
+* 互動式與非互動式模式：提供互動式圖形使用者介面 (TUI) 和非互動式命令列模式，方便在不同情境下使用。
+* 客製化設定：允許透過 config.toml 檔案調整沙盒設定、模型選擇、以及其他引數。
+* 開源模型支援：透過設定檔案，可以連線並使用例如 Ollama 等開源大型語言模型。
+
+
+#### 如何使用
+
+* **安裝:** 使用 npm (`npm install -g @openai/codex`) 或 brew (`brew install codex`) 全域安裝，或從 GitHub Release 下載對應平臺的二進位檔案。
+* **登入:** 使用 ChatGPT 方案登入 (需要 Plus, Pro 或 Team 方案)，或設定 `OPENAI_API_KEY` 環境變數使用 API 金鑰。  若在無頭機器上使用，需要額外步驟將認證檔案複製到目標機器。
+* **執行:** 使用 `codex` 命令啟動互動式 TUI，或使用 `codex "your prompt"` 直接輸入提示。  `codex exec "..."`  則用於非互動式模式。
+* **沙盒設定:** 使用 `--sandbox` 選項設定沙盒模式 (read-only, workspace-write, danger-full-access)，以及 `--ask-for-approval` 選項設定是否需要使用者批准。
+* **模型選擇:** 使用 `--model` 選項或在 config.toml 檔案中設定 `model` 引數選擇模型。  可以使用 `--profile` 選擇預設設定檔。
+* **開源模型使用:** 設定 `~/.codex/config.toml` 檔案以使用其他支援 OpenAI API 的開源模型，並使用 `--oss` 旗標。
+* **設定檔:**  修改 `~/.codex/config.toml` 檔案可調整各種引數，例如沙盒模式、批准策略和模型提供者。
+## 📌 [tadata-org/fastapi_mcp](https://github.com/tadata-org/fastapi_mcp)
+<Callout>
+    Description: Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!\
+    🌐 Python｜⭐️ 8,880 | 1912 stars this week
+</Callout>
+    #### 簡介
+
+FastAPI-MCP 是一個能將 FastAPI 端點快速且安全地公開為 Model Context Protocol (MCP) 工具的套件。它內建驗證機制，並能利用您現有的 FastAPI 相依性。  FastAPI-MCP  設計為 FastAPI 的原生擴充套件，而非僅僅是一個將 OpenAPI 轉換為 MCP 的轉換器，這使得它能充分利用 FastAPI 的優勢，例如原生相依性注入和 ASGI 傳輸。  它只需最少的設定即可運作，並能保留您請求模型和回應模型的 Schema 以及 Swagger 檔案。  您可以選擇將 MCP 伺服器掛載到您的 FastAPI 應用程式中，或單獨部署。  若您偏好託管方案，可參考 tadata.com。
+
+
+#### 主要功能
+
+* 內建驗證機制，使用現有的 FastAPI 相依性。
+* 原生 FastAPI 擴充套件，而非 OpenAPI 到 MCP 的轉換器。
+* 配置簡潔，只需指向您的 FastAPI 應用程式即可運作。
+* 保留請求模型和回應模型的 Schema。
+* 保留所有端點的 Swagger 檔案。
+* 彈性部署：將 MCP 伺服器掛載到相同的應用程式或單獨部署。
+* 使用 ASGI 傳輸，直接使用 FastAPI 的 ASGI 介面進行高效通訊。
+* 支援原生 FastAPI 相依性，用於安全地驗證和授權 MCP 端點。
+* 使用 ASGI 通訊協定，直接與 FastAPI 應用程式進行通訊，無需 HTTP 呼叫。
+*  統一基礎架構，FastAPI 應用程式無需與 MCP 伺服器分開執行（儘管也支援單獨部署）。
+
+
+#### 如何使用
+
+* 使用 `uv add fastapi-mcp` 或 `pip install fastapi-mcp` 安裝。
+* 在您的 FastAPI 應用程式中匯入 `FastApiMCP`：
+```python
+from fastapi import FastAPI
+from fastapi_mcp import FastApiMCP
+
+app = FastAPI()
+
+mcp = FastApiMCP(app)
+
+# 掛載 MCP 伺服器
+mcp.mount()
+```
+*  MCP 伺服器將會在 `https://app.base.url/mcp` 可用。
+*  參考提供的檔案和範例程式碼以獲得更進階的使用方法。
+## 📌 [menloresearch/jan](https://github.com/menloresearch/jan)
+<Callout>
+    Description: Jan is an open source alternative to ChatGPT that runs 100% offline on your computer\
+    🌐 TypeScript｜⭐️ 37,074 | 1652 stars this week
+</Callout>
+    #### 簡介
+
+Jan 是一個可在您的裝置上 100% 離線執行的 AI 助理，讓您可以完整控制並保護您的隱私，下載並執行大型語言模型 (LLMs)。它支援 Windows、macOS 和 Linux 系統，並提供穩定版和夜間版供下載。Jan 從 HuggingFace 下載並執行 LLMs，也支援與 OpenAI、Anthropic 等雲端服務整合。
+
+
+#### 主要功能
+
+*   **本地 AI 模型:** 下載並執行來自 HuggingFace 的大型語言模型 (LLMs)，例如 Llama、Gemma、Qwen 等。
+*   **雲端整合:** 連線到 OpenAI、Anthropic、Mistral、Groq 等雲端服務。
+*   **自訂助理:** 建立專門針對您任務的 AI 助理。
+*   **OpenAI 相容 API:** 本地伺服器 (localhost:1337) 供其他應用程式使用。
+*   **模型上下文協定 (MCP) 整合:**  提升功能的 MCP 整合。
+*   **注重隱私:**  所有運算都在本地執行 (當您需要時)。
+
+
+#### 如何使用
+
+*   **下載安裝:** 從 jan.ai 或 GitHub Releases 下載適合您作業系統的版本 (jan.exe, jan.dmg, jan.deb, jan.AppImage)。
+*   **從原始碼編譯 (進階):**  需要 Node.js ≥ 20.0.0、Yarn ≥ 1.22.0、Make ≥ 3.81 和 Rust (for Tauri)。 使用 `make` 或 `mise` 命令進行編譯，例如 `git clone https://github.com/menloresearch/jan; cd jan; make dev` 或 `mise dev`。  `make` 或 `mise` 提供 `dev`, `build`, `test`, `clean` 等目標。
+*   **手動命令 (進階):**  使用 `yarn install`, `yarn build:tauri:plugin:api`, `yarn build:core`, `yarn build:extensions`, `yarn dev` 等命令。
+*   **系統需求:**  macOS 13.6+ (8GB RAM for 3B models, 16GB for 7B, 32GB for 13B), Windows 10+ (建議有 GPU 支援),  大多數 Linux 發行版皆可支援。
+## 📌 [conductor-oss/conductor](https://github.com/conductor-oss/conductor)
+<Callout>
+    Description: Conductor is an event driven orchestration platform providing durable and highly resilient execution engine for your applications\
+    🌐 Java｜⭐️ 25,944 | 1269 stars this week
+</Callout>
+    #### 簡介
+
+* Conductor 是一個開源的微服務協調引擎，由 Netflix 開發，現由 Orkes 團隊和社群維護。
+* 它用於管理微服務和事件驅動的工作流程，允許開發者建立定義服務、資料庫和其他外部系統之間互動的工作流程。
+* Conductor 旨在實現靈活、彈性和可擴充套件的工作流程，並簡化雲原生應用程式和企業系統的協調。
+* 它支援自動重試和回退機制，並具備監控和除錯功能。
+*  Conductor 能夠與微服務、外部 API 和遺留系統無縫整合。
+*  工作流程定義採用 JSON 格式，並支援版本控制。
+
+
+#### 主要功能
+
+* **Workflow as code:** 使用 JSON 定義工作流程，並進行版本管理。
+* **Rich task types:**  提供多種任務型別，例如 HTTP、JSON、Lambda、子工作流程和事件任務，實現靈活的工作流程定義。
+* **Dynamic workflow management:** 工作流程可以獨立於底層服務演進。
+* **Built-in UI:** 提供可自定義的使用者介面來監控和管理工作流程。
+* **Flexible persistence and queue options:** 支援 Redis、MySQL、Postgres 等多種資料庫和佇列選項。
+* **Resilience and Error Handling:** 內建彈性和錯誤處理機制，例如自動重試和回退機制。
+* **Scalability:** 可擴充套件性強，適用於高流量環境下的複雜工作流程。
+* **Observability:** 提供監控和除錯工作流程的功能。
+
+
+#### 如何使用
+
+* **安裝需求:** 安裝 Docker Desktop、Java 17 或更高版本，以及 Node 14（用於 UI 建置）。
+* **快速入門:**  從 GitHub 複製程式碼庫 (`git clone https://github.com/conductor-oss/conductor`)，使用 Docker Compose 啟動 (`docker compose -f docker/docker-compose.yaml up`)。
+* **建立第一個工作流程:** 透過 UI (`http://localhost:8127`) 或 REST API (`http://localhost:8080`) 建立工作流程。
+* **檔案:**  參考 Conductor 檔案獲取更多詳細資訊。
+* **資料庫規格:** 預設使用 Redis 作為持久化儲存，並使用 Elasticsearch (7.x) 或 Opensearch (2.x) 作為索引後端。
+* **從原始碼建置:**  可以從原始碼建置並部署 Conductor 作為獨立的 Java 應用程式。
+* **可用 SDK:** 提供 Java、Python、Javascript、Go 和 C# 等多種 SDK，方便與 Conductor 互動。
