@@ -22,7 +22,13 @@ This repository is designed to automatically generate a weekly digest of trendin
 
 ## 🤖 How to Use
 
+### Prerequisites
+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) - Modern Python package manager
+- [Bun](https://bun.sh/) - Frontend package manager
+
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/guan404ming/blog.git
    cd blog
@@ -32,16 +38,23 @@ This repository is designed to automatically generate a weekly digest of trendin
    - Create a `.env` file and add your API keys and other necessary configurations.
 
 3. Install dependencies:
+
+   **Python (Writer):**
+
    ```bash
    cd writer
-   pip install -r requirements.txt
+   uv sync
    ```
+
+   **Frontend:**
+
    ```bash
    cd frontend
    bun install
    ```
 
 4. Run the application:
+
    ```bash
    cd frontend
    bun run dev

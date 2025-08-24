@@ -5,173 +5,157 @@ publishedAt: '2025-08-24'
 ## 📌 [moeru-ai/airi](https://github.com/moeru-ai/airi)
 <Callout>
     Description: 💖🧸 Self hosted, you owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.\
-    🌐 Vue｜⭐️ 8,022 | 5373 stars this week
+    🌐 Vue｜⭐️ 8,476 | 5373 stars this week
 </Callout>
     #### 簡介
 
-Project AIRI 是一個以 Neuro-sama 為靈感的專案，旨在創造一個可與使用者互動的 AI 角色（虛擬女友/男友、數位寵物或數位夥伴）。不同於其他 AI VTuber 開源專案，AIRI 從一開始就大量使用 Web 技術（WebGPU、WebAudio、Web Workers、WebAssembly、WebSocket 等），使其能在現代瀏覽器和裝置上執行，甚至支援 PWA（Progressive Web App）。儘管瀏覽器版本展示了 Web 技術的可能性，但桌面版 AIRI 預設使用原生 NVIDIA CUDA 和 Apple Metal，以獲得更好的效能。AIRI 的目標是讓使用者隨時隨地擁有自己的數位生命。目前專案仍處於早期開發階段，並積極招募開發者加入。
+Project AIRI 是一個旨在重新創造 Neuro-sama 的開源專案，目標是打造一個可在多平臺執行的 AI 虛擬角色，讓使用者擁有自己的數位生命伴侶。它結合了大型語言模型 (LLM) 的能力，並支援遊戲、聊天等多種互動方式，並強調使用 Web 技術以及跨平臺相容性。不同於其他專案，AIRI 從一開始就著重於 Web 技術 (WebGPU, WebAudio, Web Workers, WebAssembly, WebSocket 等)，讓它可以在現代瀏覽器和行動裝置上執行，同時也支援桌面版本，利用 native NVIDIA CUDA 和 Apple Metal 提升效能。目前專案仍在早期開發階段，積極尋求開發者加入。
 
 
 #### 主要功能
 
-AIRI 的主要功能包括：
+Project AIRI 的主要功能包含：
 
-*   **腦 (Brain):**  透過支援多種大型語言模型 (LLM) API，例如 OpenAI、Google Gemini 等，實現與使用者的自然語言對話。並能執行遊戲，例如 Minecraft 和 Factorio（Factorio 功能仍在開發中）。支援 Telegram 和 Discord 聊天。
-*   **記憶 (Memory):**  內建純瀏覽器資料庫支援 (DuckDB WASM | pglite)，並開發中記憶體 Alaya 系統。  支援純瀏覽器本地 (WebGPU) 推理。
-*   **耳 (Ears):**  支援從瀏覽器和 Discord 接收音訊輸入，並具備客戶端語音辨識和說話偵測功能。
-*   **口 (Mouth):**  使用 ElevenLabs 語音合成技術進行語音輸出。
-*   **身體 (Body):**  支援 VRM 和 Live2D 模型，並具備自動眨眼、自動注視和閒置眼球運動等動畫效果。
+*   **腦 (Brain):**  整合大型語言模型 (LLM)，支援多個 LLM API 提供商，例如 OpenAI、Google Gemini 等。  能進行聊天互動，並可與遊戲互動 (Minecraft, Factorio)。
+*   **記憶 (Memory):** 使用內建瀏覽器資料庫 (DuckDB WASM, pglite) 和 Memory Alaya (開發中) 儲存資訊。
+*   **耳朵 (Ears):** 支援從瀏覽器和 Discord 接收音訊輸入，並進行客戶端語音辨識和說話偵測。
+*   **嘴巴 (Mouth):** 使用 ElevenLabs 語音合成進行語音輸出。
+*   **身體 (Body):** 支援 VRM 和 Live2D 模型，並具備自動眨眼、注視和閒置眼動等動畫功能。
+*   多平臺支援：瀏覽器 (PWA)、桌面應用程式。
+*   豐富的外掛系統 (WIP)。
+*   多種遊戲整合：Minecraft, Factorio (部分功能)。
 
 
 #### 如何使用
 
-目前 AIRI 專案主要透過 `pnpm` 命令進行開發和執行：
+目前 Project AIRI 仍處於開發階段，使用方式主要透過開發者模式參與：
 
-*   `pnpm i`: 安裝專案依賴套件。
-*   `pnpm dev`: 啟動 Stage Web 版本（瀏覽器版本）開發伺服器。
-*   `pnpm dev:tamagotchi`: 啟動 Stage Tamagotchi 版本（桌面版本）開發伺服器。
-*   `pnpm dev:docs`: 啟動檔案網站開發伺服器。
-*   `npx bumpp --no-commit --no-tag`: 釋出版本（需先更新 Cargo.toml 中的版本號）。
+*   **安裝套件:** 使用 `pnpm i` 安裝專案所需的套件。
+*   **啟動開發伺服器:** 使用 `pnpm dev` 啟動瀏覽器版本 (Stage Web) 的開發伺服器；使用 `pnpm dev:tamagotchi` 啟動桌面版本 (Stage Tamagotchi) 的開發伺服器；使用 `pnpm dev:docs` 啟動檔案網站的開發伺服器。
+*   參考 `CONTRIBUTING.md` 檔案，瞭解專案的開發流程和環境設定。
+*   貢獻程式碼：參與專案開發，擴充套件 AIRI 的功能。
+*   目前無公開釋出的使用者版本。
 
-詳細的開發說明請參考 `CONTRIBUTING.md` 檔案。  桌面版本的開發需要額外設定環境，詳情也請參考 `CONTRIBUTING.md`。  AIRI 支援多種 LLM API 提供者，方便使用者選擇不同的模型和服務。
+  專案包含許多子專案，提供多種工具和函式庫，例如：語音轉文字、文字轉語音的通用端點代理伺服器 (unspeech)、HuggingFace Spaces 部署工具 (hfup) 等。
 ## 📌 [simstudioai/sim](https://github.com/simstudioai/sim)
 <Callout>
     Description: Sim is an open-source AI agent workflow builder. Sim's interface is a lightweight, intuitive way to rapidly build and deploy LLMs that connect with your favorite tools.\
-    🌐 TypeScript｜⭐️ 11,625 | 4321 stars this week
+    🌐 TypeScript｜⭐️ 11,712 | 4321 stars this week
 </Callout>
     #### 簡介
 
-Simstudio 是一個用於快速構建和部署 AI 代理工作流程的平臺。它提供雲端託管和自託管兩種方案，支援使用 Ollama 的本地 AI 模型，並具備豐富的功能，例如知識庫和語義搜尋。Simstudio 利用向量嵌入 (vector embeddings) 技術，需要 PostgreSQL 12+ 資料庫以及 pgvector 擴充套件。
+Sim 是一個能讓使用者在幾分鐘內建置和部署 AI 代理工作流程的平臺。它提供雲端託管和自託管兩種部署方式，支援使用本地模型 (例如透過 Ollama)，並整合了向量嵌入功能，例如知識庫和語義搜尋。Sim 使用 PostgreSQL 資料庫 (建議使用 pgvector 擴充套件)，並需要 Bun runtime 環境。
 
 
 #### 主要功能
 
-* 快速構建和部署 AI 代理工作流程。
-* 支援雲端託管 (sim.ai) 和自託管。
-* 自託管方案支援 NPM Package、Docker Compose 和 Dev Containers。
-* 使用 Ollama 執行本地 AI 模型，無需外部 API。
-* 利用向量嵌入 (vector embeddings) 技術實現知識庫和語義搜尋等功能。
-* 提供開發伺服器 (Next.js app 和 realtime socket server)。
-* 支援 Copilot 服務 (需設定 API Keys)。
-* 可自定義設定 Port。
-* 提供 Docker Image 拉取跳過選項。
+* 建置和部署 AI 代理工作流程。
+* 雲端託管 (sim.ai) 和自託管選項。
+* 支援使用 Ollama 執行本地 AI 模型，無需外部 API。
+* 使用向量嵌入進行知識庫和語義搜尋，需要 PostgreSQL 資料庫 (建議使用 pgvector 擴充套件)。
+* 提供多種自託管部署方式：NPM 套件、Docker Compose 和開發容器。
+* 整合 Copilot 服務 (需 API 金鑰)。
+* 提供開發模式，包含主應用程式和即時 Socket 伺服器。
 
 
 #### 如何使用
 
-**雲端託管:** 直接訪問 sim.ai。
-
-**自託管:**
-
-* **NPM Package:** `npx simstudio` (需安裝 Docker)。
-* **Docker Compose:**
-    *  `git clone https://github.com/simstudioai/sim.git`
-    *  `cd sim`
-    *  `docker compose -f docker-compose.prod.yml up -d`  (或使用 `docker-compose.ollama.yml` 執行 Ollama 模型)
-* **Dev Containers:** 使用 VS Code Remote - Containers 擴充套件，執行 `bun run dev:full`。
-* **手動設定:**
-    *  安裝 Bun runtime 和 PostgreSQL 12+ (包含 pgvector 擴充套件)。
-    *  `git clone`, `cd sim`, `bun install`。
-    *  設定 PostgreSQL 和 `.env` 檔案 (包含 `DATABASE_URL`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`)。
-    *  `bunx drizzle-kit migrate`。
-    *  `bun run dev:full` (或分別執行 `bun run dev` 和 `bun run dev:sockets`)。  
-    *  設定 Copilot API Keys (如有需要)。
+* **雲端託管:** 直接訪問 sim.ai。
+* **自託管 (NPM):** 使用 `npx simstudio` 命令。需安裝 Docker。
+* **自託管 (Docker Compose):**  
+    * 複製 GitHub 倉庫: `git clone https://github.com/simstudioai/sim.git`
+    * 使用 `docker compose -f docker-compose.prod.yml up -d`  啟動。
+* **自託管 (Ollama):** 使用 `docker compose -f docker-compose.ollama.yml`  啟動，支援 GPU 和 CPU 版本。
+* **自託管 (開發容器):** 使用 VS Code 的 Remote - Containers 擴充套件。執行 `bun run dev:full`。
+* **自託管 (手動):**  需要 Bun runtime 和 PostgreSQL 12+ (含 pgvector 擴充套件)。需設定 `.env` 檔案，並執行 `bunx drizzle-kit migrate` 和 `bun run dev:full` (或分別啟動 Next.js 應用程式和即時 Socket 伺服器)。  PostgreSQL 和 pgvector 的安裝可選擇 Docker 或手動安裝。
 ## 📌 [coleam00/Archon](https://github.com/coleam00/Archon)
 <Callout>
     Description: Beta release of Archon OS - the knowledge and task management backbone for AI coding assistants.\
-    🌐 Python｜⭐️ 10,399 | 4256 stars this week
+    🌐 Python｜⭐️ 10,467 | 4256 stars this week
 </Callout>
     #### 簡介
 
-Archon 是一個用於強化 AI 程式碼輔助工具的命令中心，目前仍處於 Beta 階段。它提供一個簡潔的介面，用於管理專案的知識庫、上下文和任務。對於 AI 程式碼輔助工具來說，它是一個 Model Context Protocol (MCP) 伺服器，允許它們協同作業並利用相同的知識、上下文和任務。Archon 支援多種 AI 模型 (例如 Claude Code, Kiro, Cursor, Windsurf 等)，並提供智慧搜尋、任務管理以及即時更新等功能，以提升 AI 驅動程式碼的輸出品質。它取代了舊版本的 agenteer，功能更加強大且全面。
+Archon 是一個 beta 版本的 AI 程式碼助理命令中心，提供簡潔的介面來管理專案的知識、上下文和任務。它作為一個模型上下文協定 (MCP) 伺服器，讓多個 AI 程式碼助理 (例如 Claude Code、Kiro、Cursor 等) 能同時存取相同的知識庫、上下文和任務，提升 AI 程式碼生成的效率。Archon 不僅能管理現有程式碼庫，也能應用於新專案，其知識和任務管理功能能改善任何 AI 驅動的程式碼編寫輸出。
 
 
 #### 主要功能
 
-* **知識管理:**  支援智慧網頁爬取、檔案處理 (PDF, Word, Markdown 等)、程式碼範例提取、向量搜尋以及來源管理。
-* **AI 整合:** 提供 Model Context Protocol (MCP) 介面，支援多種 LLM 模型 (OpenAI, Ollama, Google Gemini)，並提供多種 RAG 策略。
-* **專案與任務管理:**  提供階層式專案組織、AI 輔助的專案和任務建立、版本控制檔案以及進度追蹤。
-* **即時協作:**  利用 WebSocket 技術提供即時進度追蹤、多使用者支援、背景處理以及健康監控。
+* **知識管理:** 支援智慧型網頁爬取、檔案處理 (PDF、Word 檔案、Markdown 等)、程式碼範例萃取、向量搜尋及來源管理。
+* **AI 整合:** 提供模型上下文協定 (MCP) 讓多種 AI 程式碼助理連線，支援 OpenAI、Ollama 和 Google Gemini 模型，並提供多種 RAG 策略。
+* **專案與任務管理:** 提供階層式專案組織、AI 輔助的專案與任務建立、檔案版本控制和協同編輯、以及進度追蹤。
+* **即時協作:** 使用 WebSocket 更新提供即時進度追蹤，支援多使用者協同作業，並具備背景處理和健康監控功能。
 
 
 #### 如何使用
 
-* **設定環境:** 安裝 Docker Desktop、Node.js 18+ (混合開發模式)、Supabase 帳號以及 OpenAI API key (或其他支援的模型)。  可選擇安裝 Make 以簡化操作。
-* **複製儲存庫並設定環境變數:** 使用 `git clone` 複製儲存庫，並複製 `.env.example` 到 `.env` 並設定 Supabase 憑證。
-* **設定資料庫:** 在 Supabase SQL 編輯器中執行 `migration/complete_setup.sql`。
-* **啟動服務:** 使用 `docker compose --profile full up --build -d` 或 `make dev-docker` 啟動所有服務 (伺服器、MCP 伺服器、代理程式和 UI)。
-* **設定 API 金鑰:**  訪問  `http://localhost:3737`，在設定中選擇 LLM/嵌入提供者並設定 API 金鑰。
-* **測試功能:**  測試網頁爬取、檔案上傳、專案建立以及與 AI 程式碼輔助工具整合。
-* **重置資料庫 (選項):** 若需重置資料庫，在 Supabase SQL 編輯器中執行 `migration/RESET_DB.sql`，然後重新執行 `migration/complete_setup.sql` 並重新啟動服務。
-* **自訂埠號和主機名稱:** 修改 `.env` 檔案中的相關變數來調整埠號和主機名稱，並重新啟動 Docker 容器。
+* **設定:**  需要 Docker Desktop、Node.js 18+ (混合開發模式)、Supabase 帳號和 OpenAI API 金鑰 (或其他支援的 LLM)。複製 repo、設定 .env 檔案 (包含 Supabase 憑證)、設定資料庫 (執行 `migration/complete_setup.sql`)。
+* **啟動服務:** 使用 `docker compose --profile full up --build -d` 或 `make dev-docker` 啟動 Docker 容器 (伺服器、MCP 伺服器、代理程式和 UI)。
+* **設定 API 金鑰:**  瀏覽器開啟 http://localhost:3737，前往設定頁面設定 LLM/嵌入式提供者的 API 金鑰。
+* **測試:**  上傳檔案、爬取網站，建立專案並新增任務，以及將其與 AI 程式碼助理整合。
+* **資料庫重置:**  如有需要，可執行 `migration/RESET_DB.sql` 重設資料庫，再執行 `migration/complete_setup.sql` 重新建立資料表，並重新啟動服務和設定。
+* **開發模式:** 使用 `make install` 安裝依賴項，並使用 `make dev` 或 `make dev-docker` 啟動混合開發或全 Docker 開發模式。
 ## 📌 [emcie-co/parlant](https://github.com/emcie-co/parlant)
 <Callout>
     Description: LLM agents built for control. Designed for real-world use. Deployed in minutes.\
-    🌐 Python｜⭐️ 7,426 | 3495 stars this week
+    🌐 Python｜⭐️ 7,444 | 3495 stars this week
 </Callout>
     #### 簡介
 
-Parlant 是一個用於開發 AI 代理程式的框架，解決了傳統 LLM 代理程式在遵循指令、處理邊緣案例和保持一致性方面存在的問題。與傳統方法仰賴複雜且難以維護的系統提示不同，Parlant 允許開發者以自然語言定義規則，確保 AI 代理程式始終按照預期行為運作，提高可靠性和一致性，並適用於金融服務、醫療保健、電子商務和法律科技等領域。  它提供生產就緒的解決方案，並具備企業級功能，例如對話旅程、動態準則匹配和可靠的工具整合。
+Parlant 是一個用於開發 AI 代理程式的框架，解決了傳統 LLM 代理程式在遵循指令、處理邊緣情況和保持一致性方面存在的問題。與傳統方法依靠複雜且難以管理的系統提示不同，Parlant 允許開發者以自然語言定義規則和行為準則，確保 AI 代理程式能準確地遵循預期的流程。它提供了建立符合業務需求的客戶端代理程式的結構，並能有效地避免 LLM 產生幻覺或忽略指令。Parlant 的目標是讓 AI 代理程式的開發更可靠、更可預測，並更容易擴充套件。
 
 
 #### 主要功能
 
-* **自然語言定義規則 (Behavioral Guidelines):**  使用自然語言定義 AI 代理程式的行為準則，方便理解和維護。
-* **確保規則遵守 (Ensured rule compliance):**  Parlant 確保 AI 代理程式準確遵循已定義的規則，減少不一致性。
-* **工具整合 (Tool Use):**  將外部 API、資料擷取器或後端服務與特定互動事件連線。
-* **領域適應 (Domain Adaptation):**  讓 AI 代理程式學習領域特定術語並產生個人化回應。
-* **預設回應 (Canned Responses):**  使用回應範本消除幻覺並保證風格一致性。
-* **可解釋性 (Explainability):**  瞭解每個準則匹配和遵循的原因和時間。
-* **對話旅程 (Conversational Journeys):** 引導客戶逐步達成目標。
-* **動態準則匹配 (Dynamic Guideline Matching):** 基於語境應用規則。
-* **可靠的工具整合 (Reliable Tool Integration):** 整合 API、資料庫和外部服務。
-* **對話分析 (Conversation Analytics):** 深入瞭解代理程式行為。
+* **Journeys (旅程):** 定義清晰的客戶旅程，並指定代理程式在每個步驟中的回應方式。
+* **Behavioral Guidelines (行為準則):** 以自然語言輕鬆制定代理程式行為；Parlant 會根據上下文匹配相關元素。
+* **Tool Use (工具使用):** 將外部 API、資料擷取器或後端服務附加到特定的互動事件。
+* **Domain Adaptation (領域適應):** 教導代理程式特定領域的術語，並制定個性化的回應。
+* **Canned Responses (預設回應):** 使用回應範本來消除幻覺並保證風格的一致性。
+* **Explainability (可解釋性):** 瞭解每個準則何時以及為何被匹配和遵循。
+* **Conversational Journeys (對話旅程):** 引導客戶逐步完成目標。
+* **Dynamic Guideline Matching (動態準則匹配):** 基於上下文的規則應用。
+* **Reliable Tool Integration (可靠的工具整合):** API、資料庫、外部服務。
+* **Conversation Analytics (對話分析):** 深入瞭解代理程式行為。
 
 
 #### 如何使用
 
-* 使用 `pip install parlant` 安裝 Parlant。
-* 使用 `import parlant.sdk as p` 匯入 SDK。
-* 使用 `@p.tool` 裝飾器定義工具函式，例如天氣 API 函式 `get_weather`。
-* 使用 `await server.create_agent` 建立 AI 代理程式。
-* 使用 `await agent.create_guideline` 定義行為準則，包含條件、動作和工具。
-* 執行程式碼，AI 代理程式將在 `http://localhost:8800` 啟動。
-* 整合官方 React 元件或自建前端。
-
-程式碼範例：
+Parlant 提供簡潔的 Python SDK，方便開發者快速建立和部署 AI 代理程式。  以下是一個簡單的範例：
 
 ```python
+import parlant.sdk as p
+
 @p.tool
 async def get_weather(context: p.ToolContext, city: str) -> p.ToolResult:
     # Your weather API logic here
     return p.ToolResult(f"Sunny, 72°F in {city}")
 
 async def main():
-    # ... (rest of the code)
+    async with p.Server() as server:
+        agent = await server.create_agent(...)
+        await agent.create_guideline(...)
 ```
+
+透過 `create_agent` 建立代理程式，並使用 `create_guideline` 定義行為準則 (包含條件、動作和使用的工具)。  框架會自動處理準則的匹配和執行，確保代理程式的行為符合預期。  最後，範例中展示瞭如何使用內建的 React 元件或自建前端來整合代理程式。  Parlant 提供完整的可解釋性，方便開發者瞭解代理程式的每個決策。
 ## 📌 [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
 <Callout>
     Description: Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.\
-    🌐 Python｜⭐️ 61,619 | 3472 stars this week
+    🌐 Python｜⭐️ 61,713 | 3472 stars this week
 </Callout>
     #### 簡介
 
-這個專案「Awesome LLM Apps」彙整了許多基於大型語言模型(LLM)的應用程式範例。這些應用程式使用了來自OpenAI、Anthropic、Google以及開源模型（例如DeepSeek、Qwen或Llama）等多種模型，並且整合了RAG、AI Agents、多Agent團隊、MCP、語音Agent等技術。您可以將這些應用程式在本地電腦上執行。本專案旨在展示LLM在不同領域的實際應用，並促進開源LLM應用程式的發展。
+此專案是一個精心策劃的優秀大型語言模型 (LLM) 應用程式集合，涵蓋了基於檢索增強生成 (RAG)、AI 代理、多代理團隊、記憶體控制程式 (MCP)、語音代理等技術的應用程式。這些應用程式使用來自 OpenAI、Anthropic、Google 和開源模型（如 DeepSeek、Qwen 或 Llama）的模型，部分應用程式可在本地電腦上執行。本專案旨在展示 LLM 在不同領域的實際應用，並促進開源 LLM 應用程式的發展。
 
 
 #### 主要功能
 
-* 收集並展示各種基於LLM的應用程式，涵蓋多種模型和技術。
-* 提供使用OpenAI, Anthropic, Google, 和開源LLM模型的應用程式範例。
-* 整合了AI Agents, Agent Teams, MCP, 和 RAG等技術。
-* 包含針對不同應用場景的Agent，例如：資料分析、醫療影像、音樂生成、旅行規劃、金融分析、法律諮詢等等。
-* 提供多種Agent團隊協作的範例。
-* 包含語音Agent和MCP Agent的應用程式。
-* 提供基於RAG的應用程式範例，包含不同的RAG方法和資料來源。
-* 提供LLM應用程式記憶體管理和微調的教學範例。
-* 提供與不同資料來源（例如GitHub、Gmail、PDF、研究論文、Substack和YouTube影片）進行對話的教學範例。
+* 收錄大量基於不同技術（RAG、AI 代理、多代理團隊、MCP、語音代理）的 LLM 應用程式範例。
+* 支援多種 LLM 模型，包括 OpenAI、Anthropic、Google 和開源模型（DeepSeek、Qwen、Llama 等）。
+* 提供涵蓋多個領域的應用程式，例如：AI 代理、多代理團隊、語音 AI 代理、MCP AI 代理、RAG 應用程式、LLM 應用程式記憶體教學、與 X 聊天教學、LLM 微調教學。
+* 部分應用程式可在本地電腦執行，降低使用門檻。
+* 提供良好的檔案和程式碼，方便學習和貢獻。
 
 
 #### 如何使用
 
-此專案是一個應用程式範例的集合，而非單一應用程式。  使用者可以瀏覽README中的各個專案，並根據提供的程式碼和說明，在本地環境中執行這些應用程式。  每個應用程式都基於不同的LLM模型和技術，因此使用方法會有所不同。  需要根據個別應用程式的README檔案瞭解其詳細使用方法及所需依賴項。  部分應用程式可能需要安裝特定的LLM模型和相關庫。  本專案提供各個應用程式的程式碼和說明檔案，方便使用者學習和使用。
+此專案並非單一應用程式，而是一個彙整多個 LLM 應用程式的集合。每個應用程式都有其獨立的使用說明，詳情請參考各個應用程式的 README 檔案。  使用方式通常涉及安裝必要的套件、設定 API 金鑰 (如有需要)，並根據程式碼中的說明執行應用程式。部分應用程式可能需要特定資料集或環境設定。  此專案的價值在於其提供的豐富範例和教學，讓使用者能學習如何構建和部署自己的 LLM 應用程式。
