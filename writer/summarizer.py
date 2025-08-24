@@ -1,12 +1,13 @@
 # Set up Gemini API
 from dotenv import load_dotenv
-import google.generativeai as genai
+from google import genai
 import os
 from opencc import OpenCC
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash-latest")
+
+# Create a single client object
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 cc = OpenCC("s2twp")
 
 
@@ -38,10 +39,10 @@ def summarize_repo(repositories):
         try:
             if len(summaries) >= 5:
                 break
-
-            summary = cc.convert(
-                model.generate_content(prompt + repository["readme"]).text.strip()
+            response = client.models.generate_content(
+                model="gemini-2.5-flash", contents=prompt + repository["readme"]
             )
+            summary = cc.convert(response.text.strip())
 
             if len(summary) > 0:
                 summaries.append(
