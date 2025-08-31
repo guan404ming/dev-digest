@@ -1,0 +1,189 @@
+---
+title: '[8/25 - 8/31] GitHub Weekly Digest'
+publishedAt: '2025-08-31'
+---
+## 📌 [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)
+<Callout>
+    Description: Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude & Gemini\
+    🌐 JavaScript｜⭐️ 17,382 | 8812 stars this week
+</Callout>
+    #### 簡介
+
+本專案旨在收集和彙整各公開部署聊天機器人中的系統訊息指令（System Prompts Leaks）。它記錄了這些聊天機器人的內部指示，為研究其行為模式和潛在資訊洩漏提供了寶貴資源。
+
+#### 主要功能
+
+*   彙集了從多種公開部署聊天機器人中發現的 `System Prompts Leaks`。
+*   提供各個機器人的原始內部系統訊息指令。
+*   作為研究聊天機器人行為、安全性和潛在資訊洩漏的參考資料。
+
+#### 如何使用
+
+*   您可以透過提交 `PR's` (Pull Requests) 來貢獻新的 `system message instructions` 或更新現有內容。
+*   若有任何疑問或想進行討論，請使用專案的 `discussions tabs`。
+*   請勿在 `Issues tab` 中發起一般性討論，`Issues tab` 應保留用於報告問題或提出具體改進建議。
+*   可透過 `Discord` 平臺參與社群互動或獲取進一步資訊。
+## 📌 [plait-board/drawnix](https://github.com/plait-board/drawnix)
+<Callout>
+    Description: 开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等。All in one open-source whiteboard tool with mind, flowchart, freehand and etc.\
+    🌐 TypeScript｜⭐️ 10,032 | 4633 stars this week
+</Callout>
+    #### 簡介
+
+Drawnix 是一款開源且免費的 SaaS 白板工具，提供一體化的創作平臺。它整合了思維導圖、流程圖、自由繪畫等多種功能，旨在成為一個開箱即用的全方位創意工具。
+
+#### 主要功能
+
+*   **免費與開源：** Drawnix 是一款完全免費且開源的協作白板工具。
+*   **多樣繪圖功能：** 支援思維導圖、流程圖、畫筆工具及圖片插入功能。
+*   **靈活匯出與儲存：** 可將內容匯出為 PNG、JSON(.drawnix) 格式，並支援瀏覽器快取自動儲存。
+*   **強大編輯特性：** 提供撤銷、重做、複製、貼上、縮放、滾動等編輯功能，並具備無限畫布。
+*   **智慧語法轉換：** 支援 mermaid 語法轉換為流程圖，以及 markdown 文字轉換為思維導圖。
+*   **外掛化架構：** 基於 plugin mechanism 設計，提供高度擴充套件性，並能支援多種 UI frameworks（如 Angular, React）。
+*   **最佳化使用者體驗：** 支援主題模式，並已適配移動裝置。
+
+#### 如何使用
+
+*   您可以透過訪問 Drawnix 的線上應用程式 `https://drawnix.com` 來直接使用此工具。
+## 📌 [moeru-ai/airi](https://github.com/moeru-ai/airi)
+<Callout>
+    Description: 💖🧸 Self hosted, you owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.\
+    🌐 Vue｜⭐️ 11,902 | 4377 stars this week
+</Callout>
+    #### 簡介
+
+Project AIRI 旨在重現如 Neuro-sama 般的 AI waifu/虛擬角色，讓使用者能隨時隨地擁有並與其數位生命互動。此專案基於 Web 技術開發，支援瀏覽器、行動裝置及桌面版，並透過 HuggingFace & candle 支援原生 GPU 加速。目前正處於早期開發階段，積極尋求貢獻者加入。
+
+#### 主要功能
+
+- **數位生命核心能力 (Brain):** 能夠執行遊戲如 Minecraft 和 Factorio (WIP)，並在 Telegram 和 Discord 進行聊天。
+- **記憶系統 (Memory):** 支援純瀏覽器內的資料庫 (DuckDB WASM | pglite) 及開發中的 Memory Alaya，並提供瀏覽器內的 WebGPU 本地推論。
+- **聽覺輸入 (Ears):** 可從瀏覽器或 Discord 獲取音訊輸入，支援客戶端 Speech Recognition 及 Talking Detection。
+- **語音輸出 (Mouth):** 整合 ElevenLabs 進行高擬真度 Voice Synthesis。
+- **虛擬身體控制 (Body):** 全面支援 VRM 和 Live2D 模型，包含自動眨眼 (Auto blink)、自動凝視 (Auto look at) 及閒置眼部動作 (Idle eye movement) 等動畫控制。
+- **廣泛的 LLM API 支援 (LLM API Providers):** 透過 xsai 支援多種 LLM 服務，包括 OpenRouter, OpenAI, Google Gemini, Anthropic Claude, Ollama 等。
+- **跨平臺執行:** 支援現代瀏覽器、PWA 的行動裝置及利用原生 GPU (NVIDIA CUDA, Apple Metal) 的桌面應用程式。
+- **開放與擴充套件性:** 提供 plugin systems，方便使用者整合及擴充套件功能。
+
+#### 如何使用
+
+- **開發環境設定:**
+  - 首先，執行 `pnpm i` 安裝專案依賴。
+  - 接著，執行 `pnpm dev` 即可啟動開發伺服器。
+- **Stage Web (瀏覽器版本):**
+  - 使用 `pnpm dev` 啟動，或直接訪問 airi.moeru.ai。
+- **Stage Tamagotchi (桌面版本):**
+  - 需參考 `CONTRIBUTING.md` 設定開發環境。
+  - 透過 `pnpm dev:tamagotchi` 啟動。
+  - 若使用 Nix，確保 flakes 已啟用，然後執行 `nix run github:moeru-ai/airi`。
+- **檔案網站:**
+  - 執行 `pnpm dev:docs` 啟動檔案網站的開發模式。
+- **釋出 (Publish):**
+  - 執行 `npx bumpp --no-commit --no-tag` 後，請手動更新 `Cargo.toml` 中的版本號。
+- **貢獻專案:**
+  - 歡迎各領域開發者、藝術家和設計師加入，詳細貢獻指南請查閱 `CONTRIBUTING.md`。
+  - 正在尋找 Live2D modeller, VRM modeller, Computer Vision, Speech Recognition, WebGPU 等領域的專家。
+  - 有興趣者可在 Discord 伺服器上自我介紹。
+## 📌 [winapps-org/winapps](https://github.com/winapps-org/winapps)
+<Callout>
+    Description: Run Windows apps such as Microsoft Office/Adobe in Linux (Ubuntu/Fedora) and GNOME/KDE as if they were a part of the native OS, including Nautilus integration. Hard fork of https://github.com/Fmstrat/winapps/\
+    🌐 Shell｜⭐️ 8,193 | 3606 stars this week
+</Callout>
+    #### 簡介
+
+WinApps 讓您能在 GNU/Linux 系統（如 KDE Plasma、GNOME 或 XFCE）上無縫執行 Windows 應用程式，包括 Microsoft 365 和 Adobe Creative Cloud，提供如同原生應用般的整合體驗。其透過 Docker、Podman 或 libvirt 虛擬機器執行 Windows，查詢已安裝的應用程式，並利用 FreeRDP 將選定的 Windows 應用程式無縫渲染到 GNU/Linux 環境中。
+
+#### 主要功能
+
+- 能夠在 GNU/Linux 系統上無縫執行 Windows 應用程式，如 Microsoft 365 和 Adobe Creative Cloud。
+- 支援所有 Windows 應用程式，但不包括核心級別的反作弊系統（例如 Riot Vanguard）。
+- 透過 Docker、Podman 或 libvirt 虛擬機器執行 Windows，並將應用程式捷徑建立到 GNU/Linux 主機上。
+- GNU/Linux 的 `/home` 目錄可透過 `\\tsclient\home` 在 Windows 中存取。
+- 整合 Nautilus，支援右鍵點選檔案，根據檔案的 MIME type 使用特定的 Windows 應用程式開啟。
+- 提供官方工作列小部件，以便無縫管理 Windows 子系統並啟動 Windows 應用程式。
+- Microsoft Office 連結（例如 `ms-word://`）會自動在 Windows 子系統中開啟。
+- 社群測試的應用程式享有高解析度圖示和預設的 MIME type，以便檔案管理器識別。
+
+#### 如何使用
+
+- **步驟 1：配置 Windows 虛擬機器 (VM)**
+    - 使用 Docker、Podman 或 libvirt 建立或配置一個 Windows VM。
+    - 推薦後端為 Docker 或 Podman 以實現自動化安裝。
+    - 所有方法均利用 KVM 虛擬化以提供高效能。
+- **步驟 2：安裝相依套件**
+    - 根據您的 GNU/Linux 發行版安裝必要的套件，例如 Debian/Ubuntu：
+      ```bash
+      sudo apt install -y curl dialog freerdp3-x11 git iproute2 libnotify-bin netcat-openbsd
+      ```
+    - WinApps 要求 FreeRDP v3 或更高版本。
+- **步驟 3：建立 WinApps 配置檔案**
+    - 在 `~/.config/winapps/winapps.conf` 中設定您的 Windows 使用者名稱 (`RDP_USER`)、密碼 (`RDP_PASS`) 和後端 (`WAFLAVOR`)。
+    - 務必將 `~/.config/winapps/winapps.conf` 的許可權設定為 `600`，僅限您的使用者帳戶可存取。
+- **步驟 4：測試 FreeRDP 連線**
+    - 執行 FreeRDP 命令測試 RDP 連線至您的 Windows VM，例如：
+      ```bash
+      xfreerdp3 /u:"Your Windows Username" /p:"Your Windows Password" /v:192.168.122.2 /cert:tofu
+      ```
+    - 若出現憑證錯誤，請刪除 `~/.config/freerdp/server/` 中相關的舊憑證後重試。
+- **步驟 5：執行 WinApps 安裝程式**
+    - 在 Windows VM 啟動狀態下，執行以下命令完成 WinApps 安裝：
+      ```bash
+      bash <(curl https://raw.githubusercontent.com/winapps-org/winapps/main/setup.sh)
+      ```
+    - 可透過 `winapps-setup --help` 查詢更多引數。
+## 📌 [HKUDS/DeepCode](https://github.com/HKUDS/DeepCode)
+<Callout>
+    Description: "DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)"\
+    🌐 Python｜⭐️ 4,605 | 2945 stars this week
+</Callout>
+    #### 簡介
+
+DeepCode 是一個開源的多代理程式程式碼生成平臺，透過 AI Agents 將想法轉化為可投入生產的程式碼。它旨在推程序式碼生成技術，提供 CLI 和 Web 介面，將研究論文和自然語言轉化為高品質、可投入生產的程式碼，有效解決程式碼實作複雜性、研究瓶頸、開發延遲及重複編碼等挑戰。
+
+#### 主要功能
+
+- **Paper2Code**：自動將複雜演演算法從研究論文轉換為高品質、可投入生產的程式碼，加速演演算法的重現與實作。
+- **Text2Web**：自動化前端網頁開發，將純文字描述轉化為功能齊全、視覺吸引力的前端網頁程式碼，實現快速介面建立。
+- **Text2Backend**：自動化後端開發，根據簡單的文字輸入生成高效、可擴充套件且功能豐富的後端程式碼。
+- **Autonomous Multi-Agent Workflow**：透過可靠的自動化解決常見的開發任務，從概念到程式碼，簡化開發流程。
+- **Research-to-Production Pipeline**：多模態檔案分析引擎，可從學術論文中提取演演算法邏輯和數學模型，生成最佳化實作。
+- **Natural Language Code Synthesis**：使用經微調的語言模型進行上下文感知程式碼生成，支援多種程式語言和框架。
+- **Quality Assurance Automation**：整合靜態分析、自動化單元測試生成和檔案合成，確保程式碼正確性和全面覆蓋。
+- **Multi-Agent Architecture**：由中央協調 Agent、Intent Understanding Agent、Document Parsing Agent 等多個專門 Agent 組成，協同完成複雜的程式碼生成任務。
+
+#### 如何使用
+
+- **步驟 1：安裝**
+    - **直接安裝 (推薦)**：
+        - 執行以下命令安裝 DeepCode package：
+            ```bash
+            pip install deepcode-hku
+            ```
+        - 下載配置檔：
+            ```bash
+            curl -O https://raw.githubusercontent.com/HKUDS/DeepCode/main/mcp_agent.config.yaml
+            curl -O https://raw.githubusercontent.com/HKUDS/DeepCode/main/mcp_agent.secrets.yaml
+            ```
+        - 在 `mcp_agent.secrets.yaml` 中配置 OpenAI 和 Anthropic 的 API keys。
+        - （可選）在 `mcp_agent.config.yaml` 中配置 Brave Search 或 Bocha-MCP 的搜尋 API keys。
+        - （可選）在 `mcp_agent.config.yaml` 中配置檔案分段功能（`enabled` 和 `size_threshold_chars`）。
+    - **開發安裝 (從原始碼)**：
+        - 複製儲存庫：`git clone https://github.com/HKUDS/DeepCode.git` 並進入目錄。
+        - **使用 UV (推薦用於開發)**：
+            - 安裝 UV：`curl -LsSf https://astral.sh/uv/install.sh | sh`。
+            - 建立虛擬環境並安裝依賴：`uv venv --python=3.13`，接著 `source .venv/bin/activate` 和 `uv pip install -r requirements.txt`。
+            - 配置 API 和搜尋 keys 如直接安裝所述。
+        - **使用傳統 pip**：
+            - 安裝依賴：`pip install -r requirements.txt`。
+            - 配置 API 和搜尋 keys 如直接安裝所述。
+    - **Windows 使用者：額外的 MCP Server 配置**：
+        - 全域性安裝 MCP servers：`npm i -g @modelcontextprotocol/server-brave-search` 和 `npm i -g @modelcontextprotocol/server-filesystem`。
+        - 查詢全域性 `node_modules` 路徑（`npm -g root`）。
+        - 更新 `mcp_agent.config.yaml` 以使用 MCP servers 的絕對路徑，例如：
+            ```yaml
+            mcp:
+              servers:
+                brave:
+                  command: "node"
+                  args: ["C:/Program Files/nodejs/node_modules/@modelcontextprotocol/server-brave-search/dist/index.js"]
+            ```
