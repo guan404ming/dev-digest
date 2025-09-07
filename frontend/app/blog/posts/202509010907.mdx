@@ -1,0 +1,252 @@
+---
+title: '[9/1 - 9/7] GitHub Weekly Digest'
+publishedAt: '2025-09-07'
+---
+## 📌 [dockur/windows](https://github.com/dockur/windows)
+<Callout>
+    Description: Windows inside a Docker container.\
+    🌐 Shell｜⭐️ 44,576 | 6784 stars this week
+</Callout>
+    #### 簡介
+這個專案提供了一個在 Docker 容器內執行 Windows 作業系統的解決方案。它支援多種 Windows 版本，並整合了 ISO 下載、KVM 加速及 Web-based viewer 等關鍵功能，讓使用者能夠快速部署一個虛擬化的 Windows 環境，並支援多種客製化配置。
+
+#### 主要功能
+
+*   **在 Docker 容器內執行 Windows：** 提供一個將 Windows 作業系統虛擬化並執行在 Docker 環境中的解決方案。
+*   **ISO downloader：** 內建 ISO 下載器，支援多種 Windows 版本（包括 Desktop 及 Server 版本，從 Windows XP 到 Windows 11/Server 2025）。
+*   **KVM acceleration：** 利用 KVM 技術提供硬體加速，提升虛擬機器效能。
+*   **Web-based viewer：** 提供基於 Web 的檢視器，便於透過瀏覽器進行操作，特別適合安裝初期。
+*   **高度客製化配置：** 可透過環境變數 (environment variables) 調整 CPU cores、RAM size、DISK_SIZE、Windows 版本、語言、使用者憑證等。
+*   **檔案分享功能：** 支援與主機 (host) 共享檔案，透過 Windows 內部的 `\\host.lan\Data` 存取。
+*   **RDP 連線支援：** 除了 Web-viewer 外，也支援使用標準 Microsoft Remote Desktop client 連線以獲得更佳體驗。
+*   **彈性的儲存與網路選項：** 支援自訂儲存位置 (storage location)、多磁碟、磁碟直通 (disk pass-through) 及 macvlan 網路配置。
+
+#### 如何使用
+
+*   **啟動容器：**
+    *   **使用 Docker Compose (推薦)：** 建立 `docker-compose.yml` 檔案，配置必要的環境變數和掛載點，然後執行 `docker compose up -d`。
+        ```yaml
+        services:
+          windows:
+            image: dockurr/windows
+            container_name: windows
+            environment:
+              VERSION: "11" # 例如: "10", "11l", "2022"
+            devices:
+              - /dev/kvm
+              - /dev/net/tun
+            cap_add:
+              - NET_ADMIN
+            ports:
+              - 8006:8006
+              - 3389:3389/tcp
+              - 3389:3389/udp
+            volumes:
+              - ./windows:/storage # 儲存 Windows 磁碟影像
+            restart: always
+        ```
+    *   **使用 Docker CLI：**
+        ```bash
+        docker run -it --rm --name windows -p 8006:8006 \
+          --device=/dev/kvm --device=/dev/net/tun --cap-add NET_ADMIN \
+          -v "${PWD:-.}/windows:/storage" \
+          -e VERSION="11" \
+          dockurr/windows
+        ```
+*   **存取 Windows 環境：**
+    *   開啟您的 Web 瀏覽器，連線至 `http://<您的主機IP>:8006`。
+    *   首次啟動會自動執行 Windows 安裝過程。
+*   **完成安裝：**
+    *   待看到 Windows 桌面後，表示安裝已完成，可開始使用。
+    *   預設使用者名稱為 `Docker`，密碼為 `admin`。
+*   **透過 RDP 連線 (推薦)：**
+    *   安裝後，建議使用 Microsoft Remote Desktop client 連線至容器 IP (Port 3389)，以獲得更好的體驗 (支援音訊、剪貼簿等)。
+*   **選擇 Windows 版本：**
+    *   透過 `environment` 中的 `VERSION` 變數來指定不同的 Windows 版本，例如 `VERSION: "11"` (Windows 11 Pro) 或 `VERSION: "10l"` (Windows 10 LTSC)。
+*   **更改磁碟大小與儲存位置：**
+    *   使用 `DISK_SIZE` 環境變數設定磁碟大小，例如 `DISK_SIZE: "256G"`。
+    *   透過 `volumes` 掛載來指定 Windows 磁碟影像的儲存路徑，例如 `- ./windows:/storage`。
+*   **檔案分享：**
+    *   在 `volumes` 中新增 `- ./example:/data`，即可在 Windows 內透過 `\\host.lan\Data` 存取主機上的 `./example` 資料夾。
+*   **自訂 CPU 與 RAM：**
+    *   在 `environment` 中設定 `CPU_CORES` 和 `RAM_SIZE`，例如 `CPU_CORES: "4"` 和 `RAM_SIZE: "8G"`。
+## 📌 [QuentinFuxa/WhisperLiveKit](https://github.com/QuentinFuxa/WhisperLiveKit)
+<Callout>
+    Description: Real-time & local speech-to-text, translation, and speaker diarization. With server & web UI.\
+    🌐 Python｜⭐️ 6,444 | 2964 stars this week
+</Callout>
+    #### 簡介
+
+WhisperLiveKit 是一個提供即時、完全本地化語音轉文字的解決方案，並具備說話者識別功能。它將即時語音轉錄直接帶到瀏覽器，內含現成可用的後端伺服器與簡單前端。此工具透過 SimulStreaming、WhisperStreaming 等領先技術，解決了傳統 Whisper 模型處理即時音訊分塊時語境丟失的問題，實現低延遲與高品質的即時語音處理。
+
+#### 主要功能
+
+*   **即時語音轉文字 (Real-time Speech-to-Text)**：提供直接在瀏覽器中進行即時語音轉錄的功能。
+*   **說話者識別 (Speaker Diarization)**：支援即時說話者識別功能，可區分不同說話者。
+*   **低延遲處理**：採用 SimulStreaming (超低延遲) 和 WhisperStreaming (低延遲) 等 SOTA 技術，實現高效且流暢的即時轉錄。
+*   **智慧緩衝與增量處理**：不同於傳統 Whisper 模型，透過智慧緩衝和增量處理克服即時音訊分塊的語境問題。
+*   **語音活動檢測 (Voice Activity Detection, VAD)**：內建 Silero VAD 以減少無語音時的處理開銷。
+*   **多使用者支援**：後端架構支援多個併發使用者。
+*   **多種可選後端與模型**：可選用 `faster-whisper`、`mlx-whisper` (適用於 Apple Silicon 最佳化)、或整合 OpenAI API 等後端，並支援多種 Whisper `model` 大小與 `language`。
+*   **高度可配置**：提供豐富的命令列引數和 Python API，允許使用者自定義 `model`、`language`、`task` (轉錄/翻譯) 和 `diarization` 等多項設定。
+
+#### 如何使用
+
+*   **安裝**：
+    *   使用 `pip install whisperlivekit` 安裝套件。
+    *   需預先安裝 FFmpeg，並依作業系統指示進行：
+        *   Ubuntu/Debian: `sudo apt install ffmpeg`
+        *   MacOS: `brew install ffmpeg`
+        *   Windows: 從官方網站下載 .exe 並加入 PATH。
+*   **快速啟動**：
+    1.  啟動轉錄伺服器：`whisperlivekit-server --model base --language en`
+    2.  在瀏覽器中開啟 `http://localhost:8000` 即可開始即時語音轉錄。
+*   **可選依賴項**：根據需求安裝額外的依賴項，例如用於 `Sortformer` 的 speaker diarization (`git+https://github.com/NVIDIA/NeMo.git@main#egg=nemo_toolkit[asr]`) 或 Apple Silicon 最佳化的 `mlx-whisper`。
+*   **命令列介面 (CLI) 使用範例**：
+    *   使用更大模型：`whisperlivekit-server --model large-v3`
+    *   進階配置（包含 diarization 和指定語言）：`whisperlivekit-server --host 0.0.0.0 --port 8000 --model medium --diarization --language fr`
+*   **Python API 整合**：可透過 `TranscriptionEngine` 和 `AudioProcessor` 等類別，結合 `FastAPI` 建立自訂伺服器，參考 `basic_server` 範例進行整合。
+    ```python
+    from whisperlivekit import TranscriptionEngine, AudioProcessor
+    # ... (FastAPI setup)
+    transcription_engine = TranscriptionEngine(model="medium", diarization=True, lan="en")
+    audio_processor = AudioProcessor(transcription_engine=transcription_engine)
+    # ... (websocket handling)
+    ```
+*   **前端實現**：套件內含 HTML/JavaScript 範例，也可透過 `from whisperlivekit import get_inline_ui_html` 匯入。
+*   **引數配置**：重要引數包括 `--model` 大小、`--language`、`--backend` (如 `faster-whisper`)、`--diarization`、`--task translate` 及伺服器設定 (`--host`, `--port`, `--ssl-certfile`, `--ssl-keyfile`)。
+*   **說話者識別設定**：啟用 `diarization` 時，若使用 Diart，需要接受 Hugging Face 上 `pyannote.audio` 模型的使用者條款並登入 (`huggingface-cli login`)。
+## 📌 [bytebot-ai/bytebot](https://github.com/bytebot-ai/bytebot)
+<Callout>
+    Description: Bytebot is a self-hosted AI desktop agent that automates computer tasks through natural language commands, operating within a containerized Linux desktop environment.\
+    🌐 TypeScript｜⭐️ 5,666 | 2671 stars this week
+</Callout>
+    #### 簡介
+
+- Bytebot 是一個開源的 AI Desktop Agent，旨在為您自動完成各項電腦任務。
+- 它擁有一個完整的虛擬桌面環境，能像人類一樣操作應用程式、管理檔案及執行複雜的多步驟工作流程。
+- 不同於僅限瀏覽器的 Agent 或傳統 RPA 工具，Bytebot 可使用任何桌面應用程式，並與檔案系統互動。
+- 這賦予 AI 完整的電腦使用許可權，解鎖了僅靠 API 整合無法實現的強大功能。
+- 想像它是一位擁有專屬電腦、能獨立工作的虛擬員工。
+
+#### 主要功能
+
+- **完整的任務自主性 (Complete Task Autonomy):** 能自主完成多步驟任務，包括瀏覽網頁、處理認證 (含 2FA)、下載及組織檔案到其本地檔案系統。
+- **處理檔案能力 (Process Documents):** 可讀取整個 PDF、從複雜檔案中提取資料、交叉引用多個檔案中的資訊，並根據分析建立新檔案。
+- **使用真實應用程式 (Use Real Applications):** 不僅限於 Web 介面，還能操作桌面應用程式（如文字編輯器、VS Code、Email Client）、執行指令碼及命令列工具。
+- **自然語言任務 (Natural Language Tasks):** 只需以自然語言描述所需任務，Bytebot 即可理解並執行。
+- **檔案上傳支援 (File Uploads):** 可將檔案直接上傳至任務，供 Bytebot 進行處理。
+- **即時桌面檢視 (Live Desktop View):** 提供即時檢視，讓您觀察 Bytebot 在虛擬桌面上的工作進度。
+- **接管模式 (Takeover Mode):** 允許使用者在需要時手動接管控制權，以提供協助或配置。
+- **支援密碼管理器 (Password Manager Support):** 可整合 1Password、Bitwarden 等密碼管理器，實現應用程式和網站的自動認證。
+
+#### 如何使用
+
+- **快速部署 (Quick Start):**
+    - **選項 1: Railway (最簡單):** 點選並加入您的 AI provider API key 即可部署。
+    - **選項 2: Docker Compose:**
+      ```bash
+      git clone https://github.com/bytebot-ai/bytebot.git
+      cd bytebot
+      echo "ANTHROPIC_API_KEY=sk-ant-..." > docker/.env # 或 OPENAI_API_KEY/GEMINI_API_KEY
+      docker-compose -f docker/docker-compose.yml up -d
+      # 開啟 http://localhost:9992
+      ```
+- **設定虛擬桌面 (Configure the Desktop):** 透過 UI 的 "Desktop" 頁籤，您可以安裝額外程式、設定密碼管理器、配置應用程式並登入網站。
+- **建立任務 (Start Giving Tasks):** 以自然語言描述您想 Bytebot 完成的任務，然後觀察它在配置好的虛擬桌面上執行。
+- **範例任務 (Example Tasks):** 支援多種任務型別，包括基本研究（如「總結 quantum computing」）、檔案處理（如「從 PDF 提取付款條款」）及跨應用程式工作流程（如「從多家銀行下載報表並整合」）。
+- **透過 API 建立任務 (Create Tasks via API):** 可透過 REST API 以程式化方式建立任務，支援檔案上傳。
+  ```python
+  import requests
+  # Simple task
+  response = requests.post('http://localhost:9991/tasks', json={
+      'description': 'Download the latest sales report and create a summary'
+  })
+  ```
+- **直接桌面控制 (Direct Desktop Control):** 亦可透過 API 直接控制虛擬桌面行為。
+  ```bash
+  curl -X POST http://localhost:9990/computer-use \
+    -H "Content-Type: application/json" \
+    -d '{"action": "screenshot"}'
+  ```
+## 📌 [chiphuyen/aie-book](https://github.com/chiphuyen/aie-book)
+<Callout>
+    Description: [WIP] Resources for AI engineers. Also contains supporting materials for the book AI Engineering (Chip Huyen, 2025)\
+    🌐 Jupyter Notebook｜⭐️ 7,987 | 1874 stars this week
+</Callout>
+    #### 簡介
+
+本資料庫提供AI Engineering書籍及相關資源。AI Engineering一書旨在涵蓋從基礎模型（Foundation Models）適應實際問題的端到端過程。書中結合了傳統工程技術與新興的基礎模型技術，提供應用框架。內容專注於AI工程的核心原理，而非特定的工具或API。適用於AI工程師、ML工程師、資料科學家等技術角色，旨在幫助讀者解決AI應用中的實際挑戰。
+
+#### 主要功能
+
+*   提供《AI Engineering》書籍的目錄、章節摘要及學習筆記，以及相關的AI工程資源。
+*   包含Prompt examples、Case studies、Misalignment AI內容與ChatGPT及Claude對話熱力圖產生器等實用工具。
+*   提供將基礎模型（Foundation Models），包括LLMs和LMMs，應用於特定情境的端到端框架。
+*   深入探討AI應用評估、幻覺（hallucinations）的偵測與緩解，以及Prompt engineering的最佳實踐。
+*   解釋RAG（Retrieval Augmented Generation）的工作原理與策略，並指導如何建立及評估AI agent。
+*   提供關於模型finetuning的決策指南、資料需求與品質驗證，以及如何最佳化模型的速度、成本與安全性。
+*   教導建立持續改進AI應用的回饋迴圈機制。
+*   幫助讀者理解和導航AI生態系統中的模型型別、評估基準和多樣化的應用模式。
+
+#### 如何使用
+
+*   可透過Amazon、O'Reilly、Kindle及大多數技術書籍銷售平臺購買《AI Engineering》一書。
+*   本資料庫將持續更新，提供更多AI工程資源、Prompt examples、Case studies及趣味工具等補充內容。
+*   讀者可以獨立閱讀《AI Engineering》，或將其與《Designing Machine Learning Systems》（DMLS）作為互補資源一同學習。
+*   本書適用於欲建立、最佳化AI應用程式，或需解決生產問題（如幻覺、安全性、延遲、成本）的工程師及技術經理。
+*   旨在協助讀者系統化AI開發流程，提升團隊效率，並瞭解如何利用基礎模型提升業務價值。
+*   工具開發者、研究人員及AI工程師職位求職者可透過本書獲取相關洞見與所需技能。
+*   書中過於技術性的章節將會事先提醒，讀者可依個人需求選擇性閱讀。
+## 📌 [pedroslopez/whatsapp-web.js](https://github.com/pedroslopez/whatsapp-web.js)
+<Callout>
+    Description: A WhatsApp client library for NodeJS that connects through the WhatsApp Web browser app\
+    🌐 JavaScript｜⭐️ 19,243 | 1471 stars this week
+</Callout>
+    #### 簡介
+
+這是一個 WhatsApp API 客戶端，透過 WhatsApp Web 瀏覽器應用程式連線。它利用 Puppeteer 啟動並管理 WhatsApp Web，從而存取其內部功能，提供幾乎所有 WhatsApp Web 的功能，並可作為 Node.js 應用程式進行動態處理。儘管此方法有助於降低封鎖風險，但 WhatsApp 不允許非官方客戶端，因此不保證完全安全。
+
+#### 主要功能
+
+*   支援 Multi Device 功能。
+*   能傳送及接收各類訊息，包括文字、媒體 (圖片、音訊、視訊、檔案)、貼圖、聯絡人卡片及位置資訊。
+*   可回覆訊息、進行訊息反應 (React to messages)、建立投票及處理 Channels。
+*   完整支援群組管理功能，包括加入群組、獲取邀請、修改群組資訊及設定、新增/移除/升降級群組成員。
+*   支援在訊息中提及使用者或群組。
+*   可執行對話靜音/取消靜音，以及封鎖/解除封鎖聯絡人。
+*   能獲取聯絡人資訊及個人檔案圖片。
+*   可設定使用者狀態訊息。
+
+#### 如何使用
+
+*   Node.js v18+ 版本為必要條件。
+*   透過 npm 安裝模組：
+    ```bash
+    npm i whatsapp-web.js
+    ```
+*   基本用法範例：
+    ```javascript
+    const { Client } = require('whatsapp-web.js');
+
+    const client = new Client();
+
+    client.on('qr', (qr) => {
+        // Generate and scan this code with your phone
+        console.log('QR RECEIVED', qr);
+    });
+
+    client.on('ready', () => {
+        console.log('Client is ready!');
+    });
+
+    client.on('message', msg => {
+        if (msg.body == '!ping') {
+            msg.reply('pong');
+        }
+    });
+
+    client.initialize();
+    ```
+*   更多進階範例請參考 `example.js`。
+*   關於儲存及恢復 sessions 的詳細資訊，請查閱 Authentication Strategies。
