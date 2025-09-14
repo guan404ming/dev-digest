@@ -1,0 +1,256 @@
+---
+title: '[9/8 - 9/14] GitHub Weekly Digest'
+publishedAt: '2025-09-14'
+---
+## 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
+<Callout>
+    Description: all of the workflows of n8n i could find (also from the site itself)\
+    🌐 HTML｜⭐️ 29,391 | 2990 stars this week
+</Callout>
+    #### 簡介
+
+這是一個專業組織的n8n Workflow集合，包含2,053個工作流程，並配備一個極速的檔案系統，提供即時搜尋、分析及瀏覽功能。該系統相較傳統檔案具有100倍的效能提升。
+
+*   集合了2,053個n8n workflows，提供專業的組織與管理。
+*   搭載一個閃電般快速的檔案系統，支援即時搜尋、分析和瀏覽。
+*   檔案系統效能相較傳統方式提升100倍。
+*   因DMCA合規性，儲存庫歷史已於2025年8月14日重寫，現有fork或local clone需注意同步指示。
+*   鼓勵使用者透過贊助支援專案持續改進。
+
+#### 主要功能
+
+*   **高效能檔案系統**: 提供Sub-100ms的回應時間，基於SQLite FTS5的即時全文搜尋，並支援進階過濾。
+*   **最佳化使用者體驗**: 具備Responsive design以適應行動裝置，支援Dark/light themes，並能偵測系統偏好。
+*   **詳盡統計與分析**: 即時顯示365個獨特Integrations和29,445個總Nodes的資料。
+*   **智慧工作流程管理**: 透過Trigger type、Complexity及Service Name進行智慧分類；工作流程名稱自動化轉換成有意義的標題。
+*   **視覺化與資料存取**: 支援即時JSON檢視與下載，以及Mermaid diagram generation，用於工作流程的視覺化。
+*   **豐富的集合**: 包含2,053個n8n workflows，所有流程都經過分析和分類，確保品質。
+*   **自動化分類系統**: 根據Service Name識別和Category Mapping，將工作流程組織成如AI Agent Development、Communication & Messaging等15大類。
+*   **強大後端架構**: 採用SQLite FTS5資料庫、FastAPI後端和Responsive Frontend，並具備MD5 hashing的Change Detection及Background Processing等特性。
+
+#### 如何使用
+
+*   **快速啟動檔案系統**:
+    ```bash
+    pip install -r requirements.txt
+    python run.py
+    # 開啟瀏覽器訪問 http://localhost:8000
+    ```
+*   **安裝與啟動 (推薦)**:
+    ```bash
+    git clone <repo-url>
+    cd n8n-workflows
+    pip install -r requirements.txt
+    python run.py
+    # 於 http://localhost:8000 瀏覽工作流程
+    ```
+*   **開發模式選項**: 可使用 `python run.py --dev` 啟動自動過載，或指定主機/埠 (`--host 0.0.0.0 --port 3000`)，亦可強制資料庫重新索引 (`--reindex`)。
+*   **匯入n8n工作流程**:
+    *   推薦使用 Python importer：`python import_workflows.py`。
+    *   手動匯入：在n8n Editor UI中，選擇「Import workflow」並從`workflows/`資料夾匯入`.json`檔案，之後需更新credentials或webhook URLs。
+*   **API 使用範例**: 可透過 `curl` 指令查詢工作流程，例如依關鍵字、Trigger Type、Complexity或Category進行過濾。
+    ```bash
+    curl "http://localhost:8000/api/workflows?q=telegram+automation"
+    curl "http://localhost:8000/api/workflows/category/messaging"
+    ```
+*   **系統要求**: 需Python 3.7+、現代瀏覽器、50MB儲存空間及n8n Instance。
+*   **貢獻**: 可透過從n8n匯出JSON工作流程、遵循Established pattern命名並將檔案新增至`workflows/`目錄來貢獻，並記得移除敏感資料。
+## 📌 [emcie-co/parlant](https://github.com/emcie-co/parlant)
+<Callout>
+    Description: LLM agents built for control. Designed for real-world use. Deployed in minutes.\
+    🌐 Python｜⭐️ 11,943 | 2852 stars this week
+</Callout>
+    #### 簡介
+
+Parlant 解決了傳統 AI agent 在測試環境表現良好，但在實際使用中出現無視指令、幻覺、無法一致處理邊緣案例等問題。它透過「教導原則」而非「對抗提示」的方式，確保 LLM agent 的行為符合業務要求，從而提供可靠、可預測的生產級 AI 代理。
+
+#### 主要功能
+
+*   提供 Journeys 功能，明確定義客戶旅程並引導 agent 在每個步驟做出正確回應。
+*   透過 Behavioral Guidelines，輕鬆制定 agent 行為，並能根據上下文情境智慧匹配相關規則。
+*   支援 Reliable Tool Integration (Tool Use)，將外部 APIs、資料擷取器或後端服務連線到特定互動事件。
+*   允許 Domain Adaptation，教導 agent 領域專有術語並制定個性化回應，以適應不同業務需求。
+*   提供 Canned Responses，使用回應模板以消除 LLM 幻覺並保證 agent 回覆的風格和語氣一致性。
+*   確保 Guideline 的行為遵從性 (Ensured rule compliance)，為開發者提供可預測且一致的 agent 行為，無需依賴複雜的 system prompts。
+*   具備 Explainability 功能，可讓開發者理解每個 Guideline 被匹配和遵循的原因和時機，便於除錯和最佳化。
+*   內建 Guardrails 以防止幻覺和離題回應，並提供 Conversation Analytics 以深入分析 agent 行為。
+
+#### 如何使用
+
+*   **安裝 Parlant SDK**:
+    ```bash
+    pip install parlant
+    ```
+*   **定義 Tools**:
+    透過 `@p.tool` decorator 建立非同步函式，處理 agent 需要執行的外部邏輯，例如查詢天氣或獲取當前時間。
+    ```python
+    import parlant.sdk as p
+    from datetime import datetime
+
+    @p.tool
+    async def get_weather(context: p.ToolContext, city: str) -> p.ToolResult:
+        # Your weather API logic here
+        return p.ToolResult(f"Sunny, 72°F in {city}")
+
+    @p.tool
+    async def get_datetime(context: p.ToolContext) -> p.ToolResult:
+        return p.ToolResult(datetime.now())
+    ```
+*   **初始化 Agent 伺服器**:
+    在主函式中，使用 `async with p.Server() as server:` 啟動一個本地伺服器。
+*   **建立 Agent**:
+    使用 `await server.create_agent()` 建立一個新的 agent，並賦予其名稱和描述。
+    ```python
+    async def main():
+        async with p.Server() as server:
+            agent = await server.create_agent(
+                name="WeatherBot",
+                description="Helpful weather assistant"
+            )
+    ```
+*   **設定 Agent 變數 (Variable)**:
+    透過 `await agent.create_variable()` 定義 context 變數，可連結至 tool 以自動更新 agent 的狀態。
+    ```python
+    await agent.create_variable(name="current-datetime", tool=get_datetime)
+    ```
+*   **制定 Guideline**:
+    使用 `await agent.create_guideline()` 來控制和引導 agent 的行為。定義觸發的 `condition`、agent 的 `action` 以及需使用的 `tools`。
+    ```python
+    await agent.create_guideline(
+        condition="User asks about weather",
+        action="Get current weather and provide a friendly response with suggestions",
+        tools=[get_weather]
+    )
+    ```
+*   **執行 Agent**:
+    透過 `asyncio.run(main())` 執行主函式。
+    ```python
+    if __name__ == "__main__":
+        import asyncio
+        asyncio.run(main())
+    ```
+*   **測試與整合**:
+     agent 成功執行後，測試 playground 將在 `http://localhost:8800` 準備就緒。可整合官方 React widget 或自行開發前端與 agent 互動。
+## 📌 [Physical-Intelligence/openpi](https://github.com/Physical-Intelligence/openpi)
+<Callout>
+    
+    🌐 Python｜⭐️ 7,329 | 2759 stars this week
+</Callout>
+    #### 簡介
+
+openpi 是一個開源機器人模型與套件庫，由 Physical Intelligence 團隊發布。它包含三種視覺-語言-動作 (VLA) 模型：π₀、π₀-FAST 和 π₀.₅，提供預訓練模型檢查點及微調範例，支援機器人資料集。
+
+- `openpi` 是 Physical Intelligence 團隊發布的開源機器人模型與套件庫。
+- 目前包含三種視覺-語言-動作 (VLA) 模型：基於 flow 的 π₀、基於 FAST action tokenizer 的 autoregressive π₀-FAST，以及升級版 π₀.₅ (支援 flow matching head)。
+- 所有模型都提供預訓練檢查點，這些檢查點已在超過 10k 小時的機器人資料上進行訓練。
+- 提供開箱即用或針對自有資料集進行微調的範例。
+- 提醒使用者，這些模型主要為團隊自有機器人開發，不保證適用於所有平臺 (如 ALOHA 和 DROID)，鼓勵嘗試。
+- 已更新 PyTorch 支援、發布 π₀.₅ 模型、改進 DROID 訓練的閒置過濾器，並提供 DROID 資料集上訓練 VLA 的說明。
+
+#### 主要功能
+
+- 提供多種 VLA 模型：π₀、π₀-FAST 和 π₀.₅，用於機器人視覺-語言-動作控制。
+- 包含豐富的預訓練基礎模型檢查點 (基於 10k+ 小時機器人資料)，以及針對特定平臺和任務的「專家級」微調檢查點。
+- 支援 PyTorch 框架，提供 π₀ 和 π₀.₅ 模型的 PyTorch 實現，並提供 JAX 模型轉換工具。
+- 具備遠端推論功能，可讓模型在不同伺服器上執行，並透過 websocket 將動作串流至機器人。
+- 提供無需實體機器人即可測試推論的指令碼，方便開發和除錯。
+- 內建資料轉換工具，能將自定義資料轉換為 LeRobot 資料集格式，以利訓練。
+- 提供詳細的訓練配置範例，支援計算與過載狀態/動作歸一化統計。
+- 支援多 GPU (DDP) 訓練，用於 PyTorch 模型微調。
+
+#### 如何使用
+
+- **環境設定與安裝**:
+    - **要求**: 需要 NVIDIA GPU (推論 >8GB, LoRA Fine-Tuning >22.5GB, Full Fine-Tuning >70GB) 和 Ubuntu 22.04 作業系統。
+    - **安裝步驟**: 透過 `git clone --recurse-submodules` 克隆倉庫，然後使用 `uv` 安裝 Python 依賴 (`uv sync`, `uv pip install -e .`)。亦可選擇 Docker 安裝。
+- **執行預訓練模型推論**:
+    - 使用 Python 載入配置、下載檢查點並建立策略，透過 `policy.infer(example)` 執行推論。
+    ```python
+    from openpi.training import config as _config
+    from openpi.policies import policy_config
+    from openpi.shared import download
+    config = _config.get_config("pi05_droid")
+    checkpoint_dir = download.maybe_download("gs://openpi-assets/checkpoints/pi05_droid")
+    policy = policy_config.create_trained_policy(config, checkpoint_dir)
+    example = {"observation/exterior_image_1_left": ..., "prompt": "pick up the fork"}
+    action_chunk = policy.infer(example)["actions"]
+    ```
+    - 支援遠端推論及無需實體機器人測試。
+- **在自有資料上微調基礎模型**:
+    - **資料準備**: 參考範例指令碼將自有資料轉換為 LeRobot 資料集格式。
+    - **訓練流程**: 定義訓練配置，計算歸一化統計 (`uv run scripts/compute_norm_stats.py`)，並執行 `uv run scripts/train.py` 啟動訓練。
+    - **策略部署**: 訓練完成後可啟動策略伺服器 (`uv run scripts/serve_policy.py`) 供評估或機器人執行時查詢。
+- **PyTorch 支援**:
+    - **功能**: 目前支援 π₀ 和 π₀.₅，但部分 JAX 功能 (如 π₀-FAST, Mixed Precision Training, FSDP, LoRA Training, EMA Weights) 尚不支援。
+    - **設定**: 確保 `transformers` 庫為指定版本，並應用必要的補丁以確保功能正確。
+    ```bash
+    cp -r ./src/openpi/models_pytorch/transformers_replace/* .venv/lib/python3.11/site-packages/transformers/
+    ```
+    - **JAX 模型轉換**: 提供指令碼 (`examples/convert_jax_model_to_pytorch.py`) 將 JAX 格式的檢查點轉換為 PyTorch 格式。
+    - **PyTorch 推論與微調**: 推論和策略伺服器 API 與 JAX 版本相同，僅需指定 PyTorch 檢查點路徑；微調則需轉換基礎模型並使用 `scripts/train_pytorch.py` 啟動單或多 GPU 訓練。
+## 📌 [Stirling-Tools/Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)
+<Callout>
+    Description: #1 Locally hosted web application that allows you to perform various operations on PDF files\
+    🌐 Java｜⭐️ 67,125 | 2016 stars this week
+</Callout>
+    #### 簡介
+Stirling-PDF 是一個強大的本地託管、基於 Docker 的網頁版 PDF 操作工具。它提供超過 50 種 PDF 功能，讓使用者能執行分割、合併、轉換、重組、加密、壓縮等多元操作。所有檔案處理都確保隱私，檔案僅在客戶端或伺服器記憶體中臨時存在，下載後即刪除。
+
+#### 主要功能
+*   **全面的 PDF 操作**: 提供超過 50 種功能，涵蓋 PDF 頁面操作、轉換、安全及其他工具。
+*   **頁面管理與編輯**: 具備互動式 GUI，可檢視、合併、分割、重組、旋轉、移除頁面，並支援頁面內容的編輯（如註釋、繪圖、文字、圖片）。
+*   **多元格式轉換**: 支援 PDF 與圖片、Word、PowerPoint、HTML、XML、CSV、URL、Markdown 等常見檔案格式的雙向轉換。
+*   **安全與許可權控制**: 可增減密碼、設定許可權、新增浮水印、簽署、清理及自動遮蔽敏感文字。
+*   **效率與自動化**: 支援檔案並行處理、客製化下載選項、建立自動化 'Pipelines' 執行多個任務。
+*   **API 整合**: 提供 API 介面，方便與外部指令碼或系統進行整合。
+*   **進階功能**: 包含 Dark mode、選用 Login and Authentication、資料庫 Backup and Import，以及如 SSO 的 Enterprise features。
+*   **多國語言支援**: 目前 Stirling-PDF 支援 40 種語言介面。
+
+#### 如何使用
+*   **詳細文件**: 請查閱 docs.stirlingpdf.com 上的全面性文件。
+*   **安裝指南**: 文件中包含所有平臺的 Installation guides。
+*   **配置選項**: 提供詳細的 Configuration options 指引。
+*   **功能介紹**: 提供所有 PDF 操作功能的 Feature documentation。
+*   **API 參考**: 包含 API reference 使用方法和參考資料。
+*   **安全設定**: 指導如何進行 Security setup。
+*   **企業功能**: 介紹如何啟用和使用 Enterprise features。
+## 📌 [11cafe/jaaz](https://github.com/11cafe/jaaz)
+<Callout>
+    Description: The world's first open-source multimodal creative assistant This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.\
+    🌐 TypeScript｜⭐️ 4,425 | 1914 stars this week
+</Callout>
+    #### 簡介
+
+Jaaz.app 是一個開源、隱私優先且支援本地部署的 Canva AI 替代品，也是全球首個開源多模態畫布創意代理。它提供「Magic Canva」和「Magic Video」功能，讓使用者能像玩 LEGO 般直觀地透過繪圖和指示來創作，AI 即可即時理解並生成內容。另有企業雲端完整版，支援私有化部署與商業授權。
+
+#### 主要功能
+
+- **One-Prompt Image & Video Generation**: 透過單一 Prompt 在數秒內生成完整的影象或影片。
+  - 支援 GPT-4o, Midjourney, VEO3, Kling, veo3, seedance 等模型。
+  - 具備自動最佳化 Prompt 及多輪精修功能。
+- **Magic Canvas & Magic Video**: 無需 Prompt 即可創作，像 LEGO 般直觀構建。
+  - 透過簡單的素描和自由組合，AI 能即時理解並生成內容。
+  - 影片創作時只需描述步驟，AI 將依據指令生成。
+- **Infinite Canvas & Visual Storyboarding**: 提供無限畫布用於場景規劃。
+  - 可連結版面配置、視覺化管理媒體。
+  - 支援即時協作。
+- **Smart AI Agent System**: 透過聊天指令插入物件、轉移風格、控制邏輯。
+  - 可與本地 (ComfyUI) 和雲端模型協同工作。
+  - 維持多角色的一致性。
+- **Flexible Deployment & Local Assets**: 支援完全離線或混合部署 (Ollama + APIs)。
+  - 內建媒體與 Prompt 庫。
+  - 跨平臺相容 Windows 與 macOS。
+- **Privacy & Security**: 優先本地化處理，確保資料不離開您的裝置。
+  - 開源設計無追蹤。
+  - 商業使用安全，使用者擁有自己的資料。
+
+#### 如何使用
+
+- 從官方網站下載應用程式：[https://jaaz.app/](https://jaaz.app/)
+- 點選首頁右上角的「Log In」按鈕以存取 API 模型。
+- 透過低成本方案，即可無縫使用多種強大的 APIs。
+- 開始與 Agent 聊天，以生成故事或故事板。
+- 範例 Prompt：
+  ```
+  Help me place this character in six different scenes, all in front of landmark buildings from around the world. The lighting is harmonious. He takes photos from all over the world, realistic, with warm light, high picture quality, and a picture ratio of 9:16
+  ```
