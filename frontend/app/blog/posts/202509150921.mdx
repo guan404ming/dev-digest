@@ -1,0 +1,232 @@
+---
+title: '[9/15 - 9/21] GitHub Weekly Digest'
+publishedAt: '2025-09-21'
+---
+## 📌 [microsoft/markitdown](https://github.com/microsoft/markitdown)
+<Callout>
+    Description: Python tool for converting files and office documents to Markdown.\
+    🌐 Python｜⭐️ 79,480 | 6418 stars this week
+</Callout>
+    #### 簡介
+
+MarkItDown 是一個輕量級的 Python 工具，旨在將多種檔案轉換為 Markdown 格式，以供 LLM 應用和文字分析管道使用。它專注於保留檔案的重要結構，例如標題、列表和表格，並提供 MCP 伺服器與 LLM 整合。其輸出主要針對工具消費而非高真度的人類閱讀。
+
+#### 主要功能
+
+*   **多格式轉換**：能將 PDF、PowerPoint、Word、Excel、Images (含 EXIF 與 OCR)、Audio (含 EXIF 與語音轉錄)、HTML、文字格式 (CSV, JSON, XML)、ZIP 檔案、YouTube 網址及 EPubs 等多種檔案型別轉換為 Markdown。
+*   **結構保留**：專注於保留檔案的重要結構與內容，如 headings、lists、tables 和 links，以利文字分析。
+*   **LLM 最佳化**：輸出為 Markdown 格式，此格式接近純文字，且主流 LLM natively 支援並具有 token-efficient 的優勢。
+*   **彈性依賴**：提供可選的 feature-groups 依賴，允許使用者僅安裝所需特定檔案格式 (如 `[pdf]`, `[docx]`, `[audio-transcription]`) 的支援。
+*   **外掛系統**：支援第三方 plugins，可擴充套件轉換功能，預設為禁用狀態。
+*   **Azure Document Intelligence 整合**：可利用 Azure Document Intelligence 服務進行檔案轉換，提升處理能力。
+*   **LLM 影象描述**：支援使用 LLM (如 OpenAI GPT-4o) 為影象檔案 (pptx, image files) 提供描述功能。
+*   **MCP 伺服器**：提供 Model Context Protocol (MCP) 伺服器，方便與如 Claude Desktop 等 LLM 應用程式整合。
+
+#### 如何使用
+
+*   **前置條件**：需要 Python 3.10 或更高版本。強烈建議使用 virtual environment (如 `venv`, `uv`, `conda`) 來管理依賴。
+*   **安裝**：
+    *   標準安裝：`pip install 'markitdown[all]'` 以包含所有可選功能。
+    *   從原始碼安裝：克隆 repository 後，使用 `pip install -e 'packages/markitdown[all]'`。
+    *   **重要更新**：依賴現在分為可選功能組，且 `convert_stream()` 需二進位制檔案物件 (binary file-like object)。
+*   **命令列工具 (CLI)**：
+    *   基本轉換：`markitdown path-to-file.pdf > document.md` 或 `markitdown path-to-file.pdf -o document.md`。
+    *   管道輸入：`cat path-to-file.pdf | markitdown`。
+*   **安裝特定依賴**：為特定檔案格式安裝依賴，例如 `pip install 'markitdown[pdf, docx, pptx]'`。
+*   **外掛使用**：
+    *   列出已安裝外掛：`markitdown --list-plugins`。
+    *   啟用外掛：`markitdown --use-plugins path-to-file.pdf`。
+*   **Azure Document Intelligence 整合**：
+    *   CLI：`markitdown path-to-file.pdf -o document.md -d -e "<document_intelligence_endpoint>"`。
+*   **Python API**：
+    *   基本轉換：
+        ```python
+        from markitdown import MarkItDown
+        md = MarkItDown(enable_plugins=False)
+        result = md.convert("test.xlsx")
+        print(result.text_content)
+        ```
+    *   搭配 Document Intelligence：
+        ```python
+        from markitdown import MarkItDown
+        md = MarkItDown(docintel_endpoint="<document_intelligence_endpoint>")
+        result = md.convert("test.pdf")
+        print(result.text_content)
+        ```
+    *   使用 LLM 進行影象描述：
+        ```python
+        from markitdown import MarkItDown
+        from openai import OpenAI
+        client = OpenAI()
+        md = MarkItDown(llm_client=client, llm_model="gpt-4o")
+        result = md.convert("example.jpg")
+        print(result.text_content)
+        ```
+*   **Docker 部署**：
+    *   構建映像：`docker build -t markitdown:latest .`。
+    *   執行容器：`docker run --rm -i markitdown:latest < ~/your-file.pdf > output.md`。
+## 📌 [Alibaba-NLP/DeepResearch](https://github.com/Alibaba-NLP/DeepResearch)
+<Callout>
+    Description: Tongyi Deep Research, the Leading Open-source Deep Research Agent\
+    🌐 Python｜⭐️ 11,493 | 4610 stars this week
+</Callout>
+    #### 簡介
+
+Tongyi DeepResearch 是由通義實驗室開發的生成式大型語言模型，擁有 305 億總引數，每 token 啟用 33 億引數。專為長時程、深度資訊搜尋任務設計，並在多個 agentic 搜尋基準測試中展現頂尖效能，基於 WebAgent 專案。
+
+#### 主要功能
+
+*   **自動化合成資料生成管線**: 設計了一個高度可擴充套件的全自動化資料合成管線，支援 agentic 預訓練、監督式微調及強化學習。
+*   **大規模 agentic 資料持續預訓練**: 利用多樣化、高品質的 agentic 互動資料，擴充套件模型能力，保持資料新穎性並強化推理效能。
+*   **端到端強化學習**: 採用嚴格的 on-policy RL 方法，基於 Group Relative Policy Optimization 框架，並使用 token-level policy gradients 等技術穩定訓練。
+*   **Agent 推理正規化相容性**: 在推理時，Tongyi DeepResearch 相容於兩種正規化：ReAct（評估模型核心 intrinsic 能力）和基於 IterResearch 的 'Heavy' 模式（利用測試時 scaling 策略釋放最大效能）。
+*   **模型下載**: 提供 Tongyi-DeepResearch-30B-A3B 模型，具 30B-A3B 引數，支援 128K Context Length，可透過 HuggingFace 和 ModelScope 下載。
+*   **基準評估指令碼**: 提供用於評估各種資料集的基準評估指令碼。
+*   **深度研究 Agent 家族**: 擁有多個相關的深度研究 agent 家族，詳情可參考相關學術論文（如 WebWalker, WebDancer, WebSailor）。
+*   **OpenRouter API 整合**: Tongyi-DeepResearch-30B-A3B 模型已可透過 OpenRouter API 進行呼叫，無需 GPU 即可執行推理。
+
+#### 如何使用
+
+*   **環境設定**:
+    *   建議使用 Python 3.10.0 版本。
+    *   強烈建議使用 `conda` 或 `virtualenv` 建立隔離環境：
+        ```bash
+        conda create -n react_infer_env python=3.10.0
+        conda activate react_infer_env
+        ```
+*   **安裝依賴**:
+    *   安裝所有必需的依賴項：
+        ```bash
+        pip install -r requirements.txt
+        ```
+*   **準備評估資料**:
+    *   在專案根目錄下建立 `eval_data/` 資料夾。
+    *   將 JSONL 格式的 QA 檔案（例如 `example.jsonl`）放入此目錄。
+    *   每行必須是包含 `"question"` 和 `"answer"` 鍵的 JSON 物件，例如：`{"question": "...", "answer": "..."}`。
+    *   若計畫使用檔案解析工具，請將檔名前置到問題欄位，並將參考檔案放入 `eval_data/file_corpus/` 目錄。
+*   **配置推理指令碼**:
+    *   開啟 `run_react_infer.sh`，根據註釋修改以下變數：`MODEL_PATH`、`DATASET`、`OUTPUT_PATH`。
+    *   根據啟用的工具（如 retrieval, calculator, web search 等），提供所需的 `API_KEY`、`BASE_URL` 或其他憑證。
+*   **執行推理指令碼**:
+    *   執行以下命令：
+        ```bash
+        bash run_react_infer.sh
+        ```
+*   **透過 OpenRouter API 呼叫模型**:
+    *   修改 `inference/react_agent.py` 檔案：
+        *   在 `call_server` 函式中，設定您的 OpenRouter 帳戶的 API key 和 URL。
+        *   將模型名稱更改為 `alibaba/tongyi-deepresearch-30b-a3b`。
+        *   根據第 88-90 行的註釋調整內容連線方式。
+## 📌 [Zie619/n8n-workflows](https://github.com/Zie619/n8n-workflows)
+<Callout>
+    Description: all of the workflows of n8n i could find (also from the site itself)\
+    🌐 HTML｜⭐️ 32,379 | 3067 stars this week
+</Callout>
+    #### 簡介
+
+這個專案是一個專業組織的 n8n 工作流程集合，包含 2,053 個預先設計的自動化流程。它提供一個超高效能的文件系統，實現即時搜尋、分析與瀏覽功能，效能比傳統文件提升高達百倍。
+
+#### 主要功能
+
+*   **高效能文件系統**: 提供低於 100ms 的回應時間，基於 SQLite FTS5 實現即時全文檢索與進階篩選，並支援響應式設計及深淺色主題。
+*   **全面的工作流程集合**: 包含 2,053 個 n8n 工作流程，涵蓋 365 種獨特整合服務及總計 29,445 個節點，並經過專業分類與品質保證。
+*   **智慧命名與分類系統**: 自動將技術檔案名稱轉換為易讀標題（例如：「Telegram Webhook Automation」），並依觸發型別、複雜度及服務名稱自動分類工作流程。
+*   **豐富的資訊呈現**: 提供即時統計資料、工作流程 Mermaid 圖表生成、JSON 檢視與下載功能。
+*   **多樣化的使用案例分類**: 將工作流程按服務對映至 12 個主要類別，如 `Communication & Messaging`、`AI Agent Development`、`Data Processing & Analysis` 等，便於使用者探索。
+*   **現代技術架構**: 採用 SQLite FTS5 資料庫、FastAPI 後端及響應式前端，支援變更檢測、背景處理、壓縮回應及行動裝置最佳化。
+*   **進階搜尋 API**: 允許透過 API 進行文字搜尋、依觸發型別/複雜度/類別篩選，以及獲取統計資料等。
+
+#### 如何使用
+
+*   **推薦的快速文件系統 (Modern Fast System)**:
+    ```bash
+    git clone <repo-url>
+    cd n8n-workflows
+    pip install -r requirements.txt
+    python run.py
+    ```
+    然後透過 `http://localhost:8000` 瀏覽工作流程。
+*   **開發模式啟動 (Development Mode)**:
+    *   使用 `python run.py --dev` 進行自動重新載入。
+    *   或指定自定義的主機/埠，例如 `python run.py --host 0.0.0.0 --port 3000`。
+*   **強制資料庫重建索引**: 執行 `python run.py --reindex` 以強制重新索引資料庫。
+*   **匯入工作流程到 n8n**:
+    *   **推薦方式**: 使用 Python 匯入器：
+        ```bash
+        python import_workflows.py
+        ```
+    *   **手動方式**: 開啟您的 n8n Editor UI，點選選單 (☰) → Import workflow，選擇 `workflows/` 資料夾中的任何 `.json` 檔案，並在執行前更新憑證/Webhook URL。
+*   **系統要求**: 需要 Python 3.7+、現代瀏覽器、約 50MB 儲存空間及一個 n8n 例項。
+*   **API 使用範例**:
+    *   搜尋工作流程: `curl "http://localhost:8000/api/workflows?q=telegram+automation"`
+    *   依觸發型別與複雜度篩選: `curl "http://localhost:8000/api/workflows?trigger=Webhook&complexity=high"`
+    *   獲取資料庫統計資料: `curl "http://localhost:8000/api/stats"`
+## 📌 [CorentinJ/Real-Time-Voice-Cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning)
+<Callout>
+    Description: Clone a voice in 5 seconds to generate arbitrary speech in real-time\
+    🌐 Python｜⭐️ 56,758 | 1660 stars this week
+</Callout>
+    #### 簡介
+
+本儲存庫實作基於 SV2TTS (Transfer Learning from Speaker Verification to Multispeaker Text-To-Speech Synthesis) 框架的 Real-Time Voice Cloning，是一個碩士論文專案。它能從簡短音訊數位化聲音，並以此參考生成任意文字的語音，其中 vocoder 支援即時運作。請注意，此專案發布至今已較舊，建議參考更新的開源方案以獲得更好的音質。
+
+#### 主要功能
+
+*   實作 SV2TTS 深度學習框架，用於多說話者文字轉語音合成 (Multispeaker Text-To-Speech Synthesis)。
+*   能夠從幾秒鐘的音訊中建立一個聲音的數位表示 (digital representation of a voice)。
+*   以該數位表示為參考，將任意文字生成為語音。
+*   內建的 vocoder 支援 real-time 語音生成。
+*   SV2TTS 框架分三個階段，並整合了以下論文的實作：
+    *   GE2E (encoder): Generalized End-To-End Loss for Speaker Verification
+    *   Tacotron (synthesizer): Tacotron: Towards End-to-End Speech Synthesis
+    *   WaveRNN (vocoder): Efficient Neural Audio Synthesis
+*   支援 Windows 和 Linux 作業系統，並推薦使用 GPU 以提升訓練和推斷 (inference) 速度。
+
+#### 如何使用
+
+*   **環境準備**:
+    *   建議使用 Python 3.7 (Python 3.5 或更高版本應可運作，但可能需調整依賴版本)。
+    *   可選：建議使用 `venv` 設定 virtual environment。
+    *   安裝 `ffmpeg`，這是讀取音訊檔案所必需的。
+    *   安裝 PyTorch：選擇最新的穩定版本、作業系統、套件管理器 (預設為 pip)，並根據您的 GPU 選擇 CUDA 版本，否則選擇 CPU，然後執行提供的指令。
+    *   執行 `pip install -r requirements.txt` 安裝其餘的依賴項。
+*   **下載預訓練模型 (Pretrained Models)**:
+    *   預訓練模型現在會自動下載。如果自動下載失敗，可以手動從提供的連結下載。
+*   **測試配置 (Test Configuration)**:
+    *   在下載任何資料集之前，可以執行 `python demo_cli.py` 來測試您的配置。
+    *   如果所有測試都透過，則表示您的配置已準備就緒。
+*   **下載資料集 (Datasets)**:
+    *   若僅用於工具箱的試玩，資料集是可選的。
+## 📌 [PowerShell/PowerShell](https://github.com/PowerShell/PowerShell)
+<Callout>
+    Description: PowerShell for every system!\
+    🌐 C#｜⭐️ 50,055 | 1505 stars this week
+</Callout>
+    #### 簡介
+
+*   PowerShell 是一個跨平臺 (Windows, Linux, macOS) 的自動化和配置工具/框架。
+*   它擅長處理結構化資料 (JSON, CSV, XML)、REST APIs 和物件模型。
+*   包含命令列 Shell、相關的指令碼語言，以及處理 cmdlets 的框架。
+*   此 GitHub 儲存庫主要處理 PowerShell 7.x 及更高版本。
+
+#### 主要功能
+
+*   支援 Windows, Linux 和 macOS 等多種作業系統。
+*   作為自動化和配置工具/框架，最佳化用於處理 JSON, CSV, XML 等結構化資料、REST APIs 和物件模型。
+*   提供命令列 Shell、相關的指令碼語言，以及處理 cmdlets 的框架。
+*   透過 GitHub Discussions 促進社群成員就非程式碼相關主題進行自由開放的討論。
+*   社群可透過 Gitter, Discord, IRC on Libera.Chat, Slack 等平臺進行即時聊天交流。
+*   提供社群 Dashboard，利用 PowerShell, Azure 和 PowerBI 呈現貢獻和專案狀態。
+*   設有 PowerShell-RFC 儲存庫，用於提交和評論未來的設計提案。
+*   支援貢獻開發，提供 Contribution Guide 和 PowerShell SDK NuGet package 資訊。
+
+#### 如何使用
+
+*   **安裝 PowerShell:** 參閱 Installing PowerShell 檔案以獲取 Windows, macOS 和 Linux 平臺的安裝指南。
+*   **升級 PowerShell:** 建議使用初次安裝時的相同方法進行升級，以獲得最佳結果。
+*   **初次接觸 PowerShell:** 建議查閱 getting started documentation 以瞭解更多資訊。
+*   **回報問題:** PowerShell 7.x 及更高版本的相關問題請在此儲存庫提交；Windows PowerShell 5.1 的問題請使用 Feedback Hub app 回報。
+*   **參與討論:** 透過 GitHub Discussions 參與非程式碼相關的社群討論。
+*   **加入聊天:** 可在 Gitter, Discord, IRC on Libera.Chat 或 Slack 上與其他社群成員即時交流。
+*   **貢獻開發:** 請查閱 Contribution Guide 以瞭解如何開發和貢獻，並可參考 PowerShell-RFC 儲存庫提交設計提案。
+*   **建置原始碼:** 可使用 `git clone https://github.com/PowerShell/PowerShell.git` 下載儲存庫並遵循指示建置。
