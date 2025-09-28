@@ -1,0 +1,210 @@
+---
+title: '[9/22 - 9/28] GitHub Weekly Digest'
+publishedAt: '2025-09-28'
+---
+## 📌 [Gar-b-age/CookLikeHOC](https://github.com/Gar-b-age/CookLikeHOC)
+<Callout>
+    Description: 🥢像老乡鸡🐔那样做饭。主要部分于2024年完工，非老乡鸡官方仓库。文字来自《老乡鸡菜品溯源报告》，并做归纳、编辑与整理。CookLikeHOC.\
+    🌐 JavaScript｜⭐️ 18,780 | 10745 stars this week
+</Callout>
+    #### 簡介
+
+這個專案名為「像老鄉雞那樣做飯」（CookLikeHOC），核心為彙整《老鄉雞菜品溯源報告》中的菜品資訊。專案由貢獻者於2024年完成，與老鄉雞官方無關，旨在提供一個平臺供大眾查閱及補充菜品資料。
+
+#### 主要功能
+
+*   完整收錄《老鄉雞菜品溯源報告》中公佈的所有菜品資料，並經過編輯與整理。
+*   提供線上網頁端，方便使用者直接點選訪問與查閱。
+*   支援 Docker 執行，為使用者提供部署解決方案。
+*   推出由 AI 繪製的手繪圖版及 AI 配圖流程版網頁。
+*   歡迎使用者貢獻菜品的實拍圖。
+*   鼓勵使用者查閱並補充現有菜品資訊。
+
+#### 如何使用
+
+*   點選提供的連結直接訪問專案的線上網頁端。
+*   若需本地部署，請查閱 Docker 支援頁面或相關 PR 以獲取執行指引。
+*   透過網頁端瀏覽所有已錄入的《老鄉雞菜品溯源報告》菜品資料。
+*   可提交實拍圖，豐富菜品視覺內容。
+*   參與補充或修正菜品文字資訊，提升資料的完整性。
+*   探索 AI 手繪圖版及 AI 配圖流程版網頁，體驗不同風格的呈現。
+*   參考鄰近的「How To Cook」專案以獲取更詳細的烹飪指導。
+## 📌 [Alibaba-NLP/DeepResearch](https://github.com/Alibaba-NLP/DeepResearch)
+<Callout>
+    Description: Tongyi Deep Research, the Leading Open-source Deep Research Agent\
+    🌐 Python｜⭐️ 14,891 | 3880 stars this week
+</Callout>
+    #### 簡介
+
+Tongyi DeepResearch 是由通義實驗室開發的代理式大型語言模型，擁有 305 億總引數，每 token 僅啟用 33 億。此模型專為長時間、深度資訊探索任務而設計，並在 Humanity's Last Exam、BrowserComp 等多個代理式搜尋基準測試中展現頂尖效能。
+
+#### 主要功能
+
+-   **自動化合成資料生成管道：** 設計高度可擴充套件的資料合成管道，實現全自動化，支援代理式預訓練、監督式微調及強化學習。
+-   **大規模代理式資料持續預訓練：** 利用多樣化、高品質的代理式互動資料，有效擴充套件模型能力，保持新穎性並強化推理效能。
+-   **端到端強化學習：** 採用基於客製化 Group Relative Policy Optimization 框架的嚴格 on-policy RL 方法，包含 token-level 策略梯度及負樣本選擇性過濾等。
+-   **代理式推理正規化相容性：** 在推理時，Tongyi DeepResearch 相容兩種正規化：ReAct 用於嚴格評估模型核心內在能力；基於 IterResearch 的 'Heavy' 模式則透過測試時擴充套件策略釋放模型最大潛力。
+-   **模型下載：** `Tongyi-DeepResearch-30B-A3B` 模型（30B-A3B 引數，128K 上下文長度）可從 🤗 HuggingFace 和 🤖 ModelScope 下載。
+
+#### 如何使用
+
+1.  **環境設定：**
+    *   推薦使用 Python 3.10.0。
+    *   強烈建議使用 `conda` 或 `virtualenv` 建立隔離環境，例如：
+        ```bash
+        conda create -n react_infer_env python=3.10.0
+        conda activate react_infer_env
+        ```
+2.  **安裝依賴：** 執行 `pip install -r requirements.txt` 安裝所需套件。
+3.  **環境配置與評估資料準備：**
+    *   複製 `.env.example` 為 `.env` 檔案，並配置您的 API keys (例如 `SERPER_KEY_ID`, `JINA_API_KEYS`, `DASHSCOPE_API_KEY`) 及路徑 (`MODEL_PATH`, `DATASET`, `OUTPUT_PATH`)。
+    *   評估資料支援 JSONL (推薦) 或 JSON 格式，每個物件需包含 "question" 和 "answer" 鍵。
+    *   若使用檔案解析工具，請將參考檔案置於 `eval_data/file_corpus/` 目錄，並在問題欄位前置檔案名 (例如：`{"question": "report.pdf What are the key findings?", ...}`)。
+4.  **配置推理指令碼：** 開啟 `run_react_infer.sh`，根據註釋修改 `MODEL_PATH`, `DATASET`, `OUTPUT_PATH` 等變數，並提供所需工具的 API keys。
+5.  **執行推理指令碼：** 執行 `bash run_react_infer.sh` 以執行模型推理。
+6.  **透過 OpenRouter API 呼叫模型 (選用)：**
+    *   修改 `inference/react_agent.py` 中的 `call_server` 函式，設定您的 OpenRouter API key 和 URL。
+    *   將模型名稱更改為 `alibaba/tongyi-deepresearch-30b-a3b`。
+    *   根據註釋調整內容的連線方式 (約 88-90 行)。
+## 📌 [gin-gonic/gin](https://github.com/gin-gonic/gin)
+<Callout>
+    Description: Gin is a high-performance HTTP web framework written in Go. It provides a Martini-like API but with significantly better performance—up to 40 times faster—thanks to httprouter. Gin is designed for building REST APIs, web applications, and microservices.\
+    🌐 Go｜⭐️ 85,969 | 1935 stars this week
+</Callout>
+    #### 簡介
+
+Gin 是一個用 Go 語言編寫的高效能 HTTP web framework，提供類似 Martini 的 API 但效能卓越，比其快上 40 倍。它專為構建 REST APIs、web applications 和 microservices 而設計，特別注重速度與開發者生產力。Gin 結合了 Express.js 風格路由的簡潔性與 Go 的高效能，非常適合處理高吞吐量及快速原型開發。
+
+#### 主要功能
+
+*   **Zero allocation router**：提供極致記憶體效率的路由功能，運作時無堆疊記憶體分配。
+*   **High performance**：在 Go web framework 中展現優異的速度表現。
+*   **Middleware support**：具備可擴充套件的中介軟體系統，支援 authentication, logging, CORS 等多種功能。
+*   **Crash-free**：內建 recovery middleware，有效防止程式 panic 導致伺服器崩潰。
+*   **JSON validation**：提供自動化的請求/回應 JSON 繫結與驗證機制。
+*   **Route grouping**：方便地組織相關路由，並為它們應用共同的中介軟體。
+*   **Error management**：提供集中式的錯誤處理和日誌記錄功能。
+*   **Built-in rendering**：支援 JSON, XML, HTML templates 等多種資料呈現方式。
+
+#### 如何使用
+
+*   **環境要求 (Prerequisites)**
+    *   需要 Go version 1.23 或以上版本。
+    *   建議具備基本的 Go 語言知識。
+*   **安裝 (Installation)**
+    *   Go's module support 讓安裝變得簡單，只需在 Go 程式碼中引入 Gin 即可自動下載：
+        ```go
+        import "github.com/gin-gonic/gin"
+        ```
+*   **你的第一個 Gin 應用程式 (Your First Gin Application)**
+    *   以下是一個完整的簡單範例：
+        ```go
+        package main
+
+        import (
+          "net/http"
+
+          "github.com/gin-gonic/gin"
+        )
+
+        func main() {
+          // 建立一個 Gin 路由器，預設帶有 logger 和 recovery middleware
+          r := gin.Default()
+
+          // 定義一個簡單的 GET endpoint
+          r.GET("/ping", func(c *gin.Context) {
+            // 回傳 JSON 回應
+            c.JSON(http.StatusOK, gin.H{
+              "message": "pong",
+            })
+          })
+
+          // 在 8080 埠啟動伺服器
+          r.Run()
+        }
+        ```
+*   **執行應用程式 (Running the application)**
+    *   將上述程式碼儲存為 `main.go`。
+    *   在終端機中執行 `go run main.go`。
+    *   在瀏覽器中開啟 `http://localhost:8080/ping`，您將看到 `{"message":"pong"}`。
+*   **進一步學習資源 (Next Steps)**
+    *   查閱 Gin Quick Start Guide 以獲取詳盡的教學和 API 範例。
+    *   瀏覽 Example Repository 探索各種 Gin 用例，如 REST API 開發、Authentication & middleware、檔案上傳下載、WebSocket connections 和 Template rendering。
+    *   參考 Go.dev API Documentation 獲取完整的 API 參考資料。
+    *   訪問 gin-gonic.com 上的多語言使用者指南，以及 Go.dev Tutorial: Developing a RESTful API with Go and Gin。
+## 📌 [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners)
+<Callout>
+    Description: 12 Weeks, 24 Lessons, AI for All!\
+    🌐 Jupyter Notebook｜⭐️ 42,571 | 1624 stars this week
+</Callout>
+    #### 簡介
+
+本課程提供一個為期12週、共24堂課的入門級人工智慧(AI)學習體驗。它結合了實用的課程、測驗和實驗，旨在幫助初學者探索AI的世界，涵蓋了從基礎概念到進階的深度學習框架，如TensorFlow和PyTorch，並觸及AI倫理。此課程亦支援多種語言，透過GitHub Action自動更新翻譯內容。
+
+#### 主要功能
+
+*   **全面的AI學習路徑**：涵蓋AI的不同方法，從符號AI（如Knowledge Representation, GOFAI）到現代的Neural Networks和Deep Learning。
+*   **實用的框架應用**：使用業界流行的TensorFlow和PyTorch框架，透過程式碼範例深入說明Neural Networks和Deep Learning的概念。
+*   **專業的影像與文書處理**：介紹Neural Architectures應用於Computer Vision（如CNN、GAN）和Natural Language Processing（如Word2Vec、Transformer、BERT、LLM）。
+*   **探索非主流AI技術**：涵蓋Genetic Algorithms和Multi-Agent Systems等較少見的AI方法。
+*   **專為初學者設計**：提供豐富的學習資源，包括預讀材料、可執行的Jupyter Notebooks、實驗（Labs）以及相關的Microsoft Learn模組連結。
+*   **多語言支援**：透過GitHub Action實現自動化更新，支援繁體中文等多種語言，確保全球學習者的可及性。
+*   **AI倫理考量**：課程包含關於AI倫理和Responsible AI的專題，引導學習者思考AI應用的社會影響。
+*   **課堂內容結構化**：課程分為七個主要單元，從AI簡介到符號AI、神經網路、電腦視覺、自然語言處理、其他AI技術及AI倫理。
+
+#### 如何使用
+
+*   **環境設定**：提供專門的課程（Lesson 0: Course Setup）協助您設定開發環境。教育工作者也有專用的課程設定指南。
+*   **執行程式碼**：課程內容包含可執行的Jupyter Notebooks，可以直接在VSCode或Codespaces中執行。
+*   **取得課程內容**：
+    *   首先，您需要 `Fork the Repository` 到您的GitHub帳戶。
+    *   然後，克隆（clone）您fork出的儲存庫到本地環境。
+*   **參與實作**：部分主題提供實驗（Labs），讓您有機會將所學知識應用於實際問題。
+*   **利用學習資源**：每個課程包含預讀材料、針對特定框架（PyTorch或TensorFlow）的Jupyter Notebooks，以及相關的Microsoft Learn模組連結。
+*   **課堂學習**：依循12週、24堂課的學習路徑，逐步探索AI的各個層面。
+## 📌 [tldraw/tldraw](https://github.com/tldraw/tldraw)
+<Callout>
+    Description: very good whiteboard SDK / infinite canvas SDK\
+    🌐 TypeScript｜⭐️ 43,064 | 1148 stars this week
+</Callout>
+    #### 簡介
+
+*   tldraw 是一個用於在 React 中建立無限畫布 (infinite canvas) 體驗的函式庫。
+*   它是數位白板 tldraw.com 背後的軟體，以公共 monorepo 的形式提供。
+*   欲瞭解更多資訊及閱讀檔案，請造訪 tldraw.dev。
+*   tldraw SDK 在遵守 tldraw 許可證的前提下，允許在商業或非商業專案中使用，但需保留 "Made with tldraw" 浮水印。
+*   若要移除浮水印，可購買 business license。
+
+#### 主要功能
+
+*   提供建立無限畫布 (infinite canvas) 體驗的 React 函式庫。
+*   支援 AI 代理程式使用專案中的 `CONTEXT.md` 檔案來快速建立上下文。
+*   提供 `yarn context` 指令，用於定位並顯示最相關的 `CONTEXT.md` 檔案。
+*   `yarn context` 支援多種選項，例如 `-v` 或 `--verbose` 顯示完整內容，以及 `-r` 或 `--recursive` 尋找所有相關檔案。
+
+#### 如何使用
+
+*   **安裝:** 使用 npm 安裝 tldraw 函式庫：
+    ```bash
+    npm i tldraw
+    ```
+*   **基本用法:** 在 React 應用程式中匯入並使用 `Tldraw` 元件：
+    ```jsx
+    import { Tldraw } from 'tldraw'
+    import 'tldraw/tldraw.css'
+
+    export default function App() {
+        return (
+            <div style={{ position: 'fixed', inset: 0 }}>
+                <Tldraw />
+            </div>
+        )
+    }
+    ```
+*   **本地開發環境設定:**
+    *   首先，複製此 monorepo。
+    *   啟用 corepack 以確保使用正確的 Yarn 版本：`npm i -g corepack`
+    *   安裝專案依賴：`yarn`
+    *   啟動本地開發伺服器：`yarn dev`
+    *   開啟範例專案於 `localhost:5420`。
+*   更多詳細資訊請參閱 tldraw.dev 上的檔案。
