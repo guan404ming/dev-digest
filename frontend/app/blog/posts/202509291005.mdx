@@ -1,0 +1,170 @@
+---
+title: '[9/29 - 10/5] GitHub Weekly Digest'
+publishedAt: '2025-10-05'
+---
+## 📌 [harry0703/MoneyPrinterTurbo](https://github.com/harry0703/MoneyPrinterTurbo)
+<Callout>
+    Description: 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.\
+    🌐 Python｜⭐️ 45,622 | 5535 stars this week
+</Callout>
+    #### 簡介
+
+- MoneyPrinterTurbo 是一款自動化短影片生成工具，僅需提供影片主題或關鍵字。
+- 它能全自動生成影片文案、素材、字幕、背景音樂，並合成高畫質短影片。
+- 該工具支援 Web 及 API 介面，並獲得 RecCloud 提供免費線上服務及佐糖 PicWish 的贊助支援。
+
+#### 主要功能
+
+- 採用完整的 MVC 架構，程式碼結構清晰易維護，同時支援 API 和 Web 介面。
+- 支援 AI 自動生成或自訂影片文案，並提供中文和英文文案選項。
+- 可生成多種高畫質影片尺寸，包括豎屏 9:16 (1080x1920) 和橫屏 16:9 (1920x1080)。
+- 支援批次影片生成，可一次生成多個，並可彈性設定影片片段時長。
+- 提供多種語音合成選擇，可即時試聽效果，並支援字幕生成與字型、位置、顏色、大小、描邊等自訂功能。
+- 可設定背景音樂（隨機或指定音樂檔案），並調整音量。
+- 影片素材來源高畫質且無版權，亦支援使用使用者的本地素材。
+- 支援整合多種大型語言模型 (LLM)，如 OpenAI、Moonshot、DeepSeek 等。
+
+#### 如何使用
+
+- **快速開始：**
+    - 可透過 Google Colab 執行，無需本地環境配置。
+    - Windows 使用者可下載一鍵啟動包，解壓後執行 `update.bat` 更新程式碼，再執行 `start.bat` 啟動。
+- **安裝部署 (通用步驟)：**
+    - 克隆專案程式碼：`git clone https://github.com/harry0703/MoneyPrinterTurbo.git`。
+    - 可選地修改 `config.toml` 檔案，配置 `pexels_api_keys`、`llm_provider` 及相關 API Keys。
+- **Docker 部署：**
+    - 確保 Docker 已安裝，在專案根目錄執行 `docker-compose up`。
+    - 啟動後，透過瀏覽器訪問 Web 介面 `http://0.0.0.0:8501` 及 API 文件 `http://0.0.0.0:8080/docs`。
+- **手動部署：**
+    - 建立 Python 虛擬環境 (`python=3.11`)，並安裝 `requirements.txt`。
+    - 依據作業系統安裝 ImageMagick，並在 `config.toml` 中配置 `imagemagick_path`。
+    - 執行 `webui.sh` (MacOS/Linux) 或 `webui.bat` (Windows) 啟動 Web 介面；執行 `python main.py` 啟動 API 服務。
+- **語音合成：** 支援多種語音選項，可配置 API KEY 使用如 Azure 等更真實的語音。
+- **字幕生成：** 透過 `subtitle_provider` 設定 (在 `config.toml`)，可在 `edge` (生成速度快) 或 `whisper` (品質佳，需下載模型) 間切換。
+- **背景音樂與字型：** 自訂音樂或字型可分別放置於專案的 `resource/songs` 和 `resource/fonts` 目錄。
+## 📌 [commaai/openpilot](https://github.com/commaai/openpilot)
+<Callout>
+    Description: openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.\
+    🌐 Python｜⭐️ 58,195 | 2110 stars this week
+</Callout>
+    #### 簡介
+
+*   openpilot 是一個用於機器人技術的作業系統。
+*   目前，它主要用於升級超過 300 款支援車輛的駕駛輔助系統。
+
+#### 主要功能
+
+*   提供先進的駕駛輔助系統升級，適用於多種汽車型號。
+*   嚴格遵守 ISO26262 指南，並設有全面的安全與測試措施。
+*   內建軟體在迴路 (software-in-the-loop) 測試，每次 commit 都會執行。
+*   安全模型的核心程式碼位於 `panda` 中，以 C 語言編寫並透過嚴格測試。
+*   實施硬體在迴路 (hardware-in-the-loop) 測試，包括對 `panda` 的額外測試。
+*   支援多個軟體分支，包括穩定的 `release3`、提前釋出的 `release3-staging` 以及最新的開發版本 `nightly` 和 `nightly-dev`。
+*   作為一個開源專案，歡迎使用者透過 GitHub 提交 pull requests 和 issues。
+
+#### 如何使用
+
+*   **在車輛中使用 openpilot：**
+    *   需要具備一個支援的裝置，例如 `comma 3X` (可於 comma.ai/shop 購買)。
+    *   透過指定 URL (例如 `openpilot.comma.ai`) 安裝軟體到 `comma 3X` 裝置。
+    *   確保您的車輛是 275+ 款支援車型之一。
+    *   需要專用的車用線束 (car harness) 將 `comma 3X` 連線到您的車輛。
+    *   提供詳細的線束和裝置安裝說明。
+    *   雖然可以在其他硬體上執行 openpilot，但非隨插即用。
+*   **快速開始（通用安裝）：**
+    ```bash
+    bash <(curl -fsSL openpilot.comma.ai)
+    ```
+*   **開始開發 openpilot：**
+    *   透過 GitHub 提交 pull requests 和 issues 參與專案。
+    *   加入社群 Discord 獲取支援和交流。
+    *   查閱貢獻檔案 (contributing docs) 和 openpilot 工具 (openpilot tools)。
+    *   程式碼檔案可在 https://docs.comma.ai 找到。
+    *   執行 openpilot 的相關資訊可在社群 Wiki 上查閱。
+    *   可選擇使用不同分支進行開發和測試：`openpilot.comma.ai` (release)、`openpilot-test.comma.ai` (staging)、`openpilot-nightly.comma.ai` (nightly)。
+## 📌 [humanlayer/humanlayer](https://github.com/humanlayer/humanlayer)
+<Callout>
+    Description: The best way to get AI coding agents to solve hard problems in complex codebases.\
+    🌐 TypeScript｜⭐️ 5,527 | 2009 stars this week
+</Callout>
+    #### 簡介
+
+*   CodeLayer 是一個開源 IDE，旨在讓 AI coding agents 解決複雜程式碼庫中的困難問題。
+*   它建立在 Claude Code 之上，提供經過實戰驗證的工作流程，能夠在大型且複雜的程式碼庫中有效運用 AI。
+*   作為一個開源專案，CodeLayer 具備從個人筆記型電腦到整個團隊的彈性擴充套件能力。
+*   目標是提供最有效的方式，讓 Coding Agents 在複雜的開發環境中發揮最大效益。
+
+#### 主要功能
+
+*   **Superhuman for Claude Code:** 提供以鍵盤為主（Keyboard-first）的工作流程，專為重視速度和控制的開發者設計。
+*   **Advanced Context Engineering:** 旨在幫助團隊將 AI-first 開發擴充套件到整個組織，同時避免混亂。
+*   **M U L T I C L A U D E:** 支援並行執行多個 Claude Code session，可應用於 Worktrees 和 Remote cloud workers 等場景。
+*   透過其 battle-tested workflows，CodeLayer 讓 AI 能在大型且複雜的程式碼庫中解決挑戰性的問題。
+*   背後的開發團隊在 "Context Engineering" 和 "12 Factor Agents" 方面擁有領先專業知識，這些概念奠定了 AI 解決複雜問題的基礎。
+*   顯著提升開發者的生產力與 token consumption 效率（根據使用者回饋）。
+*   為團隊提供客製化工作流程（tailored workflows）、自訂整合（custom integrations）和尖端建議，以實現 AI-first 開發的規模化。
+*   HumanLayer 的專家工程師能與團隊協作，確保每個人都能成為 100x engineer，投資於實際成果而非單純工具。
+
+#### 如何使用
+
+*   使用者可以透過「Join Waitlist」或「Discord」頻道獲取最新資訊或參與社群。
+*   CodeLayer 鼓勵採用 Keyboard-first 的工作流程，以實現更快的速度和精準控制。
+*   透過其 Advanced Context Engineering，團隊可以將 AI-first 開發逐步匯入組織。
+*   利用 M U L T I C L A U D E 功能，使用者可以並行處理多個 Claude Code session，以最佳化工作流程。
+*   產品內建 battle-tested workflows，指導 AI agents 有效解決複雜問題。
+*   對於企業或團隊，可透過電子郵件聯絡 `contact@humanlayer.dev`，以獲取量身定製的解決方案、整合服務及專家指導，以實現 AI-first 開發的全面部署。
+## 📌 [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+<Callout>
+    Description: Interactive roadmaps, guides and other educational content to help developers grow in their careers.\
+    🌐 TypeScript｜⭐️ 339,533 | 1985 stars this week
+</Callout>
+    #### 簡介
+
+`roadmap.sh` 是一個社群驅動的平臺，致力於為開發者提供豐富的學習路線圖 (roadmaps)、文章與資源。其核心特色是所有路線圖皆具備互動性，使用者可以點選路線圖中的節點 (nodes)，以深入探索並理解各個技術主題。此平臺旨在協助開發者清晰地規劃學習路徑並持續提升專業知識。
+
+#### 主要功能
+
+*   提供廣泛且多樣化的互動式學習路線圖 (Roadmaps)，涵蓋 Frontend、Backend、DevOps、Full Stack、AI、Cloud (AWS, Cloudflare)、Data Analysis、Software Engineering、程式語言 (JavaScript, Python, Go, Rust, Java, C++, PHP) 以及行動開發 (Android, iOS, Flutter) 等多個領域。
+*   收錄多種互動式最佳實踐 (Best Practices) 文章，例如 Backend Performance Best Practices、Frontend Performance Best Practices、Code Review Best Practices、API Security Best Practices 和 AWS Best Practices，幫助開發者遵循業界標準。
+*   提供一系列問答集 (Questions)，旨在協助使用者測試、評估並強化其對特定技術主題的知識，包括 JavaScript Questions、Node.js Questions、React Questions、Backend Questions 和 Frontend Questions。
+*   所有路線圖皆具備互動性，允許使用者點選各個節點 (nodes) 以展開更詳細的資訊和相關資源，實現更深入的學習體驗。
+
+#### 如何使用
+
+*   **探索學習路徑：** 瀏覽所有可用的 Roadmaps，或造訪 "get started page" 頁面以獲得引導，幫助您選擇最適合的學習路徑。
+*   **互動式學習：** 點選任何路線圖中的節點 (nodes)，即可展開並深入瞭解該技術主題的詳細資訊、文章和相關資源。
+*   **查閱最佳實踐：** 透過網站提供的 Backend Performance Best Practices、Frontend Performance Best Practices 等分類，學習並應用業界的建議與規範。
+*   **自我知識評估：** 使用 JavaScript Questions、Node.js Questions、React Questions 等問答集來測試和提升您的技術知識水平。
+*   **參與貢獻開發：** 如果您希望貢獻於此專案，可以透過 `git clone` 專案倉庫，安裝所需的 dependencies 後啟動本地開發環境。
+*   **分享社群：** 請考慮在您的社群平臺分享 `roadmap.sh` 及其提供的價值，這將對平臺發展有極大的幫助。
+## 📌 [nextcloud/server](https://github.com/nextcloud/server)
+<Callout>
+    Description: ☁️ Nextcloud server, a safe home for all your data\
+    🌐 PHP｜⭐️ 32,695 | 1846 stars this week
+</Callout>
+    #### 簡介
+
+Nextcloud Server 是一個強大且安全的平臺，讓您能將所有資料儲存在自選的伺服器上。它不僅能確保您的檔案、聯絡人、日曆等內容的私密性與安全，同時也提供跨裝置的資料同步與協作分享功能，是您數位生活的理想之選。
+
+#### 主要功能
+
+*   **資料存取：** 您可以將檔案、聯絡人、日曆及更多內容儲存到您選擇的伺服器上。
+*   **資料同步：** 讓您的檔案、聯絡人、日曆及更多內容在所有裝置間保持同步。
+*   **資料分享：** 透過授予他人存取許可權，輕鬆分享您希望他們檢視或協作的內容。
+*   **應用程式擴充：** 可透過 App Store 擴充數百種應用程式，例如 Calendar、Contacts、Mail、Video Chat 等。
+*   **高安全性：** 具備加密機制、HackerOne bounty program 及 two-factor authentication，確保您的資料安全。
+*   提供對檔案、日曆、聯絡人、通訊等內容的完整控制與保護。
+
+#### 如何使用
+
+*   **取得 Nextcloud：**
+    *   透過我們的網站或應用程式，直接在 Nextcloud Providers 之一註冊帳號。
+    *   在自己的硬體上自行安裝 Nextcloud Server，或使用我們預設好的 appliances。
+    *   購買預裝 Nextcloud 的裝置。
+    *   尋找為您或您的公司提供 Nextcloud 託管服務的服務供應商。
+*   **參與開發：**
+    *   設定您的 local development environment。
+    *   建立一個 branch 並進行修改，記得使用 `git commit -sm "Your commit message"` 簽署您的 commits。
+    *   建立一個 pull request 並 @mention 相關人員進行審閱。
+    *   第三方 components 作為 git submodules 需先初始化，執行 `git submodule update --init` 等命令。
+    *   一些預設包含的 apps (如 First run wizard 或 Activity) 在 master 分支中可能缺失，需手動 clone 到 `apps` 子資料夾。
