@@ -1,0 +1,182 @@
+---
+title: '[10/27 - 11/2] GitHub Weekly Digest'
+publishedAt: '2025-11-02'
+---
+## 📌 [microsoft/agent-lightning](https://github.com/microsoft/agent-lightning)
+<Callout>
+    Description: The absolute trainer to light up AI agents.\
+    🌐 Python｜⭐️ 5,699 | 3643 stars this week
+</Callout>
+    #### 簡介
+
+Agent Lightning 是一個用於訓練 AI agents 的強大工具，旨在以近乎零程式碼修改的方式，將您的 AI agents 轉變為可最佳化的實體。它支援任何 agent 框架，並擁抱 Reinforcement Learning 等多種先進演演算法，為 AI agents 的持續改進提供清晰路徑。
+
+#### 主要功能
+
+- ⚡ **核心最佳化能力**: 幾乎無需程式碼修改 (ZERO CODE CHANGE) 即可將您的 agent 轉化為可最佳化的「野獸」。
+- 🤖 **廣泛的框架支援**: 可與任何 agent 框架協同工作，包括 LangChain, OpenAI Agent SDK, AutoGen, CrewAI, Microsoft Agent Framework，甚至基於 Python OpenAI 的方案。
+- 🎯 **多 agent 系統的靈活最佳化**: 能夠選擇性地最佳化多 agent 系統中的一個或多個 agent。
+- 🤗 **整合多種先進演演算法**: 內建並支援 Reinforcement Learning (RL), Automatic Prompt Optimization, Supervised Fine-tuning 等多種演演算法。
+- **簡潔的架構設計**: Agent Lightning 透過最少的移動元件，讓您專注於想法而非繁瑣的底層架構。
+- **非侵入式執行**: 您的 agent 將照常執行，只需嵌入輕量級的 `agl.emit_xxx()` 輔助函式，或讓 tracer 自動收集 prompts、tool calls 和 rewards。
+- **中央資料樞紐**: 這些事件將結構化為 spans 流入 `LightningStore`，作為任務、資源和追蹤的中央樞紐。
+- **演演算法驅動的改進**: 您選擇或編寫的演演算法從 `LightningStore` 讀取 spans 進行學習，並發布更新的資源，例如最佳化的 prompt templates 或新的 policy weights。
+
+#### 如何使用
+
+- **安裝 Agent Lightning**:
+  ```bash
+  pip install agentlightning
+  ```
+- **詳細安裝指南**: 請查閱官方的 [installation guide](https://agentlightning.io/docs/installation) 以獲取更多細節。
+- **開始使用**: 透過參考 [documentation](https://agentlightning.io/docs) 和 [examples](https://agentlightning.io/examples) 來瞭解如何開始使用 Agent Lightning。
+- **貢獻專案**: 歡迎各界貢獻與建議。請閱讀 [Contributing Guide](https://github.com/microsoft/agentlightning/blob/main/CONTRIBUTING.md) 以瞭解環境設定、分支規範和 Pull Request 要求。
+- **引用**: 如果您在研究或專案中發現 Agent Lightning 有用，請引用我們的論文：
+  ```bibtex
+  @misc{luo2025agentlightningtrainai,
+        title={Agent Lightning: Train ANY AI Agents with Reinforcement Learning},
+        author={Xufang Luo and Yuge Zhang and Zhiyuan He and Zilong Wang and Siyun Zhao and Dongsheng Li and Luna K. Qiu and Yuqing Yang},
+        year={2025},
+        eprint={2508.03680},
+        archivePrefix={arXiv},
+        primaryClass={cs.AI},
+        url={https://arxiv.org/abs/2508.03680},
+  }
+  ```
+## 📌 [yeongpin/cursor-free-vip](https://github.com/yeongpin/cursor-free-vip)
+<Callout>
+    Description: [Support 0.49.x]（Reset Cursor AI MachineID & Bypass Higher Token Limit） Cursor Ai ，自动重置机器ID ， 免费升级使用Pro功能: You've reached your trial request limit. / Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.\
+    🌐 Python｜⭐️ 39,781 | 3305 stars this week
+</Callout>
+    #### 簡介
+
+「Cursor Free VIP」工具支援最新 `0.49.x` 版本的 Cursor，主要用於教育和研究目的。它不會生成虛假的電子郵件帳戶或 OAuth 訪問，並全面支援 Windows、macOS 和 Linux 作業系統。為確保最佳效能，建議以管理員許可權執行並保持其更新。
+
+#### 主要功能
+
+*   支援最新 `0.49.x` 版本的 Cursor。
+*   是一款用於學習和研究的工具，不會生成任何假的電子郵件帳戶和 OAuth 訪問。
+*   全面支援 Windows、macOS 和 Linux 作業系統，涵蓋 `x64`, `x86`, `Intel`, `Apple Silicon` 和 `ARM64` 架構。
+*   提供重置 Cursor 配置的功能。
+*   支援多語言介面，包括 English、簡體中文、繁體中文和 Vietnamese。
+*   建議以管理員許可權執行並保持工具更新，以獲得最佳效能。
+
+#### 如何使用
+
+*   **指令碼自動化執行 (Auto Run Script):**
+    *   **Linux/macOS:** 透過 `curl` 下載並執行安裝指令碼。
+        ```bash
+        curl -fsSL https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.sh -o install.sh && chmod +x install.sh && ./install.sh
+        ```
+    *   **Archlinux:** 透過 `yay` 從 AUR 安裝。
+        ```bash
+        yay -S cursor-free-vip-git
+        ```
+    *   **Windows:** 透過 PowerShell 執行安裝指令碼。
+        ```powershell
+        irm https://raw.githubusercontent.com/yeongpin/cursor-free-vip/main/scripts/install.ps1 | iex
+        ```
+    *   若要停止執行中的指令碼，請按 `Ctrl+C`。
+*   **檔案配置 (Config):**
+    *   配置檔案位於 `Documents/.cursor-free-vip/config.ini`。
+    *   `[Chrome]` 區塊用於設定 Chrome 瀏覽器的路徑 (`chromepath`)。
+    *   `[Turnstile]` 區塊可調整人機驗證的等待時間 (`handle_turnstile_time`, `handle_turnstile_random_time`)。
+    *   `[OSPaths]` 區塊定義了 Cursor 相關的儲存路徑，如 `storage_path`、`sqlite_path` 和 `machine_id_path`。
+    *   `[Timing]` 區塊包含多種操作的隨機等待時間設定，例如頁面載入 (`page_load_wait`)、輸入 (`input_wait`) 和提交 (`submit_wait`)。
+    *   `[Utils]` 區塊用於控制更新檢查 (`check_update`) 和帳號資訊顯示 (`show_account_info`)。
+    *   `[TempMailPlus]` 區塊允許啟用並配置 TempMailPlus 服務，以支援獲取驗證碼 (`enabled`, `email`, `epin`)。
+## 📌 [codecrafters-io/build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)
+<Callout>
+    Description: Master programming by recreating your favorite technologies from scratch.\
+    🌐 Markdown｜⭐️ 432,513 | 3063 stars this week
+</Callout>
+    #### 簡介
+此儲存庫匯集了各種關於從頭開始重新建構流行技術的詳細指南。它旨在提供實作學習的資源，體現了「我無法創造，我便不理解」的費曼名言，是學習新知識的絕佳方式。
+
+#### 主要功能
+
+*   本儲存庫提供了從零開始建構多種技術的指南，涵蓋範圍廣泛。
+*   技術類別包括但不限於：3D Renderer, Augmented Reality, Blockchain / Cryptocurrency, Database, Docker, Emulator / Virtual Machine 等。
+*   每個技術類別下都列出了多個教學資源，通常會註明使用的程式語言。
+*   這些指南以步驟式教學為主，適合想要深入理解技術內部工作原理的學習者。
+*   支援多種程式語言，如 C, C++, Python, JavaScript, Go, Rust 等，方便不同背景的開發者。
+*   資源形式多樣，包含文字教學、程式碼範例，甚至有影片教學連結。
+*   透過實作這些專案，能有效提升對複雜系統的理解與開發技能。
+
+#### 如何使用
+
+*   首先，瀏覽儲存庫首頁列出的「Build your own <insert-technology-here>」清單，選擇您感興趣的技術領域。
+*   點選您選擇的技術名稱，例如 "Build your own 3D Renderer"，將會看到該技術的詳細教學列表。
+*   在該技術列表下，您可以根據偏好的程式語言或教學型別（例如文字、影片）選擇適合的資源。
+*   每個教學連結都指向一個外部指南或專案，提供從頭開始建構該技術的步驟和說明。
+*   建議從易於理解或與您目前技能相符的教程開始，逐步深入學習。
+*   您可以利用儲存庫中提供的豐富資源來實踐「What I cannot create, I do not understand」的學習理念。
+## 📌 [toeverything/AFFiNE](https://github.com/toeverything/AFFiNE)
+<Callout>
+    Description: There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.\
+    🌐 TypeScript｜⭐️ 58,911 | 2663 stars this week
+</Callout>
+    #### 簡介
+
+- AFFiNE.Pro 是一個專注於隱私、本地優先 (local-first)、開源 (open-source) 且即用型的 Notion 與 Miro 替代方案。
+- 它是一個超融合 (hyper-fused) 平臺，旨在為創意人士提供一站式解決方案。
+- AFFiNE 將檔案 (Docs)、畫布 (canvas) 和表格 (tables) 高度整合。
+- 它作為一個一體化的工作空間，提供知識管理 (knowledge management)、wiki、簡報 (presentation) 和數位資產 (digital assets) 等功能。
+
+#### 主要功能
+
+- **真正的區塊畫布體驗**: 將檔案與白板完全融合，允許在無邊界畫布上放置任何形式的 building block，包括 rich text、sticky notes、嵌入式網頁、multi-view databases、連結頁面、形狀和投影片。
+- **多模態 AI 協作夥伴**: 內建 AFFiNE AI，能協助產生專業報告、將大綱轉為投影片、總結文章為 mindmap、整理任務計畫，甚至直接透過 prompt 繪製和編碼原型應用程式和網頁，例如 Canvas AI 協助腦力激盪。
+- **本地優先與即時協作**: 支援 local-first 理念，確保使用者資料始終儲存於本機磁碟。同時，也支援網頁和跨平臺客戶端的 real-time sync 與 collaboration。
+- **自主託管與客製化**: 提供管理、self-host、fork 並建立專屬 AFFiNE 的自由。未來將推出 Plugin community 和 third-party blocks。可參考 Blocksuite 瞭解如何自主託管。
+
+#### 如何使用
+
+- **快速入門與資訊**: 訪問 Home Page、Live Demo、Blog 或 Documentation 以獲取更多詳細資訊。
+- **保持更新**: 在 GitHub 上「Star」專案，即可即時接收所有發布通知。
+- **參與社群**: 加入 Discord 或 AFFiNE Community 參與討論、提問及學習。
+- **報告問題與建議**: 透過 GitHub Issues 提交 Bug Reports 或 Feature Requests。
+- **內容貢獻**: 貢獻自己的 `Template`，讓其他使用者使用。
+- **語言支援**: 參與翻譯及語言支援，請訪問 i18n General Space。
+- **自主託管**: 查閱 Blocksuite 專案以瞭解 AFFiNE 的 self-host 方法。
+- **開發者參與**: 若有意貢獻程式碼，請詳閱 `docs/CONTRIBUTING.md` 並確保已接受 Contributor License Agreement。
+## 📌 [cjpais/Handy](https://github.com/cjpais/Handy)
+<Callout>
+    Description: A free, open source, and extensible speech-to-text application that works completely offline.\
+    🌐 TypeScript｜⭐️ 5,142 | 2031 stars this week
+</Callout>
+    #### 簡介
+
+- Handy 是一款免費、開源且完全離線的跨平臺桌面應用程式，提供簡潔、注重隱私的語音轉文字服務。
+- 它基於 Tauri (Rust + React/TypeScript) 構建，讓使用者無需將語音傳送至雲端，即可透過快捷鍵快速將語音轉換為文字。
+- 其核心設計理念為：免費、開源、私密、簡單，目標是成為最易於 fork 的語音轉文字工具。
+- 支援 Windows, macOS, 和 Linux 等主流作業系統。
+
+#### 主要功能
+
+- **完全離線操作：** 所有語音轉文書處理皆在本機完成，不需網路連線。
+- **隱私優先：** 您的語音資料始終保留在電腦上，絕不傳送至雲端。
+- **跨平臺支援：** 可在 Windows, macOS, 和 Linux 作業系統上執行。
+- **快捷鍵控制：** 支援可配置的鍵盤快捷鍵來啟動/停止錄音或使用 push-to-talk 模式。
+- **直接貼上文字：** 將轉錄完成的文字直接貼上至當前焦點的任何文字輸入欄位。
+- **多種轉錄模型：**
+    - 支援 Whisper 模型 (Small/Medium/Turbo/Large)，並在支援硬體上提供 GPU 加速。
+    - 提供 CPU 最佳化的 Parakeet V3 模型，具備高效能及自動語言偵測功能。
+- **靜音過濾：** 整合 Silero VAD (Voice Activity Detection) 技術，有效過濾錄音中的靜音部分。
+
+#### 如何使用
+
+- **安裝應用程式：**
+    - 從發行頁面或官方網站下載 Handy 的最新版本。
+    - 依照您的作業系統 (Windows, macOS, Linux) 特定指示安裝應用程式。
+- **首次啟動與設定：**
+    - 啟動 Handy 後，請授予應用程式所需的系統許可權 (如麥克風存取、輔助功能)。
+    - 前往設定 (Settings) 頁面，配置您個人偏好的鍵盤快捷鍵，用於啟動/停止錄音或切換 push-to-talk 模式。
+- **進行語音轉錄：**
+    - 按下您配置的鍵盤快捷鍵以開始錄音。
+    - 在快捷鍵啟用期間說出您的內容。
+    - 釋放快捷鍵後，Handy 將處理您的語音並自動進行轉錄。
+    - 轉錄後的文字將直接貼上到您當前使用的應用程式中的文字輸入欄位。
+- **存取除錯模式 (Debug Mode)：**
+    - macOS: `Cmd+Shift+D`
+    - Windows/Linux: `Ctrl+Shift+D`
