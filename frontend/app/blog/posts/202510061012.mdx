@@ -1,0 +1,225 @@
+---
+title: '[10/6 - 10/12] GitHub Weekly Digest'
+publishedAt: '2025-10-12'
+---
+## 📌 [Stremio/stremio-web](https://github.com/Stremio/stremio-web)
+<Callout>
+    Description: Stremio - Freedom to Stream\
+    🌐 JavaScript｜⭐️ 7,391 | 5686 stars this week
+</Callout>
+    #### 簡介
+
+*   Stremio 是一個現代化的媒體中心。
+*   它為您的影片娛樂提供一站式解決決方案。
+*   使用者可以透過易於安裝的 Addons 來發現、觀看和組織影片內容。
+
+#### 主要功能
+
+*   作為一個現代化的媒體中心。
+*   提供一站式的影片娛樂解決方案。
+*   允許使用者發現（Discover）影片內容。
+*   支援觀看（Watch）影片內容。
+*   具備組織（Organize）影片內容的能力。
+*   所有影片內容均透過易於安裝的 Addons 提供。
+
+#### 如何使用
+
+*   **建置 (Build)**：
+    *   **先決條件 (Prerequisites)**：
+        *   Node.js 12 或更高版本。
+        *   pnpm 10 或更高版本。
+    *   **安裝依賴 (Install dependencies)**：
+        ```bash
+        pnpm install
+        ```
+    *   **啟動開發伺服器 (Start development server)**：
+        ```bash
+        pnpm start
+        ```
+    *   **生產環境建置 (Production build)**：
+        ```bash
+        pnpm run build
+        ```
+*   **使用 Docker 執行 (Run with Docker)**：
+    *   **建置 Docker 映像 (Build Docker image)**：
+        ```bash
+        docker build -t stremio-web .
+        ```
+    *   **執行 Docker 容器 (Run Docker container)**：
+        ```bash
+        docker run -p 8080:8080 stremio-web
+        ```
+## 📌 [Infisical/infisical](https://github.com/Infisical/infisical)
+<Callout>
+    Description: Infisical is the open-source platform for secrets, certificates, and privileged access management.\
+    🌐 TypeScript｜⭐️ 22,532 | 2233 stars this week
+</Callout>
+    #### 簡介
+
+*   Infisical 是一個開源的金鑰管理平臺，旨在幫助團隊集中管理應用程式配置和機密資訊，如 API keys 和資料庫憑證，並管理內部的 PKI。
+*   其使命是讓安全工具更易於所有開發人員使用，而非僅限於安全團隊，並透過重新設計開發者體驗來實現這一目標。
+
+#### 主要功能
+
+*   **Secrets Management**: 透過使用者友善的介面管理跨專案和環境的機密；支援原生整合 (如 GitHub, Vercel, AWS)、機密版本控制和即時復原、機密輪換、動態機密生成，並提供機密掃描與洩漏預防、Infisical Kubernetes Operator 和 Infisical Agent 用於注入機密。
+*   **Infisical (Internal) PKI**: 建立 CA 階層、配置憑證模板、發行和管理 X.509 憑證生命週期 (包含 CRL)；支援過期憑證警報，並提供 Infisical PKI Issuer for Kubernetes 和 Enrollment over Secure Transport (EST) 協議。
+*   **Infisical Key Management System (KMS)**: 集中管理跨專案的加密金鑰，並支援使用 symmetric keys 來加密和解密資料。
+*   **Infisical SSH**: 發行 ephemeral SSH Certificates，以實現安全、短生命週期和集中式基礎設施存取。
+*   **General Platform Features**: 提供多種身分驗證方法 (如 Kubernetes Auth, GCP Auth, Azure Auth, AWS Auth, OIDC Auth, Universal Auth)、精細的存取控制 (RBAC, 額外許可權, 臨時存取, 請求流程, 審批流程)、完整的 Audit logs，並支援 Self-hosting、Infisical SDK (Node, Python, Go, Ruby, Java, .NET)、Infisical CLI 和 Infisical API。
+
+#### 如何使用
+
+*   **快速入門**:
+    *   **使用 Infisical Cloud**: 最快且最可靠的方式是免費註冊 Infisical Cloud。
+    *   **部署到本地/雲端**: 支援在本地部署或雲端自託管。
+*   **本地執行 Infisical**:
+    *   確保系統已安裝 Git 和 Docker。
+    *   **Linux/macOS**:
+        ```bash
+        git clone https://github.com/Infisical/infisical && cd "$(basename $_ .git)" && cp .env.example .env && docker compose -f docker-compose.prod.yml up
+        ```
+    *   **Windows Command Prompt**:
+        ```bash
+        git clone https://github.com/Infisical/infisical && cd infisical && copy .env.example .env && docker compose -f docker-compose.prod.yml up
+        ```
+    *   執行後，透過 `http://localhost:80` 建立帳戶。
+*   **機密掃描與洩漏預防**:
+    *   **掃描完整 Git 歷史**:
+        ```bash
+        infisical scan --verbose
+        ```
+    *   **安裝 pre-commit hook**: 掃描每次 commit 在推送到儲存庫之前。
+        ```bash
+        infisical scan install --pre-commit-hook
+        ```
+## 📌 [TapXWorld/ChinaTextbook](https://github.com/TapXWorld/ChinaTextbook)
+<Callout>
+    Description: 所有小初高、大学PDF教材。\
+    🌐 Roff｜⭐️ 52,912 | 2218 stars this week
+</Callout>
+    #### 簡介
+
+*   本專案旨在集中開源中國義務教育資源，以促進其普及並消除地區間的教育貧困。
+*   為解決國內教育資源獲取受限，以及部分人士販售帶有私人水印資源的問題而設立。
+*   另一個主要目的是幫助海外華人子弟持續瞭解並接觸國內教育內容。
+*   期望能培養更多非為考學目的而自主學習的人。
+
+#### 主要功能
+
+*   提供從小學、初中到高中的全套數學教育資料。
+*   涵蓋大學數學課程，包括高等數學、線性代數、離散數學及機率論等。
+*   由於 GitHub 對單一檔案上傳有大小限制，超過 50MB 的大型檔案會被拆分為多個約 35MB 的部分。
+*   提供專用的 `mergePDFs-windows-amd64.exe` 工具，用於合併這些被拆分的 PDF 檔案。
+*   目標是確保教育資源的免費開放獲取，避免使用者需要購買附帶水印的資料。
+
+#### 如何使用
+
+*   **合併被拆分的檔案：**
+    1.  將 `mergePDFs-windows-amd64.exe` 下載至包含所有被拆分 PDF 檔案的相同資料夾中。
+    2.  確保 `mergePDFs-windows-amd64.exe` 與所有拆分檔案（例如 `義務教育教科書 · 數學一年級上冊.pdf.1` 和 `義務教育教科書 · 數學一年級上冊.pdf.2`）位於同一目錄。
+    3.  雙擊執行 `mergePDFs-windows-amd64.exe` 程式，它將自動完成檔案的合併。
+*   **下載檔案合併程式：**
+    *   您可以透過提供的連結下載 `mergePDFs-windows-amd64.exe`。
+*   **重新下載（適用於中國內地且網路狀況良好者）：**
+    *   您可以利用 `tchMaterial` 服務重新下載所需的教育資源。
+## 📌 [microsoft/BitNet](https://github.com/microsoft/BitNet)
+<Callout>
+    Description: Official inference framework for 1-bit LLMs\
+    🌐 Python｜⭐️ 24,096 | 1688 stars this week
+</Callout>
+    #### 簡介
+
+*   `bitnet.cpp` 是 1-bit LLMs (例如 BitNet b1.58) 的官方推論框架。
+*   提供一系列最佳化的核心 (kernels)，支援在 CPU 和 GPU 上對 1.58-bit 模型進行快速且無損的推論 (NPU 支援即將推出)。
+*   在 ARM CPU 上，推論速度提升 1.37x 至 5.07x，能耗降低 55.4% 至 70.0%。
+*   在 x86 CPU 上，推論速度提升 2.37x 至 6.17x，能耗降低 71.9% 至 82.2%。
+*   能在一顆 CPU 上執行 100B BitNet b1.58 模型，速度可達人類閱讀水準 (每秒 5-7 tokens)。
+*   顯著提升在本地裝置執行大型語言模型 (LLMs) 的潛力。
+*   該專案基於 `llama.cpp` 框架，並利用 `T-MAC` 的 Lookup Table 方法構建其核心。
+
+#### 主要功能
+
+*   專為 1.58-bit 模型提供最佳化的 `inference kernels`，確保快速且無損的推論效能。
+*   支援在 CPU 和 GPU 硬體上執行模型，並計劃未來支援 NPU。
+*   能夠在單一 CPU 上高效執行大型模型，例如 100B 的 BitNet b1.58 模型。
+*   支援多種 1-bit LLMs，包括：
+    *   `BitNet-b1.58-2B-4T` (2.4B 引數)
+    *   `bitnet_b1_58-large` (0.7B 引數)
+    *   `bitnet_b1_58-3B` (3.3B 引數)
+    *   `Llama3-8B-1.58-100B-tokens` (8.0B 引數)
+    *   `Falcon3 Family` (1B-10B) 及 `Falcon-E Family` (1B-3B)。
+*   針對不同模型和 CPU 架構 (x86/ARM) 支援特定的 `kernel` 型別 (I2_S, TL1, TL2)。
+
+#### 如何使用
+
+*   **環境要求:**
+    *   `python>=3.9`, `cmake>=3.22`, `clang>=18`。
+    *   Windows 使用者需安裝 Visual Studio 2022 並啟用 C++ 桌面開發、C++-CMake 工具等選項。
+    *   Debian/Ubuntu 可使用 `bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"` 指令碼進行安裝。
+    *   強烈建議使用 `conda` 管理環境。
+*   **從原始碼構建:**
+    1.  克隆儲存庫:
+        ```bash
+        git clone --recursive https://github.com/microsoft/BitNet.git
+        cd BitNet
+        ```
+    2.  安裝依賴 (建議使用 `conda`):
+        ```bash
+        conda create -n bitnet-cpp python=3.9
+        conda activate bitnet-cpp
+        pip install -r requirements.txt
+        ```
+    3.  下載模型並設定環境 (例如 `BitNet-b1.58-2B-4T` 模型與 `i2_s` 量化型別):
+        ```bash
+        huggingface-cli download microsoft/BitNet-b1.58-2B-4T-gguf --local-dir models/BitNet-b1.58-2B-4T
+        python setup_env.py -md models/BitNet-b1.58-2B-4T -q i2_s
+        # 或使用 --hf-repo 引數指定 Hugging Face 上的模型
+        ```
+*   **基本推論:**
+    *   使用 `run_inference.py` 指令碼執行推論，例如：
+        ```bash
+        python run_inference.py -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf -p "You are a helpful assistant" -cnv
+        ```
+    *   可選引數包括 `-n` (預測 token 數量), `-t` (執行緒數量), `-c` (上下文大小), `-temp` (溫度), `-cnv` (對話模式)。
+*   **執行基準測試 (Benchmark):**
+    *   使用 `e2e_benchmark.py` 指令碼進行效能測試，例如：
+        ```bash
+        python utils/e2e_benchmark.py -m /path/to/model -n 200 -p 256 -t 4
+        ```
+    *   引數 `-m` 為必需 (模型路徑)，可選引數有 `-n` (生成 token 數), `-p` (提示 token 數), `-t` (執行緒數)。
+## 📌 [BeehiveInnovations/zen-mcp-server](https://github.com/BeehiveInnovations/zen-mcp-server)
+<Callout>
+    Description: The power of Claude Code / GeminiCLI / CodexCLI + [Gemini / OpenAI / OpenRouter / Azure / Grok / Ollama / Custom Model / All Of The Above] working as one.\
+    🌐 Python｜⭐️ 8,673 | 1276 stars this week
+</Callout>
+    #### 簡介
+
+Zen MCP 是一個模型上下文協議伺服器，旨在將您喜愛的 AI 開發工具（如 Claude Code, Codex CLI）連線到多個 AI 模型。它能增強程式碼分析、問題解決及協同開發，讓您的 CLI 能夠編排一個 AI 團隊，利用多個模型的能力來提升開發效率和品質。
+
+#### 主要功能
+
+*   **多模型協調 (Multi-Model Orchestration)**：Zen MCP 讓您的 CLI 能夠排程 Gemini、OpenAI、Anthropic 等多種 AI 模型，為每個子任務選擇最佳 AI，實現更深入的洞察和更好的解決方案。
+*   **CLI-to-CLI Bridge (clink)**：透過 `clink` 工具連線外部 AI CLI，如 Gemini CLI、Codex CLI，並支援 CLI 子代理 (CLI Subagents) 進行隔離任務，保持主會話上下文的乾淨。
+*   **上下文連續性 (Conversation Continuity)**：確保對話上下文在工具和模型之間無縫傳遞，支援複雜工作流程如多模型程式碼審查 → 自動化規劃 → 實作 → 提交前驗證。
+*   **上下文恢復魔法 (Context Revival Magic)**：即使模型的上下文重置，其他模型也能「提醒」主模型之前的討論內容，實現無縫的對話接續。
+*   **專業程式碼審查 (Professional Code Reviews)**：透過多模型共識和分級分析，提供具體可行的回饋。
+*   **智慧除錯助手 (Smart Debugging Assistant)**：系統性地進行根本原因分析，並追蹤假設和信心水準。
+*   **擴充套件上下文視窗 (Extended Context Windows)**：透過委託給具備更大上下文視窗的模型（如 Gemini 的 1M tokens），突破單一模型的限制。
+*   **本地模型支援 (Local Model Support)**：支援在本地執行 Llama, Mistral 等模型，提供完全的隱私和零 API 成本。
+
+#### 如何使用
+
+*   **先決條件**：需安裝 Python 3.10+、Git 和 uv。
+*   **獲取 API Keys**：選擇一個或多個 AI 服務提供者（如 OpenRouter, Gemini, OpenAI, Ollama 等）並獲取其 API Keys。
+*   **安裝 Zen MCP**：
+    *   **選項 A (推薦)**：克隆 GitHub 儲存庫 `git clone https://github.com/BeehiveInnovations/zen-mcp-server.git` 並執行 `./run-server.sh` 進行自動設定。
+    *   **選項 B (uvx)**：將特定的 `mcpServers` 設定加入您的 `~/.claude/settings.json` 或 `.mcp.json` 檔案中，並配置 API keys。
+*   **開始使用**：在您的 CLI 中直接使用 Zen，透過強大的提示詞編排多個 AI 模型，例如：
+    ```
+    "Use zen to analyze this code for security issues with gemini pro"
+    "Debug this error with o3 and then get flash to suggest optimizations"
+    "clink with cli_name=\"gemini\" role=\"planner\" to draft a phased rollout plan"
+    ```
+*   **提供者配置**：在 `.env` 檔案中配置您的 API Keys 和其他設定。
+*   **工具配置 (Tool Configuration)**： Zen MCP 預設僅啟用部分核心工具以最佳化上下文視窗使用。您可以編輯 `.env` 檔案或 `mcpServers` 設定中的 `DISABLED_TOOLS` 列表，以啟用或禁用特定的工具（如 `analyze`, `refactor`, `secaudit` 等）。
+*   **推薦 AI 堆疊**：根據您使用的 CLI（如 Claude Code 或 Codex CLI），建議搭配特定的 AI 模型以獲得最佳效果，例如 Claude Code 搭配 Sonnet 4.5 進行協調，Gemini 2.5 Pro 或 GPT-5-Pro 進行深度思考。
