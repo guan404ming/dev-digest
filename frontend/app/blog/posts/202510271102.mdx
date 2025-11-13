@@ -9,18 +9,18 @@ publishedAt: '2025-11-02'
 </Callout>
     #### 簡介
 
-Agent Lightning 是一個用於訓練 AI agents 的強大工具，旨在以近乎零程式碼修改的方式，將您的 AI agents 轉變為可最佳化的實體。它支援任何 agent 框架，並擁抱 Reinforcement Learning 等多種先進演演算法，為 AI agents 的持續改進提供清晰路徑。
+Agent Lightning 是一個用於訓練 AI agents 的強大工具，旨在以近乎零程式碼修改的方式，將您的 AI agents 轉變為可最佳化的實體。它支援任何 agent 框架，並擁抱 Reinforcement Learning 等多種先進演算法，為 AI agents 的持續改進提供清晰路徑。
 
 #### 主要功能
 
 - ⚡ **核心最佳化能力**: 幾乎無需程式碼修改 (ZERO CODE CHANGE) 即可將您的 agent 轉化為可最佳化的「野獸」。
 - 🤖 **廣泛的框架支援**: 可與任何 agent 框架協同工作，包括 LangChain, OpenAI Agent SDK, AutoGen, CrewAI, Microsoft Agent Framework，甚至基於 Python OpenAI 的方案。
 - 🎯 **多 agent 系統的靈活最佳化**: 能夠選擇性地最佳化多 agent 系統中的一個或多個 agent。
-- 🤗 **整合多種先進演演算法**: 內建並支援 Reinforcement Learning (RL), Automatic Prompt Optimization, Supervised Fine-tuning 等多種演演算法。
+- 🤗 **整合多種先進演算法**: 內建並支援 Reinforcement Learning (RL), Automatic Prompt Optimization, Supervised Fine-tuning 等多種演算法。
 - **簡潔的架構設計**: Agent Lightning 透過最少的移動元件，讓您專注於想法而非繁瑣的底層架構。
 - **非侵入式執行**: 您的 agent 將照常執行，只需嵌入輕量級的 `agl.emit_xxx()` 輔助函式，或讓 tracer 自動收集 prompts、tool calls 和 rewards。
 - **中央資料樞紐**: 這些事件將結構化為 spans 流入 `LightningStore`，作為任務、資源和追蹤的中央樞紐。
-- **演演算法驅動的改進**: 您選擇或編寫的演演算法從 `LightningStore` 讀取 spans 進行學習，並發布更新的資源，例如最佳化的 prompt templates 或新的 policy weights。
+- **演算法驅動的改進**: 您選擇或編寫的演算法從 `LightningStore` 讀取 spans 進行學習，並發布更新的資源，例如最佳化的 prompt templates 或新的 policy weights。
 
 #### 如何使用
 
