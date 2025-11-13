@@ -1,0 +1,183 @@
+---
+title: '[10/13 - 10/19] GitHub Weekly Digest'
+publishedAt: '2025-10-19'
+---
+## 📌 [anthropics/prompt-eng-interactive-tutorial](https://github.com/anthropics/prompt-eng-interactive-tutorial)
+<Callout>
+    Description: Anthropic's Interactive Prompt Engineering Tutorial\
+    🌐 Jupyter Notebook｜⭐️ 24,474 | 5831 stars this week
+</Callout>
+    #### 簡介
+
+*   本課程旨在提供關於如何在 Claude 中設計最佳化 Prompt 的全面性逐步理解。
+*   課程設計強調互動性，提供許多練習撰寫和疑難排解 Prompt 的機會。
+*   課程共包含 9 個章節與搭配練習，另有進階方法附錄，建議按照章節順序進行學習。
+*   本教學使用 Anthropic 最小、最快且最便宜的模型：Claude 3 Haiku。
+*   Anthropic 另有 Claude 3 Sonnet 和 Claude 3 Opus 兩款更智慧的模型，其中 Opus 最為智慧。
+*   本教學亦提供 Google Sheets 版本，可透過 Anthropic 的 Claude for Sheets extension 使用，推薦此版本以獲得更友善的使用體驗。
+
+#### 主要功能
+
+*   掌握良好 Prompt 的基本結構。
+*   辨識常見的失敗模式並學習「80/20」技術來解決它們。
+*   瞭解 Claude 的優勢與劣勢。
+*   從零開始為常見用例建構強大的 Prompt。
+
+#### 如何使用
+
+*   建議按照課程的章節順序進行學習。
+*   每節課底部設有「Example Playground」區域，供使用者自由實驗範例並觀察更改 Prompt 如何影響 Claude 的回應。
+*   課程提供練習的解答供參考。
+*   當準備好開始時，請前往 "01_Basic Prompt Structure" 頁面。
+## 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
+<Callout>
+    Description: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.\
+    🌐 TypeScript｜⭐️ 39,450 | 3145 stars this week
+</Callout>
+    #### 簡介
+
+Claude Code 是一款代理式 (agentic) 編碼工具，它常駐於您的終端機，能理解您的程式碼庫，並透過自然語言指令幫助您加速編碼。
+
+#### 主要功能
+
+*   執行例行性任務 (executing routine tasks)。
+*   解釋複雜的程式碼 (explaining complex code)。
+*   處理 Git workflows。
+*   透過自然語言指令與工具進行互動 (natural language commands)。
+*   支援 Plugins 擴充套件功能，提供自訂指令和 agents。
+*   可用於 terminal、IDE 或透過在 GitHub 上標記 `@claude`。
+*   內建 `/bug` command，可直接在工具內回報問題。
+
+#### 如何使用
+
+*   **安裝 Claude Code：**
+    ```bash
+    npm install -g @anthropic-ai/claude-code
+    ```
+*   導航至您的專案目錄。
+*   執行 `claude` 命令以啟動工具。
+*   查閱 Plugins 目錄以瞭解可用的 plugins 及其詳細檔案。
+*   使用 `/bug` command 或提交 GitHub issue 回報遇到的問題。
+## 📌 [jingyaogong/minimind](https://github.com/jingyaogong/minimind)
+<Callout>
+    Description: 🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!\
+    🌐 Python｜⭐️ 29,944 | 2607 stars this week
+</Callout>
+    #### 簡介
+
+*   此開源專案旨在以極低成本和時間（3塊錢 + 2小時）從零開始訓練出僅為25.8M的超小語言模型 MiniMind。
+*   MiniMind 系列模型設計極其輕量化，最小版本體積是 GPT-3 的 $\frac{1}{7000}$，確保最普通的個人 GPU 也能快速訓練。
+*   專案開源了大型語言模型（LLM）的極簡結構，包含拓展共享混合專家(MoE)、資料集清洗、預訓練(Pretrain)、監督微調(SFT)、LoRA 微調、直接偏好強化學習(DPO)演算法、模型蒸餾演算法等全過程程式碼。
+*   MiniMind 同時拓展了視覺多模態的 VLM: MiniMind-V。
+*   所有核心演算法程式碼均從零使用 PyTorch 原生重構，不依賴第三方庫提供的抽象介面。
+*   這不僅是 LLM 全階段的開源復現，也是一個入門 LLM 的教程，旨在降低學習門檻。
+*   強調「2小時」是基於 NVIDIA 3090 單卡測試，「3塊錢」指 GPU 伺服器租用成本。
+*   最近更新（2025-04-26）實現了模型引數對齊 Transformers 庫命名，重構 `generate` 方式，並支援 `llama.cpp`、`vllm`、`ollama` 等熱門第三方生態。
+
+#### 主要功能
+
+*   提供 MiniMind-LLM 結構的全部程式碼，包含 Dense 和 MoE 模型。
+*   包含 Tokenizer 分詞器的詳細訓練程式碼。
+*   實現 Pretrain、SFT、LoRA、RLHF-DPO、模型蒸餾的全過程訓練程式碼。
+*   收集、蒸餾、整理並清洗去重所有階段的高質量資料集，且全部開源。
+*   從零實現關鍵演算法，幾乎不依賴第三方封裝框架，同時相容 `transformers`、`trl`、`peft` 等主流框架。
+*   訓練支援單機單卡、單機多卡 (DDP、DeepSpeed)，並支援 `wandb` 視覺化訓練流程及動態啟停訓練。
+*   模型在第三方評測榜（C-Eval、C-MMLU、OpenBookQA 等）進行測試。
+*   實現 OpenAI-API 協議的極簡服務端，便於整合到第三方 ChatUI (如 FastGPT、Open-WebUI)，並基於 `streamlit` 實現最簡聊天 WebUI 前端。
+
+#### 如何使用
+
+*   **環境準備**：首先 `git clone https://github.com/jingyaogong/minimind.git` 專案，然後 `pip install -r requirements.txt` 安裝所有依賴。
+*   **測試已有模型**：
+    1.  下載模型：`git clone https://huggingface.co/jingyaogong/MiniMind2`。
+    2.  可選命令列問答：`python eval_model.py --load 1 --model_mode 2`。
+    3.  可選啟動 WebUI：`streamlit run web_demo.py`。
+    4.  可選第三方推理：`ollama run jingyaogong/minimind2` 或 `vllm serve ./MiniMind2/ --served-model-name "minimind"`。
+*   **從零開始訓練**：
+    1.  **資料下載**：從 ModelScope 或 HuggingFace 下載所需資料檔案（推薦 `pretrain_hq.jsonl` + `sft_mini_512.jsonl` 用於快速復現 Zero 模型），並放置於 `./dataset` 目錄。
+    2.  **預訓練 (Pretrain)**：進入 `trainer` 目錄，執行 `python train_pretrain.py`。
+    3.  **監督微調 (SFT)**：在 `trainer` 目錄，執行 `python train_full_sft.py`。
+*   **多卡訓練**：若裝置有多張 GPU，可使用 `torchrun --nproc_per_node N train_xxx.py` (DDP) 或 `deepspeed --num_gpus=N train_xxx.py` (DeepSpeed)。
+*   **其他訓練**：專案提供 LoRA (`train_lora.py`)、RLHF-DPO (`train_dpo.py`)、知識蒸餾 (`train_distillation.py`) 和推理模型 (`train_distill_reason.py`) 等訓練指令碼，均在 `trainer` 目錄下執行。
+*   **模型引數配置**：透過修改 `./model/LMConfig.py` 檔案來調整模型結構引數，例如 `d_model` 和 `n_layers`。
+## 📌 [TibixDev/winboat](https://github.com/TibixDev/winboat)
+<Callout>
+    Description: Run Windows apps on 🐧 Linux with ✨ seamless integration\
+    🌐 TypeScript｜⭐️ 12,224 | 2572 stars this week
+</Callout>
+    #### 簡介
+
+*   WinBoat 是一款創新的 Electron 應用程式，旨在讓 Windows 應用程式能夠在 Linux 系統上無縫執行，實現 "Windows for Penguins" 的願景。
+*   它採用容器化方法，將 Windows 作為 Docker 容器內的虛擬機器 (VM) 執行，並透過 WinBoat Guest Server 進行資料通訊。
+*   利用 FreeRDP 和 Windows 的 RemoteApp 協定，WinBoat 能將 Windows 應用程式以原生 OS-level 視窗的形式整合到 Linux 桌面環境中。
+*   目前仍處於 Beta 階段 (Work in Progress)，使用者可能偶爾會遇到問題和錯誤，建議需具備一定的故障排除能力。
+
+#### 主要功能
+
+*   **優雅介面 (Elegant Interface)**：提供流線型且直觀的介面，將 Windows 無縫整合至 Linux 桌面，帶來原生般的體驗。
+*   **自動化安裝 (Automated Installs)**：透過簡潔的介面進行安裝，使用者只需選擇偏好和規格，系統將自動處理其餘設定。
+*   **執行任何應用程式 (Run Any App)**：只要能在 Windows 上執行的應用程式，都可以在 WinBoat 上以原生 OS-level 視窗執行。
+*   **完整 Windows 桌面 (Full Windows Desktop)**：在需要時，使用者可以存取完整的 Windows 桌面環境。
+*   **檔案系統整合 (Filesystem Integration)**：使用者的 home directory 會被掛載到 Windows 中，方便 Linux 與 Windows 之間輕鬆共享檔案。
+*   **更多功能 (And many more)**：包含 Smartcard passthrough、resource monitoring 等，並持續新增更多功能。
+
+#### 如何使用
+
+*   **先決條件 (Prerequisites)**：
+    *   **硬體要求**：至少 4 GB RAM、2 個 CPU threads、32 GB 可用儲存空間。
+    *   **虛擬化**：BIOS/UEFI 中需啟用 KVM。
+    *   **容器化**：需要安裝 Docker (注意：不支援 Docker Desktop) 及 Docker Compose v2。
+    *   **使用者許可權**：將您的使用者帳戶加入 `docker` 群組。
+    *   **遠端連線**：需要 FreeRDP (請確保為 3.x.x 版本並支援音效)。
+    *   **[可選] Kernel Modules**：可載入 `iptables` / `nftables` 和 `iptable_nat` kernel modules 以增強網路自動探索和共享檔案系統效能。
+*   **下載 (Downloading)**：
+    *   可從 Releases 頁籤下載最新的 Linux 版本，提供 `AppImage`、`Unpacked`、`.deb` 和 `.rpm` 四種格式。
+*   **已知問題 (Known Issues About Container Runtimes)**：
+    *   目前不支援 Podman、Docker Desktop、透過 Podman socket 模擬 Docker 的發行版，以及任何 rootless containerization 解決方案。
+*   **建置 WinBoat (Building WinBoat)**：
+    *   需安裝 NodeJS 和 Go。
+    *   執行 `git clone https://github.com/TibixDev/WinBoat`。
+    *   執行 `npm i` 安裝依賴。
+    *   執行 `npm run build:linux-gs` 建置應用程式和 guest server。
+    *   建置好的應用程式可在 `dist` 目錄中找到。
+*   **開發模式執行 (Running WinBoat in development mode)**：
+    *   確保滿足先決條件並安裝 NodeJS 和 Go。
+    *   執行 `git clone https://github.com/TibixDev/WinBoat`。
+    *   執行 `npm i` 安裝依賴。
+    *   執行 `npm run build-guest-server` 建置 guest server。
+    *   執行 `npm run dev` 啟動應用程式。
+## 📌 [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+<Callout>
+    Description: 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.\
+    🌐 MDX｜⭐️ 64,403 | 1773 stars this week
+</Callout>
+    #### 簡介
+
+*   Prompt engineering 是一門新興學科，用於開發和最佳化 prompt 以高效使用 language models (LMs)。
+*   它有助於理解 large language models (LLMs) 的能力和限制。
+*   研究人員利用它改進 LLMs 在各種任務上的表現，開發者用它設計 robust prompting techniques。
+*   此指南為響應對 LLMs 開發的高度興趣而建立，收錄了所有相關的最新資源。
+*   它提供了 DAIR.AI Academy 的課程作為補充，提供 hands-on 的學習方法。
+*   指南已累積超過 300 萬學習者，並支援 13 種語言。
+
+#### 主要功能
+
+*   **Prompt Engineering 概覽**: 提供 Prompt Engineering 的簡介、LLM Settings、Basics of Prompting、Prompt Elements 及設計提示的 General Tips。
+*   **多種 Prompting Techniques**: 涵蓋 Zero-Shot Prompting、Few-Shot Prompting、Chain-of-Thought Prompting、Retrieval Augmented Generation (RAG) 等多種進階技術。
+*   **Prompt Engineering 應用**: 探討 Function Calling、Generating Data、Generating Code 及 Graduate Job Classification 等實際應用案例。
+*   **Prompt Hub**: 包含分類 (Classification)、編碼 (Coding)、影象生成 (Image Generation)、問題回答 (Question Answering) 等多個領域的提示範例。
+*   **支援多種 Models**: 涵蓋 ChatGPT、GPT-4、LLaMA、Mistral 7B 等主流 LLMs 的相關內容。
+*   **風險與誤用**: 分析 Adversarial Prompting、Factuality 及 Biases 等潛在風險。
+*   **豐富的學習資源**: 提供 Papers、Tools、Notebooks、Datasets 及 Additional Readings，幫助深入學習。
+*   **DAIR.AI Academy 課程及服務**: 提供 self-paced 課程、企業培訓 (corporate training)、諮詢 (consulting) 和講座 (talks) 等服務。
+
+#### 如何使用
+
+*   **瀏覽網頁版指南**: 訪問 Prompt Engineering Guide (Web Version) 或 promptingguide.ai 網站獲取最新內容。
+*   **參與 DAIR.AI Academy 課程**: 報名參加 prompt engineering, RAG, 和 AI Agents 課程，獲取 hands-on 的學習體驗。
+*   **使用優惠碼**: 在報名課程時使用 `PROMPTING20` 獲取 20% 的折扣。
+*   **探索指南主題**: 依序查閱 "Prompt Engineering - Introduction"、"LLM Settings"、"Basics of Prompting" 等章節學習基礎知識。
+*   **學習進階技術與應用**: 深入瞭解 "Prompt Engineering - Techniques" 和 "Prompt Engineering - Applications" 中的各種方法和實際案例。
+*   **參考 Prompt Hub**: 根據需求在 "Prompt Engineering - Prompt Hub" 中查詢不同應用場景的提示範例。
+*   **查閱模型與研究**: 瀏覽 "Prompt Engineering - Models" 瞭解不同 LLMs，並在 "Prompt Engineering - Papers" 獲取學術研究。
+*   **加入社群**: 透過 Discord、Twitter、YouTube 和 Newsletter 與社群互動，獲取最新資訊和支援。
