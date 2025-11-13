@@ -1,0 +1,219 @@
+---
+title: '[11/3 - 11/9] GitHub Weekly Digest'
+publishedAt: '2025-11-09'
+---
+## 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
+<Callout>
+    Description: 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。\
+    🌐 Python｜⭐️ 23,084 | 19911 stars this week
+</Callout>
+    #### 簡介
+
+“微輿”是一個從0實現的創新型多智慧體輿情分析系統，旨在破除資訊繭房、還原輿情原貌、預測未來走向並輔助決策。它能像聊天一樣提出分析需求，智慧體會全自動分析國內外30+主流社媒與數百萬條大眾評論。系統名稱“微輿”諧音“微魚”（BettaFish），象徵“小而強大，不畏挑戰”。
+
+#### 主要功能
+
+- **AI驅動的全域監控**: AI爬蟲叢集7x24小時不間斷作業，覆蓋微博、小紅書、抖音、快手等10+國內外關鍵社媒，深度捕獲熱點內容及海量使用者評論。
+- **超越LLM的複合分析引擎**: 融合5類專業Agent、微調模型、統計模型等中介軟體，透過多模型協同工作，確保分析結果的深度、準度與多維視角。
+- **強大多模態能力**: 突破圖文限制，能深度解析抖音、快手等短影片內容，並精準提取現代搜尋引擎中的天氣、日曆、股票等結構化多模態資訊卡片。
+- **Agent“論壇”協作機制**: 為不同Agent賦予獨特工具集與思維模式，引入辯論主持人模型，透過“論壇”機制進行鏈式思維碰撞與辯論，催生更高質量集體智慧。
+- **公私域資料無縫融合**: 平臺提供高安全性介面，支援將內部業務資料庫與輿情資料無縫整合，為垂直業務提供“外部趨勢+內部洞察”的強大分析能力。
+- **輕量化與高擴充套件性框架**: 基於純Python模組化設計，實現輕量化、一鍵式部署，程式碼結構清晰，便於開發者整合自定義模型與業務邏輯。
+- **四大核心Agent**：包含 Query Agent（國內外新聞廣度搜尋）、Media Agent（強大多模態內容分析）、Insight Agent（私有資料庫挖掘）和 Report Agent（智慧報告生成）。
+- **多輪協作分析流程**：從使用者提問開始，多個Agent並行啟動初步分析，透過“論壇”協作進行深度研究，最終由 Report Agent 收集並整合生成動態報告。
+
+#### 如何使用
+
+- **Docker 快速啟動**:
+  - 執行命令在後臺啟動所有服務：
+    ```bash
+    docker compose up -d
+    ```
+  - 需配置 PostgreSQL 資料庫連線資訊，如 `DB_HOST=db`, `DB_PORT=5432`, `DB_USER=bettafish`, `DB_PASSWORD=bettafish`, `DB_NAME=bettafish`。
+  - 配置所有大模型相關引數，所有 LLM 呼叫使用 OpenAI 的 API 介面標準。
+- **原始碼啟動環境準備**:
+  - 推薦使用 Conda 或 uv 建立 Python 3.9+ 環境：
+    ```bash
+    conda create -n your_conda_name python=3.11
+    conda activate your_conda_name
+    ```
+  - 安裝依賴包：`pip install -r requirements.txt` (或 `uv pip install -r requirements.txt`)。
+  - 安裝 Playwright 瀏覽器驅動：`playwright install chromium`。
+- **配置LLM與資料庫**:
+  - 複製 `.env.example` 檔案為 `.env`。
+  - 編輯 `.env` 檔案，填入資料庫連線引數（如 `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_DIALECT` 等）和 LLM API 金鑰（如 `INSIGHT_ENGINE_API_KEY`, `INSIGHT_ENGINE_BASE_URL`, `INSIGHT_ENGINE_MODEL_NAME` 等），已統一由根目錄 `.env` 檔案管理。
+- **啟動完整系統（推薦）**:
+  - 啟用 Conda/uv 環境後，在專案根目錄執行：
+    ```bash
+    python app.py
+    ```
+  - 訪問 `http://localhost:5000` 即可使用完整系統。
+- **單獨啟動Agent (Streamlit)**:
+  - 可單獨啟動特定 Agent，例如：
+    ```bash
+    streamlit run SingleEngineApp/query_engine_streamlit_app.py --server.port 8503
+    ```
+- **爬蟲系統獨立使用 (MindSpider)**:
+  - 進入 `MindSpider` 目錄，執行 `python main.py --setup` 初始化。
+  - 執行話題提取（獲取熱點新聞和關鍵詞）：`python main.py --broad-topic`。
+  - 執行完整爬蟲流程：`python main.py --complete --date 2024-01-20`。
+- **接入不同LLM模型**:
+  - 系統支援任意相容 OpenAI 呼叫格式的 LLM 提供商，只需在 `/config.py` 或 `.env` 中填寫對應的 `KEY`、`BASE_URL`、`MODEL_NAME`。
+## 📌 [microsoft/agent-lightning](https://github.com/microsoft/agent-lightning)
+<Callout>
+    Description: The absolute trainer to light up AI agents.\
+    🌐 Python｜⭐️ 7,614 | 2117 stars this week
+</Callout>
+    #### 簡介
+Agent Lightning 是一個專為訓練 AI agents 設計的平臺，支援多種框架並提供強化學習、自動提示最佳化等功能，旨在以最少程式碼修改實現 agents 的最佳化與部署。
+
+*   Agent Lightning 是一個強大的訓練器，旨在激發 AI agents 的潛力。
+*   它讓您的 agents 具備最佳化能力，且幾乎無需更改程式碼。
+*   支援任何 agent framework (例如 LangChain, OpenAI Agent SDK, AutoGen, CrewAI, Microsoft Agent Framework)，甚至可在沒有 agent framework 的環境下使用 (如 Python OpenAI)。
+*   它提供了一條從首次部署到持續改進的清晰路徑，避免了重寫或供應商鎖定。
+*   其架構設計旨在將活動部件保持在最低限度，讓開發者能專注於創意而非底層設定。
+
+#### 主要功能
+
+*   **零程式碼修改 (幾乎)**：將您的 agents 轉化為可最佳化的「猛獸」，且幾乎不需更改原始程式碼。
+*   **廣泛框架支援**：可與任何 agent framework 整合，例如 LangChain、OpenAI Agent SDK、AutoGen、CrewAI 或 Microsoft Agent Framework；甚至可在不使用 framework 的情況下 (如 Python OpenAI) 進行開發。
+*   **選擇性最佳化**：在多 agents 系統中，能夠有選擇地最佳化一個或多個 agents。
+*   **多種演演算法**：整合並運用 Reinforcement Learning、Automatic Prompt Optimization、Supervised Fine-tuning 等多種先進演演算法。
+*   **輕量級事件傳送**：可透過插入輕量級的 `agl.emit_xxx()` 輔助函式來手動傳送事件。
+*   **自動追蹤功能**：支援讓 tracer 自動收集每個 prompt、tool call 和 reward 事件。
+*   **LightningStore**：所有事件會以結構化的 spans 形式流入 LightningStore，這是一個同步任務、資源和追蹤記錄的中心樞紐。
+*   **自動學習與改進**：您選擇或自行編寫的演演算法會從 spans 中學習，並發布更新後的資源，例如最佳化後的 prompt templates 或新的 policy weights。
+
+#### 如何使用
+
+*   **安裝**：透過 pip 命令將 Agent Lightning 安裝到您的環境中。
+    ```bash
+    pip install agentlightning
+    ```
+*   **詳細安裝指引**：請參考官方的 installation guide 以獲取更詳細的安裝步驟與資訊。
+*   **入門使用**：查閱官方 documentation 和 examples，以開始使用 Agent Lightning 並瞭解其基本操作。
+*   **事件追蹤**：您可以使用輕量級的 `agl.emit_xxx()` 輔助函式來記錄事件，或者讓 tracer 自動收集每個 prompt、tool call 和 reward。
+*   **訓練流程**：Trainer 將資料集串流傳輸給 runners，在 LightningStore 和演演算法之間傳遞資源，並在有改進時更新 inference engine。
+*   **持續改進**：您可以選擇停止訓練，或讓相同的迴圈持續運作以實現穩定的效能提升。
+## 📌 [nocobase/nocobase](https://github.com/nocobase/nocobase)
+<Callout>
+    Description: NocoBase is the most extensible AI-powered no-code/low-code platform for building business applications and enterprise solutions.\
+    🌐 TypeScript｜⭐️ 18,932 | 1802 stars this week
+</Callout>
+    #### 簡介
+
+NocoBase 是一個極具擴充套件性的 AI 驅動 no-code 平臺，提供全面控制、無限擴充套件性和 AI 協作能力。它旨在幫助團隊快速適應變化並大幅降低成本，可在數分鐘內部署，讓您完全掌控一切。
+
+#### 主要功能
+
+*   **資料模型驅動，非表單/表格驅動**
+    *   NocoBase 採用資料模型驅動方法，將資料結構與使用者介面分離，開啟無限可能性。
+    *   UI 與資料結構完全解耦。
+    *   可為同一 table 或 record 建立任意數量的多個 blocks 和 actions。
+    *   支援主資料庫、外部資料庫及第三方 APIs 作為資料來源。
+*   **AI 員工，整合至您的業務系統**
+    *   NocoBase 允許將 AI 功能無縫嵌入您的 interfaces、workflows 和 data context 中，使 AI 在實際業務場景中真正有用。
+    *   可為 translator, analyst, researcher 或 assistant 等角色定義 AI employees。
+    *   在 interfaces 和 workflows 中實現 AI 與人類的無縫協作。
+    *   確保 AI 使用安全、透明且可根據您的業務需求自訂。
+*   **所見即所得，極易使用**
+    *   儘管能開發複雜的業務系統，NocoBase 仍保持體驗簡單直觀。
+    *   一鍵切換 usage mode 和 configuration mode。
+    *   Pages 作為畫布來安排 blocks 和 actions，類似 Notion。
+    *   Configuration mode 專為普通使用者而非程式設計師設計。
+*   **一切皆為 Plugin，專為擴充套件**
+    *   NocoBase 透過基於 plugin 的微核心架構實現高度擴充套件性。
+    *   所有 functionalities 均為 plugins，類似 WordPress。
+    *   Plugins 安裝後即可使用。
+    *   Pages, blocks, actions, APIs, 和 data sources 均可透過 custom plugins 進行擴充套件。
+
+#### 如何使用
+
+*   NocoBase 支援三種安裝方法。
+*   **使用 Docker 安裝** (👍Recommended)，此方法適合 no-code 場景。
+## 📌 [Skyvern-AI/skyvern](https://github.com/Skyvern-AI/skyvern)
+<Callout>
+    Description: Automate browser based workflows with AI\
+    🌐 Python｜⭐️ 17,186 | 1774 stars this week
+</Callout>
+    #### 簡介
+
+- Skyvern 是一個利用 LLM 和電腦視覺自動化瀏覽器工作流程的平臺，取代傳統脆弱的自動化方案。
+- 它提供簡單的 API 端點，能全面自動化大量網站上的手動工作流程。
+- 傳統方法依賴 DOM 解析和 XPath 互動，容易因網站佈局變更而失效。
+- Skyvern 改用 Vision LLM 學習並與網站互動，使其能應對未曾見過的網站，並抵抗網站佈局變更。
+- 其設計靈感來自 Task-Driven autonomous agent，並能運用 LLM 進行複雜情況的推理。
+- 具備將單一工作流程應用於多個網站的能力，提高自動化彈性。
+- 在 WebBench 基準測試中，Skyvern 達到 SOTA 的 64.4% 準確度。
+- 特別在 RPA 相關的 WRITE 任務（如填寫表單、登入）上表現最佳。
+
+#### 主要功能
+
+- **Skyvern Tasks**: 作為基礎構建模組，每個任務是對 Skyvern 的單一請求，完成特定目標。
+- **Skyvern Workflows**: 可將多個任務串聯成連貫的工作單元，支援 Browser Task、Data Extraction、For Loops 等多種功能。
+- **Livestreaming**: 提供瀏覽器檢視實時傳輸功能，便於除錯與瞭解 Skyvern 的互動。
+- **Form Filling 與 Data Extraction**: 具備原生填寫網站表單和精確提取資料的能力，可指定 `data_extraction_schema` 獲取結構化輸出。
+- **File Downloading**: 能夠從網站下載檔案，並自動上傳至區塊儲存空間。
+- **Authentication**: 支援多種驗證方式，包含 2FA (TOTP、Email、SMS) 及 Bitwarden, 1Password, LastPass 等密碼管理器整合。
+- **Model Context Protocol (MCP)**: 支援任何與 MCP 相容的 LLM，增加模型選擇彈性。
+- **Integrations**: 可與 Zapier, Make.com, N8N 等平臺無縫整合，連線 Skyvern 工作流程到其他應用程式。
+
+#### 如何使用
+
+- **Skyvern Cloud**: 提供託管的雲端版本 (app.skyvern.com)，省去基礎設施管理，內建反機器人與 CAPTCHA 解決方案。
+- **本地安裝**: 確保具備 Python 3.11.x, NodeJS & NPM 環境，Windows 使用者需額外安裝 Rust 及 C++ 開發工具。
+- **快速啟動**: 透過 `pip install skyvern` 安裝後，執行 `skyvern quickstart` 設定資料庫，再執行 `skyvern run all` 啟動服務和 UI (http://localhost:8080)。
+- **程式碼執行任務**: 可直接使用 Python SDK 執行任務，例如：
+    ```python
+    from skyvern import Skyvern
+    skyvern = Skyvern()
+    task = await skyvern.run_task(prompt="Find the top post on hackernews today")
+    ```
+- **進階瀏覽器控制**: 支援自訂 Chrome 瀏覽器路徑 (`browser_path`) 或連線任何遠端瀏覽器 (`cdp_url`)，以實現更彈性的操作。
+- **結構化輸出**: 可在 `run_task` 中使用 `data_extraction_schema` 引數，確保提取的資料符合預期 JSON 格式。
+- **除錯工具與 Docker**: 提供多個 `skyvern` CLI 命令用於服務管理與除錯，並支援 Docker Compose 快速部署。
+- **LLM 支援**: 廣泛支援 OpenAI, Anthropic, Azure OpenAI, AWS Bedrock, Gemini, Ollama, OpenRouter 等主流 LLM 供應商，透過環境變數配置。
+## 📌 [HKUDS/DeepCode](https://github.com/HKUDS/DeepCode)
+<Callout>
+    Description: "DeepCode: Open Agentic Coding (Paper2Code & Text2Web & Text2Backend)"\
+    🌐 Python｜⭐️ 9,785 | 1765 stars this week
+</Callout>
+    #### 簡介
+
+- DeepCode 是一個開源的代理式編碼平臺，利用多代理系統將想法轉化為可投入生產的程式碼。
+- 它在 OpenAI 的 PaperBench 基準測試中創下新高，超越了人類專家與領先的商業程式碼代理。
+- 提供 CLI 介面以實現快速命令列工作流程，以及直觀的 Web 介面以提供視覺化互動體驗。
+- 旨在提升程式碼生成能力，簡化從概念到程式碼的開發流程。
+
+#### 主要功能
+
+- **Paper2Code**: 自動將研究論文中的複雜演演算法轉化為高品質、可投入生產的程式碼，加速演演算法的重現。
+- **Text2Web**: 將純文字描述自動生成為功能齊全、視覺吸引人的前端網頁程式碼，以快速建立介面。
+- **Text2Backend**: 根據簡單的文字輸入生成高效、可擴充套件且功能豐富的後端程式碼，簡化伺服器端開發。
+- **Research-to-Production Pipeline**: 多模態檔案分析引擎，從學術論文中提取演演算法邏輯和數學模型，生成最佳化實作。
+- **Natural Language Code Synthesis**: 利用微調的語言模型進行上下文感知程式碼生成，支援多種程式語言和框架。
+- **Automated Prototyping Engine**: 智慧支架系統，生成完整的應用程式結構，包括資料庫綱要、API 端點和前端元件。
+- **Quality Assurance Automation**: 整合靜態分析、自動單元測試生成和檔案合成，確保程式碼正確性和全面覆蓋。
+- **CodeRAG Integration System**: 先進的檢索增強生成系統，結合語義向量嵌入和圖形依賴分析，自動發現最佳函式庫和實作模式。
+
+#### 如何使用
+
+- **安裝 DeepCode 套件 (推薦)**:
+  ```bash
+  pip install deepcode-hku
+  ```
+- **下載設定檔**:
+  ```bash
+  curl -O https://raw.githubusercontent.com/HKUDS/DeepCode/main/mcp_agent.config.yaml
+  curl -O https://raw.githubusercontent.com/HKUDS/DeepCode/main/mcp_agent.secrets.yaml
+  ```
+- **設定 API 金鑰 (必填)**:
+  - 編輯 `mcp_agent.secrets.yaml`，填入您的 OpenAI/Anthropic API 金鑰和 `base_url`。
+- **設定搜尋 API 金鑰 (選填)**:
+  - 編輯 `mcp_agent.config.yaml`，設定 Brave Search (`BRAVE_API_KEY`) 或 Bocha-MCP (`BOCHA_API_KEY`) 的 API 金鑰。
+- **設定檔案分割 (選填)**:
+  - 在 `mcp_agent.config.yaml` 中，設定 `document-segmentation` 的 `enabled` (true/false) 和 `size_threshold_chars`。
+- **開發環境安裝**:
+  - 您可以選擇使用 UV 或傳統 `pip` 從 GitHub 儲存庫克隆並安裝依賴。
+- **Windows 使用者額外設定**:
+  - 若使用 Windows，可能需要手動全域安裝 MCP servers (例如 `@modelcontextprotocol/server-brave-search`) 並在 `mcp_agent.config.yaml` 中更新為絕對路徑。
