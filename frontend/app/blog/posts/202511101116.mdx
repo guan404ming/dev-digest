@@ -1,0 +1,238 @@
+---
+title: '[11/10 - 11/16] GitHub Weekly Digest'
+publishedAt: '2025-11-16'
+---
+## 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
+<Callout>
+    Description: 🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/飞书/钉钉/Telegram/邮件/ntfy推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点\
+    🌐 Python｜⭐️ 14,051 | 8722 stars this week
+</Callout>
+    #### 簡介
+
+*   🚀 「熱點助手」是一個輕量、易部署的專案，旨在讓使用者告別無效刷屏，只看真正關心的新聞資訊，最快30秒即可部署。
+*   此專案以輕量化、易於部署為目標，讓使用者能夠主動獲取所需資訊，而非被動接受演演算法推薦。
+*   它整合了多平臺新聞資訊，並支援自定義關注點，減少對單一 APP 的依賴。
+*   專案資料主要來自 newsnow 提供的 API 介面。
+*   專案的發展離不開社群貢獻者、點 star 的支持者、公眾號讀者以及資金贊助者的支援。
+
+#### 主要功能
+
+*   **全網熱點聚合**: 預設監控知乎、抖音、bilibili、華爾街見聞等 11 個主流平臺熱點，並支援自行增加額外平臺。
+*   **智慧推送策略**: 提供三種推送模式 (當日匯總 `daily`、當前榜單 `current`、增量監控 `incremental`)，並可選附加「推送時間視窗控制」功能，限制推送時間範圍和頻率。
+*   **精準內容篩選**: 透過設定個人關鍵字（如：AI、比亞迪、教育政策），只推送相關熱點，支援「普通詞」、「必須詞(+)」和「過濾詞(!)」三種語法，並可片語化管理，配置於 `frequency_words.txt`。
+*   **熱點趨勢分析**: 實時追蹤新聞熱度變化，包括時間軸追蹤、熱度變化、新增檢測(`🆕` 標記)、持續性分析和跨平臺對比。
+*   **個性化熱點演演算法**: 重新整理全網熱搜，根據排名高（60%）、持續出現（30%）和排名品質（10%）進行權重調整，使用者可依需求自訂這些比例。
+*   **多管道即時推播**: 支援企業微信、飛書、釘釘、Telegram、郵件、ntfy 等多種管道，將訊息直達手機和信箱。
+*   **多端適配與持久化**: 提供 GitHub Pages 自動生成精美網頁報告（適配 PC/移動端），支援 Docker 部署，並可將歷史記錄儲存為 HTML/TXT 格式。
+*   **AI 智慧分析 (v3.0.0 新增)**: 基於 MCP (Model Context Protocol) 協議，提供 AI 對話分析系統，支援自然語言查詢、13 種分析工具（如趨勢追蹤、跨平臺對比、智慧摘要等），並可接入多種 MCP 使用者端。
+
+#### 如何使用
+
+*   **零技術門檻部署**:
+    *   Fork 本專案到您的 GitHub 帳戶。
+    *   若需實時更新的網頁版，Fork 後前往倉庫的 Settings → Pages 啟用 GitHub Pages。
+*   **設定 GitHub Secrets**:
+    *   在您 Fork 後的倉庫中，進入 Settings > Secrets and variables > Actions > New repository secret。
+    *   根據您需要的推送平臺（如 WeChat Work、Feishu、DingTalk、Telegram、Email、ntfy），設定對應的 `WEBHOOK_URL` 或 `TOKEN`/`CHAT_ID` 等環境變數。
+*   **配置檔案調整**:
+    *   編輯 `config/config.yaml` 檔案，配置推送模式、通知選項、以及時間視窗控制等。
+    *   編輯 `config/frequency_words.txt` 檔案，新增您關心的關鍵字，支援普通詞、必須詞(+)、過濾詞(!)和片語功能。
+*   **手動測試新聞推播**:
+    *   進入您的 GitHub 倉庫的 Actions 頁面。
+    *   找到 "Hot News Crawler" 工作流並點選 "Run workflow" 即可手動觸發一次推播測試。
+*   **Docker 部署 (推薦)**:
+    *   下載 `config.yaml` 和 `frequency_words.txt` 到本地的 `config` 目錄。
+    *   使用 `docker run` 命令或 `docker-compose` 啟動容器，並透過 `-v` 掛載配置目錄和輸出目錄，透過 `-e` 設定各推播平臺的環境變數。
+    *   從 v3.0.5 開始，Docker 環境變數可直接覆寫 `config.yaml` 中的核心配置。
+*   **AI 智慧分析部署**:
+    *   可透過 Cherry Studio 提供 GUI 配置介面進行快速部署，或參考 `README-Cherry-Studio.md`。
+    *   學習與 AI 對話的技巧，參考 `README-MCP-FAQ.md`，使用自然語言進行新聞資料查詢與深度分析。
+*   **管理與除錯**: 部署後可使用 `docker exec -it trend-radar python manage.py [command]` 命令來檢視狀態、手動執行、檢視日誌、配置等。
+## 📌 [usestrix/strix](https://github.com/usestrix/strix)
+<Callout>
+    Description: Open-source AI agents for penetration testing\
+    🌐 Python｜⭐️ 11,135 | 7170 stars this week
+</Callout>
+    #### 簡介
+
+Strix 是一個開源的 AI 代理工具，旨在透過模擬真實駭客行為，動態執行程式碼、發現並利用實際的 PoC 驗證應用程式中的漏洞。它為開發者和資安團隊提供快速、精確的資安測試，避免了手動滲透測試的開銷和靜態分析工具的誤報。目前已無縫整合 GitHub Actions 和 CI/CD 流程，可在每個 pull request 自動掃描漏洞。
+
+#### 主要功能
+
+-   **全方位的駭客工具包：** Strix 代理內建 HTTP Proxy、Browser Automation、Terminal Environments、Python Runtime、Reconnaissance、Code Analysis 和 Knowledge Management 等工具。
+-   **自動化漏洞驗證：** 透過實際的 PoC (Proof-of-Concepts) 進行驗證，而非產生誤報。
+-   **針對開發者的 CLI：** 提供易於使用的命令列介面，生成具備可操作性的報告。
+-   **自動修復與報告：** 加速漏洞的修復流程。
+-   **廣泛的漏洞偵測能力：** 可識別 Access Control、Injection Attacks (SQL, NoSQL, Command Injection)、Server-Side (SSRF, XXE)、Client-Side (XSS, Prototype Pollution)、Business Logic、Authentication (JWT, Session Management) 和 Infrastructure (Misconfigurations) 等多種漏洞。
+-   **代理團隊協作：** 具備多代理協作編排，可進行分散式工作流、可擴充套件的測試和動態協調。
+-   **應用場景：** 適用於 Application Security Testing、Rapid Penetration Testing、Bug Bounty Automation 和 CI/CD Integration。
+-   **企業平臺功能：** 提供 Executive Dashboards、Custom Fine-Tuned Models、大規模掃描、第三方整合和企業級支援。
+
+#### 如何使用
+
+-   **前置條件：**
+    -   Docker (執行中)
+    -   Python 3.12+
+    -   LLM provider key (例如 OpenAI API key 或使用本地 LLM)
+-   **安裝與首次掃描：**
+    ```bash
+    pipx install strix-agent
+    export STRIX_LLM="openai/gpt-5"
+    export LLM_API_KEY="your-api-key"
+    strix --target ./app-directory
+    ```
+    首次執行會自動拉取 sandbox Docker 映像，結果會儲存到 `agent_runs/<run-name>`。
+-   **基本用法：**
+    -   掃描本地程式碼庫：`strix --target ./app-directory`
+    -   資安審查 GitHub 儲存庫：`strix --target https://github.com/org/repo`
+    -   黑箱 Web 應用程式評估：`strix --target https://your-app.com`
+-   **進階測試場景：**
+    -   灰箱認證測試：`strix --target https://your-app.com --instruction "Perform authenticated testing using credentials: user:pass"`
+    -   多目標測試 (原始碼 + 部署的應用程式)：`strix -t https://github.com/org/app -t https://your-app.com`
+    -   聚焦測試與自定義指令：`strix --target api.your-app.com --instruction "Focus on business logic flaws and IDOR vulnerabilities"`
+-   **Headless 模式：**
+    在沒有互動式 UI 的情況下執行 Strix，適用於伺服器和自動化作業，使用 `-n` 或 `--non-interactive` 旗標。當發現漏洞時，CLI 會以非零程式碼退出。
+    ```bash
+    strix -n --target https://your-app.com
+    ```
+-   **CI/CD (GitHub Actions) 整合：**
+    可將 Strix 新增到您的 CI/CD 流程中，在 pull request 時執行資安測試，例如使用以下 GitHub Actions workflow：
+    ```yaml
+    name: strix-penetration-test
+    on:
+      pull_request:
+    jobs:
+      security-scan:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+          - name: Install Strix
+            run: pipx install strix-agent
+          - name: Run Strix
+            env:
+              STRIX_LLM: ${{ secrets.STRIX_LLM }}
+              LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+            run: strix -n --target ./
+    ```
+## 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
+<Callout>
+    Description: 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。\
+    🌐 Python｜⭐️ 27,311 | 4642 stars this week
+</Callout>
+    #### 簡介
+"微輿" (BettaFish) 是一個從0實現的創新型多智慧體輿情分析系統。它讓使用者能像聊天一樣提出分析需求，全自動分析國內外30+主流社媒與數百萬條大眾評論，旨在破除資訊繭房，還原輿情原貌，預測未來走向，並輔助決策。"微輿" 象徵著"小而強大，不畏挑戰"的精神。
+
+#### 主要功能
+*   **AI驅動的全域監控：** AI爬蟲叢集7x24小時不間斷作業，全面覆蓋微博、小紅書、抖音、快手等10+國內外關鍵社媒，實時捕獲熱點內容及海量使用者評論。
+*   **超越LLM的複合分析引擎：** 融合設計的5類專業Agent、微調模型、統計模型等中介軟體，透過多模型協同工作，確保分析結果的深度、準度與多維視角。
+*   **強大的多模態能力：** 突破圖文限制，能深度解析抖音、快手等短影片內容，並精準提取現代搜尋引擎中的天氣、日曆、股票等結構化多模態資訊卡片。
+*   **Agent“論壇”協作機制：** 賦予不同Agent獨特工具集與思維模式，引入辯論主持人模型，透過“論壇”機制進行鏈式思維碰撞與辯論，生成高品質集體智慧。
+*   **公私域資料無縫融合：** 提供高安全性介面，支援內部業務資料庫與公開輿情資料無縫整合，為垂直業務提供“外部趨勢+內部洞察”的分析能力。
+*   **輕量化與高擴充套件性框架：** 基於純Python模組化設計，實現輕量化、一鍵式部署；程式碼結構清晰，易於開發者整合自定義模型與業務邏輯，快速擴充套件與深度定製。
+
+#### 如何使用
+*   **快速開始 (Docker)**
+    *   複製一份 `.env.example` 檔案，命名為 `.env`，並按需配置環境變數。
+    *   執行以下命令在後臺啟動所有服務：
+        ```bash
+        docker compose up -d
+        ```
+    *   配置資料庫 (PostgreSQL，引數如 `DB_HOST=db`, `DB_PORT=5432` 等) 和大模型 (LLM) API 服務，所有 LLM 呼叫使用 OpenAI 的 API 介面標準。
+*   **原始碼啟動指南**
+    *   **環境要求：** 確保安裝 Python 3.9+、Conda 或 uv、PostgreSQL/MySQL (推薦 PostgreSQL)。
+    *   **建立環境：** 使用 Conda 執行 `conda create -n your_conda_name python=3.11` 並啟用。
+    *   **安裝依賴包：** 執行 `pip install -r requirements.txt` (或 `uv pip install -r requirements.txt`)。
+    *   **安裝 Playwright 瀏覽器驅動：** 執行 `playwright install chromium` 用於爬蟲功能。
+    *   **配置 LLM 與資料庫：** 複製 `.env.example` 為 `.env`，填入資料庫連線資訊和各 Agent 的 LLM API 金鑰、BaseUrl 和模型名稱 (例如 `INSIGHT_ENGINE_API_KEY=`, `INSIGHT_ENGINE_BASE_URL=`)。
+    *   **啟動完整系統：** 在專案根目錄啟用環境，執行 `python app.py`。系統將執行在 `http://localhost:5000`。
+    *   **單獨啟動 Agent：** 可使用 `streamlit run SingleEngineApp/query_engine_streamlit_app.py --server.port 8503` 等指令獨立執行特定 Agent。
+    *   **爬蟲系統獨立使用：** 進入 `MindSpider` 目錄，執行 `python main.py --setup` 初始化，隨後可執行 `python main.py --broad-topic` (話題提取) 或 `python main.py --complete --date 2024-01-20` (完整爬蟲流程)。
+## 📌 [opencloud-eu/opencloud](https://github.com/opencloud-eu/opencloud)
+<Callout>
+    Description: 🌤️This is the main repository of the OpenCloud server. It contains the golang codebase for the backend services.\
+    🌐 Go｜⭐️ 3,807 | 1011 stars this week
+</Callout>
+    #### 簡介
+
+*   OpenCloud Server Backend是OpenCloud伺服器的主儲存庫。
+*   此儲存庫包含後端服務的 `golang` 程式碼。
+*   若需OpenCloud的一般資訊或安裝方式，請參考 OpenCloud on Github 及 OpenCloud GmbH。
+
+#### 主要功能
+
+*   **專案貢獻：** OpenCloud伺服器依據 Apache 2.0 許可證發布，歡迎來自各方的貢獻。
+*   **多種參與方式：** 參與專案的方式包含回報問題或錯誤、提出功能需求、撰寫檔案、編寫程式碼或擴充套件測試、程式碼審查、以及協助社群成員。
+*   **社群指引：** 每一份貢獻都意義非凡且受到讚賞。請參考 Contribution Guidelines 以開始參與。
+*   **技術棧：** OpenCloud後端透過 OpenID Connect 進行使用者認證，此為貢獻者需知的重要技術資訊。
+
+#### 如何使用
+
+*   **產生資源：** 首先，執行 `make generate` 以產生例如 web UI 和內建 IDP 所需的 assets。
+*   **編譯二進位檔：** 接著，執行 `make -C opencloud build` 來編譯 `opencloud` 二進位檔。
+*   **啟動本地測試例項：** 編譯後會產生 `opencloud/bin/opencloud`，可透過以下兩步驟命令立即啟動為本地測試例項：
+    ```bash
+    opencloud/bin/opencloud init && opencloud/bin/opencloud server
+    ```
+*   **伺服器配置：** 此命令會建立伺服器配置（預設在 `$HOME/.opencloud`），並啟動伺服器。
+*   **更多安裝選項：** 有關更多設定和安裝選項，請查閱 Development Documentation。
+## 📌 [Skyvern-AI/skyvern](https://github.com/Skyvern-AI/skyvern)
+<Callout>
+    Description: Automate browser based workflows with AI\
+    🌐 Python｜⭐️ 18,034 | 897 stars this week
+</Callout>
+    #### 簡介
+
+- Skyvern 利用 LLMs 和 Computer Vision 自動化瀏覽器工作流程，提供簡易 API 端點，取代傳統脆弱的自動化方案。
+- 不同於依賴 DOM 和 XPath 的舊方法，Skyvern 透過 Vision LLMs 學習並與網站互動，即使網站佈局改變也能順暢執行。
+- 能夠將單一工作流程應用於多個網站，具備強大適應性與複雜情境的推理能力。
+
+#### 主要功能
+
+- **卓越效能**: 在 WebBench 基準測試中，準確度達到 64.4%，尤其在 Robotic Process Automation (RPA) 相關的 WRITE 任務上表現最佳。
+- **任務 (Tasks)**: Skyvern 的核心建構塊，每個任務是一個單一請求，指示 Skyvern 導航網站並完成特定目標。
+- **工作流程 (Workflows)**: 允許串聯多個任務，形成複雜的自動化流程，支援 Browser Task, Data Extraction, Validation, For Loops 等。
+- **資料提取與表單填寫**: 能夠精確地從網頁提取資料，並可透過 `data_extraction_schema` 定義輸出結構；原生支援填寫網站表單。
+- **檔案下載與身份驗證**: 支援從網站下載檔案，並自動上傳至 block storage；提供多種身份驗證方式，包括 2FA (TOTP, Email, SMS) 及主流密碼管理器整合 (Bitwarden, 1Password, LastPass)。
+- **彈性 LLM 支援**: 廣泛支援多種 LLM 服務供應商，如 OpenAI, Anthropic, Azure OpenAI, AWS Bedrock, Gemini, Ollama, OpenRouter 及 OpenAI-compatible 端點。
+- **雲端服務 (Skyvern Cloud)**: 提供託管的雲端版本，無需管理基礎設施，具備並行執行、反機器人機制、代理網路及 CAPTCHA 解決方案。
+- **第三方整合**: 支援與 Zapier, Make.com, N8N 等主流自動化平臺連線。
+
+#### 如何使用
+
+- **快速開始 (Skyvern Cloud)**:
+    - 直接前往 `app.skyvern.com` 建立帳戶即可使用託管服務。
+- **本地安裝與執行**:
+    - **安裝依賴項**: 需 Python 3.11.x+, NodeJS & NPM。Windows 使用者需額外安裝 Rust、VS Code C++ dev tools 及 Windows SDK。
+    - **安裝 Skyvern 套件**: 執行 `pip install skyvern`。
+    - **首次執行與服務啟動**:
+        - 進行資料庫設定: `skyvern quickstart`
+        - 啟動服務與 UI: `skyvern run all`，然後訪問 `http://localhost:8080`。
+- **透過程式碼執行任務**:
+    - 使用 Skyvern Python SDK 建立例項並呼叫 `run_task` 方法。
+    ```python
+    from skyvern import Skyvern
+    skyvern_client = Skyvern()
+    task = await skyvern_client.run_task(prompt="Find the top post on hackernews today")
+    print(task)
+    ```
+    - 可指定 `api_key` 和 `base_url` 以切換至 Skyvern Cloud 或本地服務。
+- **自定義輸出 Schema**:
+    - 利用 `data_extraction_schema` 引數，以 JSON 格式定義任務輸出，確保結果結構一致。
+    ```python
+    task = await skyvern_client.run_task(
+        prompt="Find the top post on hackernews today",
+        data_extraction_schema={
+            "type": "object",
+            "properties": {
+                "title": {"type": "string", "description": "The title of the top post"},
+                "url": {"type": "string", "description": "The URL of the top post"}
+            }
+        }
+    )
+    ```
+- **高階瀏覽器控制**:
+    - 支援連線本地 Chrome 瀏覽器 (設定 `browser_path` 或 `.env` 變數 `CHROME_EXECUTABLE_PATH`) 或指定遠端 CDP URL。
+- **除錯指令**:
+    - 提供一系列 CLI 指令，如 `skyvern run server`, `skyvern status`, `skyvern stop all` 等，便於服務管理與除錯。
+- **Docker Compose 部署**:
+    - 透過 Docker Compose 快速設定 Skyvern 環境，只需克隆儲存庫並執行 `docker compose up -d` 即可啟動服務。
