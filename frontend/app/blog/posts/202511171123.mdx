@@ -1,0 +1,261 @@
+---
+title: '[11/17 - 11/23] GitHub Weekly Digest'
+publishedAt: '2025-11-23'
+---
+## 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
+<Callout>
+    Description: 🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点\
+    🌐 Python｜⭐️ 24,538 | 10586 stars this week
+</Callout>
+    #### 簡介
+
+`TrendRadar` 是一個輕量且易於部署的熱點助手，旨在幫助使用者告別無效刷屏，最快 30 秒內部署，只接收真正關心的新聞資訊，實現個性化、高效的資訊獲取。
+
+#### 主要功能
+
+*   **全網熱點聚合**: 預設監控知乎、抖音、bilibili 熱搜、華爾街見聞、微博等 11 個主流平臺，並支援自定義增加更多平臺。
+*   **智慧推送策略**: 提供 `daily`（每日彙總）、`current`（當前榜單）、`incremental`（增量監控）三種推送模式，並具備可選的推送時間視窗控制功能。
+*   **精準內容篩選**: 透過個人關鍵詞設定，支援普通詞、必須詞 `+`、過濾詞 `!` 和數量限制 `@` 語法，以及片語化管理，精準過濾無關資訊。
+*   **熱點趨勢分析**: 實時追蹤新聞熱度變化，提供時間軸追蹤、熱度變化、新增檢測 (`🆕`)、持續性分析及跨平臺對比功能。
+*   **個性化熱點演算法**: 重新整理全網熱搜，可調整排名 (`rank_weight`)、持續出現的話題 (`frequency_weight`) 和排名質量 (`hotness_weight`) 等權重。
+*   **多渠道實時推送**: 支援企業微信、飛書、釘釘、Telegram、郵件、ntfy 等多種管道，並可透過 GitHub Pages 自動生成精美網頁報告。
+*   **AI 智慧分析 (v3.0.0 新增)**: 基於 `MCP (Model Context Protocol)` 協議，提供對話式查詢、13 種分析工具，用於話題趨勢追蹤、跨平臺資料對比、智慧摘要等深度分析。
+*   **零技術門檻部署**: 支援 GitHub 一鍵 `Fork`（30秒部署 GitHub Pages，1分鐘企業微信通知）以及 Docker 容器化部署，有效減少對 APP 的依賴。
+
+#### 如何使用
+
+*   **Fork 專案**: 將本專案 `Fork` 到您的 GitHub 帳戶。
+*   **設定 GitHub Secrets**: 在您 `Fork` 後的倉庫中，進入 `Settings > Secrets and variables > Actions`，點選 `New repository secret`，依據您所需的推送平臺（如 `WEWORK_WEBHOOK_URL`, `FEISHU_WEBHOOK_URL`, `TELEGRAM_BOT_TOKEN`, `EMAIL_FROM`, `NTFY_TOPIC` 等）配置對應的 `Name` 和 `Secret` 值。請務必嚴格使用指定的 `Name`。
+*   **手動測試推送**: 完成上述步驟後，前往您專案的 `Actions` 頁面，找到 `Hot News Crawler`，點選 `Run workflow` 進行測試，約 1 分鐘後訊息將推送到您配置的平臺。
+*   **配置關鍵詞**: 編輯 `config/frequency_words.txt` 檔案，加入您關心的關鍵詞，可使用普通詞、必須詞 `+`、過濾詞 `!` 和數量限制 `@` 語法，並用空行分隔不同片語。
+*   **調整推送設定 (可選)**: 您可以根據需求修改 `config/config.yaml` 檔案中的 `report.mode` (daily/current/incremental)、`notification.push_window` (推送時間視窗) 及 `report.weight` (熱點權重調整) 等引數。
+*   **Docker 部署 (替代 GitHub Actions)**:
+    *   **快速體驗**: 建立 `config` 和 `output` 目錄，下載 `config.yaml` 和 `frequency_words.txt` 到 `config` 目錄，然後使用類似以下命令部署：
+        ```bash
+        docker run -d --name trend-radar \
+          -v ./config:/app/config:ro \
+          -v ./output:/app/output \
+          -e FEISHU_WEBHOOK_URL="你的飛書webhook" \
+          -e CRON_SCHEDULE="*/30 * * * *" \
+          wantcat/trendradar:latest
+        ```
+    *   **使用 docker-compose (推薦)**: 建立 `trendradar/{config,docker}` 目錄，下載 `config.yaml`, `frequency_words.txt`, `.env`, `docker-compose.yml` 到對應目錄，配置 `.env` 中的環境變數，然後執行 `docker-compose pull` 和 `docker-compose up -d`。支援透過環境變數覆蓋 `config.yaml` 設定（如 `REPORT_MODE`, `PUSH_WINDOW_ENABLED`）。
+*   **AI 智慧分析 (可選)**: `AI` 功能需要本地新聞資料支援 (`output` 資料夾)。專案預設包含測試資料，建議自行部署專案以獲取即時資料。可透過 `Cherry Studio` 等 `MCP` 客戶端進行對話式查詢和深度分析。
+## 📌 [usestrix/strix](https://github.com/usestrix/strix)
+<Callout>
+    Description: Open-source AI agents for penetration testing\
+    🌐 Python｜⭐️ 13,135 | 2141 stars this week
+</Callout>
+    #### 簡介
+
+Strix 是一款開源的 AI 代理，旨在模模擬實駭客的行為，透過動態執行程式碼、發現漏洞並透過實際的 PoC 進行驗證。它為開發人員和安全團隊提供快速、精確的安全測試，無需手動滲透測試的開銷或靜態分析工具的誤報。Strix 現已無縫整合 GitHub Actions 和 CI/CD 管道，可在每個 Pull Request 上自動掃描漏洞，並在不安全程式碼進入生產環境之前予以阻止。
+
+#### 主要功能
+
+*   具備全面的 hacker toolkit，包含 HTTP Proxy、Browser Automation、Terminal Environments、Python Runtime、Reconnaissance、Code Analysis 及 Knowledge Management。
+*   多個 AI 代理可協同合作並擴充套件測試範圍。
+*   透過 PoC 進行真實驗證，有效避免誤報。
+*   提供開發者友善的 CLI 介面和可操作的報告。
+*   自動修復與報告功能，加速漏洞修復流程。
+*   可偵測並驗證多種安全漏洞，包括 Access Control (如 IDOR、privilege escalation)、Injection Attacks (如 SQL, NoSQL, command injection)、Server-Side (如 SSRF, XXE)、Client-Side (如 XSS) 及 Business Logic flaws 等。
+*   支援透過 Graph of Agents 進行進階多代理協調，實現分散式工作流程、可擴充套件測試和動態協作。
+*   可用於應用程式安全測試、快速滲透測試、Bug Bounty 自動化及 CI/CD 整合。
+
+#### 如何使用
+
+*   **前置要求:** 需安裝 Docker (執行中)、Python 3.12+，並具備 LLM provider key (例如 OpenAI API key)。
+*   **安裝與啟動掃描:**
+    ```bash
+    # 安裝 Strix
+    pipx install strix-agent
+
+    # 配置您的 AI provider
+    export STRIX_LLM="openai/gpt-5"
+    export LLM_API_KEY="your-api-key"
+
+    # 執行首次安全評估，目標可以是本地目錄、GitHub repo 或 Web 應用程式 URL
+    strix --target ./app-directory
+    ```
+    (首次執行會自動拉取 sandbox Docker image。結果會儲存至 `strix_runs/<run-name>`)
+*   **使用雲端版本:** 訪問 app.usestrix.com，無需本地安裝、API key 設定或管理 LLM 成本，即可快速啟動掃描並獲取完整報告，並提供 CI/CD 與 GitHub 整合及持續監控。
+*   **基本使用範例:** 目標可以是本地程式碼庫 (`./app-directory`)、GitHub 儲存庫 (`https://github.com/org/repo`) 或部署的 Web 應用程式 (`https://your-app.com`)。
+*   **進階測試情境:** 支援灰箱認證測試 (`--instruction "Perform authenticated testing..."`)、多目標 (`-t`) 測試 (如同時掃描程式碼庫和部署應用程式)，並可透過 `--instruction` 旗標進行聚焦測試。
+*   **無頭模式 (Headless Mode):** 使用 `-n` 或 `--non-interactive` 旗標，適合在伺服器和自動化作業中以程式方式執行 Strix。在發現漏洞時會以非零程式碼退出。
+    ```bash
+    strix -n --target https://your-app.com
+    ```
+*   **CI/CD 整合 (GitHub Actions):** 可將 Strix 加入 CI/CD 管道中，以在 pull requests 上自動執行安全測試，阻擋不安全程式碼進入生產環境。
+## 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
+<Callout>
+    Description: 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。\
+    🌐 Python｜⭐️ 28,924 | 1722 stars this week
+</Callout>
+    #### 簡介
+
+“微輿” (BettaFish) 是一個從零開始實現的創新型多智慧體輿情分析系統，旨在幫助使用者破除資訊繭房，還原輿情原貌，預測未來走向，並輔助決策。使用者只需透過對話提出分析需求，系統的智慧體便會自動分析全球30多個主流社群媒體及數百萬條評論，實現「小而強大，不畏挑戰」的目標，最終成為驅動各種業務場景的通用資料分析引擎。
+
+#### 主要功能
+
+*   **AI 驅動的全域監控：** AI 爬蟲叢集 7x24 小時不間斷作業，全面覆蓋 Weibo、Xiaohongshu、Douyin、Kuaishou 等 10+ 國內外關鍵社媒，實時捕獲熱點內容並深入分析使用者評論。
+*   **超越 LLM 的複合分析引擎：** 融合設計的 5 類專業 Agent、微調模型、統計模型等中介軟體，透過多模型協同確保分析結果的深度、準度與多維視角。
+*   **強大的多模態能力：** 突破圖文限制，能深度解析 Douyin、Kuaishou 等短影片內容，並精準提取現代搜尋引擎中的天氣、日曆、股票等結構化多模態資訊卡片。
+*   **Agent 「論壇」協作機制：** 為不同 Agent 賦予獨特的工具集與思維模式，引入辯論主持人模型，透過「論壇」機制進行鏈式思維碰撞與辯論，產生更高品質的集體智慧。
+*   **公私域資料無縫融合：** 平臺不僅分析公開輿情，還提供高安全性的介面，支援將內部業務資料庫與輿情資料無縫整合，打通資料壁壘，提供「外部趨勢+內部洞察」的分析能力。
+*   **輕量化與高擴充套件性框架：** 基於純 Python 模組化設計，實現輕量化、一鍵式部署，程式碼結構清晰，便於開發者整合自定義模型與業務邏輯。
+*   **核心智慧體分工：** 包含 Query Agent (新聞廣度搜尋)、Media Agent (多模態內容分析)、Insight Agent (私有資料庫挖掘) 和 Report Agent (智慧報告生成)。
+*   **LLM 供應商靈活配置：** 所有 LLM 呼叫均相容 OpenAI 的 API 介面標準，使用者可自行配置 API Key、BaseUrl 和模型名稱。
+
+#### 如何使用
+
+*   **快速開始 (Docker 部署):**
+    *   複製 `.env.example` 為 `.env` 並配置相關環境變數。
+    *   執行以下命令在後臺啟動所有服務：
+        ```bash
+        docker compose up -d
+        ```
+    *   配置 PostgreSQL 或 MySQL 資料庫連線資訊 (DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME)。
+    *   配置大模型 (LLM) 引數，確保所有 LLM 呼叫相容 OpenAI API 標準，填寫 API Key、BaseUrl 和模型名稱。
+*   **原始碼啟動指南：**
+    *   **環境準備：** 確保安裝 Python 3.9+、Conda 或 uv、PostgreSQL 或 MySQL (推薦)，並建議 2GB 以上記憶體。
+    *   **建立並啟用環境：**
+        ```bash
+        conda create -n your_conda_name python=3.11
+        conda activate your_conda_name
+        # 或使用 uv:
+        uv venv --python 3.11
+        ```
+    *   **安裝依賴包：**
+        ```bash
+        pip install -r requirements.txt
+        # 或使用 uv:
+        uv pip install -r requirements.txt
+        ```
+    *   **安裝 Playwright 瀏覽器驅動：**
+        ```bash
+        playwright install chromium
+        ```
+    *   **配置 LLM 與資料庫：** 複製專案根目錄的 `.env.example` 為 `.env`，填入您的資料庫連線資訊與各 Agent 所需的 LLM API Key、BaseUrl 和模型名稱。
+    *   **啟動完整系統：** 啟用環境後，在專案根目錄下執行 `python app.py`，然後訪問 `http://localhost:5000`。
+    *   **獨立啟動 Agent (Streamlit):**
+        ```bash
+        streamlit run SingleEngineApp/query_engine_streamlit_app.py --server.port 8503
+        # 類似指令啟動 MediaEngine 或 InsightEngine
+        ```
+    *   **爬蟲系統 (MindSpider) 單獨使用：**
+        ```bash
+        cd MindSpider
+        python main.py --setup           # 專案初始化
+        python main.py --broad-topic     # 執行話題提取
+        python main.py --complete --date 2024-01-20 # 執行完整爬蟲流程
+        ```
+## 📌 [Skyvern-AI/skyvern](https://github.com/Skyvern-AI/skyvern)
+<Callout>
+    Description: Automate browser based workflows with AI\
+    🌐 Python｜⭐️ 18,650 | 656 stars this week
+</Callout>
+    #### 簡介
+
+- Skyvern 透過 LLMs 和 computer vision 自動化瀏覽器工作流程。
+- 它提供簡單的 API 端點，旨在取代傳統仰賴 DOM 解析和 XPath 的脆弱自動化方案。
+- 擺脫預定義的互動方式，轉而使用 Vision LLMs 學習並理解網站。
+- 其設計受 Task-Driven 自主代理啟發，並結合 Playwright 等瀏覽器自動化庫。
+- 透過代理群組來 comprehend、plan 和 execute 網站操作。
+- 優勢：能夠在未見網站上操作、抗網站佈局變更、單一流程應用於多網站，並利用 LLMs 處理複雜推斷。
+- 在 WebBench 基準測試中，其 WRITE 任務表現突出，達到 64.4% 的 SOTA 準確度。
+
+#### 主要功能
+
+- **Skyvern Tasks**: 基本建構塊，每個 `Task` 是對 Skyvern 的單一請求，指示其導航網站並完成特定目標，可包含 `url`、`prompt` 及可選的 `data schema` 和 `error codes`。
+- **Skyvern Workflows**: 串聯多個 `Tasks` 以形成更複雜的工作單元，支援 `Browser Task`、`Browser Action`、`Data Extraction`、`Validation`、`For Loops` 等功能。
+- **Livestreaming**: 允許將瀏覽器視窗即時串流到本地機器，便於除錯和理解 Skyvern 的互動過程。
+- **Form Filling**: 能夠根據 `navigation_goal` 原生填寫網站上的表單輸入。
+- **Data Extraction**: 能從網站中提取資料，並可透過 `data_extraction_schema` 引數指定所需的輸出 JSON 結構。
+- **File Downloading**: 能夠下載網站檔案，所有下載的檔案會自動上傳到 block storage。
+- **Authentication**: 支援多種身份驗證方法，包括 2FA (TOTP, QR-based, Email-based, SMS-based) 和密碼管理器整合 (Bitwarden, 1Password, LastPass)。
+- **LLM 支援與整合**: 支援 Model Context Protocol (MCP) 並相容多種 LLM 供應商，如 OpenAI、Anthropic、Azure OpenAI、AWS Bedrock、Gemini、Ollama、OpenRouter 等。
+- **第三方整合**: 支援與 Zapier, Make.com, N8N 等主流自動化平臺連線。
+
+#### 如何使用
+
+- **快速入門**:
+    - **Skyvern Cloud**: 透過 `app.skyvern.com` 建立帳戶即可體驗雲端託管服務。
+    - **本地安裝與執行**:
+        1. 確保已安裝 `Python 3.11.x` (或 3.12)、`NodeJS` 及 `NPM` (Windows 使用者需額外安裝 `Rust`, `VS Code` 的 C++ 開發工具和 Windows SDK)。
+        2. 執行 `pip install skyvern` 安裝 Skyvern。
+        3. 執行 `skyvern quickstart` 完成資料庫設定等初始化步驟。
+        4. **執行任務**: 推薦使用 UI (`skyvern run all` 後訪問 `http://localhost:8080`)，或透過 Python 程式碼：
+            ```python
+            from skyvern import Skyvern
+            skyvern = Skyvern()
+            task = await skyvern.run_task(prompt="Find the top post on hackernews today")
+            print(task)
+            ```
+- **進階用法**:
+    - **控制自訂瀏覽器**: 可透過 Python 程式碼指定 `browser_path`，或在 `.env` 檔案中設定 `CHROME_EXECUTABLE_PATH` 和 `BROWSER_TYPE`。
+    - **遠端瀏覽器**: 傳遞 `cdp_url` 引數連線至任何遠端瀏覽器。
+    - **獲取一致的輸出 schema**: 在 `run_task` 函式中加入 `data_extraction_schema` 引數以定義期望的輸出結構。
+- **除錯指令**: 提供一系列 CLI 指令，如 `skyvern run server`、`skyvern run ui`、`skyvern status`、`skyvern stop all` 等，以便於管理和除錯服務。
+- **Docker Compose 設定**: 確保已安裝 Docker Desktop，透過 `docker compose up -d` 指令可啟動包含 Skyvern 服務和 UI 的 Docker 環境。
+- **貢獻者設定**: 使用 `uv sync --group dev` 建立虛擬環境，並執行 `uv run skyvern quickstart` 進行初始化。
+- **檔案**: 更詳盡的說明可參閱 Skyvern 的 `📕 docs page`。
+- **環境變數配置**: 支援透過環境變數 (例如 `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` 等) 配置 LLM 供應商。
+## 📌 [mudler/LocalAI](https://github.com/mudler/LocalAI)
+<Callout>
+    Description: 🤖 The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement for OpenAI, running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference\
+    🌐 Go｜⭐️ 39,014 | 534 stars this week
+</Callout>
+    #### 簡介
+* LocalAI 是一個免費且開源的 OpenAI 替代方案，提供與 OpenAI (Elevenlabs, Anthropic 等) API 規範相容的 REST API。
+* 它允許您在本地或內部部署環境中執行大型語言模型 (LLMs)、生成影象和音訊。
+* 支援多種模型家族，且不強制要求 GPU。
+* 現已成為一套全面 AI 工具「Local Stack Family」的一部分，其中包括 LocalAGI (代理管理平臺) 和 LocalRecall (持久記憶體與知識庫系統)。
+
+#### 主要功能
+* **全面的 AI 能力**: 提供 LLMs 文字生成 (支援 llama.cpp, transformers, vllm 等)、Text to Audio、Audio to Text (whisper.cpp)、影象生成及 Embeddings generation。
+* **相容 OpenAI API**: 作為一個與 OpenAI API 規範相容的 REST API 替代方案。
+* **後端畫廊 (Backend Gallery)**: 支援即時安裝/移除後端，基於 OCI images 並可透過 API 驅動。
+* **多模態功能**: 具備 Vision API、Object Detection (rf-detr) 和 Reranker API。
+* **去中心化推理**: 支援 P2P Inferencing，包括分散式 llama.cpp、Federated mode 和 AI Swarms。
+* **代理能力**: 透過 Model Context Protocol (MCP) 與外部工具和 LocalAGI 整合，提供 Agentic capabilities。
+* **硬體廣泛支援**: 支援 NVIDIA CUDA 11/12, AMD ROCm, Intel oneAPI, Apple Metal, Vulkan, NVIDIA Jetson 等 GPU 加速，同時也支援 CPU Optimized 執行。
+* **內建 WebUI**: 提供整合式 WebUI 介面，便於管理與操作。
+
+#### 如何使用
+* **使用安裝指令碼 (Installer Script)**:
+  ```bash
+  curl https://localai.io/install.sh | sh
+  ```
+  (更多安裝選項請參考 Installer Options。)
+* **使用 Docker**:
+  * **CPU only 映像**:
+    ```bash
+    docker run -ti --name local-ai -p 8080:8080 localai/localai:latest
+    ```
+  * **NVIDIA GPU 映像**: (例如 CUDA 12.0)
+    ```bash
+    docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-gpu-nvidia-cuda-12
+    ```
+  * **其他 GPU 映像**: 支援 AMD (ROCm), Intel (oneAPI), Vulkan 等專用 Docker 映像。
+  * **AIO 映像**: 提供預載模型的 All-In-One (AIO) Docker 映像，包含 CPU 及不同 GPU 版本。
+* **載入模型**:
+  * **從模型庫 (Model Gallery) 執行**:
+    ```bash
+    local-ai run llama-3.2-1b-instruct:q4_k_m
+    ```
+  * **從 Huggingface 執行**:
+    ```bash
+    local-ai run huggingface://TheBloke/phi-2-GGUF/phi-2.Q8_0.gguf
+    ```
+  * **從 Ollama OCI 登錄檔執行**:
+    ```bash
+    local-ai run ollama://gemma:2b
+    ```
+  * **從配置檔執行**:
+    ```bash
+    local-ai run https://gist.githubusercontent.com/.../phi-2.yaml
+    ```
+  * **從標準 OCI 登錄檔執行**:
+    ```bash
+    local-ai run oci://localai/phi-2:latest
+    ```
+* **自動後端檢測 (Automatic Backend Detection)**: 從模型庫或 YAML 檔案安裝模型時，LocalAI 會自動檢測系統的 GPU 功能並下載適用的後端。
