@@ -1,0 +1,258 @@
+---
+title: '[11/24 - 11/30] GitHub Weekly Digest'
+publishedAt: '2025-11-30'
+---
+## 📌 [sansan0/TrendRadar](https://github.com/sansan0/TrendRadar)
+<Callout>
+    Description: 🎯 告别信息过载，AI 助你看懂新闻资讯热点，简单的舆情监控分析 - 多平台热点聚合+基于 MCP 的AI分析工具。监控35个平台（抖音、知乎、B站、华尔街见闻、财联社等），智能筛选+自动推送+AI对话分析（用自然语言深度挖掘新闻：趋势追踪、情感分析、相似检索等13种工具）。支持企业微信/个人微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 推送，30秒网页部署，1分钟手机通知，无需编程。支持Docker部署⭐ 让算法为你服务，用AI理解热点\
+    🌐 Python｜⭐️ 32,744 | 8594 stars this week
+</Callout>
+    #### 簡介
+TrendRadar 是一個輕量、易部署的熱點助手，助您告別無效刷屏，最快30秒即可部署，只看真正關心的新聞資訊。它能聚合全網熱點，透過智慧分析與精準篩選，提供個人化新聞推送，並支援多渠道實時通知。
+
+#### 主要功能
+
+*   **全網熱點聚合**: 預設監控11個主流平臺（如知乎、抖音、Bilibili、百度熱搜等），並可自行增加額外平臺。
+*   **智慧推送策略**: 提供 `daily` (當日彙總), `current` (當前榜單), `incremental` (增量監控) 三種模式，滿足不同使用者需求。
+*   **精準內容篩選**: 透過個人關鍵字（支援普通詞、必須詞 `+`、過濾詞 `!`、數量限制 `@`）設定，只推送相關熱點。
+*   **熱點趨勢分析**: 實時追蹤新聞熱度變化，記錄時間軸、熱度變化、新增檢測及跨平臺對比。
+*   **個性化熱點演算法**: 根據排名高(60%)、持續出現(30%)、排名質量(10%)等權重，重新整理全網熱搜。
+*   **多渠道實時推送**: 支援企業微信（含個人微信推送）、飛書、釘釘、Telegram、郵件、ntfy、Bark、Slack 等多種通知渠道。
+*   **AI 智慧分析 (v3.0.0 新增)**: 基於 `MCP (Model Context Protocol)` 協議，提供對話式查詢、13種分析工具（如話題趨勢追蹤、情感分析等）。
+*   **零技術門檻部署**: 支援 GitHub 一鍵 `Fork`，30秒部署 `GitHub Pages`，或透過 `Docker` 容器化部署。
+
+#### 如何使用
+
+*   **Fork 專案**: 點選 GitHub 頁面右上角的 "Fork" 按鈕，將專案複製到您的 GitHub 帳戶。
+*   **設定 GitHub Secrets**: 在您 `Fork` 後的倉庫中，進入 `Settings > Secrets and variables > Actions > New repository secret`。
+    *   **Name** 必須嚴格使用指定名稱（例如：`WEWORK_WEBHOOK_URL`、`TELEGRAM_BOT_TOKEN`、`TELEGRAM_CHAT_ID` 等）。
+    *   **Secret** 填寫從對應平臺獲取的 `Webhook` 地址、`Bot Token` 或 `Chat ID` 等實際內容。
+    *   可同時配置多個平臺。
+*   **手動測試新聞推送**: 完成 `Secrets` 配置後，進入您 `Fork` 專案的 `Actions` 頁面，找到 "Hot News Crawler"，點選右側的 "Run workflow" 按鈕進行測試。
+*   **配置推送模式**: 編輯 `config/config.yaml` 檔案中的 `report.mode` 設定，選擇 `daily` (當日彙總)、`current` (當前榜單) 或 `incremental` (增量監控) 等模式。
+*   **設定個人關鍵字**: 編輯 `config/frequency_words.txt` 檔案，新增您關心的關鍵字，支援普通詞、必須詞 `+`、過濾詞 `!`、數量限制 `@` 等基礎語法。
+*   **調整熱點權重**: 在 `config.yaml` 中調整 `weight` 區塊的 `rank_weight`、`frequency_weight` 和 `hotness_weight` 比例，總和必須為 1.0。
+*   **Docker 部署 (可選)**: 專案提供 `Docker` 或 `docker-compose` 方式部署，您可透過環境變數覆蓋 `config.yaml` 中的配置。例如：設定 `-e REPORT_MODE="incremental"`。
+## 📌 [usestrix/strix](https://github.com/usestrix/strix)
+<Callout>
+    Description: Open-source AI agents for penetration testing\
+    🌐 Python｜⭐️ 15,092 | 1829 stars this week
+</Callout>
+    #### 簡介
+
+*   Strix 是一個開源的 AI 駭客工具，其自主 AI 代理行為如同真實駭客，能動態執行程式碼，尋找並透過實際的 PoC (Proof-of-Concepts) 驗證漏洞。
+*   專為需要快速、精準安全性測試的開發人員和安全團隊設計，可避免手動滲透測試的開銷和靜態分析工具的誤報。
+*   已無縫整合至 GitHub Actions 和 CI/CD 流程，可在每次 pull request 時自動掃描漏洞，並在不安全程式碼進入生產環境前將其阻擋。
+*   提供現成的完整駭客工具包，並支援 AI 代理團隊協作與擴充套件。
+*   透過 PoC 進行真實驗證，而非產生誤報。
+*   提供開發者優先的 CLI 工具，帶有可執行的報告。
+*   支援自動修復和報告，以加速問題修復。
+*   適用於應用程式安全測試、快速滲透測試、漏洞賞金自動化及 CI/CD 整合。
+
+#### 主要功能
+
+*   **代理式安全工具：** Strix 代理具備全面的安全測試工具包，包括：
+    *   Full HTTP Proxy：用於完整的請求/響應操作與分析。
+    *   Browser Automation：多標籤瀏覽器，用於測試 XSS、CSRF、認證流程。
+    *   Terminal Environments：互動式 shell，用於命令執行和測試。
+    *   Python Runtime：用於自訂漏洞開發和驗證。
+    *   Reconnaissance：自動化 OSINT 和攻擊面對映。
+    *   Code Analysis：靜態和動態分析功能。
+    *   Knowledge Management：結構化的發現和攻擊文件。
+*   **全面的漏洞偵測：** Strix 可識別和驗證多種安全漏洞，例如：
+    *   Access Control：IDOR、許可權提升、認證繞過。
+    *   Injection Attacks：SQL、NoSQL、命令注入。
+    *   Server-Side：SSRF、XXE、反序列化缺陷。
+    *   Client-Side：XSS、原型汙染、DOM 漏洞。
+    *   Business Logic：競爭條件、工作流程操縱。
+    *   Authentication：JWT 漏洞、會話管理。
+    *   Infrastructure：配置錯誤、暴露的服務。
+*   **代理圖 (Graph of Agents)：** 利用先進的多代理協調機制，進行全面的安全測試，具備：
+    *   Distributed Workflows：針對不同攻擊和資產的專業代理。
+    *   Scalable Testing：平行執行以實現快速全面的覆蓋。
+    *   Dynamic Coordination：代理間協作並分享發現。
+
+#### 如何使用
+
+*   **先決條件：**
+    *   Docker (需執行中)
+    *   Python 3.12+
+    *   LLM 供應商金鑰 (例如 OpenAI API key 或使用本地 LLM)
+*   **安裝與首次掃描：**
+    ```bash
+    # Install Strix
+    pipx install strix-agent
+
+    # Configure your AI provider (請替換為你的金鑰)
+    export STRIX_LLM="openai/gpt-5"
+    export LLM_API_KEY="your-api-key"
+
+    # Run your first security assessment
+    strix --target ./app-directory
+    ```
+    首次執行會自動下載沙盒 Docker 映像檔。結果會儲存至 `strix_runs/<run-name>`。
+*   **雲端執行 Strix：** 若要避免本地設定、API 金鑰和不可預測的 LLM 成本，可前往 app.usestrix.com 使用託管的雲端版本。
+*   **基本使用範例：**
+    *   掃描本地程式碼庫：`strix --target ./app-directory`
+    *   安全審查 GitHub 儲存庫：`strix --target https://github.com/org/repo`
+    *   黑盒 Web 應用程式評估：`strix --target https://your-app.com`
+*   **進階測試情境：**
+    *   灰盒認證測試：`strix --target https://your-app.com --instruction "Perform authenticated testing using credentials: user:pass"`
+    *   多目標測試：`strix -t https://github.com/org/app -t https://your-app.com`
+    *   帶有自訂指令的重點測試：`strix --target api.your-app.com --instruction "Focus on business logic flaws and IDOR vulnerabilities"`
+*   **無頭模式 (Headless Mode)：** 使用 `-n` 或 `--non-interactive` 旗標以程式設計方式執行 Strix，適合伺服器和自動化任務。
+    ```bash
+    strix -n --target https://your-app.com
+    ```
+*   **CI/CD 整合 (GitHub Actions)：** 將 Strix 新增到您的 GitHub Actions 工作流程中，在 pull request 上執行安全測試。
+    ```yaml
+    name: strix-penetration-test
+
+    on:
+      pull_request:
+
+    jobs:
+      security-scan:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v4
+
+          - name: Install Strix
+            run: pipx install strix-agent
+
+          - name: Run Strix
+            env:
+              STRIX_LLM: ${{ secrets.STRIX_LLM }}
+              LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+
+            run: strix -n -t ./
+    ```
+*   **配置：** 可設定以下環境變數：
+    *   `export STRIX_LLM="openai/gpt-5"`
+    *   `export LLM_API_KEY="your-api-key"`
+    *   `export LLM_API_BASE="your-api-base-url"` (可選，用於本地模型)
+## 📌 [666ghj/BettaFish](https://github.com/666ghj/BettaFish)
+<Callout>
+    Description: 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。\
+    🌐 Python｜⭐️ 30,023 | 1187 stars this week
+</Callout>
+    #### 簡介
+
+「微輿」是一個從零實現的創新型多智慧體輿情分析系統，旨在幫助使用者破除資訊繭房，還原輿情原貌，預測未來走向，並輔助決策。使用者只需像聊天一樣提出分析需求，系統便會全自動分析全球30多個主流社媒平臺與數百萬條大眾評論。其名「微輿」（諧音「微魚」，BettaFish）象徵著「小而強大，不畏挑戰」。
+
+#### 主要功能
+
+-   **AI驅動的全域監控**: AI爬蟲叢集7x24小時不間斷作業，全面覆蓋微博、小紅書、抖音、快手等10+國內外關鍵社媒，實時捕捉熱點內容並下鑽至海量使用者評論。
+-   **超越LLM的複合分析引擎**: 融合設計的5類專業Agent、微調模型、統計模型等中介軟體，透過多模型協同工作，確保分析結果的深度、準度與多維視角。
+-   **強大的多模態能力**: 突破圖文限制，能深度解析抖音、快手等短影片內容，並精準提取現代搜尋引擎中的天氣、日曆、股票等結構化多模態資訊卡片。
+-   **Agent「論壇」協作機制**: 為不同Agent賦予獨特工具集與思維模式，引入辯論主持人模型，透過「論壇」機制進行鏈式思維碰撞與辯論，催生更高質量集體智慧。
+-   **公私域資料無縫融合**: 提供高安全性介面，支援內部業務資料庫與輿情資料無縫整合，為垂直業務提供「外部趨勢+內部洞察」的分析能力。
+-   **輕量化與高擴充套件性框架**: 基於純Python模組化設計，實現輕量化、一鍵式部署，程式碼結構清晰，方便開發者整合自定義模型與業務邏輯。
+
+#### 如何使用
+
+-   **Docker 快速啟動**: 複製 `.env.example` 為 `.env` 並完成配置後，執行 `docker compose up -d` 即可在後臺啟動所有服務。
+-   **配置要點**: 無論 Docker 或原始碼啟動，皆需配置資料庫 (`DB_HOST`, `DB_PORT`, `DB_USER` 等) 和 LLM (`INSIGHT_ENGINE_API_KEY`, `INSIGHT_ENGINE_BASE_URL` 等)，所有 LLM 呼叫均使用 OpenAI API 介面標準。
+-   **原始碼環境準備**: 建議使用 Python 3.9+ 及 Conda 或 uv 建立虛擬環境，並透過 `pip install -r requirements.txt` 安裝基礎依賴包（可選安裝 PDF 匯出所需系統依賴）。
+-   **爬蟲前置設定**: 需安裝 Playwright 瀏覽器驅動 (`playwright install chromium`) 以啟用系統的社媒爬蟲功能。
+-   **完整系統啟動 (原始碼)**: 啟用虛擬環境後，在專案根目錄執行 `python app.py`，隨後即可透過瀏覽器訪問 `http://localhost:5000` 使用完整系統。
+-   **單獨 Agent 啟動**: 可使用 `streamlit run SingleEngineApp/<engine>_streamlit_app.py --server.port <port>` 命令獨立啟動 QueryEngine, MediaEngine 或 InsightEngine。
+-   **爬蟲系統獨立使用**: 進入 `MindSpider` 目錄，先執行 `python main.py --setup` 初始化，然後可透過 `--broad-topic` 或 `--complete` 等引數執行話題提取或深度爬取。
+-   **命令列報告生成**: 若無需 Web 介面，可直接執行 `python report_engine_only.py` 自動獲取各分析引擎的最新報告並生成綜合報告，支援 `--query` 指定主題及 `--skip-pdf` 跳過 PDF 輸出。
+## 📌 [Skyvern-AI/skyvern](https://github.com/Skyvern-AI/skyvern)
+<Callout>
+    Description: Automate browser based workflows with AI\
+    🌐 Python｜⭐️ 19,153 | 514 stars this week
+</Callout>
+    #### 簡介
+
+Skyvern 透過 LLMs 和 Computer Vision 自動化瀏覽器工作流程。它提供一個簡單的 API，取代傳統不穩定的自動化方式。Skyvern 利用 Vision LLMs 學習並互動網站，能適應佈局變更，並在未見過的網站上執行任務。它在 WebBench 基準測試中達到 SOTA 表現，尤其擅長 WRITE 任務。
+
+#### 主要功能
+
+*   **瀏覽器工作流程自動化：** 利用 LLMs 和 Computer Vision 自動化網頁任務，無需自訂程式碼，對網站佈局變更具有抵抗力。
+*   **Skyvern Cloud：** 提供託管雲端服務，支援多例項平行執行、內建反機器人機制、代理網路和 CAPTCHA 解決方案。
+*   **Skyvern Tasks：** 基礎構成單元，每個任務是一個包含 URL、prompt 和可選 `data_schema` 的單一請求。
+*   **Skyvern Workflows：** 串聯多個任務以完成複雜工作，支援瀏覽器任務、資料提取、驗證、迴圈、檔案處理、電子郵件傳送、HTTP 請求和自訂程式碼區塊。
+*   **資料與檔案處理：** 能夠填寫表單、從網站中提取結構化資料（透過 `data_extraction_schema`），並下載檔案至區塊儲存空間。
+*   **Livestreaming：** 實時直播瀏覽器畫面至本地機器，便於除錯和理解 Skyvern 的互動過程。
+*   **認證支援：** 支援多種認證方式，包括 2FA (TOTP，如 QR、Email、SMS) 和與 Bitwarden、1Password、LastPass 等密碼管理工具整合。
+*   **彈性 LLM 整合：** 支援 Model Context Protocol (MCP) 和多種 LLM 供應商，如 OpenAI、Anthropic、Azure OpenAI、AWS Bedrock、Gemini、Ollama、OpenRouter 及 OpenAI-compatible 端點。
+
+#### 如何使用
+
+*   **快速入門：**
+    *   **Skyvern Cloud：** 訪問 `app.skyvern.com` 即可開始使用。
+    *   **本地安裝：** 確保 Python 3.11.x+/NodeJS/NPM 依賴，Windows 使用者需額外安裝 Rust/VS Code C++ 工具。
+        *   安裝：`pip install skyvern`
+        *   初始化：`skyvern quickstart` (處理資料庫設定等)。
+        *   執行：`skyvern run all` 啟動服務及 UI (訪問 `http://localhost:8080`)。
+*   **透過程式碼執行任務：**
+    ```python
+    from skyvern import Skyvern
+    skyvern = Skyvern()
+    task = await skyvern.run_task(prompt="Find the top post on hackernews today")
+    print(task)
+    # 可指定目標 (Cloud 或本地服務): Skyvern(api_key="...", base_url="...")
+    ```
+*   **進階瀏覽器控制：**
+    *   **自訂 Chrome：** 可在 Python 中設定 `browser_path` 引數，或在 `.env` 中配置 `CHROME_EXECUTABLE_PATH` 和 `BROWSER_TYPE=cdp-connect`。
+    *   **遠端瀏覽器：** 透過 `cdp_url` 引數連線任意 CDP 服務的遠端瀏覽器。
+*   **結構化資料提取：** 在 `run_task` 中使用 `data_extraction_schema` 引數，定義 JSON 格式的輸出結構，確保取得一致的資料。
+    ```python
+    task = await skyvern.run_task(
+        prompt="...",
+        data_extraction_schema={"type": "object", "properties": {"title": {"type": "string"}}}
+    )
+    ```
+*   **服務管理與除錯：** 提供多個 CLI 指令，例如 `skyvern run server` (啟動後端)、`skyvern run ui` (啟動前端)、`skyvern status` (檢查狀態) 及 `skyvern stop all` (停止所有服務)。
+*   **Docker Compose 部署：**
+    *   確保 Docker Desktop 執行。
+    *   執行 `skyvern init llm` (生成 .env) 並填寫 LLM 金鑰。
+    *   執行 `docker compose up -d`，然後訪問 `http://localhost:8080` 使用 UI。
+## 📌 [ayn2op/discordo](https://github.com/ayn2op/discordo)
+<Callout>
+    Description: A lightweight, secure, and feature-rich Discord terminal (TUI) client.\
+    🌐 Go｜⭐️ 4,548 | 459 stars this week
+</Callout>
+    #### 簡介
+
+Discordo 是一款輕量級、安全且功能豐富的 Discord 終端客戶端，讓您可以在命令列介面中體驗 Discord。它目前仍處於積極開發階段，未來版本可能會有 breaking changes。
+
+#### 主要功能
+
+*   **Lightweight**: 輕量級的終端客戶端。
+*   **Configurable**: 支援高度自定義配置。
+*   **Mouse & clipboard support**: 提供滑鼠和剪貼簿功能支援。
+*   **Attachments**: 支援附件的處理。
+*   **Notifications**: 提供通知功能。
+*   **2-Factor & QR code authentication**: 支援兩步驟驗證和 QR code 掃描登入。
+*   **Discord-flavored markdown**: 支援 Discord 風格的 Markdown 語法。
+
+#### 如何使用
+
+*   **安裝方式一：Prebuilt binaries**
+    可從官方連結下載適用於 Windows, macOS 或 Linux 的預編譯二進位檔案。
+*   **安裝方式二：Package managers**
+    透過各種套件管理器安裝：
+    *   Arch Linux: `yay -S discordo-git`
+    *   Gentoo: `emerge net-im/discordo` (透過 guru repos)
+    *   FreeBSD: `pkg install discordo` 或 ports system。
+    *   Nix: 可透過 `pkgs.discordo` 或 upstream flake `github:ayn2op/discordo` 安裝。
+    *   Windows (Scoop):
+        ```
+        scoop bucket add vvxrtues https://github.com/vvirtues/bucket
+        scoop install discordo
+        ```
+*   **安裝方式三：從原始碼編譯**
+    執行 `git clone https://github.com/ayn2op/discordo`，進入目錄後使用 `go build .`。
+*   **Wayland clipboard support**:
+    若需 X11 clipboard 相容性，需安裝 `x11-dev` 相關套件，例如 Ubuntu 上使用 `apt install xwayland`。
+*   **登入方式一：Password 登入**
+    直接執行 `discordo` 後，輸入您的 email 和 password 即可登入。
+*   **登入方式二：Token 登入**
+    透過 `--token` command-line flag 提供驗證 token (例如 `discordo --token "YOUR_DISCORD_TOKEN"`)，或設定 `DISCORDO_TOKEN` 環境變數。
+*   **登入方式三：QR 登入**
+    執行 `discordo` 後，點選 "Login with QR" 按鈕，並遵循螢幕上的指示操作。
+*   **配置**
+    應用程式的行為、keybindings 和 theme 可透過 `config.toml` 檔案進行自定義。該檔案路徑因作業系統而異 (例如 Unix 系統為 `$XDG_CONFIG_HOME/discordo/config.toml` 或 `$HOME/.config/discordo/config.toml`)。若未找到配置檔，將使用預設配置。
