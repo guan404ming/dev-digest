@@ -1,0 +1,266 @@
+---
+title: '[12/1 - 12/7] GitHub Weekly Digest'
+publishedAt: '2025-12-07'
+---
+## 📌 [rustfs/rustfs](https://github.com/rustfs/rustfs)
+<Callout>
+    Description: 🚀2.3x faster than MinIO for 4KB object payloads. RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph.\
+    🌐 Rust｜⭐️ 15,152 | 3302 stars this week
+</Callout>
+    #### 簡介
+
+RustFS 是一個使用 Rust 開發的高效能、分散式物件儲存系統。它結合了 MinIO 的簡潔性與 Rust 的記憶體安全及卓越效能。RustFS 提供完整的 S3 相容性，完全開源，並針對資料湖、AI 及大資料工作負載進行最佳化。其採用寛鬆的 Apache 2.0 許可證，為新一代物件儲存提供卓越的速度和安全的分散式功能。
+
+#### 主要功能
+
+*   **高效能與分散式架構:** 基於 Rust 開發，確保最大速度與資源效率；具備可擴充套件與容錯的分散式設計。
+*   **S3 相容性:** 提供與現有 S3 應用程式和工具的無縫整合。
+*   **資料湖支援:** 針對高吞吐量的大資料和 AI 工作負載進行最佳化。
+*   **開源與許可證:** 採用 Apache 2.0 許可證，鼓勵社群貢獻和商業使用，避免 AGPL 的限制。
+*   **核心 S3 功能完備:** 支援 Upload/Download、Versioning、Logging、Event Notifications 及 Kubernetes Helm Charts 等核心 S3 操作。
+*   **資料保護機制:** 支援 Bitrot Protection 及 Single Node Mode，並正開發 Bucket Replication、Lifecycle Management 及 Distributed Mode 等進階功能。
+*   **卓越的 Console 體驗:** 提供全面且強大的管理介面。
+*   **記憶體安全與合規性:** Rust-based 設計確保 Memory Safety；無遙測功能，完全符合 GDPR, CCPA, APPI 等 Data Sovereignty 法規。
+
+#### 如何使用
+
+*   **一鍵安裝 (Option 1):**
+    ```bash
+    curl -O https://rustfs.com/install_rustfs.sh && bash install_rustfs.sh
+    ```
+*   **Docker 快速啟動 (Option 2):**
+    *   建立並更改資料目錄許可權 (將擁有者設為 `10001:10001`):
+        ```bash
+        mkdir -p data logs
+        chown -R 10001:10001 data logs
+        ```
+    *   執行 Docker 容器 (使用 `latest` 版本):
+        ```bash
+        docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -v $(pwd)/logs:/logs rustfs/rustfs:latest
+        ```
+    *   亦可使用 Docker Compose 啟動 (包含 `observability` 服務):
+        ```bash
+        docker compose --profile observability up -d
+        ```
+*   **從原始碼建置 (Option 3 - 進階使用者):**
+    *   使用 `./docker-buildx.sh` 指令碼建置多架構 Docker 映像，或推送至 Registry:
+        ```bash
+        ./docker-buildx.sh --build-arg RELEASE=latest # 本地建置多架構映像
+        ./docker-buildx.sh --push                      # 建置並推送至登錄檔
+        ```
+    *   也可透過 `make` 指令執行相關 Docker 建置命令，例如 `make docker-buildx`。
+    *   **macOS 注意事項:** 若於 macOS 上進行跨平臺編譯時，遇到 `ProcessFdQuotaExceeded` 錯誤，請先執行 `ulimit -n 4096`。
+*   **使用 Helm Chart 建置 (Option 4 - 雲原生):**
+    *   請遵循 Helm Chart README 中的詳細說明，將 RustFS 部署到 Kubernetes 叢集。
+*   **存取 RustFS Console:**
+    *   安裝並執行 RustFS 後，在您的網路瀏覽器中開啟 `http://localhost:9000` 即可存取管理介面。
+## 📌 [oven-sh/bun](https://github.com/oven-sh/bun)
+<Callout>
+    Description: Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one\
+    🌐 Zig｜⭐️ 84,394 | 1951 stars this week
+</Callout>
+    #### 簡介
+
+Bun 是一個專為 JavaScript 和 TypeScript 應用程式設計的一體化工具包，以單一的可執行檔 `bun` 提供。其核心是一個快速的 JavaScript runtime，旨在作為 Node.js 的直接替代品。它以 Zig 語言編寫並由 JavaScriptCore 驅動，顯著降低啟動時間並減少記憶體使用。Bun 的內建工具比現有選項更快，且無需大量修改即可在現有的 Node.js 專案中使用。
+
+#### 主要功能
+
+*   **快速的 JavaScript Runtime**: 作為 Node.js 的直接替代品，以 Zig 編寫並由 JavaScriptCore 驅動，提供更快的啟動時間和更低的記憶體消耗。
+*   **內建的測試執行器 (Test Runner)**: 支援使用 `bun test` 命令執行測試。
+*   **內建的指令碼執行器 (Script Runner)**: 可執行 `package.json` 中的指令碼，例如 `bun run start`。
+*   **Node.js 相容的套件管理器 (Package Manager)**: 用於安裝、更新和管理套件，例如 `bun install <pkg>`。
+*   **套件執行器 (Package Runner)**: 透過 `bunx` 命令快速執行套件，無需額外安裝。
+*   **整合式 Bundler**: 提供強大的程式碼打包功能，支援 JavaScript、TypeScript、JSX 等。
+*   **廣泛的 API 支援**: 包含內建的 HTTP server (Bun.serve)、WebSockets、檔案 I/O (Bun.file)，以及針對 SQLite、PostgreSQL、Redis、S3 等的客戶端。
+*   **開箱即用的 TypeScript 和 JSX 支援**: 無需額外設定即可直接執行 `.ts`, `.tsx`, `.jsx` 等檔案。
+
+#### 如何使用
+
+*   **安裝 Bun**:
+    *   **推薦 (Linux / macOS)**:
+        ```bash
+        curl -fsSL https://bun.com/install | bash
+        ```
+    *   **Windows**:
+        ```powershell
+        powershell -c "irm bun.sh/install.ps1 | iex"
+        ```
+    *   **使用 npm**:
+        ```bash
+        npm install -g bun
+        ```
+    *   **使用 Homebrew (macOS / Linux)**:
+        ```bash
+        brew tap oven-sh/bun
+        brew install bun
+        ```
+    *   **使用 Docker**:
+        ```bash
+        docker pull oven/bun
+        docker run --rm --init --ulimit memlock=-1:-1 oven/bun
+        ```
+*   **升級 Bun**:
+    *   升級到最新穩定版：`bun upgrade`
+    *   升級到最新 Canary 版：`bun upgrade --canary`
+*   **執行 TypeScript/JSX 檔案**:
+    ```bash
+    bun run index.tsx
+    ```
+*   **執行測試**:
+    ```bash
+    bun test
+    ```
+*   **執行 `package.json` 中的指令碼**:
+    ```bash
+    bun run start
+    ```
+*   **安裝套件**:
+    ```bash
+    bun install <pkg>
+    ```
+*   **執行已安裝的套件**:
+    ```bash
+    bunx cowsay 'Hello, world!'
+    ```
+*   **初始化新專案**:
+    *   `bun init`
+    *   `bun create <template-name>`
+## 📌 [comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+<Callout>
+    Description: The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.\
+    🌐 Python｜⭐️ 95,909 | 1031 stars this week
+</Callout>
+    #### 簡介
+
+ComfyUI 是一個功能強大且模組化的視覺 AI 引擎與應用程式，它允許使用者透過圖形、節點或流程圖介面，設計並執行進階的 Stable Diffusion 工作流程。此應用程式支援 Windows, Linux, 和 macOS 等多種作業系統，讓使用者無需編寫程式碼即可建立複雜的 AI 生成任務。
+
+#### 主要功能
+
+*   提供直觀的節點/圖形/流程圖介面，無需編碼即可實驗並建立複雜的 Stable Diffusion 工作流程。
+*   支援廣泛的 AI 模型，包括 SDXL、SD3 等 Image Models、Image Editing Models、Stable Video Diffusion 等 Video Models、Stable Audio 等 Audio Models 及 Hunyuan3D 2.0 等 3D Models。
+*   具備非同步佇列系統 (Asynchronous Queue system) 和智慧記憶體管理，即使 GPU VRAM 低至 1GB 也能執行大型模型。
+*   支援多種模型載入，如 `ckpt` 和 `safetensors` 格式的 diffusion models、VAEs 和 CLIP models，以及 `Embeddings`/`Textual inversion`、`Loras` 和 `Hypernetworks`。
+*   能夠從生成的 PNG、WebP 和 FLAC 檔案載入完整的帶有種子 (seeds) 的工作流程，並支援將工作流程儲存為 Json 檔案。
+*   包含多樣化的生成與編輯功能，如 Hires fix、Area Composition、Inpainting、ControlNet、T2I-Adapter 和多種 Upscale Models。
+*   支援 Latent previews with TAESD，且核心可完全離線工作，除非使用者選擇下載。
+*   提供選配的 API nodes，可透過線上 Comfy API 使用外部供應商的付費模型。
+
+#### 如何使用
+
+*   **取得 ComfyUI：** 可選擇下載 Desktop Application (適用於 Windows & macOS)、Windows Portable Package，或進行 Manual Install (支援所有作業系統及 GPU 型別)。
+*   **模型設定：** 下載後，將 `ckpt`/`safetensors` 檔案放置於 `ComfyUI\models\checkpoints`，VAEs 放置於 `ComfyUI\models\vae` 等對應目錄。
+*   **手動安裝 (Windows, Linux)：**
+    1.  Git clone 儲存庫。
+    2.  根據您的 GPU 型別 (NVIDIA, AMD, Intel, Apple Mac silicon, Ascend NPUs, Cambricon MLUs, Iluvatar Corex)，使用 `pip` 指令安裝或更新 PyTorch。
+        例如，NVIDIA 使用者可執行：
+        ```bash
+        pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130
+        ```
+    3.  安裝所有依賴項：
+        ```bash
+        pip install -r requirements.txt
+        ```
+*   **啟動 ComfyUI：** 在 ComfyUI 目錄下執行：
+    ```bash
+    python main.py
+    ```
+*   **共享模型路徑：** 透過編輯 `extra_model_paths.yaml` 檔案，可設定模型搜尋路徑，以便與其他 UI 共享模型。
+*   **鍵盤快捷鍵：** 提供多個快速操作鍵，例如 `Ctrl + Enter` 可排隊生成當前圖形，`Ctrl + S` 儲存工作流程，`Ctrl + Z/Y` 執行撤銷/重做。
+*   **載入工作流程：** 將生成的 PNG 圖片拖曳至網頁介面，即可載入包含原始種子 (seeds) 的完整工作流程。
+*   **ComfyUI-Manager (選配)：** 若要安裝和管理自訂節點，請先安裝其依賴：`pip install -r manager_requirements.txt`，然後啟動 ComfyUI 時新增 `--enable-manager` 旗標：
+    ```bash
+    python main.py --enable-manager
+    ```
+## 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
+<Callout>
+    Description: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.\
+    🌐 Shell｜⭐️ 44,856 | 964 stars this week
+</Callout>
+    #### 簡介
+
+*   Claude Code 是一款代理型 (agentic) 編碼工具，可在您的終端機 (terminal) 中執行。
+*   它能理解您的程式碼庫 (codebase)。
+*   透過執行例行任務、解釋複雜程式碼及處理 Git 工作流程，幫助您更快地編寫程式碼。
+*   所有操作皆透過自然語言指令 (natural language commands) 執行。
+*   可在終端機、IDE 中使用，或在 Github 上標註 @claude 進行互動。
+*   可查閱官方檔案 (official documentation) 瞭解更多資訊。
+
+#### 主要功能
+
+*   **外掛 (Plugins)**: 包含多個 Claude Code 外掛，透過自定義指令 (custom commands) 和代理 (agents) 擴充套件功能。
+*   詳細外掛檔案可在 `plugins` 目錄中找到。
+*   **錯誤報告 (Bug Reporting)**: 支援使用 `/bug` 指令直接在 Claude Code 內部報告問題。
+*   也可透過 GitHub issue 提交錯誤報告。
+*   **社群支援 (Community Support)**: 可加入 Claude Developers Discord，與其他開發者交流。
+*   在 Discord 社群中獲得幫助、分享回饋並討論您的專案。
+
+#### 如何使用
+
+*   **安裝 (Installation)**:
+    *   MacOS/Linux: 執行以下命令安裝：
+        ```bash
+        curl -fsSL https://claude.ai/install.sh | bash
+        ```
+    *   Homebrew (MacOS): 執行以下命令安裝：
+        ```bash
+        brew install --cask claude-code
+        ```
+    *   Windows: 執行以下命令安裝：
+        ```powershell
+        irm https://claude.ai/install.ps1 | iex
+        ```
+    *   NPM: 執行以下命令安裝：
+        ```bash
+        npm install -g @anthropic-ai/claude-code
+        ```
+*   **NPM 安裝注意事項**: 若使用 NPM 安裝，需同時安裝 Node.js 18+。
+*   **啟動**: 導航至您的專案目錄 (project directory) 後，執行 `claude` 命令即可。
+## 📌 [microsoft/magentic-ui](https://github.com/microsoft/magentic-ui)
+<Callout>
+    Description: A research prototype of a human-centered web agent\
+    🌐 Python｜⭐️ 8,711 | 600 stars this week
+</Callout>
+    #### 簡介
+
+Magentic-UI 是一個以人為本的 AI 代理研究原型，旨在解決複雜的網頁和程式編碼任務，並可能需要監控。與其他「黑箱」代理不同，它會在執行前揭露計畫，允許使用者引導，並請求敏感操作的批准。最近更新包括整合 Microsoft Fara-7B 模型、支援 "Tell me When" 長期監控、檔案上傳、MCP Agents 擴充套件，以及更快速的 Docker 安裝。
+
+#### 主要功能
+
+*   Magentic-UI 特別適用於需要網頁操作（如填寫表單、自訂訂單）、深度網站導航或網頁導航與程式碼執行結合的複雜任務。
+*   其獨特之處在於提供透明且可控的介面，支援高效的 human-in-the-loop 參與。
+*   **Co-Planning**：透過聊天和計畫編輯器協同建立並批准逐步計畫。
+*   **Co-Tasking**：可透過網頁瀏覽器或聊天直接中斷和引導任務執行，並在需要時請求澄清和協助。
+*   **Action Guards**：敏感操作必須經過使用者明確批准後才會執行。
+*   **Plan Learning and Retrieval**：從先前的執行中學習，以改進未來的任務自動化，並將其儲存於計畫庫中，支援自動或手動檢索。
+*   **Parallel Task Execution**：可以同時執行多個任務，會話狀態指示器會告知 Magentic-UI 何時需要使用者輸入或任務已完成。
+*   支援自動化監控任務 "Tell me When"、檔案上傳進行分析或修改，以及透過 MCP Agents 擴充套件功能。
+
+#### 如何使用
+
+*   **快速入門：**
+    1.  **設定環境**：
+        ```bash
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install magentic-ui --upgrade
+        ```
+    2.  **設定 API 金鑰**：
+        ```bash
+        export OPENAI_API_KEY="your-api-key-here"
+        ```
+    3.  **啟動 Magentic-UI**：
+        ```bash
+        magentic-ui --port 8081
+        ```
+        然後在瀏覽器中開啟 `http://localhost:8081`。
+*   **先決條件**：需要 Docker 和 Python 3.10+。Windows 使用者建議使用 WSL2。
+*   **替代使用選項**：
+    *   **無 Docker 執行**（功能受限，無程式碼執行）：`magentic-ui --run-without-docker --port 8081`
+    *   **命令列介面**：`magentic-cli --work-dir PATH/TO/STORE/DATA`
+*   **自訂 LLM Clients**：透過 `pip install magentic-ui[azure]` 或 `pip install magentic-ui[ollama]` 安裝額外支援，然後可透過 UI 設定或傳遞 config 檔案來變更模型客戶端。
+*   **使用 Fara-7B 模型**：
+    1.  安裝 `magentic-ui[fara]`。
+    2.  在獨立程式中，使用 vLLM 服務 Fara-7B 模型：`vllm serve "microsoft/Fara-7B" --port 5000 --dtype auto`
+    3.  建立 `fara_config.yaml` 配置檔案。
+    4.  啟動 Magentic-UI：`magentic-ui --fara --port 8081 --config fara_config.yaml`
+*   **配置選項**：可以透過 UI 設定或在啟動時傳遞 YAML config 檔案 (`magentic-ui --port 8081 --config config.yaml`) 來配置模型客戶端（如 Azure OpenAI, Ollama）和 MCP Server。
