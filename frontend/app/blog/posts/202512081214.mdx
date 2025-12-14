@@ -1,0 +1,179 @@
+---
+title: '[12/8 - 12/14] GitHub Weekly Digest'
+publishedAt: '2025-12-14'
+---
+## 📌 [microsoft/VibeVoice](https://github.com/microsoft/VibeVoice)
+<Callout>
+    Description: Open-Source Frontier Voice AI\
+    🌐 Python｜⭐️ 17,730 | 6950 stars this week
+</Callout>
+    #### 簡介
+
+VibeVoice 是一個開源研究框架，旨在推動語音合成社群的協作。它是一個創新的框架，能從文字生成具表現力、長篇、多說話者的對話音訊。VibeVoice 透過獨特的連續語音分詞器（Acoustic 及 Semantic）和結合 Large Language Model (LLM) 的 next-token diffusion framework，有效解決傳統 Text-to-Speech (TTS) 的挑戰。
+
+#### 主要功能
+
+*   **長篇多說話者模型 (Long-form multi-speaker model):**
+    *   能合成長達 90 分鐘的對話或單人語音。
+    *   支援多達 4 位不同的說話者，超越許多先前模型通常 1-2 位說話者的限制。
+*   **即時串流 TTS 模型 (Realtime streaming TTS model):**
+    *   可在約 300 ms 內產生初始可聽見的語音。
+    *   支援串流文字輸入，用於單一說話者的即時語音生成。
+    *   專為低延遲生成而設計。
+*   **核心技術創新:**
+    *   採用超低幀率 (7.5 Hz) 的連續語音分詞器 (Acoustic 和 Semantic)。
+    *   有效保留音訊保真度，同時顯著提升長序列處理的計算效率。
+    *   運用 next-token diffusion framework，結合 Large Language Model (LLM) 理解文字上下文和對話流程，並透過 diffusion head 生成高保真度的聲學細節。
+*   支援生成如 podcasts 等富有表現力的對話音訊。
+*   已增加九種語言（DE, FR, IT, JP, KR, NL, PL, PT, ES）的實驗性說話者。
+
+#### 如何使用
+
+*   可透過 Colab 試用 `VibeVoice-Realtime-0.5B` 即時文字轉語音模型。
+*   如需語音客製化 (voice customization) 服務，請聯絡 VibeVoice 團隊。
+*   為降低 deepfake 風險並確保首個語音片段的低延遲，語音提示 (voice prompts) 以嵌入格式提供。
+## 📌 [DayuanJiang/next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io)
+<Callout>
+    Description: A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.\
+    🌐 TypeScript｜⭐️ 9,130 | 4526 stars this week
+</Callout>
+    #### 簡介
+
+Next AI Draw.io 是一款基於 Next.js 的網頁應用程式，它將 AI 能力與 draw.io 流程圖相結合。使用者可以透過自然語言指令和 AI 輔助視覺化，輕鬆建立、修改及強化各種圖表。
+
+#### 主要功能
+
+-   **LLM 驅動的圖表建立**: 利用大型語言模型，透過自然語言指令直接建立和操作 draw.io 圖表。
+-   **基於圖片的圖表複製**: 上傳現有圖表或圖片，AI 會自動複製並最佳化它們。
+-   **PDF 與文字檔上傳**: 上傳 PDF 檔案和文字檔案，提取內容並從現有檔案生成圖表。
+-   **AI 推理過程顯示**: 支援的模型（如 OpenAI o1/o3, Gemini, Claude 等）可顯示 AI 的思考過程。
+-   **圖表歷史紀錄**: 提供全面的版本控制，追蹤所有變更，可在 AI 編輯前檢視和恢復圖表的舊版本。
+-   **互動式聊天介面**: 與 AI 即時溝通，精確最佳化您的圖表。
+-   **雲端架構圖支援**: 專門支援生成 AWS, GCP, Azure 等雲端架構圖，並使用相關圖示。
+-   **動態聯結器**: 建立圖表元素之間動態且具動畫效果的聯結器，提升視覺化效果。
+
+#### 如何使用
+
+-   **線上試用**:
+    -   無需安裝，可直接在我們的 demo 網站上體驗應用程式。
+    -   請注意，demo 網站目前使用 minimax-m2；為獲得最佳效果，建議使用 Claude Sonnet 4.5 或 Claude Opus 4.5 進行自託管。
+    -   您可使用自己的 API Key 以繞過 demo 網站的使用限制，設定會本地儲存於瀏覽器中，不會上傳至伺服器。
+-   **使用 Docker 執行 (推薦)**:
+    -   首先安裝 Docker。
+    -   透過指令啟動容器，並設定相關環境變數：
+        ```bash
+        docker run -d -p 3000:3000 \
+          -e AI_PROVIDER=openai \
+          -e AI_MODEL=gpt-4o \
+          -e OPENAI_API_KEY=your_api_key \
+          ghcr.io/dayuanjiang/next-ai-draw-io:latest
+        ```
+    -   或使用 `.env` 檔案配置：`cp env.example .env` 並編輯，然後執行 `docker run -d -p 3000:3000 --env-file .env ghcr.io/dayuanjiang/next-ai-draw-io:latest`。
+    -   在瀏覽器中開啟 `http://localhost:3000` 即可訪問。
+-   **本地安裝**:
+    -   克隆專案儲存庫：`git clone https://github.com/DayuanJiang/next-ai-draw-io` 並進入目錄。
+    -   安裝依賴：`npm install`。
+    -   配置您的 AI provider：複製 `env.example` 為 `.env.local`，並設定 `AI_PROVIDER`, `AI_MODEL`, API keys 及可選的 `ACCESS_CODE_LIST` (建議設定以防止令牌快速耗盡)。
+    -   執行開發伺服器：`npm run dev`，然後在瀏覽器中開啟 `http://localhost:3000`。
+-   **部署**:
+    -   最簡單的方式是使用 Next.js 開發者提供的 Vercel 平臺進行部署。
+    -   請務必在 Vercel 控制檯中設定與您本地 `.env.local` 檔案相同的環境變數。
+-   **多種 AI Provider 支援**:
+    -   支援 AWS Bedrock (預設), OpenAI, Anthropic, Google AI, Azure OpenAI, Ollama, OpenRouter, DeepSeek, SiliconFlow 等。
+    -   除了 AWS Bedrock 和 OpenRouter，所有 Provider 均支援自訂端點。
+    -   此任務需要強大的模型能力來生成符合嚴格格式約束 (draw.io XML) 的長篇文字；推薦模型包括 Claude Sonnet 4.5, GPT-5.1, Gemini 3 Pro, DeepSeek V3.2/R1。Claude 系列模型特別適合用於建立帶有 AWS, Azure, GCP 等雲端架構標誌的圖表。
+## 📌 [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents)
+<Callout>
+    Description: 📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程\
+    🌐 Python｜⭐️ 8,718 | 2879 stars this week
+</Callout>
+    #### 簡介
+
+Hello-Agents 是一個 Datawhale 社群的開源教程，旨在彌補當前系統性、重實踐的智慧體構建指南的匱乏。專注於 AI 原生 Agent，從核心原理到多智慧體應用，幫助學習者從 LLM 使用者轉變為智慧體系統構建者。
+
+#### 主要功能
+
+-   **免費且開源**：Datawhale 社群提供的完全免費學習資源，鼓勵與社群共同成長。
+-   **理解核心原理**：深入理解智慧體的概念、歷史發展與經典正規化。
+-   **實作能力提升**：掌握熱門低程式碼平臺（如 Coze, Dify, n8n）與主流智慧體框架（如 AutoGen, AgentScope, LangGraph）的使用。
+-   **自研框架能力**：基於 OpenAI 原生 API，從零開始構建一個屬於自己的智慧體框架 `HelloAgents`。
+-   **掌握高階技術**：逐步實現 Context Engineering、Memory、RAG、智慧體通訊協議（如 MCP, A2A, ANP）等系統性技術。
+-   **Agentic-RL 實戰**：掌握從 SFT 到 GRPO 的 LLM 全流程訓練實戰，進行模型訓練。
+-   **開發真實應用**：實戰開發智慧旅行助手、自動化深度研究智慧體及模擬社會動態的賽博小鎮等綜合專案。
+-   **求職面試準備**：學習智慧體相關的求職面試問題與解答。
+
+#### 如何使用
+
+-   **線上閱讀**：點選 [這裡](https://github.com/datawhalechina/hello-agents) 開始線上學習，無需下載，隨時隨地查閱。
+-   **PDF 版本下載**：可從 [GitHub Release](https://github.com/datawhalechina/hello-agents/releases/tag/V1.0.0) 或 [Datawhale 官網](https://www.datawhale.cn/learn/summary/239) 免費下載帶有開源標誌水印的 PDF 教程。
+-   **本地閱讀與貢獻**：參考專案指南，在本地閱讀內容或參與社群內容貢獻。
+-   **學習基礎要求**：建議具備基礎 Python 程式設計能力，並對大語言模型有基本的概念性瞭解（例如，知道如何透過 API 呼叫 LLM）。
+-   **系統化學習路徑**：按照專案的五大部分（智慧體與語言模型基礎、構建 LLM 智慧體、高階知識擴充套件、綜合案例進階、畢業設計及未來展望）依序學習，循序漸進。
+-   **理論與實踐結合**：強烈建議親手執行、除錯並修改 `code` 資料夾內提供的所有配套程式碼，將理論知識應用於實際操作。
+-   **社群交流與支援**：遇到問題時，歡迎在專案的 [issue 區](https://github.com/datawhalechina/hello-agents/issues) 提問，並關注 Datawhale 及其他 Agent 相關社群。
+-   **貢獻社群內容**：鼓勵將在學習過程中的獨到見解或實踐總結，以 PR 形式貢獻至社群精選 (Community Blog) 或 Extra-Chapter。
+## 📌 [lfnovo/open-notebook](https://github.com/lfnovo/open-notebook)
+<Callout>
+    Description: An Open Source implementation of Notebook LM with more flexibility and features\
+    🌐 TypeScript｜⭐️ 14,702 | 2416 stars this week
+</Callout>
+    #### 簡介
+Open Notebook 是一個開源、注重隱私、100% 本地執行的 Google Notebook LM 替代方案。它讓使用者能掌控資料、自由選擇多種 AI 模型（支援 16+ 供應商）、組織多模態內容、生成專業 Podcast、智慧搜尋並進行上下文 AI 對話。其核心優勢在於資料隱私、成本效益、高度自訂性和避免供應商鎖定。
+
+#### 主要功能
+- **隱私優先：** 自行託管資料，提供完整的資料主權。
+- **多模型 AI 支援：** 支援超過 16 個 AI 供應商，包括 OpenAI, Anthropic, Ollama, Google, LM Studio 等。
+- **通用內容支援：** 可組織 PDF、影片、音訊、網頁、Office docs 等多模態內容。
+- **專業 Podcast 生成：** 支援多達 4 位講者和自訂 Episode Profiles。
+- **智慧搜尋與上下文 AI 對話：** 對所有內容進行 Full-text 和 Vector Search，並基於您的研究資料與 AI 進行對話。
+- **AI 輔助筆記：** 生成見解或手動撰寫筆記。
+- **全面的 REST API：** 提供完整的 REST API 以實現自動化整合與客製化。
+- **靈活部署與高客製化：** 支援 Docker、雲端或本地部署，且為開源系統，提供無限擴充套件性。
+
+#### 如何使用
+- **透過 Docker 快速啟動：** 使用提供的 Docker 映像檔 `lfnovo/open_notebook:v1-latest-single` 或 `ghcr.io/lfnovo/open-notebook:v1-latest-single`。
+- **兩種主要設定方式：**
+    - **Local Machine Setup (本地機器設定)：**
+    ```bash
+    docker run -d \
+      --name open-notebook \
+      -p 8502:8502 -p 5055:5055 \
+      -v ./notebook_data:/app/data \
+      -v ./surreal_data:/mydata \
+      -e OPENAI_API_KEY=your_key_here \
+      -e SURREAL_URL="ws://localhost:8000/rpc" \
+      -e SURREAL_USER="root" \
+      -e SURREAL_PASSWORD="root" \
+      -e SURREAL_NAMESPACE="open_notebook" \
+      -e SURREAL_DATABASE="production" \
+      lfnovo/open_notebook:v1-latest-single
+    ```
+    - **Remote Server Setup (遠端伺服器設定)：** 適用於伺服器、Raspberry Pi 等遠端機器，需將 `API_URL` 環境變數設為伺服器實際 IP 或 Domain。
+- **關鍵設定注意事項：** 必須暴露 Port 8502 (Web interface) 和 Port 5055 (API backend)，且 `API_URL` 變數需與您實際存取伺服器的方式一致，遠端存取請勿使用 `localhost`。
+- **使用 Docker Compose (推薦)：** 建立 `docker-compose.yml` 檔案以簡化服務管理。
+- **問題排除：** 檔案中提供常見問題 (如 "Unable to connect to server" 或 "404" 錯誤) 的解決方案。
+- **尋求協助：** 可查閱 Getting Started Guide、Installation Guide，或加入 Discord 伺服器，亦有 CustomGPT 協助安裝。
+## 📌 [agentsmd/agents.md](https://github.com/agentsmd/agents.md)
+<Callout>
+    Description: AGENTS.md — a simple, open format for guiding coding agents\
+    🌐 TypeScript｜⭐️ 11,245 | 2271 stars this week
+</Callout>
+    AGENTS.md
+
+#### 簡介
+AGENTS.md 是一個簡單、開放的格式，用於指導程式碼代理。它可視為專為代理設計的 README，提供專屬且可預測的位置，以提供上下文和指令，協助 AI 程式碼代理在您的專案上工作。
+
+#### 主要功能
+- 提供開發環境設定的實用提示。
+- 包含詳細的測試指令，確保程式碼品質。
+- 規範 Pull Request (PR) 的提交指南。
+
+#### 如何使用
+- 提供開發環境的快速導航與設定指南，例如使用 `pnpm dlx turbo run where <project_name>` 快速跳轉至指定套件。
+- 指導如何將套件加入 workspace (例如執行 `pnpm install --filter <project_name>`)，並建立新的開發套件 (例如透過 `pnpm create vite@latest <project_name> -- --template react-ts`)。
+- 強調確認套件名稱時需檢查每個套件 `package.json` 中的 `name` 欄位。
+- 說明如何查詢 CI 計劃（位於 `.github/workflows` 資料夾），並執行指定套件的所有檢查，例如 `pnpm turbo run test --filter <project_name>`。
+- 闡述從套件根目錄執行 `pnpm test` 的方法，以及如何使用 `pnpm vitest run -t "<test name>"` 進行精確測試。
+- 要求修正所有測試和型別錯誤，直到整個測試套件透過且綠燈顯示。
+- 提醒在移動檔案或更改 imports 後，執行 `pnpm lint --filter <project_name>` 以確保 ESLint 和 TypeScript 規則依然透過。
+- 規範 Pull Request (PR) 的標題格式為：`[<project_name>] <Title>`。
