@@ -1,0 +1,212 @@
+---
+title: '[12/15 - 12/21] GitHub Weekly Digest'
+publishedAt: '2025-12-21'
+---
+## 📌 [DayuanJiang/next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io)
+<Callout>
+    Description: A next.js web application that integrates AI capabilities with draw.io diagrams. This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.\
+    🌐 TypeScript｜⭐️ 13,886 | 5255 stars this week
+</Callout>
+    #### 簡介
+
+Next AI Draw.io 是一個基於 Next.js 的網路應用程式，旨在透過整合 AI 功能與 draw.io 圖表工具，讓使用者能透過自然語言指令輕鬆建立、修改和增強各類圖表，並實現 AI 輔助視覺化。
+
+#### 主要功能
+
+*   **LLM-Powered Diagram Creation**: 透過大型語言模型，直接使用自然語言指令建立和操作 draw.io 圖表。
+*   **Image-Based Diagram Replication**: 上傳現有圖表或圖片，AI 將自動複製並進行強化。
+*   **Document-to-Diagram**: 上傳 PDF 檔案和文字檔，AI 可從中提取內容並生成相關圖表。
+*   **AI Reasoning Display**: 顯示支援模型 (如 OpenAI o1/o3, Gemini, Claude 等) 的 AI 思考過程。
+*   **Diagram History**: 提供全面的版本控制，追蹤所有圖表變更，允許使用者檢視和還原AI編輯前的版本。
+*   **Interactive Chat Interface**: 透過互動式聊天介面與 AI 實時溝通，以精煉和最佳化您的圖表。
+*   **Cloud Architecture Diagram Support**: 專門支援生成 AWS, GCP, Azure 等主要雲服務的架構圖。
+*   **Animated Connectors**: 建立動態和動畫聯結器，以提升圖表元素之間的視覺化效果。
+*   **MCP Server (Preview)**: 支援與 AI agents (如 Claude Desktop, Cursor, VS Code) 透過 MCP (Model Context Protocol) 整合使用。
+
+#### 如何使用
+
+*   **線上試用**:
+    *   直接訪問 demo 網站，無需任何安裝即可體驗應用程式。
+    *   在聊天面板的 Settings 中配置您的 API Key，以使用個人帳戶並繞過 demo 站點的使用限制。
+*   **使用 Docker 執行 (推薦)**:
+    *   確保已安裝 Docker。
+    *   執行以下指令來啟動服務，並替換為您的 AI provider 及 API key：
+        ```bash
+        docker run -d -p 3000:3000 \
+          -e AI_PROVIDER=openai \
+          -e AI_MODEL=gpt-4o \
+          -e OPENAI_API_KEY=your_api_key \
+          ghcr.io/dayuanjiang/next-ai-draw-io:latest
+        ```
+    *   在瀏覽器中開啟 `http://localhost:3000` 即可使用。
+*   **本地安裝**:
+    *   Clone 儲存庫：`git clone https://github.com/DayuanJiang/next-ai-draw-io` 並進入專案目錄。
+    *   安裝依賴項：`npm install`
+    *   配置 AI provider：複製 `env.example` 為 `.env.local`，並編輯配置 `AI_PROVIDER`、`AI_MODEL` 和所需的 API keys。
+        *   **注意**: 建議設定 `ACCESS_CODE_LIST` 來保護部署網站的訪問許可權。
+    *   執行開發伺服器：`npm run dev`
+    *   在瀏覽器中開啟 `http://localhost:3000` 即可訪問應用程式。
+*   **多種 AI Providers 支援**: 支援 AWS Bedrock, OpenAI, Anthropic, Google AI, Azure OpenAI, Ollama, OpenRouter, DeepSeek, SiliconFlow 等多個 AI 提供者。
+## 📌 [simstudioai/sim](https://github.com/simstudioai/sim)
+<Callout>
+    Description: Open-source platform to build and deploy AI agent workflows.\
+    🌐 TypeScript｜⭐️ 23,812 | 4494 stars this week
+</Callout>
+    #### 簡介
+Sim 是一個強大的平臺，讓您能夠在數分鐘內建構並部署 AI agent 工作流程。它提供視覺化設計介面、Copilot 輔助以及與向量資料庫的整合，以簡化 AI 應用程式的開發。
+
+#### 主要功能
+
+*   **視覺化工作流程設計：** 透過畫布以視覺化方式設計 agent 工作流程，連線 agents、tools 和 blocks，並即時執行設計好的流程。
+*   **Copilot 輔助開發：** 利用 Copilot 從自然語言生成 nodes、修正錯誤，並直接迭代 flows，大幅提升開發效率。
+*   **向量資料庫整合：** 輕鬆上傳檔案到 vector store，讓 AI agents 能夠根據您的特定內容進行資訊檢索並回答問題。
+
+#### 如何使用
+
+*   **雲端託管：**
+    *   直接透過 `sim.ai` 存取雲端託管版本。
+*   **自託管：NPM Package (快速上手)**
+    *   確保 Docker 已安裝並執行。
+    *   執行指令 `npx simstudio`。
+    *   在瀏覽器中開啟 `http://localhost:3000` 即可存取。
+    *   可選引數：`--port <port>` (預設 3000) 或 `--no-pull`。
+*   **自託管：Docker Compose (推薦)**
+    *   複製儲存庫：
+        ```bash
+        git clone https://github.com/simstudioai/sim.git
+        cd sim
+        ```
+    *   啟動 Sim：
+        ```bash
+        docker compose -f docker-compose.prod.yml up -d
+        ```
+    *   應用程式將在 `http://localhost:3000/` 執行。
+*   **使用本地 AI 模型 (Ollama)**
+    *   啟動支援 GPU 的 Ollama (自動下載 `gemma3:4b` 模型)：
+        ```bash
+        docker compose -f docker-compose.ollama.yml --profile setup up -d
+        ```
+    *   或適用於 CPU-only 系統：
+        ```bash
+        docker compose -f docker-compose.ollama.yml --profile cpu --profile setup up -d
+        ```
+    *   若 Ollama 獨立執行，請設定 `OLLAMA_URL` (例如，macOS/Windows 上為 `http://host.docker.internal:11434`)。
+*   **使用 vLLM (OpenAI-compatible API)**
+    *   設定環境變數 `VLLM_BASE_URL` (例如：`http://your-vllm-server:8000`) 和 `VLLM_API_KEY` (選填) 以連線 vLLM 服務。
+*   **自託管：手動安裝**
+    *   需具備 Bun runtime, Node.js v20+, PostgreSQL 12+ (帶 pgvector extension)。
+    *   克隆儲存庫、安裝依賴，設定 PostgreSQL (透過 Docker 或手動安裝 pgvector)。
+    *   配置 `apps/sim/.env` 檔案 (DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL)。
+    *   執行資料庫遷移：`cd packages/db && bunx drizzle-kit migrate`。
+    *   啟動伺服器：從專案根目錄執行 `bun run dev:full`。
+*   **Copilot API Key 設定 (自託管)**
+    *   前往 `https://sim.ai` → Settings → Copilot 產生一個 Copilot API Key。
+    *   將該 key 設定為您自託管例項的環境變數 `COPILOT_API_KEY`。
+## 📌 [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+<Callout>
+    Description: A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.\
+    🌐 TypeScript｜⭐️ 8,407 | 3312 stars this week
+</Callout>
+    #### 簡介
+
+Claude-Mem 是一個為 Claude Code 設計的持久記憶壓縮系統。它透過自動捕捉工具使用觀察、生成語義摘要，並在未來的會話中提供這些內容，無縫地儲存跨會話的上下文。這讓 Claude 即使在會話結束或重新連線後，也能維持對專案知識的連續性。
+
+#### 主要功能
+
+-   **持久記憶 (Persistent Memory)**：上下文資訊可跨會話儲存，確保知識連續性。
+-   **漸進式揭露 (Progressive Disclosure)**：提供分層記憶檢索，並可檢視 token 成本，幫助 Claude 智慧決策。
+-   **技能型搜尋 (Skill-Based Search)**：使用 `mem-search` 技能透過自然語言查詢專案歷史。
+-   **Web 瀏覽器 UI (Web Viewer UI)**：提供即時記憶流，可透過 `http://localhost:37777` 存取。
+-   **隱私控制 (Privacy Control)**：使用 `<private>` 標籤排除敏感內容不被儲存。
+-   **自動化操作 (Automatic Operation)**：無需手動介入，上下文自動注入與管理。
+-   **結構化觀察 (Structured Observations)**：透過 AI 提取學習內容，並依型別、概念和檔案引用進行分類。
+-   **核心元件 (Core Components)**：包含 5 個生命週期 Hooks、一個帶有 Web UI 的 Worker Service (HTTP API on port 37777)、SQLite 資料庫和 Chroma Vector Database 實現混合搜尋。
+
+#### 如何使用
+
+-   **安裝與啟用 (Installation & Activation)**：
+    1.  在新的 Claude Code session 中輸入 `/plugin marketplace add thedotmack/claude-mem`。
+    2.  接著輸入 `/plugin install claude-mem`。
+    3.  重新啟動 Claude Code，之前的會話上下文將自動出現在新的會話中。
+-   **查詢記憶 (Querying Memory)**：
+    -   透過 `mem-search` 技能，使用自然語言進行查詢，例如 `"What bugs did we fix last session?"` 或 `"How did we implement authentication?"`。
+    -   支援多種搜尋操作，如搜尋 Observations、Sessions、Prompts，或按 Concept、File、Type 搜尋。
+-   **Web Viewer UI**：
+    -   透過瀏覽器開啟 `http://localhost:37777` 實時檢視記憶流和管理設定。
+-   **隱私控制**：
+    -   在對話中，使用 `<private>` 標籤包裹敏感內容，使其不會被儲存。
+-   **設定配置 (Configuration)**：
+    -   設定檔位於 `~/.claude-mem/settings.json`。
+    -   可透過 CLI 輔助工具 `./claude-mem-settings.sh` 或直接編輯檔案進行修改。
+    -   範例：調整 `CLAUDE_MEM_MODEL` 或 `CLAUDE_MEM_CONTEXT_OBSERVATIONS`。
+    ```json
+    {
+      "CLAUDE_MEM_MODEL": "claude-sonnet-4-5",
+      "CLAUDE_MEM_WORKER_PORT": "37777",
+      "CLAUDE_MEM_CONTEXT_OBSERVATIONS": "50"
+    }
+    ```
+-   **試用 Beta 功能 (Beta Features)**：
+    -   在 Web Viewer UI (`http://localhost:37777`) 中，點選 Settings (齒輪圖示)。
+    -   在 Version Channel 中選擇 "Try Beta (Endless Mode)" 並等待 Worker 重新啟動。
+## 📌 [datawhalechina/hello-agents](https://github.com/datawhalechina/hello-agents)
+<Callout>
+    Description: 📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程\
+    🌐 Python｜⭐️ 11,260 | 2647 stars this week
+</Callout>
+    #### 簡介
+
+Hello-Agents 🤖 是一個由 Datawhale 社群發起的開源學習專案，旨在提供一份從零開始、理論與實戰並重的智慧體系統建構指南。鑑於 2025 年被譽為「Agent 元年」，本專案聚焦於 AI Native Agent 的設計與實現，協助學習者從大語言模型（LLM）的使用者轉變為智慧體系統的建構者。它深入探討智慧體的核心原理、架構及經典正規化，並引導學習者親手打造多智慧體應用，特別適合具備基礎 Python 程式設計能力和對 LLM 有基本概念的 AI 開發者、軟體工程師、學生及自學者。
+
+#### 主要功能
+
+- 全面學習：完全免費且開源，提供智慧體系統設計與開發的完整流程教學。
+- 核心原理：深入理解智慧體定義、型別、正規化（如 ReAct、Plan-and-Solve、Reflection）及發展歷史。
+- 框架實踐：掌握主流低程式碼平臺（Coze、Dify、n8n）和程式碼框架（AutoGen、AgentScope、LangGraph）的使用。
+- 自研框架：學習如何從零開始基於 OpenAI 原生 API 建構自己的智慧體框架。
+- 進階技術：掌握上下文工程、Memory、RAG、智慧體通訊協議（MCP、A2A、ANP）及效能評估等技術。
+- 模型訓練：實戰 Agentic-RL，涵蓋從 SFT 到 GRPO 的 LLM 訓練流程。
+- 綜合案例：親手開發智慧旅行助手、自動化深度研究智慧體及賽博小鎮等實際應用。
+- 求職準備：提供智慧體相關職位的面試題總結與答案。
+
+#### 如何使用
+
+- **線上閱讀：** 點選提供的連結即可隨時隨地開始學習，無需下載。
+- **本地閱讀與貢獻：** 若想在本地閱讀或參與貢獻，請參考學習指南。
+- **前置知識：** 建議具備基礎 Python 程式設計能力，並對大語言模型（LLM）有基本概念性瞭解。
+- **學習路徑：**
+    - **第一部分：** 智慧體與語言模型基礎，建立理論根基。
+    - **第二部分：** 建構你的大語言模型智慧體，實作經典正規化、使用低程式碼平臺及主流框架，並自建智慧體框架。
+    - **第三部分：** 高階知識擴充套件，學習記憶、檢索、上下文工程、通訊協議及 Agentic-RL 等。
+    - **第四部分：** 綜合案例進階，透過實際專案（如智慧旅行助手、賽博小鎮）淬煉建構能力。
+    - **第五部分：** 畢業設計及未來展望，完成個人多智慧體應用並探索前沿方向。
+- **實踐為重：** 強烈建議結合 `code` 資料夾內的配套程式碼，親手執行、除錯與修改，以獲得最佳學習效果。
+- **社群貢獻：** 歡迎將學習心得或實踐成果以 PR 形式貢獻至「社群精選」或「Extra-Chapter」。
+- **PDF 下載：** 可透過 GitHub 或 Datawhale 官方網站免費下載帶有 Datawhale 標誌浮水印的 PDF 版本。
+## 📌 [agentsmd/agents.md](https://github.com/agentsmd/agents.md)
+<Callout>
+    Description: AGENTS.md — a simple, open format for guiding coding agents\
+    🌐 TypeScript｜⭐️ 12,752 | 1682 stars this week
+</Callout>
+    #### 簡介
+*   `AGENTS.md` 是一個簡單、開放的格式，用於指導編碼 agent。
+*   它就像是 agent 的 `README` 檔案，提供專屬且可預測的位置，以提供上下文和指令，協助 AI 編碼 agent 執行專案工作。
+
+#### 主要功能
+*   提供開發環境設定與操作的實用提示。
+*   提供詳細的測試執行與品質驗證指南。
+*   指導 Pull Request (PR) 的提交規範。
+*   旨在為 AI 編碼 agent 提供清晰、一致的工作指南。
+*   幫助 agent 理解專案的特定行為和預期成果。
+
+#### 如何使用
+*   **開發環境導航與設定：**
+    *   使用 `pnpm dlx turbo run where <project_name>` 快速跳轉至指定 package，並透過 `pnpm install --filter <project_name>` 將其加入工作區供 Vite, ESLint, TypeScript 識別。
+    *   可使用 `pnpm create vite@latest <project_name> -- --template react-ts` 建立新的 React + Vite TypeScript package，並透過 `package.json` 中的 `name` 欄位確認名稱。
+*   **執行測試與維護品質：**
+    *   參考 `.github/workflows` 中的 CI plan，執行 `pnpm turbo run test --filter <project_name>` (或在 package 根目錄執行 `pnpm test`) 執行所有檢查。
+    *   利用 `pnpm vitest run -t "<test name>"` 專注於特定測試步驟，並修復所有測試或 Type errors。
+    *   檔案移動或 imports 更改後，執行 `pnpm lint --filter <project_name>` 以確保 ESLint 和 TypeScript 規則透過，並為修改的程式碼新增或更新測試。
+*   **遵守 Pull Request (PR) 規範：**
+    *   PR 標題應遵循 `[<project_name>] <Title>` 格式。
+    *   提交 PR 前，務必確保所有測試均已透過。
