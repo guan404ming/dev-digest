@@ -1,0 +1,217 @@
+---
+title: '[12/22 - 12/28] GitHub Weekly Digest'
+publishedAt: '2025-12-28'
+---
+## 📌 [anthropics/skills](https://github.com/anthropics/skills)
+<Callout>
+    Description: Public repository for Agent Skills\
+    🌐 Python｜⭐️ 27,899 | 5152 stars this week
+</Callout>
+    #### 簡介
+
+*   此 repository 包含 Anthropic 為 Claude 實作的技能集。Skills 讓 Claude 能動態載入指令、指令碼及資源，以提升在特定任務上的表現，涵蓋從創意到企業工作流程的多元應用。
+*   Skills 是由指令、指令碼和資源組成的資料夾，旨在教導 Claude 以可重複的方式完成特定任務。
+*   本 repository 展示了 Claude skills 系統的潛力，並提供了各種應用範例，如檔案建立、資料分析和任務自動化。
+*   每個 skill 獨立存放於其資料夾中，並包含一個 `SKILL.md` 檔案，其中定義了指令和 metadata。
+*   許多技能以 Apache 2.0 開源許可證發布，而 `docx`、`pdf`、`pptx` 和 `xlsx` 等檔案處理技能則為 source-available，作為複雜生產環境技能的參考。
+*   這些技能主要用於演示和教育目的，實際的 Claude 行為和實作可能有所不同，建議在使用前進行徹底測試。
+
+#### 主要功能
+
+*   提供一組預先建立的技能範例，以展示 Claude 在專門任務上的增強能力。
+*   使 Claude 能夠動態載入客製化的指令和指令碼，以適應廣泛的任務需求。
+*   涵蓋多種型別的應用，包括創意領域（如藝術、音樂、設計）、技術任務（如測試 web apps、MCP server generation）。
+*   支援企業工作流程的解決方案，例如通訊和品牌建立。
+*   包含檔案建立與編輯技能，如 `docx`、`pdf`、`pptx` 和 `xlsx`，作為 Claude 內部檔案處理能力的基礎。
+*   允許開發者透過瀏覽現有技能來獲取靈感，理解不同的設計模式和方法。
+*   提供 `Agent Skills specification` (`./spec`) 和 `Skill template` (`./template`)，作為建立新技能的參考。
+
+#### 如何使用
+
+*   **在 Claude Code 中使用：**
+    *   將此 repository 註冊為 Claude Code Plugin marketplace：執行指令 `/plugin marketplace add anthropics/skills`。
+    *   安裝特定技能集：
+        *   透過介面：選擇 `Browse and install plugins`，然後選擇 `anthropic-agent-skills`，再選擇 `document-skills` 或 `example-skills`，最後點選 `Install now`。
+        *   直接安裝：執行 `/plugin install document-skills@anthropic-agent-skills` 或 `/plugin install example-skills@anthropic-agent-skills`。
+    *   安裝後，只需在對話中提及技能名稱即可使用，例如："Use the PDF skill to extract the form fields from path/to/some-file.pdf"。
+*   **在 Claude.ai 中使用：**
+    *   這些範例技能已對付費方案使用者開放使用。
+    *   請遵循「Using skills in Claude」的相關說明來啟用或上傳自訂技能。
+*   **透過 Claude API 使用：**
+    *   您可以使用 Anthropic 預建的技能，並透過 Claude API 上傳您自訂的技能。
+    *   請參考「Skills API Quickstart」以獲取詳細的整合指南。
+*   **建立基本技能：**
+    *   建立技能非常簡單，只需一個資料夾，其中包含一個 `SKILL.md` 檔案。
+    *   `SKILL.md` 檔案必須包含 YAML frontmatter 和具體的指令。
+    *   您可以參考 repository 中的 `template-skill` 作為建立新技能的範本。
+## 📌 [exo-explore/exo](https://github.com/exo-explore/exo)
+<Callout>
+    Description: Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚\
+    🌐 Python｜⭐️ 38,560 | 4624 stars this week
+</Callout>
+    #### 簡介
+
+*   exo 是一個由 exo labs 維護的平臺，能讓您將日常裝置連線成一個 AI 叢集。
+*   它能夠整合多個裝置，執行單一裝置無法承載的大型模型。
+*   透過對 RDMA over Thunderbolt 的 Day-0 支援，隨著裝置數量增加，模型執行速度也將更快。
+
+#### 主要功能
+
+*   **Automatic Device Discovery**: 執行 exo 的裝置會自動彼此探索，無需任何手動配置。
+*   **RDMA over Thunderbolt**: exo 支援 Thunderbolt 5 上的 RDMA，能將裝置間的延遲降低 99%。
+*   **Topology-Aware Auto Parallel**: exo 能根據裝置的實時拓撲、資源及網路延遲/頻寬，智慧地將模型最佳化分割並部署到所有可用裝置上。
+*   **Tensor Parallelism**: 支援模型分片 (sharding)，在 2 個裝置上可提供高達 1.8 倍的速度提升，在 4 個裝置上則可達 3.2 倍。
+*   **MLX Support**: exo 使用 MLX 作為其推論後端 (inference backend)，並利用 MLX distributed 處理分散式通訊。
+
+#### 如何使用
+
+*   exo 裝置會自動互相探索，且每個裝置皆提供 API 和 Dashboard 介面供您與叢集互動 (執行於 `http://localhost:52415`)。
+*   **從原始碼執行 (macOS)**：
+    *   **前置條件**：需安裝 `brew`、`uv`、`macmon`、`node` 及 `rust` (nightly 版本)。
+    *   **步驟**：依序執行複製專案 (`git clone`)、建置 Dashboard (`npm install` 及 `npm run build`)，最後透過 `uv run exo` 啟動。
+*   **從原始碼執行 (Linux)**：
+    *   **前置條件**：需安裝 `uv`、`node` (v18 或更高版本) 及 `rust` (nightly 版本)。請注意 `macmon` 僅適用於 macOS。
+    *   **注意**：目前 Linux 版本僅支援 CPU 執行，GPU 支援仍在開發中。
+    *   **步驟**：執行流程與 macOS 類似，包括複製專案、建置 Dashboard 及執行 `uv run exo`。
+*   **macOS App**:
+    *   exo 提供了可在 Mac 背景執行的 macOS 應用程式，要求 macOS Tahoe 26.2 或更新版本。
+    *   可從 `EXO-latest.dmg` 下載，應用程式將請求許可權以修改系統設定及安裝新的 Network profile。
+*   **使用 API**：
+    *   **1. 預覽例項部署位置**：向 `/instance/previews` 端點傳送 `curl` 請求，帶上 `model_id` 引數，即可預覽模型的有效部署選項。
+        ```bash
+        curl "http://localhost:52415/instance/previews?model_id=llama-3.2-1b"
+        ```
+    *   **2. 建立模型例項**：向 `/instance` 端點傳送 `POST` 請求，並在 `instance` 欄位中指定您選定的部署配置。
+## 📌 [google/A2UI](https://github.com/google/A2UI)
+<Callout>
+    
+    🌐 TypeScript｜⭐️ 7,766 | 2106 stars this week
+</Callout>
+    #### 簡介
+
+*   A2UI 是一個開源專案，旨在提供一種最佳化的格式和渲染器，讓代理程式能夠生成或填充豐富的使用者介面 (UI)。
+*   它解決了生成式 AI 在呈現複雜互動式介面時的挑戰，尤其是在遠端或跨信任邊界的情境。
+*   作為一個開放標準和函式庫集合，A2UI 允許代理程式透過傳送宣告式的 JSON 格式來「描述 UI 意圖」。
+*   客戶端應用程式隨後使用其原生的元件庫（例如 Flutter、Angular、Lit）來渲染這些描述。
+*   這種方法確保了代理程式生成的 UI 既安全（如同資料）又具有表現力（如同程式碼）。
+*   A2UI 目前處於 v0.8 公開預覽階段，其規範和實作仍在持續演進中，旨在促進協作並收集社群回饋。
+
+#### 主要功能
+
+*   **安全性優先**: A2UI 採用宣告式資料格式 (JSON)，而非可執行程式碼。客戶端應用程式維護一個經預先批准的 UI 元件「目錄」，代理程式只能請求渲染該目錄中的元件。
+*   **LLM 友好且可增量更新**: UI 被表示為帶有 ID 引用的元件扁平列表，這對於 LLM 來說易於增量生成，從而實現漸進式渲染和響應式使用者體驗。
+*   **框架無關且可移植**: A2UI 將 UI 結構與其實作分離。代理程式傳送元件樹及其資料模型的抽象描述，客戶端應用程式負責將這些描述對映到其原生的小部件（例如 Web components、Flutter widgets、React components）。
+*   **高度靈活性**: 透過開放註冊模式，開發者可以將伺服器端型別對映到自定義的客戶端實現，包括使用「Smart Wrapper」來連線任何現有 UI 元件（甚至安全的 iframe 容器）。
+*   **多樣化使用案例**: 支援動態資料收集（代理程式根據對話情境生成訂製表單）、遠端子代理協作（特化代理程式返回 UI 負載）和自適應工作流程（企業代理程式即時生成儀錶板或資料視覺化）。
+*   **解耦的架構**: A2UI 的流程將 UI 的生成與執行分離，包括代理程式生成 JSON 負載、訊息傳輸到客戶端、客戶端解析 JSON 並將抽象元件對映到具體實作進行渲染。
+*   **輕量級格式**: 被設計為輕量級格式，能融入更大的生態系統，並支援 A2A Protocol 和 AG UI 等傳輸方式。
+*   **廣泛的相容性**: 可由任何能夠生成 JSON 輸出的 LLM 生成，並需要執行在支援的宿主框架中（目前為 Web 或 Flutter）。
+
+#### 如何使用
+
+*   理解 A2UI 的最佳方式是執行其提供的範例。
+*   **先決條件 (Prerequisites)**:
+    *   Node.js (用於 Web 客戶端)。
+    *   Python (用於代理程式範例)。
+    *   一個有效的 Gemini API key (推測為 Gem)。
+*   客戶端應用程式將負責解析代理程式傳送的 A2UI JSON 負載，並將其中的抽象 UI 元件對映到其自身的原生元件庫進行渲染。
+*   開發者需要定義一個預先批准的 UI 元件「catalog」，代理程式將只能請求渲染該 catalog 中的元件，以確保安全性。
+## 📌 [google/langextract](https://github.com/google/langextract)
+<Callout>
+    Description: A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.\
+    🌐 Python｜⭐️ 19,499 | 1824 stars this week
+</Callout>
+    #### 簡介
+
+LangExtract 是一個 Python 函式庫，利用大型語言模型 (LLMs) 根據使用者定義的指令，從非結構化文字檔案中提取結構化資訊。它能處理臨床筆記或報告等資料，識別並組織關鍵細節，同時確保提取的資料與原始文字一致。
+
+#### 主要功能
+
+-   **精確的來源定位 (Precise Source Grounding)**：將每次提取對映到源文字中的確切位置，便於視覺化標註，提高可追溯性和驗證性。
+-   **可靠的結構化輸出 (Reliable Structured Outputs)**：根據少量範例 (few-shot examples) 實施一致的輸出 schema，並利用支援模型 (如 Gemini) 的受控生成來確保強健的結構化結果。
+-   **針對長檔案最佳化 (Optimized for Long Documents)**：透過文字分塊、平行處理和多輪提取 (multiple passes) 的最佳化策略，解決大型檔案提取中的「大海撈針」挑戰，以提高召回率 (recall)。
+-   **互動式視覺化 (Interactive Visualization)**：即時生成一個獨立的互動式 HTML 檔案，用於在其原始上下文中視覺化和審查數千個提取的實體。
+-   **彈性的 LLM 支援 (Flexible LLM Support)**：支援偏好的模型，包括 Google Gemini 系列等雲端 LLMs，以及透過內建 Ollama 介面的本地開源模型。
+-   **適用於任何領域 (Adaptable to Any Domain)**：只需少量範例即可為任何領域定義提取任務，無需模型微調。
+-   **利用 LLM 世界知識 (Leverages LLM World Knowledge)**：透過精確的 prompt 措辭和 few-shot examples，影響提取任務如何利用 LLM 的知識，但準確性取決於所選 LLM、任務複雜性、prompt 指令的清晰度及範例的性質。
+
+#### 如何使用
+
+-   **快速開始**：
+    -   **定義提取任務**：使用 `import langextract as lx`，定義清晰的 `prompt_description` 和高品質的 `lx.data.ExampleData` 範例來指導模型。
+    -   **執行提取**：透過 `lx.extract(text_or_documents, prompt_description, examples, model_id="gemini-2.5-flash")` 函式處理輸入文字。
+    -   **視覺化結果**：使用 `lx.io.save_annotated_documents([result], output_name="extraction_results.jsonl")` 將結果儲存為 `.jsonl` 檔案，再用 `lx.visualize("extraction_results.jsonl")` 生成互動式 HTML 檔案以供審閱。
+-   **處理長檔案**：
+    -   可直接處理來自 URL 的完整檔案，例如：`lx.extract(url="https://...", extraction_passes=3, max_workers=20, max_char_buffer=1000)`，以最佳化召回率和速度。
+    -   支援 Vertex AI Batch API 以節省大規模任務的成本，透過 `language_model_params={"vertexai": True, "batch": {"enabled": True}}` 啟用。
+-   **安裝**：
+    -   從 PyPI 安裝（推薦）：
+        ```bash
+        pip install langextract
+        ```
+    -   從原始碼安裝：
+        ```bash
+        git clone https://github.com/google/langextract.git
+        cd langextract
+        pip install -e .
+        ```
+    -   Docker：提供 `Dockerfile` 支援，可建構並執行 Docker 容器。
+-   **雲端模型 API Key 設定**：
+    -   使用 Gemini 或 OpenAI 等雲端模型需要 API Key，可從 AI Studio、Vertex AI 或 OpenAI Platform 獲取。
+    -   API Key 可透過環境變數 (`export LANGEXTRACT_API_KEY="your-api-key-here"`)、`.env` 檔案（推薦）、直接在程式碼中提供（不建議生產環境），或透過 Vertex AI 服務帳戶進行設定。
+-   **新增自訂模型提供者**：
+    -   LangExtract 支援透過輕量級外掛系統新增自訂 LLM 提供者，允許獨立於核心函式庫開發和分發新的模型支援。
+    -   透過 `@registry.register(...)` 註冊提供者，並發布進入點。
+-   **使用 OpenAI 模型**：
+    -   需要安裝額外依賴：
+        ```bash
+        pip install langextract[openai]
+        ```
+    -   使用時需指定 `model_id="gpt-4o"`，並設定 `fence_output=True` 和 `use_schema_constraints=False`。
+-   **使用 Ollama 本地 LLMs**：
+    -   支援使用 Ollama 進行本地推斷，無需 API Key。
+    -   指定 `model_id="gemma2:2b"` (或其他 Ollama 模型) 和 `model_url="http://localhost:11434"`。
+    -   需設定 `fence_output=False` 和 `use_schema_constraints=False`。
+    -   快速設定：安裝 Ollama，拉取模型 (`ollama pull gemma2:2b`)，然後啟動服務 (`ollama serve`)。
+## 📌 [anthropics/claude-code](https://github.com/anthropics/claude-code)
+<Callout>
+    Description: Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.\
+    🌐 Shell｜⭐️ 49,067 | 1697 stars this week
+</Callout>
+    #### 簡介
+
+*   Claude Code 是一個常駐於您的終端機 (terminal) 的代理式 (agentic) 編碼工具，能理解您的程式碼庫 (codebase)，並透過自然語言指令 (natural language commands) 加速編碼。
+*   支援在終端機 (terminal)、IDE 或在 GitHub 上標記 `@claude` 使用。
+
+#### 主要功能
+
+*   **加速編碼流程**：透過自然語言指令快速執行編碼任務。
+*   **執行例行任務**：自動化處理重複性或常見的編碼操作。
+*   **解釋複雜程式碼**：協助理解複雜的程式碼區塊。
+*   **處理 Git workflows**：簡化 Git 相關的操作流程。
+*   **支援多平臺使用**：可在終端機 (terminal)、IDE 或 GitHub 環境中整合。
+*   **可擴充性 (Plugins)**：提供多個 plugins 以自訂指令和 agents 擴充套件功能。
+*   **問題回報**：可使用 `/bug` 命令直接在 Claude Code 內回報問題。
+
+#### 如何使用
+
+*   **安裝 Claude Code**：
+    *   **MacOS/Linux**: 執行以下命令進行安裝：
+        ```bash
+        curl -fsSL https://claude.ai/install.sh | bash
+        ```
+    *   **Homebrew (MacOS)**: 使用 Homebrew 安裝：
+        ```bash
+        brew install --cask claude-code
+        ```
+    *   **Windows**: 在 PowerShell 中執行命令：
+        ```powershell
+        irm https://claude.ai/install.ps1 | iex
+        ```
+    *   **NPM**: 全域安裝：
+        ```bash
+        npm install -g @anthropic-ai/claude-code
+        ```
+        *   **注意**：若使用 NPM 安裝，您也需要安裝 Node.js 18+。
+*   **啟動工具**：導航至您的專案目錄，然後執行 `claude` 命令。
+*   **探索 plugins**：查閱 `plugins` 目錄以獲取可用 plugins 的詳細檔案。
